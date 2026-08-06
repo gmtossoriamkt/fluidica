@@ -301,7 +301,7 @@
         <nav class="breadcrumb" aria-label="Хлебные крошки">
           <a href="/">Главная</a><span>/</span>
           <a href="/blog">Блог</a><span>/</span>
-          <a href="#top">Статья</a>
+          <a href="javascript:void(0)" data-scroll="top">Статья</a>
         </nav>
         <span class="eyebrow">Гайд</span>
         <h1>Как выбрать лабораторное оборудование для старта проекта</h1>
@@ -444,6 +444,19 @@
     });
   }, {threshold:0.15});
   document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
 </script>
 
 </body>

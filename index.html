@@ -277,15 +277,15 @@
 
 <header>
   <div class="header-inner">
-    <a href="#top" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <a href="javascript:void(0)" data-scroll="top" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
     <nav>
-      <a href="#catalog">Каталог</a>
-      <a href="#why">Почему мы</a>
-      <a href="#trust">Госзакупки</a>
-      <a href="#contact">Контакты</a>
+      <a href="javascript:void(0)" data-scroll="catalog">Каталог</a>
+      <a href="javascript:void(0)" data-scroll="why">Почему мы</a>
+      <a href="javascript:void(0)" data-scroll="trust">Госзакупки</a>
+      <a href="javascript:void(0)" data-scroll="contact">Контакты</a>
     </nav>
     <div class="header-actions">
-      <a href="#catalog" class="cta-small">Каталог</a>
+      <a href="javascript:void(0)" data-scroll="catalog" class="cta-small">Каталог</a>
     </div>
   </div>
 </header>
@@ -298,8 +298,8 @@
       <h1>Открытая наука,<br><span class="accent-word">готовая к работе</span></h1>
       <p class="hero-sub">Собранные, откалиброванные и протестированные приборы на базе открытых проектов — шприцевые насосы, микроскопы, микрофлюидные станции. С локальной поддержкой и гарантией, когда импорт недоступен.</p>
       <div class="hero-actions">
-        <a href="#catalog" class="btn-primary">Смотреть каталог</a>
-        <a href="#why" class="btn-ghost">Как это устроено</a>
+        <a href="javascript:void(0)" data-scroll="catalog" class="btn-primary">Смотреть каталог</a>
+        <a href="javascript:void(0)" data-scroll="why" class="btn-ghost">Как это устроено</a>
       </div>
     </div>
 
@@ -399,8 +399,8 @@
       <h2>Расскажите, какая задача стоит перед лабораторией</h2>
       <p class="section-desc">Подберём конфигурацию под задачу и посчитаем стоимость за один день.</p>
       <div class="final-actions">
-        <a href="#contact" class="btn-primary">Написать нам</a>
-        <a href="#catalog" class="btn-ghost">Смотреть каталог</a>
+        <a href="javascript:void(0)" data-scroll="contact" class="btn-primary">Написать нам</a>
+        <a href="javascript:void(0)" data-scroll="catalog" class="btn-ghost">Смотреть каталог</a>
       </div>
     </div>
   </section>
@@ -411,7 +411,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#top" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <a href="javascript:void(0)" data-scroll="top" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
         <p>Открытые научные приборы, собранные и готовые к работе.</p>
       </div>
       <div class="footer-col">
@@ -461,6 +461,19 @@
     });
   }, {threshold:0.15});
   document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
 </script>
 
 </body>
