@@ -1,0 +1,15 @@
+{
+  "name": "Fluidica",
+  "short_name": "Fluidica",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#0B3B4E",
+  "background_color": "#0B3B4E",
+  "display": "standalone",
+  "start_url": "/"
+}
