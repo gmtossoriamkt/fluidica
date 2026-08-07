@@ -1,0 +1,622 @@
+[
+  {
+    "id": 1,
+    "name": "Насос 1-канальный в сборе",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "nasos-1-kanalnyy-v-sbore",
+    "url": "/product/nasos-1-kanalnyy-v-sbore",
+    "price": 7200,
+    "note": "Основной чек"
+  },
+  {
+    "id": 2,
+    "name": "Насос 2-канальный в сборе",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "nasos-2-kanalnyy-v-sbore",
+    "url": "/product/nasos-2-kanalnyy-v-sbore",
+    "price": 12800,
+    "note": "Основной чек"
+  },
+  {
+    "id": 3,
+    "name": "Насос 3-канальный в сборе",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "nasos-3-kanalnyy-v-sbore",
+    "url": "/product/nasos-3-kanalnyy-v-sbore",
+    "price": 19200,
+    "note": "Основной чек"
+  },
+  {
+    "id": 4,
+    "name": "Насос высокого давления 1-кан.",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "nasos-vysokogo-davleniya-1-kan",
+    "url": "/product/nasos-vysokogo-davleniya-1-kan",
+    "price": 11900,
+    "note": "Основной чек"
+  },
+  {
+    "id": 5,
+    "name": "Насос высокого давления 3-кан.",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "nasos-vysokogo-davleniya-3-kan",
+    "url": "/product/nasos-vysokogo-davleniya-3-kan",
+    "price": 27200,
+    "note": "Основной чек"
+  },
+  {
+    "id": 6,
+    "name": "Насос с автономным контроллером",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "nasos-s-avtonomnym-kontrollerom",
+    "url": "/product/nasos-s-avtonomnym-kontrollerom",
+    "price": 23800,
+    "note": "Основной чек"
+  },
+  {
+    "id": 7,
+    "name": "Насос с ЖК-дисплеем и энкодером",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "nasos-s-zhk-displeem-i-enkoderom",
+    "url": "/product/nasos-s-zhk-displeem-i-enkoderom",
+    "price": 22100,
+    "note": "Основной чек"
+  },
+  {
+    "id": 8,
+    "name": "Насос для вязких жидкостей",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "nasos-dlya-vyazkikh-zhidkostey",
+    "url": "/product/nasos-dlya-vyazkikh-zhidkostey",
+    "price": 22100,
+    "note": "Основной чек"
+  },
+  {
+    "id": 9,
+    "name": "Насос термостатируемый",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "nasos-termostatiruemyy",
+    "url": "/product/nasos-termostatiruemyy",
+    "price": 30600,
+    "note": "Основной чек"
+  },
+  {
+    "id": 10,
+    "name": "Перистальтический насос 1-кан.",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "peristalticheskiy-nasos-1-kan",
+    "url": "/product/peristalticheskiy-nasos-1-kan",
+    "price": 8000,
+    "note": "Основной чек"
+  },
+  {
+    "id": 11,
+    "name": "Перистальтический многоканальный",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "peristalticheskiy-mnogokanalnyy",
+    "url": "/product/peristalticheskiy-mnogokanalnyy",
+    "price": 18700,
+    "note": "Основной чек"
+  },
+  {
+    "id": 12,
+    "name": "USB-микроскоп на Raspberry Pi",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "usb-mikroskop-na-raspberry-pi",
+    "url": "/product/usb-mikroskop-na-raspberry-pi",
+    "price": 22500,
+    "note": "Основной чек"
+  },
+  {
+    "id": 13,
+    "name": "Микроскоп с сенсорным экраном 7\"",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "mikroskop-s-sensornym-ekranom-7",
+    "url": "/product/mikroskop-s-sensornym-ekranom-7",
+    "price": 28500,
+    "note": "Основной чек"
+  },
+  {
+    "id": 14,
+    "name": "Инвертированный микроскоп",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "invertirovannyy-mikroskop",
+    "url": "/product/invertirovannyy-mikroskop",
+    "price": 33600,
+    "note": "Основной чек"
+  },
+  {
+    "id": 15,
+    "name": "Микроскоп с моторизованным столиком",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "mikroskop-s-motorizovannym-stolikom",
+    "url": "/product/mikroskop-s-motorizovannym-stolikom",
+    "price": 41600,
+    "note": "Основной чек"
+  },
+  {
+    "id": 16,
+    "name": "Микроскоп флуоресцентный",
+    "category": "Приборы",
+    "category_slug": "devices",
+    "slug": "mikroskop-fluorestsentnyy",
+    "url": "/product/mikroskop-fluorestsentnyy",
+    "price": 51000,
+    "note": "Основной чек"
+  },
+  {
+    "id": 17,
+    "name": "Станция капельной микрофлюидики",
+    "category": "Станции",
+    "category_slug": "stations",
+    "slug": "stantsiya-kapelnoy-mikroflyuidiki",
+    "url": "/product/stantsiya-kapelnoy-mikroflyuidiki",
+    "price": 64000,
+    "note": "Максимальный чек"
+  },
+  {
+    "id": 18,
+    "name": "Станция перфузии клеток",
+    "category": "Станции",
+    "category_slug": "stations",
+    "slug": "stantsiya-perfuzii-kletok",
+    "url": "/product/stantsiya-perfuzii-kletok",
+    "price": 67200,
+    "note": "Максимальный чек"
+  },
+  {
+    "id": 19,
+    "name": "Станция микросинтеза",
+    "category": "Станции",
+    "category_slug": "stations",
+    "slug": "stantsiya-mikrosinteza",
+    "url": "/product/stantsiya-mikrosinteza",
+    "price": 60800,
+    "note": "Максимальный чек"
+  },
+  {
+    "id": 20,
+    "name": "Полный лабораторный комплекс",
+    "category": "Станции",
+    "category_slug": "stations",
+    "slug": "polnyy-laboratornyy-kompleks",
+    "url": "/product/polnyy-laboratornyy-kompleks",
+    "price": 88000,
+    "note": "Максимальный чек"
+  },
+  {
+    "id": 21,
+    "name": "Учебное рабочее место",
+    "category": "Станции",
+    "category_slug": "stations",
+    "slug": "uchebnoe-rabochee-mesto",
+    "url": "/product/uchebnoe-rabochee-mesto",
+    "price": 45000,
+    "note": "Максимальный чек"
+  },
+  {
+    "id": 22,
+    "name": "Демо-комплект на 5 мест",
+    "category": "Станции",
+    "category_slug": "stations",
+    "slug": "demo-komplekt-na-5-mest",
+    "url": "/product/demo-komplekt-na-5-mest",
+    "price": 180000,
+    "note": "Максимальный чек"
+  },
+  {
+    "id": 23,
+    "name": "Мобильный полевой комплект (кейс)",
+    "category": "Станции",
+    "category_slug": "stations",
+    "slug": "mobilnyy-polevoy-komplekt-keys",
+    "url": "/product/mobilnyy-polevoy-komplekt-keys",
+    "price": 72000,
+    "note": "Максимальный чек"
+  },
+  {
+    "id": 24,
+    "name": "Кит насоса 1-канального",
+    "category": "Наборы",
+    "category_slug": "kits",
+    "slug": "kit-nasosa-1-kanalnogo",
+    "url": "/product/kit-nasosa-1-kanalnogo",
+    "price": 5250,
+    "note": "Низкий порог входа"
+  },
+  {
+    "id": 25,
+    "name": "Кит насоса 3-канального",
+    "category": "Наборы",
+    "category_slug": "kits",
+    "slug": "kit-nasosa-3-kanalnogo",
+    "url": "/product/kit-nasosa-3-kanalnogo",
+    "price": 14250,
+    "note": "Низкий порог входа"
+  },
+  {
+    "id": 26,
+    "name": "Кит микроскопа",
+    "category": "Наборы",
+    "category_slug": "kits",
+    "slug": "kit-mikroskopa",
+    "url": "/product/kit-mikroskopa",
+    "price": 18000,
+    "note": "Низкий порог входа"
+  },
+  {
+    "id": 27,
+    "name": "Кит электроники преднастроенный",
+    "category": "Наборы",
+    "category_slug": "kits",
+    "slug": "kit-elektroniki-prednastroennyy",
+    "url": "/product/kit-elektroniki-prednastroennyy",
+    "price": 8000,
+    "note": "Низкий порог входа"
+  },
+  {
+    "id": 28,
+    "name": "Стартовый набор микрофлюидиста",
+    "category": "Наборы",
+    "category_slug": "kits",
+    "slug": "startovyy-nabor-mikroflyuidista",
+    "url": "/product/startovyy-nabor-mikroflyuidista",
+    "price": 11900,
+    "note": "Низкий порог входа"
+  },
+  {
+    "id": 29,
+    "name": "Кит апгрейда до 3 каналов",
+    "category": "Наборы",
+    "category_slug": "kits",
+    "slug": "kit-apgreyda-do-3-kanalov",
+    "url": "/product/kit-apgreyda-do-3-kanalov",
+    "price": 9600,
+    "note": "Низкий порог входа"
+  },
+  {
+    "id": 30,
+    "name": "Ремкомплект насоса (ЗИП)",
+    "category": "Наборы",
+    "category_slug": "kits",
+    "slug": "remkomplekt-nasosa-zip",
+    "url": "/product/remkomplekt-nasosa-zip",
+    "price": 4500,
+    "note": "Низкий порог входа"
+  },
+  {
+    "id": 31,
+    "name": "Каретка подачи в сборе",
+    "category": "Субузлы",
+    "category_slug": "spare-parts",
+    "slug": "karetka-podachi-v-sbore",
+    "url": "/product/karetka-podachi-v-sbore",
+    "price": 2700,
+    "note": "Ремонт/апгрейд"
+  },
+  {
+    "id": 32,
+    "name": "Механизм подачи в сборе",
+    "category": "Субузлы",
+    "category_slug": "spare-parts",
+    "slug": "mekhanizm-podachi-v-sbore",
+    "url": "/product/mekhanizm-podachi-v-sbore",
+    "price": 6300,
+    "note": "Ремонт/апгрейд"
+  },
+  {
+    "id": 33,
+    "name": "Блок электроники в сборе (прошитый)",
+    "category": "Субузлы",
+    "category_slug": "spare-parts",
+    "slug": "blok-elektroniki-v-sbore-proshityy",
+    "url": "/product/blok-elektroniki-v-sbore-proshityy",
+    "price": 6800,
+    "note": "Ремонт/апгрейд"
+  },
+  {
+    "id": 34,
+    "name": "Предметный столик микроскопа в сборе",
+    "category": "Субузлы",
+    "category_slug": "spare-parts",
+    "slug": "predmetnyy-stolik-mikroskopa-v-sbore",
+    "url": "/product/predmetnyy-stolik-mikroskopa-v-sbore",
+    "price": 3600,
+    "note": "Ремонт/апгрейд"
+  },
+  {
+    "id": 35,
+    "name": "Набор трубок ассорти (фасовка)",
+    "category": "Расходка",
+    "category_slug": "consumables",
+    "slug": "nabor-trubok-assorti-fasovka",
+    "url": "/product/nabor-trubok-assorti-fasovka",
+    "price": 660,
+    "note": "Razor-and-blades, повторные продажи"
+  },
+  {
+    "id": 36,
+    "name": "Набор фитингов Luer (стартовый)",
+    "category": "Расходка",
+    "category_slug": "consumables",
+    "slug": "nabor-fitingov-luer-startovyy",
+    "url": "/product/nabor-fitingov-luer-startovyy",
+    "price": 1100,
+    "note": "Razor-and-blades, повторные продажи"
+  },
+  {
+    "id": 37,
+    "name": "Набор игл тупых (ассорти)",
+    "category": "Расходка",
+    "category_slug": "consumables",
+    "slug": "nabor-igl-tupykh-assorti",
+    "url": "/product/nabor-igl-tupykh-assorti",
+    "price": 550,
+    "note": "Razor-and-blades, повторные продажи"
+  },
+  {
+    "id": 38,
+    "name": "Набор шприцев Luer-lock (ассорти)",
+    "category": "Расходка",
+    "category_slug": "consumables",
+    "slug": "nabor-shpritsev-luer-lock-assorti",
+    "url": "/product/nabor-shpritsev-luer-lock-assorti",
+    "price": 800,
+    "note": "Razor-and-blades, повторные продажи"
+  },
+  {
+    "id": 39,
+    "name": "Набор для литья ПДМС (с формой)",
+    "category": "Расходка",
+    "category_slug": "consumables",
+    "slug": "nabor-dlya-litya-pdms-s-formoy",
+    "url": "/product/nabor-dlya-litya-pdms-s-formoy",
+    "price": 2850,
+    "note": "Razor-and-blades, повторные продажи"
+  },
+  {
+    "id": 40,
+    "name": "Расходный набор капельной микрофлюидики",
+    "category": "Расходка",
+    "category_slug": "consumables",
+    "slug": "raskhodnyy-nabor-kapelnoy-mikroflyuidiki",
+    "url": "/product/raskhodnyy-nabor-kapelnoy-mikroflyuidiki",
+    "price": 3420,
+    "note": "Razor-and-blades, повторные продажи"
+  },
+  {
+    "id": 41,
+    "name": "Расходный набор перфузии",
+    "category": "Расходка",
+    "category_slug": "consumables",
+    "slug": "raskhodnyy-nabor-perfuzii",
+    "url": "/product/raskhodnyy-nabor-perfuzii",
+    "price": 3040,
+    "note": "Razor-and-blades, повторные продажи"
+  },
+  {
+    "id": 42,
+    "name": "Набор предметных стёкол с чипами",
+    "category": "Расходка",
+    "category_slug": "consumables",
+    "slug": "nabor-predmetnykh-styokol-s-chipami",
+    "url": "/product/nabor-predmetnykh-styokol-s-chipami",
+    "price": 1800,
+    "note": "Razor-and-blades, повторные продажи"
+  },
+  {
+    "id": 43,
+    "name": "Набор шприцевых фильтров ассорти",
+    "category": "Расходка",
+    "category_slug": "consumables",
+    "slug": "nabor-shpritsevykh-filtrov-assorti",
+    "url": "/product/nabor-shpritsevykh-filtrov-assorti",
+    "price": 1400,
+    "note": "Razor-and-blades, повторные продажи"
+  },
+  {
+    "id": 44,
+    "name": "Микрофлюидный чип PDMS (шт.)",
+    "category": "Чипы",
+    "category_slug": "chips",
+    "slug": "mikroflyuidnyy-chip-pdms-sht",
+    "url": "/product/mikroflyuidnyy-chip-pdms-sht",
+    "price": 1000,
+    "note": "Премиум-опция"
+  },
+  {
+    "id": 45,
+    "name": "Микрофлюидный чип стекло (аутсорс, шт.)",
+    "category": "Чипы",
+    "category_slug": "chips",
+    "slug": "mikroflyuidnyy-chip-steklo-autsors-sht",
+    "url": "/product/mikroflyuidnyy-chip-steklo-autsors-sht",
+    "price": 9600,
+    "note": "Премиум-опция"
+  },
+  {
+    "id": 46,
+    "name": "Микрофлюидный чип кварц (аутсорс, шт.)",
+    "category": "Чипы",
+    "category_slug": "chips",
+    "slug": "mikroflyuidnyy-chip-kvarts-autsors-sht",
+    "url": "/product/mikroflyuidnyy-chip-kvarts-autsors-sht",
+    "price": 22500,
+    "note": "Премиум-опция"
+  },
+  {
+    "id": 47,
+    "name": "Пусконаладка на месте",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "puskonaladka-na-meste",
+    "url": "/product/puskonaladka-na-meste",
+    "price": 16000,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 48,
+    "name": "Калибровка расхода",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "kalibrovka-raskhoda",
+    "url": "/product/kalibrovka-raskhoda",
+    "price": 8800,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 49,
+    "name": "Обучение базовое (полдня)",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "obuchenie-bazovoe-poldnya",
+    "url": "/product/obuchenie-bazovoe-poldnya",
+    "price": 20000,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 50,
+    "name": "Обучение расширенное (2 дня)",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "obuchenie-rasshirennoe-2-dnya",
+    "url": "/product/obuchenie-rasshirennoe-2-dnya",
+    "price": 60000,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 51,
+    "name": "Разработка кастомной конфигурации",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "razrabotka-kastomnoy-konfiguratsii",
+    "url": "/product/razrabotka-kastomnoy-konfiguratsii",
+    "price": 30000,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 52,
+    "name": "Адаптация протокола под задачу",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "adaptatsiya-protokola-pod-zadachu",
+    "url": "/product/adaptatsiya-protokola-pod-zadachu",
+    "price": 24000,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 53,
+    "name": "Годовой сервисный контракт",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "godovoy-servisnyy-kontrakt",
+    "url": "/product/godovoy-servisnyy-kontrakt",
+    "price": 45000,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 54,
+    "name": "Расширенная гарантия (+1 год)",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "rasshirennaya-garantiya-1-god",
+    "url": "/product/rasshirennaya-garantiya-1-god",
+    "price": 15000,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 55,
+    "name": "Модернизация насоса заказчика",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "modernizatsiya-nasosa-zakazchika",
+    "url": "/product/modernizatsiya-nasosa-zakazchika",
+    "price": 19000,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 56,
+    "name": "Проектирование печатной детали",
+    "category": "Услуги",
+    "category_slug": "services",
+    "slug": "proektirovanie-pechatnoy-detali",
+    "url": "/product/proektirovanie-pechatnoy-detali",
+    "price": 11000,
+    "note": "Высокая маржа, удержание"
+  },
+  {
+    "id": 57,
+    "name": "Биореактор Pioreactor-класса",
+    "category": "Новое (GitHub)",
+    "category_slug": "new-open-source",
+    "slug": "bioreaktor-pioreactor-klassa",
+    "url": "/product/bioreaktor-pioreactor-klassa",
+    "price": 37400,
+    "note": "Расширение линейки"
+  },
+  {
+    "id": 58,
+    "name": "Термоциклер ПЦР (PocketPCR-класса)",
+    "category": "Новое (GitHub)",
+    "category_slug": "new-open-source",
+    "slug": "termotsikler-ptsr-pocketpcr-klassa",
+    "url": "/product/termotsikler-ptsr-pocketpcr-klassa",
+    "price": 16200,
+    "note": "Расширение линейки"
+  },
+  {
+    "id": 59,
+    "name": "Центрифуга настольная (DIY)",
+    "category": "Новое (GitHub)",
+    "category_slug": "new-open-source",
+    "slug": "tsentrifuga-nastolnaya-diy",
+    "url": "/product/tsentrifuga-nastolnaya-diy",
+    "price": 12600,
+    "note": "Расширение линейки"
+  },
+  {
+    "id": 60,
+    "name": "Потенциостат (Rodeostat-класса)",
+    "category": "Новое (GitHub)",
+    "category_slug": "new-open-source",
+    "slug": "potentsiostat-rodeostat-klassa",
+    "url": "/product/potentsiostat-rodeostat-klassa",
+    "price": 15200,
+    "note": "Расширение линейки"
+  },
+  {
+    "id": 61,
+    "name": "Спектрометр VIS (OpnTec-класса)",
+    "category": "Новое (GitHub)",
+    "category_slug": "new-open-source",
+    "slug": "spektrometr-vis-opntec-klassa",
+    "url": "/product/spektrometr-vis-opntec-klassa",
+    "price": 25200,
+    "note": "Расширение линейки"
+  },
+  {
+    "id": 62,
+    "name": "Роборука настольная (Moveo-класса)",
+    "category": "Новое (GitHub)",
+    "category_slug": "new-open-source",
+    "slug": "roboruka-nastolnaya-moveo-klassa",
+    "url": "/product/roboruka-nastolnaya-moveo-klassa",
+    "price": 59500,
+    "note": "Расширение линейки"
+  }
+]

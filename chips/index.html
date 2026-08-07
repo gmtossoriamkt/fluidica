@@ -177,6 +177,30 @@
   }
   .placeholder-text{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 28px;max-width:440px;margin-left:auto;margin-right:auto;}
 
+  .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .product-card{
+    border:1px solid var(--line);border-radius:12px;padding:24px 22px;
+    background:var(--white);display:flex;flex-direction:column;gap:12px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .product-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .product-name{font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--ink);line-height:1.3;}
+  .product-price{font-family:var(--font-mono);font-size:15px;color:var(--accent);}
+  @media (max-width:900px){
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .product-grid{grid-template-columns:1fr;}
+  }
+
+  .price-card{
+    background:var(--primary);border-radius:16px;padding:28px 32px;
+    color:var(--white);display:inline-flex;align-items:baseline;gap:14px;
+    margin:0 0 32px;
+  }
+  .price-card .price-label{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,0.55);}
+  .price-card .price-value{font-family:var(--font-display);font-weight:800;font-size:30px;color:var(--accent);}
+
   .final-cta{
     background:linear-gradient(120deg, var(--primary) 0%, var(--primary-2) 100%);
     color:var(--white);text-align:center;padding:96px 0;
@@ -269,13 +293,21 @@
       <div class="section-head" data-reveal>
         <span class="section-label">Товары категории</span>
         <h2>Микрофлюидные чипы</h2>
-        <p class="section-desc">Наполняем карточки товаров этой категории конфигурациями, ценами и сроками сборки.</p>
+        <p class="section-desc">3 товаров категории — цена и краткое описание на карточке.</p>
       </div>
-      <div class="placeholder-card" data-reveal>
-        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
-        <div class="placeholder-title">Товары скоро появятся</div>
-        <p class="placeholder-text">Мы собираем карточки для этой категории. Расскажите о задаче — подберём конфигурацию и посчитаем стоимость вручную.</p>
-        <a href="/#contact" class="btn-primary">Написать нам</a>
+      <div class="product-grid" data-reveal>
+        <a href="/product/mikroflyuidnyy-chip-pdms-sht" class="product-card">
+          <span class="product-name">Микрофлюидный чип PDMS (шт.)</span>
+          <span class="product-price">1 000 ₽</span>
+        </a>
+        <a href="/product/mikroflyuidnyy-chip-steklo-autsors-sht" class="product-card">
+          <span class="product-name">Микрофлюидный чип стекло (аутсорс, шт.)</span>
+          <span class="product-price">9 600 ₽</span>
+        </a>
+        <a href="/product/mikroflyuidnyy-chip-kvarts-autsors-sht" class="product-card">
+          <span class="product-name">Микрофлюидный чип кварц (аутсорс, шт.)</span>
+          <span class="product-price">22 500 ₽</span>
+        </a>
       </div>
     </div>
   </section>
