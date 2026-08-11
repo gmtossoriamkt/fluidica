@@ -1,79 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://fluidica.ru/</loc></url>
-  <url><loc>https://fluidica.ru/pumps/syringe</loc></url>
-  <url><loc>https://fluidica.ru/pumps/peristaltic</loc></url>
-  <url><loc>https://fluidica.ru/microscopes</loc></url>
-  <url><loc>https://fluidica.ru/stations</loc></url>
-  <url><loc>https://fluidica.ru/kits</loc></url>
-  <url><loc>https://fluidica.ru/consumables</loc></url>
-  <url><loc>https://fluidica.ru/chips</loc></url>
-  <url><loc>https://fluidica.ru/chip-fabrication</loc></url>
-  <url><loc>https://fluidica.ru/services</loc></url>
-  <url><loc>https://fluidica.ru/spare-parts</loc></url>
-  <url><loc>https://fluidica.ru/blog/kak-vybrat-laboratornoe-oborudovanie-dlya-starta-proekta</loc></url>
-  <url><loc>https://fluidica.ru/devices</loc></url>
-  <url><loc>https://fluidica.ru/new-open-source</loc></url>
-  <url><loc>https://fluidica.ru/product/nasos-1-kanalnyy-v-sbore</loc></url>
-  <url><loc>https://fluidica.ru/product/nasos-2-kanalnyy-v-sbore</loc></url>
-  <url><loc>https://fluidica.ru/product/nasos-3-kanalnyy-v-sbore</loc></url>
-  <url><loc>https://fluidica.ru/product/nasos-vysokogo-davleniya-1-kan</loc></url>
-  <url><loc>https://fluidica.ru/product/nasos-vysokogo-davleniya-3-kan</loc></url>
-  <url><loc>https://fluidica.ru/product/nasos-s-avtonomnym-kontrollerom</loc></url>
-  <url><loc>https://fluidica.ru/product/nasos-s-zhk-displeem-i-enkoderom</loc></url>
-  <url><loc>https://fluidica.ru/product/nasos-dlya-vyazkikh-zhidkostey</loc></url>
-  <url><loc>https://fluidica.ru/product/nasos-termostatiruemyy</loc></url>
-  <url><loc>https://fluidica.ru/product/peristalticheskiy-nasos-1-kan</loc></url>
-  <url><loc>https://fluidica.ru/product/peristalticheskiy-mnogokanalnyy</loc></url>
-  <url><loc>https://fluidica.ru/product/usb-mikroskop-na-raspberry-pi</loc></url>
-  <url><loc>https://fluidica.ru/product/mikroskop-s-sensornym-ekranom-7</loc></url>
-  <url><loc>https://fluidica.ru/product/invertirovannyy-mikroskop</loc></url>
-  <url><loc>https://fluidica.ru/product/mikroskop-s-motorizovannym-stolikom</loc></url>
-  <url><loc>https://fluidica.ru/product/mikroskop-fluorestsentnyy</loc></url>
-  <url><loc>https://fluidica.ru/product/stantsiya-kapelnoy-mikroflyuidiki</loc></url>
-  <url><loc>https://fluidica.ru/product/stantsiya-perfuzii-kletok</loc></url>
-  <url><loc>https://fluidica.ru/product/stantsiya-mikrosinteza</loc></url>
-  <url><loc>https://fluidica.ru/product/polnyy-laboratornyy-kompleks</loc></url>
-  <url><loc>https://fluidica.ru/product/uchebnoe-rabochee-mesto</loc></url>
-  <url><loc>https://fluidica.ru/product/demo-komplekt-na-5-mest</loc></url>
-  <url><loc>https://fluidica.ru/product/mobilnyy-polevoy-komplekt-keys</loc></url>
-  <url><loc>https://fluidica.ru/product/kit-nasosa-1-kanalnogo</loc></url>
-  <url><loc>https://fluidica.ru/product/kit-nasosa-3-kanalnogo</loc></url>
-  <url><loc>https://fluidica.ru/product/kit-mikroskopa</loc></url>
-  <url><loc>https://fluidica.ru/product/kit-elektroniki-prednastroennyy</loc></url>
-  <url><loc>https://fluidica.ru/product/startovyy-nabor-mikroflyuidista</loc></url>
-  <url><loc>https://fluidica.ru/product/kit-apgreyda-do-3-kanalov</loc></url>
-  <url><loc>https://fluidica.ru/product/remkomplekt-nasosa-zip</loc></url>
-  <url><loc>https://fluidica.ru/product/karetka-podachi-v-sbore</loc></url>
-  <url><loc>https://fluidica.ru/product/mekhanizm-podachi-v-sbore</loc></url>
-  <url><loc>https://fluidica.ru/product/blok-elektroniki-v-sbore-proshityy</loc></url>
-  <url><loc>https://fluidica.ru/product/predmetnyy-stolik-mikroskopa-v-sbore</loc></url>
-  <url><loc>https://fluidica.ru/product/nabor-trubok-assorti-fasovka</loc></url>
-  <url><loc>https://fluidica.ru/product/nabor-fitingov-luer-startovyy</loc></url>
-  <url><loc>https://fluidica.ru/product/nabor-igl-tupykh-assorti</loc></url>
-  <url><loc>https://fluidica.ru/product/nabor-shpritsev-luer-lock-assorti</loc></url>
-  <url><loc>https://fluidica.ru/product/nabor-dlya-litya-pdms-s-formoy</loc></url>
-  <url><loc>https://fluidica.ru/product/raskhodnyy-nabor-kapelnoy-mikroflyuidiki</loc></url>
-  <url><loc>https://fluidica.ru/product/raskhodnyy-nabor-perfuzii</loc></url>
-  <url><loc>https://fluidica.ru/product/nabor-predmetnykh-styokol-s-chipami</loc></url>
-  <url><loc>https://fluidica.ru/product/nabor-shpritsevykh-filtrov-assorti</loc></url>
-  <url><loc>https://fluidica.ru/product/mikroflyuidnyy-chip-pdms-sht</loc></url>
-  <url><loc>https://fluidica.ru/product/mikroflyuidnyy-chip-steklo-autsors-sht</loc></url>
-  <url><loc>https://fluidica.ru/product/mikroflyuidnyy-chip-kvarts-autsors-sht</loc></url>
-  <url><loc>https://fluidica.ru/product/puskonaladka-na-meste</loc></url>
-  <url><loc>https://fluidica.ru/product/kalibrovka-raskhoda</loc></url>
-  <url><loc>https://fluidica.ru/product/obuchenie-bazovoe-poldnya</loc></url>
-  <url><loc>https://fluidica.ru/product/obuchenie-rasshirennoe-2-dnya</loc></url>
-  <url><loc>https://fluidica.ru/product/razrabotka-kastomnoy-konfiguratsii</loc></url>
-  <url><loc>https://fluidica.ru/product/adaptatsiya-protokola-pod-zadachu</loc></url>
-  <url><loc>https://fluidica.ru/product/godovoy-servisnyy-kontrakt</loc></url>
-  <url><loc>https://fluidica.ru/product/rasshirennaya-garantiya-1-god</loc></url>
-  <url><loc>https://fluidica.ru/product/modernizatsiya-nasosa-zakazchika</loc></url>
-  <url><loc>https://fluidica.ru/product/proektirovanie-pechatnoy-detali</loc></url>
-  <url><loc>https://fluidica.ru/product/bioreaktor-pioreactor-klassa</loc></url>
-  <url><loc>https://fluidica.ru/product/termotsikler-ptsr-pocketpcr-klassa</loc></url>
-  <url><loc>https://fluidica.ru/product/tsentrifuga-nastolnaya-diy</loc></url>
-  <url><loc>https://fluidica.ru/product/potentsiostat-rodeostat-klassa</loc></url>
-  <url><loc>https://fluidica.ru/product/spektrometr-vis-opntec-klassa</loc></url>
-  <url><loc>https://fluidica.ru/product/roboruka-nastolnaya-moveo-klassa</loc></url>
+
+  <url><loc>https://fluidica.ru/pumps/syringe/</loc></url>
+  <url><loc>https://fluidica.ru/pumps/peristaltic/</loc></url>
+  <url><loc>https://fluidica.ru/microscopes/</loc></url>
+  <url><loc>https://fluidica.ru/stations/</loc></url>
+  <url><loc>https://fluidica.ru/kits/</loc></url>
+  <url><loc>https://fluidica.ru/consumables/</loc></url>
+  <url><loc>https://fluidica.ru/chips/</loc></url>
+  <url><loc>https://fluidica.ru/chip-fabrication/</loc></url>
+  <url><loc>https://fluidica.ru/services/</loc></url>
+  <url><loc>https://fluidica.ru/spare-parts/</loc></url>
+  <url><loc>https://fluidica.ru/devices/</loc></url>
+  <url><loc>https://fluidica.ru/new-open-source/</loc></url>
+
+  <url><loc>https://fluidica.ru/blog/kak-vybrat-laboratornoe-oborudovanie-dlya-starta-proekta/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/nasos-1-kanalnyy-v-sbore/</loc></url>
+  <url><loc>https://fluidica.ru/product/nasos-2-kanalnyy-v-sbore/</loc></url>
+  <url><loc>https://fluidica.ru/product/nasos-3-kanalnyy-v-sbore/</loc></url>
+  <url><loc>https://fluidica.ru/product/nasos-vysokogo-davleniya-1-kan/</loc></url>
+  <url><loc>https://fluidica.ru/product/nasos-vysokogo-davleniya-3-kan/</loc></url>
+  <url><loc>https://fluidica.ru/product/nasos-s-avtonomnym-kontrollerom/</loc></url>
+  <url><loc>https://fluidica.ru/product/nasos-s-zhk-displeem-i-enkoderom/</loc></url>
+  <url><loc>https://fluidica.ru/product/nasos-dlya-vyazkikh-zhidkostey/</loc></url>
+  <url><loc>https://fluidica.ru/product/nasos-termostatiruemyy/</loc></url>
+  <url><loc>https://fluidica.ru/product/peristalticheskiy-nasos-1-kan/</loc></url>
+  <url><loc>https://fluidica.ru/product/peristalticheskiy-mnogokanalnyy/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/usb-mikroskop-na-raspberry-pi/</loc></url>
+  <url><loc>https://fluidica.ru/product/mikroskop-s-sensornym-ekranom-7/</loc></url>
+  <url><loc>https://fluidica.ru/product/invertirovannyy-mikroskop/</loc></url>
+  <url><loc>https://fluidica.ru/product/mikroskop-s-motorizovannym-stolikom/</loc></url>
+  <url><loc>https://fluidica.ru/product/mikroskop-fluorestsentnyy/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/stantsiya-kapelnoy-mikroflyuidiki/</loc></url>
+  <url><loc>https://fluidica.ru/product/stantsiya-perfuzii-kletok/</loc></url>
+  <url><loc>https://fluidica.ru/product/stantsiya-mikrosinteza/</loc></url>
+  <url><loc>https://fluidica.ru/product/polnyy-laboratornyy-kompleks/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/uchebnoe-rabochee-mesto/</loc></url>
+  <url><loc>https://fluidica.ru/product/demo-komplekt-na-5-mest/</loc></url>
+  <url><loc>https://fluidica.ru/product/mobilnyy-polevoy-komplekt-keys/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/kit-nasosa-1-kanalnogo/</loc></url>
+  <url><loc>https://fluidica.ru/product/kit-nasosa-3-kanalnogo/</loc></url>
+  <url><loc>https://fluidica.ru/product/kit-mikroskopa/</loc></url>
+  <url><loc>https://fluidica.ru/product/kit-elektroniki-prednastroennyy/</loc></url>
+  <url><loc>https://fluidica.ru/product/startovyy-nabor-mikroflyuidista/</loc></url>
+  <url><loc>https://fluidica.ru/product/kit-apgreyda-do-3-kanalov/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/remkomplekt-nasosa-zip/</loc></url>
+  <url><loc>https://fluidica.ru/product/karetka-podachi-v-sbore/</loc></url>
+  <url><loc>https://fluidica.ru/product/mekhanizm-podachi-v-sbore/</loc></url>
+  <url><loc>https://fluidica.ru/product/blok-elektroniki-v-sbore-proshityy/</loc></url>
+  <url><loc>https://fluidica.ru/product/predmetnyy-stolik-mikroskopa-v-sbore/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/nabor-trubok-assorti-fasovka/</loc></url>
+  <url><loc>https://fluidica.ru/product/nabor-fitingov-luer-startovyy/</loc></url>
+  <url><loc>https://fluidica.ru/product/nabor-igl-tupykh-assorti/</loc></url>
+  <url><loc>https://fluidica.ru/product/nabor-shpritsev-luer-lock-assorti/</loc></url>
+  <url><loc>https://fluidica.ru/product/nabor-dlya-litya-pdms-s-formoy/</loc></url>
+  <url><loc>https://fluidica.ru/product/raskhodnyy-nabor-kapelnoy-mikroflyuidiki/</loc></url>
+  <url><loc>https://fluidica.ru/product/raskhodnyy-nabor-perfuzii/</loc></url>
+  <url><loc>https://fluidica.ru/product/nabor-predmetnykh-styokol-s-chipami/</loc></url>
+  <url><loc>https://fluidica.ru/product/nabor-shpritsevykh-filtrov-assorti/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/mikroflyuidnyy-chip-pdms-sht/</loc></url>
+  <url><loc>https://fluidica.ru/product/mikroflyuidnyy-chip-steklo-autsors-sht/</loc></url>
+  <url><loc>https://fluidica.ru/product/mikroflyuidnyy-chip-kvarts-autsors-sht/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/puskonaladka-na-meste/</loc></url>
+  <url><loc>https://fluidica.ru/product/kalibrovka-raskhoda/</loc></url>
+  <url><loc>https://fluidica.ru/product/obuchenie-bazovoe-poldnya/</loc></url>
+  <url><loc>https://fluidica.ru/product/obuchenie-rasshirennoe-2-dnya/</loc></url>
+  <url><loc>https://fluidica.ru/product/razrabotka-kastomnoy-konfiguratsii/</loc></url>
+  <url><loc>https://fluidica.ru/product/adaptatsiya-protokola-pod-zadachu/</loc></url>
+  <url><loc>https://fluidica.ru/product/godovoy-servisnyy-kontrakt/</loc></url>
+  <url><loc>https://fluidica.ru/product/rasshirennaya-garantiya-1-god/</loc></url>
+  <url><loc>https://fluidica.ru/product/modernizatsiya-nasosa-zakazchika/</loc></url>
+  <url><loc>https://fluidica.ru/product/proektirovanie-pechatnoy-detali/</loc></url>
+
+  <url><loc>https://fluidica.ru/product/bioreaktor-pioreactor-klassa/</loc></url>
+  <url><loc>https://fluidica.ru/product/termotsikler-ptsr-pocketpcr-klassa/</loc></url>
+  <url><loc>https://fluidica.ru/product/tsentrifuga-nastolnaya-diy/</loc></url>
+  <url><loc>https://fluidica.ru/product/potentsiostat-rodeostat-klassa/</loc></url>
+  <url><loc>https://fluidica.ru/product/spektrometr-vis-opntec-klassa/</loc></url>
+  <url><loc>https://fluidica.ru/product/roboruka-nastolnaya-moveo-klassa/</loc></url>
 </urlset>
