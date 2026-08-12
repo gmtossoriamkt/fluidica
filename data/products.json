@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Насос 1-канальный в сборе",
-    "category": "Приборы",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "nasos-1-kanalnyy-v-sbore",
     "url": "/product/nasos-1-kanalnyy-v-sbore",
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "name": "Насос 2-канальный в сборе",
-    "category": "Приборы",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "nasos-2-kanalnyy-v-sbore",
     "url": "/product/nasos-2-kanalnyy-v-sbore",
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "name": "Насос 3-канальный в сборе",
-    "category": "Приборы",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "nasos-3-kanalnyy-v-sbore",
     "url": "/product/nasos-3-kanalnyy-v-sbore",
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "name": "Насос высокого давления 1-кан.",
-    "category": "Приборы",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "nasos-vysokogo-davleniya-1-kan",
     "url": "/product/nasos-vysokogo-davleniya-1-kan",
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Насос высокого давления 3-кан.",
-    "category": "Приборы",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "nasos-vysokogo-davleniya-3-kan",
     "url": "/product/nasos-vysokogo-davleniya-3-kan",
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "name": "Насос с автономным контроллером",
-    "category": "Приборы",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "nasos-s-avtonomnym-kontrollerom",
     "url": "/product/nasos-s-avtonomnym-kontrollerom",
@@ -62,7 +62,7 @@
   {
     "id": 7,
     "name": "Насос с ЖК-дисплеем и энкодером",
-    "category": "Приборы",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "nasos-s-zhk-displeem-i-enkoderom",
     "url": "/product/nasos-s-zhk-displeem-i-enkoderom",
@@ -72,7 +72,7 @@
   {
     "id": 8,
     "name": "Насос для вязких жидкостей",
-    "category": "Приборы",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "nasos-dlya-vyazkikh-zhidkostey",
     "url": "/product/nasos-dlya-vyazkikh-zhidkostey",
@@ -82,7 +82,7 @@
   {
     "id": 9,
     "name": "Насос термостатируемый",
-    "category": "Приборы",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "nasos-termostatiruemyy",
     "url": "/product/nasos-termostatiruemyy",
@@ -91,8 +91,8 @@
   },
   {
     "id": 10,
-    "name": "Перистальтический насос 1-кан.",
-    "category": "Приборы",
+    "name": "Насос перистальтический 1-канальный",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "peristalticheskiy-nasos-1-kan",
     "url": "/product/peristalticheskiy-nasos-1-kan",
@@ -101,8 +101,8 @@
   },
   {
     "id": 11,
-    "name": "Перистальтический многоканальный",
-    "category": "Приборы",
+    "name": "Насос перистальтический многоканальный",
+    "category": "Насосы",
     "category_slug": "devices",
     "slug": "peristalticheskiy-mnogokanalnyy",
     "url": "/product/peristalticheskiy-mnogokanalnyy",
@@ -112,8 +112,8 @@
   {
     "id": 12,
     "name": "USB-микроскоп на Raspberry Pi",
-    "category": "Приборы",
-    "category_slug": "devices",
+    "category": "Микроскопы",
+    "category_slug": "microscopes",
     "slug": "usb-mikroskop-na-raspberry-pi",
     "url": "/product/usb-mikroskop-na-raspberry-pi",
     "price": 22500,
@@ -122,8 +122,8 @@
   {
     "id": 13,
     "name": "Микроскоп с сенсорным экраном 7\"",
-    "category": "Приборы",
-    "category_slug": "devices",
+    "category": "Микроскопы",
+    "category_slug": "microscopes",
     "slug": "mikroskop-s-sensornym-ekranom-7",
     "url": "/product/mikroskop-s-sensornym-ekranom-7",
     "price": 28500,
@@ -132,8 +132,8 @@
   {
     "id": 14,
     "name": "Инвертированный микроскоп",
-    "category": "Приборы",
-    "category_slug": "devices",
+    "category": "Микроскопы",
+    "category_slug": "microscopes",
     "slug": "invertirovannyy-mikroskop",
     "url": "/product/invertirovannyy-mikroskop",
     "price": 33600,
@@ -142,8 +142,8 @@
   {
     "id": 15,
     "name": "Микроскоп с моторизованным столиком",
-    "category": "Приборы",
-    "category_slug": "devices",
+    "category": "Микроскопы",
+    "category_slug": "microscopes",
     "slug": "mikroskop-s-motorizovannym-stolikom",
     "url": "/product/mikroskop-s-motorizovannym-stolikom",
     "price": 41600,
@@ -152,8 +152,8 @@
   {
     "id": 16,
     "name": "Микроскоп флуоресцентный",
-    "category": "Приборы",
-    "category_slug": "devices",
+    "category": "Микроскопы",
+    "category_slug": "microscopes",
     "slug": "mikroskop-fluorestsentnyy",
     "url": "/product/mikroskop-fluorestsentnyy",
     "price": 51000,
