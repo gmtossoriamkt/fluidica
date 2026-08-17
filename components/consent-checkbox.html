@@ -1,0 +1,57 @@
+<!--
+  Компонент-заготовка «про запас»: чек-бокс согласия на обработку персональных данных.
+
+  На сайте пока нет действующей формы заявки (все CTA — это ссылки на /#contact
+  и mailto:/tel:), поэтому этот компонент нигде не подключён. Когда появится
+  реальная форма — скопировать разметку внутрь <form>, стили — в <style> формы,
+  и раскомментировать/адаптировать скрипт под id реальной кнопки отправки.
+
+  Требование: чек-бокс обязателен — кнопка отправки формы должна быть disabled,
+  пока чек-бокс не отмечен.
+-->
+
+<style>
+  .consent-row{
+    display:flex;align-items:flex-start;gap:10px;
+    margin:20px 0;
+  }
+  .consent-row input[type="checkbox"]{
+    flex:0 0 auto;
+    width:18px;height:18px;margin-top:2px;
+    accent-color:var(--accent, #17B9C4);
+    cursor:pointer;
+  }
+  .consent-row label{
+    font-size:14px;line-height:1.5;
+    color:var(--muted, #56676F);
+    cursor:pointer;
+  }
+  .consent-row a{
+    color:var(--primary-2, #10566E);
+    text-decoration:underline;
+    text-decoration-color:var(--line, #D8E2E6);
+    text-underline-offset:2px;
+  }
+  .consent-row a:hover{color:var(--accent, #17B9C4);}
+</style>
+
+<div class="consent-row">
+  <input type="checkbox" id="consent-checkbox" name="consent" required>
+  <label for="consent-checkbox">Я согласен(а) с обработкой персональных данных в соответствии с <a href="/privacy" target="_blank" rel="noopener">Политикой конфиденциальности</a></label>
+</div>
+
+<script>
+  (function(){
+    // Замените #consent-checkbox и #form-submit-button на реальные id
+    // в форме, куда будет встроен компонент.
+    var consentCheckbox = document.getElementById('consent-checkbox');
+    var submitButton = document.getElementById('form-submit-button');
+    if (!consentCheckbox || !submitButton) return;
+
+    function syncSubmitState(){
+      submitButton.disabled = !consentCheckbox.checked;
+    }
+    submitButton.disabled = !consentCheckbox.checked;
+    consentCheckbox.addEventListener('change', syncSubmitState);
+  })();
+</script>

@@ -227,6 +227,13 @@
     display:flex;justify-content:space-between;align-items:center;padding-top:28px;
     font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
   }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
 
   .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
   .footer-col .contact-row a{margin-bottom:0;}
@@ -390,6 +397,12 @@
     <div class="footer-bottom">
       <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
     </div>
+    <div class="footer-legal">
+      <a href="/privacy">Политика конфиденциальности</a>
+      <a href="/terms">Пользовательское соглашение</a>
+      <a href="/oferta">Публичная оферта</a>
+      <a href="/requisites">Реквизиты</a>
+    </div>
   </div>
 </footer>
 
@@ -414,6 +427,8 @@
     });
   });
 </script>
+
+<script src="/cookie-consent.js" defer></script>
 
 </body>
 </html>
