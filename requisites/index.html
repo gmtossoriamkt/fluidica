@@ -137,6 +137,16 @@
   }
   .section .article-wrap h2:first-child{margin-top:0;}
 
+  .req-list{display:flex;flex-direction:column;gap:22px;}
+  .req-item{display:flex;flex-direction:column;gap:4px;}
+  .req-label{
+    font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--muted);
+  }
+  .req-value{font-size:16.5px;line-height:1.6;color:var(--ink);}
+  .req-value a{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px;}
+  .req-value a:hover{color:var(--accent);}
+
   footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
   .footer-grid{
     display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
@@ -220,7 +230,28 @@
 
   <section class="section">
     <div class="article-wrap">
-      <p>Раздел в разработке. Актуальная версия документа будет опубликована до запуска формы приёма заявок и обработки персональных данных.</p>
+      <div class="req-list">
+        <div class="req-item">
+          <span class="req-label">Полное наименование</span>
+          <span class="req-value">ООО «ГМТ»</span>
+        </div>
+        <div class="req-item">
+          <span class="req-label">ОГРН</span>
+          <span class="req-value">1247700287834</span>
+        </div>
+        <div class="req-item">
+          <span class="req-label">ИНН</span>
+          <span class="req-value">9710131540</span>
+        </div>
+        <div class="req-item">
+          <span class="req-label">Юридический адрес</span>
+          <span class="req-value">г. Москва, вн.тер.г. Муниципальный округ Тверской, пер. 1-й Тверской-Ямской, д. 16, помещ. 1/П</span>
+        </div>
+        <div class="req-item">
+          <span class="req-label">Email</span>
+          <span class="req-value"><a href="mailto:info@fluidica.ru">info@fluidica.ru</a></span>
+        </div>
+      </div>
     </div>
   </section>
 
