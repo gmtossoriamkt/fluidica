@@ -200,26 +200,6 @@
     "note": "Максимальный чек"
   },
   {
-    "id": 21,
-    "name": "Учебное рабочее место",
-    "category": "Станции",
-    "category_slug": "stations",
-    "slug": "uchebnoe-rabochee-mesto",
-    "url": "/product/uchebnoe-rabochee-mesto",
-    "price": 45000,
-    "note": "Максимальный чек"
-  },
-  {
-    "id": 22,
-    "name": "Демо-комплект на 5 мест",
-    "category": "Станции",
-    "category_slug": "stations",
-    "slug": "demo-komplekt-na-5-mest",
-    "url": "/product/demo-komplekt-na-5-mest",
-    "price": 180000,
-    "note": "Максимальный чек"
-  },
-  {
     "id": 23,
     "name": "Мобильный полевой комплект (кейс)",
     "category": "Станции",
