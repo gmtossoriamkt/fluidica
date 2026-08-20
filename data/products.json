@@ -250,16 +250,6 @@
     "note": "Низкий порог входа"
   },
   {
-    "id": 28,
-    "name": "Стартовый набор микрофлюидиста",
-    "category": "Наборы",
-    "category_slug": "kits",
-    "slug": "startovyy-nabor-mikroflyuidista",
-    "url": "/product/startovyy-nabor-mikroflyuidista",
-    "price": 11900,
-    "note": "Низкий порог входа"
-  },
-  {
     "id": 29,
     "name": "Кит апгрейда до 3 каналов",
     "category": "Наборы",
