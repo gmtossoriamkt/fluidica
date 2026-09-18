@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Типичные ошибки при выборе и эксплуатации шприцевых насосов - Fluidica</title>
+<meta name="description" content="Типичные ошибки при выборе и эксплуатации шприцевых насосов: размер и диаметр шприца, пузырьки, податливость системы, противодавление и проверка фактического расхода.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/tipichnye-oshibki-shpricevye-nasosy">
+<meta property="og:title" content="Типичные ошибки при выборе и эксплуатации шприцевых насосов - Fluidica">
+<meta property="og:description" content="Типичные ошибки при выборе и эксплуатации шприцевых насосов: размер и диаметр шприца, пузырьки, податливость системы, противодавление и проверка фактического расхода.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fluidica.ru/blog/tipichnye-oshibki-shpricevye-nasosy">
+<meta property="og:locale" content="ru_RU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Ошибки при работе со шприцевыми насосами</a>
+        </nav>
+        <span class="eyebrow">Разбор</span>
+        <h1>Типичные ошибки при выборе и эксплуатации шприцевых насосов</h1>
+        <p class="hero-sub">Почему заданный расход может отличаться от фактического: разбираем ошибки выбора шприца, настройки диаметра, пузырьки, податливость системы, противодавление и другие причины нестабильной подачи.</p>
+        <div class="article-meta">
+          <span>18 сентября 2026</span>
+          <span>~10 мин чтения</span>
+          <span>Шприцевые насосы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+ <div class="article-wrap">
+
+ <p>Шприцевой насос может точно отрабатывать движение привода, но это ещё не означает, что фактический расход жидкости в эксперименте в каждый момент совпадает с числом на дисплее. Насос, шприц, трубки, соединения, рабочая жидкость и нагрузка образуют единую гидравлическую систему.</p>
+
+ <p>Поэтому многие проблемы, которые выглядят как неисправность насоса, на практике связаны с выбором шприца, настройкой его диаметра, воздухом в контуре, податливостью системы, противодавлением или особенностями запуска. Разберём типичные ошибки и способы их диагностики.</p>
+
+ <h2>1. Выбирать насос только по минимальному расходу</h2>
+
+ <p>Минимальный расход в спецификации нельзя автоматически считать гарантированным минимальным стабильным расходом в реальной установке. У некоторых насосов нижняя граница рассчитывается исходя из разрешения привода и площади поршня шприца. На практике при очень малой подаче становятся заметнее дискретность перемещения, механические зазоры, податливость системы и свойства самого шприца.</p>
+
+ <p><strong>Что делать:</strong> оценивать не только заявленный диапазон расхода, но и размер шприца, разрешение привода, точность, повторяемость, характер нагрузки и требования эксперимента к пульсациям.</p>
+
+ <h2>2. Путать разрешение, точность и повторяемость</h2>
+
+ <p>Это разные характеристики. Разрешение показывает, насколько малое изменение способен задать механизм или система управления. Точность характеризует близость результата к заданному значению. Повторяемость показывает, насколько близки результаты при повторении одинакового режима.</p>
+
+ <p>Высокое разрешение само по себе не гарантирует столь же высокой точности фактического расхода.</p>
+
+ <h2>3. Использовать слишком большой шприц для малого расхода</h2>
+
+ <p>При одинаковом линейном перемещении поршня объём вытесняемой жидкости зависит от площади его поперечного сечения. Поэтому для малых расходов меньший внутренний диаметр шприца обычно позволяет получить более тонкое объёмное дозирование при том же шаге привода.</p>
+
+ <p>Слишком большой шприц может ухудшить поведение системы на малых расходах и одновременно увеличить влияние податливости.</p>
+
+ <h2>4. Неверно задавать диаметр шприца</h2>
+
+ <p>Для шприцевого насоса диаметр - один из ключевых параметров пересчёта линейной скорости поршня в объёмный расход. Связь можно записать как <strong>Q = A × v</strong>, где Q - объёмный расход, v - скорость поршня, а A = πd²/4 - площадь поперечного сечения шприца.</p>
+
+ <p>Поскольку диаметр входит в квадрате, даже сравнительно небольшая ошибка в его значении способна дать заметную систематическую ошибку расхода. После смены типа, объёма или производителя шприца настройку диаметра следует проверять заново.</p>
+
+    <h2>5. Считать все шприцы одинаковыми</h2>
+
+    <p>Шприцы одинакового номинального объёма могут отличаться внутренним диаметром, геометрией, материалом цилиндра и поршня, трением уплотнения и механической податливостью. Эти различия способны влиять на фактическую подачу, особенно при малых расходах.</p>
+
+    <p><strong>Что делать:</strong> использовать известный внутренний диаметр конкретного шприца, учитывать совместимость его материалов с рабочей жидкостью и по возможности не менять тип шприца внутри серии сопоставимых экспериментов.</p>
+
+    <h2>6. Игнорировать податливость системы</h2>
+
+    <p>Шприц, трубки и другие элементы контура не являются абсолютно жёсткими. Под давлением они могут деформироваться и временно накапливать часть вытесняемого объёма. Поэтому после запуска или изменения заданного расхода движение поршня начинается сразу, а установившийся поток на выходе системы может сформироваться позже.</p>
+
+    <p>Чем выше податливость контура, тем заметнее переходные процессы. В некоторых конфигурациях существенный вклад вносит сам шприц.</p>
+
+    <h2>7. Оставлять пузырьки воздуха в контуре</h2>
+
+    <p>Газ значительно более сжимаем, чем жидкость. Случайный пузырёк работает как дополнительный упругий элемент: часть перемещения поршня сначала расходуется на его сжатие, а не на немедленное перемещение жидкости через выход системы.</p>
+
+    <p>Это увеличивает задержку отклика и может усложнять воспроизводимость режима после запуска или изменения расхода. Перед экспериментом контур следует заполнять так, чтобы минимизировать непредусмотренный воздух.</p>
+
+    <h2>8. Не учитывать трубки и соединения</h2>
+
+    <p>Гидравлическое сопротивление зависит не только от насоса. Для ламинарного течения в круглой трубке закон Пуазейля показывает особенно сильную зависимость сопротивления от внутреннего радиуса: при прочих равных перепад давления масштабируется как <strong>ΔP ∝ μLQ/r⁴</strong>.</p>
+
+    <p>Поэтому внутренний диаметр и длина трубки, вязкость жидкости, фитинги, сужения, мёртвый объём и податливость соединений могут заметно изменить поведение всей системы.</p>
+
+    <h2>9. Игнорировать противодавление</h2>
+
+    <p>Чтобы поддерживать заданную подачу через сопротивляющийся контур, привод должен развивать достаточное усилие. При росте сопротивления растёт и требуемое давление. Если нагрузка выходит за возможности механизма, возможны остановка движения, потеря шагов или отклонение фактической подачи от ожидаемой.</p>
+
+    <p><strong>Что проверять:</strong> сопротивление трубок и микроканалов, вязкость жидкости, отсутствие закупорки и допустимое усилие конкретного насоса. Универсального безопасного значения давления для всех шприцевых систем нет.</p>
+
+    <h2>10. Ожидать стабильный расход сразу после нажатия Start</h2>
+
+    <p>Запуск шприцевого насоса не означает, что на выходе системы мгновенно установился заданный расход. Сначала могут выбираться механические зазоры, деформироваться элементы системы и создаваться необходимое давление. Продолжительность переходного процесса зависит от расхода, шприца, податливости, сопротивления контура и других параметров установки.</p>
+
+    <p>Поэтому фиксированное универсальное время стабилизации указывать некорректно. Для чувствительных экспериментов его лучше определять для конкретной конфигурации.</p>
+
+    <h2>11. Плохо фиксировать шприц</h2>
+
+    <p>Цилиндр и поршень должны быть установлены так, чтобы движение привода действительно передавалось поршню. Люфт, перекос или неплотная фиксация способны вызвать задержку начала подачи и ухудшить воспроизводимость.</p>
+
+    <p>Перед запуском стоит проверить положение шприца, контакт толкателя с поршнем и надёжность всех элементов фиксации.</p>
+
+    <h2>12. Не учитывать люфт при смене направления</h2>
+
+    <p>При переходе между infusion и withdrawal механический привод может сначала выбирать зазор, прежде чем движение снова начнёт эффективно передаваться поршню. В этот момент заданное движение привода и фактическое перемещение жидкости могут различаться.</p>
+
+    <p>Если эксперимент требует частого реверса, переходный участок следует учитывать отдельно и проверять на реальной системе.</p>
+
+    <h2>13. Считать несколько шприцев на одном приводе независимыми каналами</h2>
+
+    <p>Количество установленных шприцев и количество независимо управляемых потоков - не одно и то же. Если несколько шприцев перемещаются одной общей кареткой или одним приводом, их поршни механически синхронизированы.</p>
+
+    <p>Для независимого изменения расходов разных потоков нужны независимо управляемые приводы или отдельные насосы. Это особенно важно в системах, где соотношение расходов требуется менять во время эксперимента.</p>
+
+    <h2>14. Считать расход на дисплее измеренным фактическим расходом</h2>
+
+    <p>В типичном шприцевом насосе отображаемый расход рассчитывается из заданного диаметра шприца и скорости перемещения привода. Это расчётная величина, а не обязательно прямое измерение потока на выходе.</p>
+
+    <p>Если фактический расход критичен для результата, его следует проверять независимым методом - например, по изменению массы или объёма за известный интервал времени либо подходящим расходомером.</p>
+
+    <h2>15. Не учитывать вязкость жидкости</h2>
+
+    <p>При заданном расходе увеличение вязкости прежде всего повышает гидравлическое сопротивление и требуемый перепад давления. Поэтому режим, который нормально работает с водой, не обязательно будет вести себя так же с более вязкой жидкостью.</p>
+
+    <p>При смене состава жидкости следует заново оценить нагрузку на насос и поведение всей гидравлической системы. Вязкость также зависит от температуры, поэтому для чувствительных измерений важны стабильные условия эксперимента.</p>
+
+    <h2>16. Забывать о времени работы одного шприца</h2>
+
+    <p>Шприц содержит конечный объём жидкости. В простейшем случае продолжительность непрерывной подачи можно оценить как <strong>t = V/Q</strong>, где V - доступный рабочий объём, а Q - расход.</p>
+
+    <p>При выборе слишком маленького шприца ради лучшего поведения на малом расходе можно получить другую проблему - недостаточную продолжительность эксперимента. Размер шприца поэтому выбирают как компромисс между требуемым расходом, разрешением подачи и временем работы.</p>
+
+    <h2>17. Доводить привод до механического конца хода</h2>
+
+    <p>Эксперимент следует планировать так, чтобы поршень не достигал предельного положения неожиданно. В конце доступного хода подача прекращается, а попытка продолжить движение может создать нежелательную механическую нагрузку.</p>
+
+    <p>До запуска полезно проверить доступный объём, направление движения, длительность опыта и запас хода.</p>
+
+    <h2>18. Не проверять систему на утечки</h2>
+
+    <p>Даже небольшой дефект соединения может привести к тому, что часть вытесняемой жидкости не попадёт туда, куда предполагает схема эксперимента. При этом насос продолжит перемещать поршень в соответствии с заданием.</p>
+
+    <p>Перед измерением расхода стоит осмотреть фитинги, резьбовые соединения, трубки, места подключения шприца и сам шприц. Следы жидкости и появление воздуха в контуре - повод остановить эксперимент и проверить герметичность.</p>
+
+    <h2>19. Не перепроверять систему после изменения конфигурации</h2>
+
+    <p>Замена шприца, трубки, жидкости, фитинга или чипа способна изменить сопротивление, податливость, мёртвый объём и переходные процессы. Поэтому результаты проверки одной конфигурации нельзя автоматически переносить на другую.</p>
+
+    <p>После существенного изменения системы полезно снова проверить диаметр шприца в настройках, герметичность, отсутствие пузырьков, время выхода на установившийся режим и, если это важно для задачи, фактический расход.</p>
+
+    <h2>Что проверять, если фактический расход отличается от заданного</h2>
+
+    <p>Диагностику удобнее проводить последовательно - от настроек насоса к шприцу и затем ко всему гидравлическому контуру.</p>
+
+    <ol>
+      <li><span><strong>1.</strong> Проверьте единицы измерения и заданный расход.</span></li>
+      <li><span><strong>2.</strong> Сверьте установленный в насосе диаметр с фактическим внутренним диаметром используемого шприца.</span></li>
+      <li><span><strong>3.</strong> Проверьте фиксацию цилиндра и поршня, отсутствие люфта и правильное направление движения.</span></li>
+      <li><span><strong>4.</strong> Удалите случайные пузырьки воздуха и убедитесь, что контур полностью заполнен жидкостью.</span></li>
+      <li><span><strong>5.</strong> Осмотрите трубки, фитинги и соединения на утечки, перегибы и закупорку.</span></li>
+      <li><span><strong>6.</strong> Оцените, достаточно ли времени прошло после запуска для выхода системы на установившийся режим.</span></li>
+      <li><span><strong>7.</strong> Проверьте, не создаёт ли вязкость жидкости или сопротивление контура чрезмерную нагрузку на привод.</span></li>
+      <li><span><strong>8.</strong> Если точность расхода критична, измерьте фактическую подачу независимым методом и сравните её с заданием.</span></li>
+    </ol>
+
+    <p>Если ошибка воспроизводится, полезно упростить систему: проверить насос с известным шприцем и минимальным числом соединений, а затем по одному возвращать элементы контура. Так легче определить, на каком участке появляется отклонение.</p>
+
+    <h2>Короткий чек-лист перед запуском</h2>
+
+    <ol>
+      <li><span><strong>1.</strong> Подходит ли диапазон расхода насоса для реальной задачи, а не только формально по спецификации?</span></li>
+      <li><span><strong>2.</strong> Правильно ли указан внутренний диаметр шприца?</span></li>
+      <li><span><strong>3.</strong> Не слишком ли велик шприц для требуемого малого расхода?</span></li>
+      <li><span><strong>4.</strong> Надёжно ли закреплены цилиндр и поршень?</span></li>
+      <li><span><strong>5.</strong> Удалён ли непредусмотренный воздух из контура?</span></li>
+      <li><span><strong>6.</strong> Проверены ли трубки, фитинги и соединения на утечки и перегибы?</span></li>
+      <li><span><strong>7.</strong> Учтены ли вязкость жидкости и сопротивление системы?</span></li>
+      <li><span><strong>8.</strong> Достаточно ли времени предусмотрено для стабилизации после запуска?</span></li>
+      <li><span><strong>9.</strong> Хватит ли объёма шприца и доступного хода на весь эксперимент?</span></li>
+      <li><span><strong>10.</strong> Нужно ли независимо проверить фактический расход?</span></li>
+    </ol>
+
+    <h2>Главное</h2>
+
+    <p>Шприцевой насос нельзя оценивать отдельно от остальной гидравлической системы. Фактическая подача формируется совместной работой привода, шприца, рабочей жидкости, трубок, соединений и нагрузки.</p>
+
+    <p>На малых расходах особенно важны правильный диаметр и размер шприца, механические зазоры, податливость системы и отсутствие случайных пузырьков. А число на дисплее насоса следует воспринимать как заданный расчётный расход, если прибор не оснащён отдельным средством прямого измерения потока.</p>
+
+    <p>Если фактический расход критичен для результата эксперимента, его лучше проверять независимым методом в той конфигурации, в которой будет проводиться работа.</p>
+
+    <div class="article-cta data-reveal>
+ <div class="placeholder-title">Больше материалов о лабораторных насосах</div>
+ <p>В блоге Fluidica разбираем выбор и эксплуатацию насосов, микрофлюидику и другие лабораторные системы.</p>
+ <a href="/blog" class="btn-primary">Читать блог</a>
+ </div>
+
+ </div>
+</section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/shpricevye-nasosy-princip-raboty-i-ustroystvo">Шприцевые насосы: принцип работы и устройство</a>
+          <a href="/blog/chto-takoe-shpricevye-nasosy">Что такое шприцевые насосы: простыми словами</a>
+          <a href="/devices">Насосы Fluidica</a>
+          <a href="/blog">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy">Политика конфиденциальности</a>
+      <a href="/terms">Пользовательское соглашение</a>
+      <a href="/oferta">Публичная оферта</a>
+      <a href="/requisites">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+
+</body>
+</html>
