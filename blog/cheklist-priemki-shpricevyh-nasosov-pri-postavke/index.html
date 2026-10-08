@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чек-лист приёмки шприцевых насосов при поставке - Fluidica</title>
+<meta name="description" content="Как принять лабораторный шприцевой насос при поставке: проверка документов, комплектности, состояния прибора и функций. Чек-лист из 20 пунктов и порядок действий при обнаружении недостатков.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/cheklist-priemki-shpricevyh-nasosov-pri-postavke">
+<meta property="og:title" content="Чек-лист приёмки шприцевых насосов при поставке - Fluidica">
+<meta property="og:description" content="Как принять лабораторный шприцевой насос при поставке: проверка документов, комплектности, состояния прибора и функций. Чек-лист из 20 пунктов и порядок действий при обнаружении недостатков.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fluidica.ru/blog/cheklist-priemki-shpricevyh-nasosov-pri-postavke">
+<meta property="og:locale" content="ru_RU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Чек-лист приёмки</a>
+        </nav>
+        <span class="eyebrow">Чек-лист</span>
+        <h1>Чек-лист приёмки шприцевых насосов при поставке</h1>
+        <p class="hero-sub">Шприцевой насос доставлен в лабораторию. Как убедиться, что оборудование соответствует заказу, не повреждено при перевозке и готово к работе? Разбираем проверку документов, комплектности, состояния прибора и его основных функций.</p>
+        <div class="article-meta">
+          <span>8 октября 2026</span>
+          <span>~13 мин чтения</span>
+          <span>Шприцевые насосы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+
+        <p>Шприцевой насос доставлен в лабораторию. Как убедиться, что оборудование соответствует заказу, не повреждено при перевозке и готово к работе? Для этого нужна приёмка: проверка документов, комплектности, состояния прибора и его основных функций.</p>
+
+        <p>Приёмка особенно важна для оборудования, от которого зависит точность и воспроизводимость эксперимента. Даже исправный на первый взгляд насос может оказаться неподходящим для задачи: например, если поставлена другая модификация, отсутствует необходимый контроллер или держатель не рассчитан на используемые шприцы.</p>
+
+        <p>В статье разберём, как принять лабораторный шприцевой насос, какие проверки провести самостоятельно, когда требуется измерение расхода и как действовать при обнаружении недостатков. В конце — чек-лист, который можно использовать при получении оборудования.</p>
+
+        <div class="callout">
+          <p><strong>Важно:</strong> рекомендации относятся к лабораторным шприцевым насосам для исследовательских и технологических задач. Медицинские инфузионные насосы имеют отдельные требования к безопасности, документации и испытаниям. Универсальный чек-лист не заменяет руководство производителя, условия договора или согласованную методику приёмочных испытаний.</p>
+        </div>
+
+        <h2>1. Подготовьтесь к приёмке до доставки</h2>
+
+        <p>Проверять оборудование удобнее, когда заранее известны условия заказа. Подготовьте договор, счёт, техническое задание или согласованную спецификацию.</p>
+
+        <p>В этих документах желательно найти:</p>
+
+        <ul>
+          <li><span>наименование и модификацию насоса;</span></li>
+          <li><span>количество приборов и каналов;</span></li>
+          <li><span>заявленный диапазон расходов;</span></li>
+          <li><span>поддерживаемые типы и размеры шприцев;</span></li>
+          <li><span>способ управления — встроенный интерфейс, внешний контроллер или компьютер;</span></li>
+          <li><span>состав комплекта и перечень дополнительных принадлежностей;</span></li>
+          <li><span>требования к документам, проверкам и гарантийному обслуживанию.</span></li>
+        </ul>
+
+        <p><strong>Главный ориентир при приёмке — согласованная спецификация, а не усреднённые характеристики оборудования такого типа.</strong></p>
+
+        <p>Например, если лаборатория заказала насос с двумя независимо управляемыми каналами, наличие двух механических держателей ещё не доказывает соответствие заказу. Необходимо проверить предусмотренный способ управления и доступные режимы.</p>
+
+        <p>Если договором установлены специальные приёмочные испытания, подготовьте соответствующую методику и средства измерений заранее.</p>
+
+        <h2>2. Осмотрите упаковку и зафиксируйте её состояние</h2>
+
+        <p>Начните проверку до распаковки.</p>
+
+        <p>Обратите внимание на вмятины, разрывы, следы влаги, повреждённые пломбы и признаки неаккуратной перевозки. Если упаковка повреждена, сфотографируйте её со всех сторон, включая транспортную маркировку.</p>
+
+        <p>После вскрытия проверьте состояние внутренних защитных элементов и самого прибора.</p>
+
+        <p>Что важно осмотреть:</p>
+
+        <ul>
+          <li><span>корпус и основание насоса;</span></li>
+          <li><span>направляющие, каретку и элементы крепления шприца;</span></li>
+          <li><span>ходовой винт и другие доступные механические элементы;</span></li>
+          <li><span>разъёмы и кабели;</span></li>
+          <li><span>экран, кнопки и органы управления, если они предусмотрены конструкцией;</span></li>
+          <li><span>блок питания и дополнительные принадлежности.</span></li>
+        </ul>
+
+        <p>Не должно быть видимых трещин, деформаций, повреждений изоляции и следов попадания жидкости.</p>
+
+        <p><strong>Не пытайтесь устранять обнаруженные дефекты самостоятельно.</strong> Подгибание креплений, регулировка механики и вскрытие корпуса до согласования с поставщиком могут затруднить установление причины повреждения.</p>
+
+        <p>Если обнаружены серьёзные повреждения, не подключайте прибор к питанию до получения инструкций от поставщика.</p>
+
+        <h2>3. Сверьте комплектацию с документами</h2>
+
+        <p>Комплектность лабораторных шприцевых насосов существенно различается. Один производитель поставляет готовый автономный прибор, другой — насосный модуль, которому необходимы внешний контроллер, компьютер или отдельный блок питания.</p>
+
+        <p>Поэтому универсального списка обязательных принадлежностей не существует.</p>
+
+        <p>Проверьте наличие всех позиций, предусмотренных заказом. В зависимости от модели это могут быть:</p>
+
+        <ul>
+          <li><span>насосный модуль или многоканальная система;</span></li>
+          <li><span>блок питания и кабели;</span></li>
+          <li><span>внешний контроллер;</span></li>
+          <li><span>программное обеспечение или инструкция по его получению;</span></li>
+          <li><span>крепления и адаптеры для шприцев;</span></li>
+          <li><span>дополнительные механические элементы;</span></li>
+          <li><span>руководство по эксплуатации;</span></li>
+          <li><span>паспорт и другие согласованные документы.</span></li>
+        </ul>
+
+        <p>Отдельно проверьте шприцы, трубки, переходники и соединители. Они не обязательно входят в стандартную поставку.</p>
+
+        <p><strong>Практический совет:</strong> отмечайте каждую позицию непосредственно в спецификации. Если чего-то не хватает, зафиксируйте расхождение до завершения приёмки в порядке, предусмотренном договором.</p>
+
+        <h2>4. Проверьте маркировку и документы</h2>
+
+        <p>На этом этапе нужно убедиться, что получен именно тот прибор, который был заказан.</p>
+
+        <p>Сверьте наименование, модель, исполнение и заводской номер, если он предусмотрен, с товаросопроводительными документами.</p>
+
+        <p>В зависимости от условий поставки комплект документов может включать:</p>
+
+        <ul>
+          <li><span>накладную или универсальный передаточный документ (УПД);</span></li>
+          <li><span>паспорт изделия;</span></li>
+          <li><span>руководство по эксплуатации;</span></li>
+          <li><span>сведения о гарантийных обязательствах;</span></li>
+          <li><span>протокол заводских испытаний или документ о калибровке, если его предоставление предусмотрено;</span></li>
+          <li><span>иные документы, указанные в договоре.</span></li>
+        </ul>
+
+        <p>Отсутствие отдельного гарантийного талона само по себе не означает отсутствия гарантии: её условия могут быть закреплены в договоре или другой документации.</p>
+
+        <p>Также важно различать несколько понятий.</p>
+
+        <p><strong>Заводская проверка</strong> подтверждает выполнение определённых контрольных операций изготовителем.</p>
+
+        <p><strong>Калибровка</strong> устанавливает соотношение между показаниями или настройками и результатами измерений при определённых условиях.</p>
+
+        <p><strong>Поверка</strong> — отдельная метрологическая процедура, применяемая к средствам измерений в предусмотренных законодательством случаях.</p>
+
+        <p><strong>Приёмочный функциональный тест</strong> показывает, что прибор выполняет выбранные команды в проверенных условиях.</p>
+
+        <p>Эти процедуры не взаимозаменяемы. Наличие заводского документа не всегда исключает необходимость испытаний по договору, а успешный запуск не подтверждает метрологические характеристики насоса.</p>
+
+        <h2>5. Подготовьте насос к первому включению</h2>
+
+        <p>Перед подключением откройте руководство по эксплуатации именно вашей модели.</p>
+
+        <p>У разных насосов могут отличаться напряжение питания, последовательность подключения, порядок установки шприца, процедура инициализации и требования к программному обеспечению.</p>
+
+        <p>Безопасный общий порядок выглядит так:</p>
+
+        <ol>
+          <li><span>Убедитесь, что корпус, кабели и разъёмы не повреждены.</span></li>
+          <li><span>Проверьте соответствие источника питания требованиям производителя.</span></li>
+          <li><span>Разместите прибор на устойчивой поверхности.</span></li>
+          <li><span>Подключите необходимые компоненты в последовательности, указанной в руководстве.</span></li>
+          <li><span>Выполните первое включение.</span></li>
+          <li><span>Проверьте индикацию, доступность органов управления и отсутствие сообщений об ошибках, если такие функции предусмотрены.</span></li>
+        </ol>
+
+        <p>Если оборудование доставлено с холода или есть признаки конденсации влаги, не включайте его до выполнения требований производителя по выдержке в рабочих условиях.</p>
+
+        <p><strong>Не существует универсального правила, что любой шприцевой насос необходимо впервые включать без шприца.</strong> Для некоторых конструкций это допустимо, для других порядок подготовки отличается.</p>
+
+        <h2>6. Проверьте работу механизма и управления</h2>
+
+        <p>Следующий этап — базовая функциональная проверка.</p>
+
+        <p>Её задача — убедиться, что насос реагирует на команды и механическая часть работает без очевидных неисправностей. Это ещё не измерение точности подачи.</p>
+
+        <p>Если руководство допускает такую проверку, выполните следующие действия:</p>
+
+        <p><strong>Проверка управления.</strong> Убедитесь, что можно задать предусмотренные параметры, запустить и остановить привод.</p>
+
+        <p><strong>Проверка движения.</strong> Проследите, что каретка движется в выбранном направлении и останавливается по команде.</p>
+
+        <p><strong>Проверка крепления шприца.</strong> Установите совместимый шприц по инструкции. Он должен надёжно фиксироваться без перекоса и чрезмерного усилия.</p>
+
+        <p><strong>Проверка программного обеспечения.</strong> Если насос управляется с компьютера, проверьте подключение и выполнение основных команд.</p>
+
+        <p><strong>Проверка предусмотренных защитных функций.</strong> Если документация описывает концевые выключатели, ограничения перемещения или сообщения об ошибках, проверьте их только способом, разрешённым производителем.</p>
+
+        <p>Не следует специально блокировать каретку, создавать избыточное давление или имитировать неисправности, если такая процедура не предусмотрена руководством.</p>
+
+        <p>Обращайте внимание на рывки, заедания, необычные звуки, потерю связи и самопроизвольные остановки. Такие признаки необходимо зафиксировать и обсудить с поставщиком.</p>
+
+        <h2>7. Как принимать многоканальный шприцевой насос</h2>
+
+        <p>Для двух-, трёх- и четырёхканальных систем недостаточно проверить движение только одного привода.</p>
+
+        <p>Если конструкция предусматривает отдельное управление каналами, проверьте каждый из них.</p>
+
+        <p>Убедитесь, что:</p>
+
+        <ul>
+          <li><span>каждый канал идентифицируется системой управления;</span></li>
+          <li><span>команды запуска и остановки выполняются;</span></li>
+          <li><span>можно задать предусмотренные параметры;</span></li>
+          <li><span>движение соответствует выбранному режиму;</span></li>
+          <li><span>каналы работают совместно или независимо именно так, как указано в спецификации.</span></li>
+        </ul>
+
+        <p>Не все многоканальные насосы обладают одинаковыми возможностями. Некоторые системы предусматривают независимые расходы, другие — согласованное управление. Возможность одновременного запуска, использования разных шприцев и программирования последовательностей нужно подтверждать документацией.</p>
+
+        <p>Если заказом предусмотрена синхронизация каналов, её проверку лучше выделить в отдельный пункт приёмочного протокола.</p>
+
+        <h2>8. Нужно ли измерять фактический расход при приёмке</h2>
+
+        <p>Это зависит от требований к эксперименту и условий договора.</p>
+
+        <p>Для базовой проверки работоспособности может быть достаточно функционального теста. Но если расход является критическим параметром, желательно предусмотреть отдельное контрольное измерение.</p>
+
+        <p>Один из распространённых способов — <strong>гравиметрическая проверка</strong>, при которой определяют массу жидкости, поданной за известное время.</p>
+
+        <p>Объёмный расход можно оценить по формуле:</p>
+
+        <div class="formula"><p>Q = m / (ρ × t)</p></div>
+
+        <p>где Q — объёмный расход, m — масса собранной жидкости, ρ — плотность жидкости при условиях измерения, t — продолжительность подачи.</p>
+
+        <p>Например, если за 30 минут насос подал 5 мл жидкости, средний расход составит:</p>
+
+        <div class="formula"><p>Q = 5 / 0,5 = 10 мл/ч</p></div>
+
+        <p>Это иллюстрация расчёта, а не готовая методика приёмочных испытаний.</p>
+
+        <h3>Что влияет на достоверность результата</h3>
+
+        <p>На результат измерения могут повлиять:</p>
+
+        <ul>
+          <li><span>точность и разрешение весов;</span></li>
+          <li><span>плотность и температура жидкости;</span></li>
+          <li><span>испарение;</span></li>
+          <li><span>наличие пузырьков воздуха;</span></li>
+          <li><span>правильность указания диаметра шприца;</span></li>
+          <li><span>упругость шприца и трубок;</span></li>
+          <li><span>сопротивление гидравлической системы;</span></li>
+          <li><span>продолжительность испытания;</span></li>
+          <li><span>задержки при запуске и остановке.</span></li>
+        </ul>
+
+        <p>Особенно осторожно нужно интерпретировать результаты при очень малых расходах: за короткое время масса собранной жидкости может оказаться слишком небольшой для надёжной оценки.</p>
+
+        <p><strong>Нельзя назначить универсальный допустимый процент отклонения для всех лабораторных шприцевых насосов.</strong> Критерий должен следовать из технической документации, согласованной спецификации или методики испытаний.</p>
+
+        <p>Также нельзя автоматически считать, что одно измерение подтверждает заявленную производителем точность во всём рабочем диапазоне.</p>
+
+        <p>Если требуется документально подтвердить точность подачи, следует заранее согласовать условия испытания: шприц, жидкость, расход, время, противодавление, число измерений и критерии оценки.</p>
+
+        <h2>9. Что делать, если обнаружены недостатки</h2>
+
+        <p>При обнаружении проблемы важно не только описать её, но и сохранить подтверждающие материалы.</p>
+
+        <p>Зафиксируйте:</p>
+
+        <ol>
+          <li><span>Наименование и модель прибора.</span></li>
+          <li><span>Заводской номер, если он имеется.</span></li>
+          <li><span>Дату получения.</span></li>
+          <li><span>Номер договора или заказа.</span></li>
+          <li><span>Суть обнаруженного недостатка.</span></li>
+          <li><span>Условия, при которых он проявился.</span></li>
+          <li><span>Фото, видео или результаты проверки.</span></li>
+          <li><span>Фамилию и должность ответственного за приёмку.</span></li>
+        </ol>
+
+        <p>Направьте информацию поставщику в порядке и сроки, предусмотренные договором.</p>
+
+        <p>Если обнаружены повреждения, неполная комплектация или несоответствие характеристик, не следует автоматически считать поставку принятой без замечаний. Порядок оформления расхождений зависит от договора и применимых правил закупки.</p>
+
+        <p>До получения инструкций поставщика не пытайтесь самостоятельно устранять механические или электрические неисправности.</p>
+
+        <h2>10. Особенности приёмки оборудования для вузов и научных организаций</h2>
+
+        <p>В университетских лабораториях и исследовательских центрах шприцевые насосы нередко приобретают по договорам, заключённым в рамках закупочных процедур.</p>
+
+        <p>В таком случае важно различать два уровня проверки:</p>
+
+        <p><strong>Техническая проверка</strong> — соответствует ли насос заказанным характеристикам и выполняет ли предусмотренные функции.</p>
+
+        <p><strong>Документальная и договорная приёмка</strong> — переданы ли необходимые документы, соблюдены ли условия поставки и выполнен ли установленный порядок оформления результатов.</p>
+
+        <p>Для закупок по 44-ФЗ и 223-ФЗ применяются соответствующие законодательные требования и условия конкретной закупки. Нельзя считать, что один универсальный чек-лист заменяет установленную процедуру.</p>
+
+        <p>Если техническое задание предусматривает приёмочные испытания, их состав и критерии должны быть согласованы до проверки оборудования.</p>
+
+        <h2>11. Чек-лист приёмки шприцевого насоса</h2>
+
+        <p>Таблицу можно распечатать и заполнить при получении оборудования.</p>
+
+        <table class="compare">
+          <thead>
+            <tr><th>№</th><th>Что проверить</th><th>Результат</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Упаковка не имеет повреждений либо повреждения зафиксированы</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>2</td><td>Корпус и доступные механические элементы осмотрены</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>3</td><td>Кабели, разъёмы и блок питания осмотрены</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>4</td><td>Модель и исполнение соответствуют заказу</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>5</td><td>Количество насосов и каналов соответствует спецификации</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>6</td><td>Комплектация сверена с договором</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>7</td><td>Получены предусмотренные документы</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>8</td><td>Маркировка и заводской номер сверены, если предусмотрены</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>9</td><td>Проверено соответствие источника питания</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>10</td><td>Первое включение выполнено по руководству</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>11</td><td>Проверена работа органов управления</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>12</td><td>Проверено выполнение команд запуска и остановки</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>13</td><td>Проверено движение привода в разрешённом режиме</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>14</td><td>Проверена установка совместимого шприца</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>15</td><td>Проверено подключение к ПО, если предусмотрено</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>16</td><td>Проверен каждый канал многоканальной системы</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>17</td><td>Проверены специальные функции, указанные в заказе</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>18</td><td>Выполнен контроль расхода, если он предусмотрен</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>19</td><td>Замечания и результаты проверок зафиксированы</td><td class="checkbox-col">☐</td></tr>
+            <tr><td>20</td><td>Оформлены документы о приёмке в установленном порядке</td><td class="checkbox-col">☐</td></tr>
+          </tbody>
+        </table>
+
+        <p>Для каждого пункта удобно использовать три варианта отметки: <strong>«Соответствует», «Не соответствует», «Не применяется»</strong>. Если обнаружено несоответствие, рядом следует указать его описание и приложить подтверждающие материалы.</p>
+
+        <h3>Пример записи о замечании</h3>
+
+        <p><strong>Оборудование:</strong> лабораторный шприцевой насос, модель ____________, заводской № ____________.</p>
+
+        <p><strong>Дата получения:</strong> ____________.</p>
+
+        <p><strong>Выявленное замечание:</strong> при выполнении команды запуска второго канала привод не начинает движение. Проверка проведена согласно разделу ____________ руководства по эксплуатации.</p>
+
+        <p><strong>Подтверждающие материалы:</strong> видеозапись проверки, фотография маркировки, копия спецификации.</p>
+
+        <p><strong>Дальнейшие действия:</strong> информация направлена поставщику для согласования диагностики и устранения недостатка.</p>
+
+        <p>Такая запись информативнее формулировки «насос не работает», поскольку позволяет понять, какая функция проверялась и что именно произошло.</p>
+
+        <h2>12. Частые ошибки при приёмке</h2>
+
+        <p><strong>Проверять только включение.</strong> Запуск прибора не подтверждает комплектность, совместимость со шприцами и соответствие техническому заданию.</p>
+
+        <p><strong>Не сверять модификацию.</strong> Насосы одного семейства могут различаться числом каналов, управлением и рабочими характеристиками.</p>
+
+        <p><strong>Считать заводскую калибровку полноценной приёмкой.</strong> Документ о заводской проверке не заменяет осмотр и сверку с заказом.</p>
+
+        <p><strong>Использовать случайный шприц.</strong> Несовместимая геометрия или неправильная установка может привести к ошибкам подачи и механическим проблемам.</p>
+
+        <p><strong>Измерять расход без учёта условий.</strong> Короткий тест на произвольном шприце не позволяет оценить точность насоса во всех режимах.</p>
+
+        <p><strong>Не фиксировать повреждения.</strong> Без фотографий и описания обстоятельств сложнее установить характер и момент возникновения недостатка.</p>
+
+        <p><strong>Самостоятельно ремонтировать новый прибор.</strong> При обнаружении неисправности лучше остановить проверку и обратиться к поставщику.</p>
+
+        <h2>Главное</h2>
+
+        <p>Приёмка лабораторного шприцевого насоса — это не просто проверка, включается ли оборудование. Необходимо убедиться, что поставлена нужная конфигурация, комплект соответствует заказу, механика не повреждена, а предусмотренные функции работают.</p>
+
+        <p>Для большинства лабораторий разумный минимум включает проверку документов, комплектности, внешнего состояния, питания, управления и движения привода. Для многоканальных систем отдельно проверяют каждый канал. Если расход критичен для эксперимента или это предусмотрено договором, проводят дополнительные испытания по согласованной методике.</p>
+
+        <p><strong>Главное правило: проверяйте не абстрактный «шприцевой насос», а конкретный прибор на соответствие конкретному заказу.</strong> Тогда чек-лист поможет выявить проблемы до начала экспериментов и сохранить понятную историю приёмки оборудования.</p>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Остались вопросы по приёмке насоса Fluidica?</div>
+          <p>Если при приёмке возникли вопросы или замечания — напишите нам, разберём ситуацию и поможем с диагностикой.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/kalibrovka-i-validaciya-shpricevyh-nasosov">Калибровка и валидация шприцевых насосов: как проверить фактический расход</a>
+          <a href="/blog/zapusk-shpricevogo-nasosa-poshagovaya-instrukciya">Пошаговый запуск шприцевого насоса в лаборатории</a>
+          <a href="/devices">Насосы Fluidica</a>
+          <a href="/blog">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy">Политика конфиденциальности</a>
+      <a href="/terms">Пользовательское соглашение</a>
+      <a href="/oferta">Публичная оферта</a>
+      <a href="/requisites">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+
+</body>
+</html>
