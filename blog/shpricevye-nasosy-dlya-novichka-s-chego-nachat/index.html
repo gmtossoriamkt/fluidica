@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Шприцевые насосы для новичка: с чего начать работу в лаборатории - Fluidica</title>
+<meta name="description" content="Как начать работу со шприцевым насосом: выбор шприца, настройка расхода, первый эксперимент с водой, проверка результата и типичные ошибки.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/shpricevye-nasosy-dlya-novichka-s-chego-nachat">
+<meta property="og:title" content="Шприцевые насосы для новичка: с чего начать работу в лаборатории - Fluidica">
+<meta property="og:description" content="Как начать работу со шприцевым насосом: выбор шприца, настройка расхода, первый эксперимент с водой, проверка результата и типичные ошибки.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fluidica.ru/blog/shpricevye-nasosy-dlya-novichka-s-chego-nachat">
+<meta property="og:locale" content="ru_RU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Для новичков</a>
+        </nav>
+        <span class="eyebrow">Для новичков</span>
+        <h1>Шприцевые насосы для новичка: с чего начать работу в лаборатории</h1>
+        <p class="hero-sub">Как выбрать шприц, разобраться с расходом и провести первый учебный эксперимент с водой: пошаговая инструкция, проверка результата и пять частых ошибок новичков.</p>
+        <div class="article-meta">
+          <span>13 октября 2026</span>
+          <span>~10 мин чтения</span>
+          <span>Для новичков</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Шприцевые насосы используют в лабораториях для контролируемой подачи небольших объёмов жидкости. Они встречаются в микрофлюидике, химических исследованиях, микрореакторах и экспериментальных установках.</p>
+
+        <p>При первом знакомстве с оборудованием возникает много вопросов: какой шприц установить, что означает расход в мкл/мин, как подготовить трубку и проверить, что насос подаёт нужный объём?</p>
+
+        <p>Разберём основы работы со шприцевым насосом и проведём простой учебный эксперимент с водой. Инструкция подходит для знакомства с принципами дозирования, но конкретные действия всегда нужно сверять с руководством вашей модели.</p>
+
+
+        <h2>Что такое шприцевой насос и как он работает</h2>
+
+        <p>Шприцевой насос — это устройство, которое перемещает поршень шприца с заданной скоростью. Вместо ручного нажатия на поршень используется электропривод.</p>
+
+        <p>В типичной конструкции двигатель вращает ходовой винт, а каретка постепенно перемещает поршень. Жидкость вытесняется из шприца и поступает в подключённую трубку.</p>
+
+        <p>Зная внутренний диаметр шприца и расстояние перемещения поршня, система рассчитывает поданный объём.</p>
+
+        <p>Основные режимы работы:</p>
+
+        <ul>
+          <li><span><strong>Подача (infusion)</strong> — поршень движется вперёд и вытесняет жидкость.</span></li>
+          <li><span><strong>Втягивание (withdrawal)</strong> — поршень движется назад, заполняя шприц жидкостью.</span></li>
+          <li><span><strong>Дозирование объёма</strong> — насос останавливается после подачи заданного количества жидкости.</span></li>
+          <li><span><strong>Программируемые циклы</strong> — чередование подачи, остановок и других действий.</span></li>
+        </ul>
+
+        <p>Набор режимов зависит от модели. Для первого эксперимента достаточно обычной подачи с постоянным расходом.</p>
+
+        <p>Важно: лабораторный шприцевой насос не следует использовать для введения жидкостей пациентам, если он не предназначен и не допущен для медицинского применения.</p>
+
+
+        <h2>Что понадобится для первого запуска</h2>
+
+        <p>Начать знакомство с насосом удобнее всего с обычной воды. Она позволяет увидеть движение жидкости и освоить настройки без работы с агрессивными реагентами.</p>
+
+        <p>Для учебного эксперимента подготовьте:</p>
+
+        <div class="checklist">
+          <div class="checklist-title">Что подготовить</div>
+          <ul>
+            <li><span>Лабораторный шприцевой насос с подходящим держателем.</span></li>
+            <li><span>Совместимый пластиковый или стеклянный шприц.</span></li>
+            <li><span>Короткую трубку и подходящий соединитель.</span></li>
+            <li><span>Воду для заполнения системы.</span></li>
+            <li><span>Ёмкость для сбора жидкости.</span></li>
+            <li><span>Весы или мерную посуду для проверки результата.</span></li>
+            <li><span>Поддон или салфетку на случай капель.</span></li>
+          </ul>
+        </div>
+
+        <p>Шприц и трубка должны подходить друг к другу по типу соединения. Часто используются соединители Luer Slip и Luer Lock. Первый удерживается за счёт посадки, второй предусматривает резьбовую фиксацию.</p>
+
+        <p>Для первого опыта удобна короткая прозрачная трубка: в ней легче заметить пузырьки воздуха. Её материал, внутренний диаметр и допустимое давление должны соответствовать условиям работы.</p>
+
+
+        <h2>Как выбрать шприц</h2>
+
+        <p>При выборе шприца важно учитывать три параметра: объём, геометрию и материал.</p>
+
+        <p><strong>Объём</strong> определяет, сколько жидкости можно подать без повторного заполнения. Для короткого учебного эксперимента обычно достаточно небольшого шприца с запасом жидкости на заполнение трубки.</p>
+
+        <p><strong>Геометрия</strong> определяет совместимость с насосом. Шприцы одинакового объёма могут отличаться длиной корпуса, формой фланца и внутренним диаметром.</p>
+
+        <p><strong>Материал</strong> выбирают с учётом рабочей жидкости. Для опыта с водой обычно подходит совместимый пластиковый шприц. При работе с растворителями необходимо отдельно проверять стойкость цилиндра, поршня, уплотнений и соединений.</p>
+
+        <h3>Почему важен внутренний диаметр</h3>
+
+        <p>Шприцевой насос рассчитывает объём по перемещению поршня и площади внутреннего сечения шприца.</p>
+
+        <p>Если в настройках указан неправильный диаметр, насос может перемещать каретку с заданной скоростью, но фактический расход будет отличаться от отображаемого.</p>
+
+        <p>Поэтому перед запуском нужно выбрать правильный профиль шприца или ввести его внутренний диаметр, если такая настройка предусмотрена.</p>
+
+
+        <h2>Как разобраться с расходом</h2>
+
+        <p>Расход показывает, какой объём жидкости подаётся за единицу времени.</p>
+
+        <p>В лабораторных шприцевых насосах часто используются:</p>
+
+        <ul>
+          <li><span><strong>мкл/мин</strong> — микролитры в минуту</span></li>
+          <li><span><strong>мл/ч</strong> — миллилитры в час</span></li>
+          <li><span><strong>мл/мин</strong> — миллилитры в минуту.</span></li>
+        </ul>
+
+        <p>Например, расход 10 мкл/мин означает, что за одну минуту насос должен подать 10 микролитров жидкости в расчётном режиме.</p>
+
+        <p>Для перевода единиц полезно помнить:</p>
+
+        <div class="formula"><p>1 мл = 1000 мкл</p></div>
+
+        <div class="formula"><p>1 мл/ч ≈ 16,67 мкл/мин</p></div>
+
+        <div class="formula"><p>10 мкл/мин = 0,6 мл/ч</p></div>
+
+        <h3>Как рассчитать время подачи</h3>
+
+        <p>Если известны объём и расход, расчётное время определяется по формуле:</p>
+
+        <div class="formula"><p>Время = объём / расход</p></div>
+
+        <p>Допустим, необходимо подать 1 мл воды при расходе 50 мкл/мин.</p>
+
+        <p>Переведём объём:</p>
+
+        <p>1 мл = 1000 мкл.</p>
+
+        <p>Разделим его на расход:</p>
+
+        <p>1000 / 50 = 20 минут.</p>
+
+        <p>Значит, расчётное время подачи составляет 20 минут. При этом отдельно учитываются заполнение трубки, возможные паузы и стабилизация потока.</p>
+
+
+        <h2>Первый эксперимент: подаём 1 мл воды</h2>
+
+        <p>Для знакомства с оборудованием выполним простую задачу: подадим 1 мл воды за 20 минут.</p>
+
+        <p><strong>Параметры эксперимента:</strong></p>
+
+        <ul>
+          <li><span>Рабочая жидкость — вода.</span></li>
+          <li><span>Объём дозирования — 1 мл.</span></li>
+          <li><span>Расход — 50 мкл/мин, или 3 мл/ч.</span></li>
+          <li><span>Расчётное время — 20 минут.</span></li>
+          <li><span>Шприц — совместимый с насосом, с достаточным запасом воды для предварительного заполнения линии.</span></li>
+        </ul>
+
+        <p>Это учебный пример, а не универсальный режим для всех насосов. Перед запуском проверьте, поддерживает ли ваша модель такие настройки.</p>
+
+        <h3>Шаг 1. Подготовьте оборудование</h3>
+
+        <p>Разместите насос на устойчивой поверхности. Проверьте состояние корпуса, кабелей, держателя и каретки.</p>
+
+        <p>Убедитесь, что рядом нет предметов, мешающих движению механизма, а ёмкость для сбора жидкости установлена устойчиво.</p>
+
+        <h3>Шаг 2. Установите шприц</h3>
+
+        <p>Наполните совместимый шприц водой и установите его согласно инструкции производителя.</p>
+
+        <p>Корпус должен надёжно удерживаться в держателе, а поршень — располагаться без перекоса. Не затягивайте фиксаторы чрезмерно.</p>
+
+        <p>Способ закрепления поршня различается: в одних насосах каретка только толкает его, в других предусмотрен дополнительный захват для режима втягивания.</p>
+
+        <h3>Шаг 3. Подключите и заполните трубку</h3>
+
+        <p>Соедините шприц с трубкой подходящим фитингом. Проверьте, что соединение герметично, а трубка не перегнута.</p>
+
+        <p>До начала измерения заполните линию водой и по возможности удалите пузырьки воздуха. Для этого некоторые насосы имеют функцию предварительной прокачки — <em>priming</em>. Если её нет, используйте разрешённый инструкцией способ подачи.</p>
+
+        <p>Количество жидкости для заполнения зависит от длины и внутреннего диаметра трубки.</p>
+
+        <h3>Шаг 4. Задайте параметры</h3>
+
+        <p>В интерфейсе насоса выберите профиль шприца или укажите его внутренний диаметр.</p>
+
+        <p>Затем установите режим подачи и расход 50 мкл/мин. Если модель поддерживает дозирование заданного объёма, укажите 1 мл.</p>
+
+        <p>Проверьте единицы измерения: ошибка между мкл/мин и мл/мин может существенно изменить режим работы.</p>
+
+        <h3>Шаг 5. Запустите подачу</h3>
+
+        <p>Поместите конец заполненной трубки в приёмную ёмкость и запустите насос.</p>
+
+        <p>Убедитесь, что жидкость действительно поступает, соединения не протекают, а каретка движется без перекоса и необычных звуков.</p>
+
+        <p>Не оставляйте первый эксперимент без наблюдения. По завершении остановите подачу в порядке, предусмотренном инструкцией.</p>
+
+
+        <h2>Как проверить полученный результат</h2>
+
+        <p>Самый простой способ — сравнить фактически собранный объём с заданным.</p>
+
+        <p>Если есть подходящие весы, взвесьте приёмную ёмкость до и после эксперимента. Разность показаний даст массу собранной воды.</p>
+
+        <p>При комнатной температуре 1 мл воды имеет массу, близкую к 1 г. Поэтому при подаче 1 мл ожидаемый результат — примерно 1 г воды с учётом плотности и условий измерения.</p>
+
+        <p>Для расчёта среднего расхода используйте соотношение:</p>
+
+        <div class="formula"><p>Расход = объём собранной жидкости / время подачи</p></div>
+
+        <p>Если точность измерения важна, учитывайте плотность воды, испарение, разрешение весов и потери жидкости при сборе.</p>
+
+        <p>Мерная посуда также подходит для грубой учебной оценки, но для малых объёмов её точности может оказаться недостаточно.</p>
+
+        <p>Помните: успешный первый опыт подтверждает работу системы в выбранных условиях, но не доказывает точность насоса во всём диапазоне расходов.</p>
+
+
+        <h2>Пять частых ошибок новичков</h2>
+
+        <h3>1. Неправильный профиль шприца</h3>
+
+        <p>Если насос использует неверный внутренний диаметр, расчётный расход может не совпадать с фактическим.</p>
+
+        <p><strong>Как избежать:</strong> проверяйте профиль и геометрию шприца перед каждым изменением конфигурации.</p>
+
+        <h3>2. Запуск с перекрытой трубкой</h3>
+
+        <p>Перегиб или засор создаёт дополнительное сопротивление и может привести к утечке или перегрузке привода.</p>
+
+        <p><strong>Как избежать:</strong> до запуска убедитесь, что выход открыт, а трубка не пережата.</p>
+
+        <h3>3. Пузырьки воздуха</h3>
+
+        <p>Воздух в линии сжимается под давлением и может вызывать задержки и нестабильность подачи.</p>
+
+        <p><strong>Как избежать:</strong> предварительно заполняйте жидкостную линию и проверяйте её перед измерением.</p>
+
+        <h3>4. Неподходящий размер шприца</h3>
+
+        <p>Слишком большой внутренний диаметр может усложнить получение стабильного очень малого расхода, поскольку для того же объёма требуется меньшее перемещение поршня.</p>
+
+        <p><strong>Как избежать:</strong> подбирайте размер шприца под расход и продолжительность эксперимента.</p>
+
+        <h3>5. Отсутствие проверки результата</h3>
+
+        <p>Движение каретки не гарантирует, что в приёмную ёмкость поступил расчётный объём жидкости.</p>
+
+        <p><strong>Как избежать:</strong> при первом запуске измерьте собранный объём или массу воды.</p>
+
+
+        <h2>Когда нужно остановить насос</h2>
+
+        <p>Немедленно прекратите работу при необычном шуме, перекосе шприца, сильной вибрации, утечке, повреждении трубки или попадании жидкости на электрические компоненты.</p>
+
+        <p>Также остановите эксперимент, если движение поршня сопровождается заметным сопротивлением или подача неожиданно прекращается.</p>
+
+        <p>После остановки действуйте по инструкции производителя. Не разбирайте привод и не отсоединяйте линию, пока не убедитесь, что это безопасно и в системе нет опасного остаточного давления.</p>
+
+
+        <h2>Как выбрать первый шприцевой насос</h2>
+
+        <p>Для начинающего пользователя не обязательно покупать модель с максимальным количеством функций.</p>
+
+        <p>В первую очередь оцените:</p>
+
+        <ul>
+          <li><span><strong>Диапазон расходов.</strong> Он должен соответствовать планируемым экспериментам с выбранными шприцами.</span></li>
+          <li><span><strong>Совместимость шприцев.</strong> Удобно, если насос поддерживает распространённые размеры и профили.</span></li>
+          <li><span><strong>Количество каналов.</strong> Для знакомства с дозированием часто достаточно одного.</span></li>
+          <li><span><strong>Управление.</strong> Понятный интерфейс упрощает настройку расхода и объёма.</span></li>
+          <li><span><strong>Документацию и сервис.</strong> Наличие подробной инструкции и технической поддержки помогает быстрее освоить оборудование.</span></li>
+        </ul>
+
+        <p>Компьютерное управление, внешние триггеры и сложные программируемые профили стоит выбирать, когда они действительно необходимы для экспериментов.</p>
+
+
+        <h2>Чек-лист перед первым запуском</h2>
+
+        <p>Перед началом работы убедитесь, что:</p>
+
+        <div class="checklist">
+          <div class="checklist-title">Проверьте перед запуском</div>
+          <ul>
+            <li><span>насос установлен устойчиво и не имеет видимых повреждений</span></li>
+            <li><span>шприц совместим с держателем и закреплён без перекоса</span></li>
+            <li><span>выбран правильный профиль или внутренний диаметр</span></li>
+            <li><span>трубка подключена герметично и не пережата</span></li>
+            <li><span>линия заполнена жидкостью</span></li>
+            <li><span>расход и единицы измерения указаны правильно</span></li>
+            <li><span>приёмная ёмкость подготовлена</span></li>
+            <li><span>известен способ штатной и аварийной остановки.</span></li>
+          </ul>
+        </div>
+
+
+        <h2>Главное</h2>
+
+        <p>Начать работу со шприцевым насосом проще всего с короткого эксперимента с водой. Он помогает освоить установку шприца, настройку расхода, подготовку жидкостной линии и проверку поданного объёма.</p>
+
+        <p>Главное — понимать связь между диаметром шприца, скоростью движения поршня и расходом жидкости. Не менее важно учитывать сопротивление трубок, наличие воздуха и ограничения конкретной модели.</p>
+
+        <p>После успешного учебного запуска можно переходить к более сложным задачам: малым расходам, длительной подаче, нескольким каналам и автоматизированным экспериментам.</p>
+
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Готовы перейти от учебного опыта к своей задаче?</div>
+          <p>Расскажите, какие расходы, шприцы и число каналов нужны, — подберём конфигурацию и поможем с первым запуском.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/chto-takoe-shpricevye-nasosy">Что такое шприцевые насосы: простыми словами</a>
+          <a href="/blog/zapusk-shpricevogo-nasosa-poshagovaya-instrukciya">Пошаговый запуск шприцевого насоса в лаборатории</a>
+          <a href="/blog/tipichnye-oshibki-shpricevye-nasosy">Типичные ошибки при работе со шприцевыми насосами</a>
+          <a href="/blog/kak-vybrat-shpricevye-nasosy-cheklist-parametrov">Как выбрать шприцевые насосы: чек-лист параметров</a>
+          <a href="/devices">Насосы Fluidica</a>
+          <a href="/blog">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy">Политика конфиденциальности</a>
+      <a href="/terms">Пользовательское соглашение</a>
+      <a href="/oferta">Публичная оферта</a>
+      <a href="/requisites">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+
+</body>
+</html>
