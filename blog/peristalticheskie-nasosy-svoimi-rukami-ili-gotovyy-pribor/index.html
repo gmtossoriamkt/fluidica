@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Перистальтические насосы своими руками или готовый прибор: что выгоднее - Fluidica</title>
+<meta name="description" content="Самосборка или готовый перистальтический насос: что сообщают авторы открытых проектов, из чего складывается итоговая стоимость, риски и как принять решение.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/peristalticheskie-nasosy-svoimi-rukami-ili-gotovyy-pribor/">
+<meta property="og:title" content="Перистальтические насосы своими руками или готовый прибор: что выгоднее - Fluidica">
+<meta property="og:description" content="Самосборка или готовый перистальтический насос: что сообщают авторы открытых проектов, из чего складывается итоговая стоимость, риски и как принять решение.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/peristalticheskie-nasosy-svoimi-rukami-ili-gotovyy-pribor/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Перистальтические насосы своими руками или готовый прибор: что выгоднее",
+      "description": "Самосборка или готовый перистальтический насос: что сообщают авторы открытых проектов, из чего складывается итоговая стоимость, риски и как принять решение.",
+      "datePublished": "2026-10-28",
+      "dateModified": "2026-10-28",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/peristalticheskie-nasosy-svoimi-rukami-ili-gotovyy-pribor/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Сравнение",
+          "item": "https://fluidica.ru/blog/peristalticheskie-nasosy-svoimi-rukami-ili-gotovyy-pribor/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Сравнение</a>
+        </nav>
+        <span class="eyebrow">Сравнение</span>
+        <h1>Перистальтические насосы своими руками или готовый прибор: что выгоднее</h1>
+        <p class="hero-sub">Сравнение по нескольким осям без готового ответа «дешевле» или «надёжнее»: данные открытых проектов, полная стоимость, риски самосборки и вопросы для решения.</p>
+        <div class="article-meta">
+          <span>28 октября 2026</span>
+          <span>~8 мин чтения</span>
+          <span>Сравнение</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Вопрос «собрать перистальтический насос самому или купить готовый» часто сводят к простой формуле: свой — дешевле, готовый — надёжнее. Открытые данные эту формулу не подтверждают ни в одну сторону. Низкая цена деталей реальна, но она не включает время на печать, сборку, отладку и калибровку, а готовый прибор не гарантирует, что он подходит именно под вашу задачу.</p>
+
+        <p>Ниже — сравнение по нескольким осям на основе публикаций авторов открытых конструкций. Принцип работы мы разбирали в статье <a href="/blog/chto-takoe-peristalticheskie-nasosy/">«Что такое перистальтические насосы»</a>, конструкцию головок — в <a href="/blog/tipy-golovok-peristalticheskih-nasosov/">«Типах головок»</a>, порядок выбора — в <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">чек-листе параметров</a>.</p>
+
+        <p>Числа в статье принадлежат авторам конкретных конструкций, были получены для их задач и на момент публикации и не описывают «все самодельные насосы». Материал касается лабораторного оборудования и не относится к медицинским насосам.</p>
+
+
+        <h2>Что значит «своими руками»</h2>
+
+        <p>Обычно это открытая конструкция: корпус и детали печатают на 3D-принтере, добавляют шаговый или обычный двигатель, трубку, подшипники или ролики и плату управления (часто на базе Arduino). Файлы и описание публикуют авторы, например, в журнале HardwareX.</p>
+
+        <p>Такие проекты решают разные задачи: микрофлюидика, отбор проб воды, многоканальное дозирование. Поэтому сравнивать их между собой и с коммерческими приборами «в лоб» нельзя.</p>
+
+
+        <h2>Что сообщают авторы открытых проектов</h2>
+
+        <p>Таблица показывает, какого порядка цифры публикуют авторы. Это не рейтинг и не обещание результата, а иллюстрация того, как различаются задачи и условия.</p>
+
+        <table class="compare">
+          <thead><tr><th>Проект</th><th>Задача</th><th>Что сообщают авторы</th></tr></thead>
+          <tbody>
+            <tr><td>3D-печатный насос на шаговом двигателе (Sci Rep, 2020)</td><td>Малые объёмы для микрофлюидики</td><td>Стоимость системы около $120, из них около $65 сам насос; расход до 1,6 мл/мин</td></tr>
+            <tr><td>8-канальный насос (HardwareX, 2020)</td><td>Многоканальное дозирование в лаборатории</td><td>Менее $45 на канал; линейный диапазон примерно от 0,7 мкл/мин до 6 мл/мин</td></tr>
+            <tr><td>Насос для отбора проб воды (HardwareX, 2021)</td><td>Пробоотбор</td><td>Компоненты около 19 австралийских долларов; сборка около 12 минут без времени печати; расход до 13 мл/мин</td></tr>
+            <tr><td>Набор для микрофлюидики (SUTD, 2021)</td><td>Микрофлюидика</td><td>По пресс-материалам, около $50 за насос; диапазон от 0,02 до 727,3 мкл/мин</td></tr>
+          </tbody>
+        </table>
+
+        <p>Что из этого следует и что нет:</p>
+
+        <ul>
+          <li><span>стоимость деталей у открытых конструкций действительно может быть низкой, это подтверждают сами авторы</span></li>
+          <li><span>сравнения с коммерческими приборами в этих работах делают сами авторы и на момент публикации, а цены меняются</span></li>
+          <li><span>данные пресс-материала SUTD не проходили независимой проверки в самом материале</span></li>
+          <li><span>цифры расхода относятся к конкретным трубкам, скоростям и условиям</span></li>
+        </ul>
+
+
+        <h2>Из чего складывается итоговая стоимость</h2>
+
+        <p>В стоимость самосборки входят не только детали:</p>
+
+        <ul>
+          <li><span>печать деталей на принтере или её заказ</span></li>
+          <li><span>закупка двигателя, платы, трубки и крепежа</span></li>
+          <li><span>время на сборку, прошивку и настройку драйвера</span></li>
+          <li><span>время на калибровку расхода и проверку</span></li>
+          <li><span>расходные материалы: трубки в любом варианте нужно менять</span></li>
+        </ul>
+
+        <p>Когда авторы открытых проектов сравнивают свою стоимость с коммерческими системами, речь в первую очередь идёт о стоимости деталей. Трудозатраты на сборку и отладку в таких сравнениях отдельно не приводятся. Поэтому цена деталей не равна цене готового к работе прибора.</p>
+
+
+        <h2>Риски и ограничения самосборки</h2>
+
+        <p>Авторы открытых проектов сами описывают ограничения. Например, в работе 2020 года о 3D-печатном насосе указано, что скорость накачки зависит от того, насколько туго зажата трубка в статоре, а давление на выходе колеблется циклически. Ещё там отмечено, что допуски изготовления ограничивают практическую скорость вращения.</p>
+
+        <p>Типичные точки внимания:</p>
+
+        <ul>
+          <li><span><strong>Зажим трубки.</strong> Усилие сжатия влияет на расход, и в самодельной конструкции оно зависит от того, как трубка зажата при сборке. О роли окклюзии мы писали в статье о типах головок</span></li>
+          <li><span><strong>Допуски деталей.</strong> От качества печати зависят люфты и плавность хода</span></li>
+          <li><span><strong>Привод и управление.</strong> Настройка драйвера и ПО влияет на фактическую скорость и, следовательно, на расход</span></li>
+          <li><span><strong>Калибровка.</strong> Расход нужно проверять в рабочих условиях, это относится и к самодельным, и к готовым приборам</span></li>
+          <li><span><strong>Трубка как расходник.</strong> На точность влияют износ и упругость трубки, приработка, противодавление, скорость, вязкость, температура и длина линии. Это общие факторы, их источник — материалы производителей насосов</span></li>
+        </ul>
+
+        <p>Ни один из пунктов не делает самодельный насос плохим. Это обычная часть ввода в эксплуатацию оборудования, собранного не на заводе.</p>
+
+
+        <h2>Что даёт готовый прибор</h2>
+
+        <p>Готовый прибор приходит собранным, а производитель может описать, как он проверяется перед отправкой. Что именно проверяют и чем это подтверждается (протокол, паспорт, сертификат), нужно уточнять у поставщика: без документа это лишь заявление продавца.</p>
+
+        <p>Кроме того, у готового прибора есть документация, список допустимых трубок и условия обслуживания. Но готовый прибор не отменяет ваши задачи: подбор трубки, калибровку и контроль износа всё равно нужно планировать.</p>
+
+
+        <h2>Когда что подходит</h2>
+
+        <p>Ниже — ориентиры, а не вердикт. Решение зависит от вашей задачи, навыков и требований к документации.</p>
+
+        <table class="compare">
+          <thead><tr><th>Критерий</th><th>Самосборка</th><th>Готовый прибор</th></tr></thead>
+          <tbody>
+            <tr><td>Бюджет на детали</td><td>Может быть ниже, цифры задают авторы проекта</td><td>Определяется поставщиком</td></tr>
+            <tr><td>Время и навыки</td><td>Нужны печать, электроника, настройка</td><td>Минимум на сборку</td></tr>
+            <tr><td>Требования к документам</td><td>Паспорт и протоколы нужно оформлять самим</td><td>Зависит от поставщика; запрашивайте документы</td></tr>
+            <tr><td>Гибкость и доработка</td><td>Высокая: открытые файлы можно менять</td><td>Определяется конструкцией и поддержкой</td></tr>
+            <tr><td>Ответственность за результат</td><td>Полностью на пользователе</td><td>Зависит от условий поставки</td></tr>
+            <tr><td>Учебные и исследовательские задачи</td><td>Подходит, если сборка — часть задачи</td><td>Подходит, если нужен результат без разработки</td></tr>
+          </tbody>
+        </table>
+
+
+        <h2>Как принять решение</h2>
+
+        <p>Ответьте на несколько вопросов:</p>
+
+        <ul>
+          <li><span>есть ли у вас принтер, электроника и опыт, или сборка станет отдельным проектом</span></li>
+          <li><span>нужны ли протоколы калибровки и паспорт для документов лаборатории или закупки</span></li>
+          <li><span>насколько критичны точность и повторяемость расхода для вашего процесса</span></li>
+          <li><span>кто будет обслуживать прибор и менять трубку</span></li>
+          <li><span>нужна ли доработка конструкции или достаточно стандартной</span></li>
+          <li><span>сколько каналов нужно и как вы их будете согласовывать</span></li>
+        </ul>
+
+        <p>Универсального ответа «что выгоднее» нет: он зависит от ваших ресурсов и требований.</p>
+
+
+        <h2>Главное</h2>
+
+        <p>Открытые конструкции перистальтических насосов существуют, и авторы сообщают о низкой стоимости деталей. Но цифры из публикаций привязаны к конкретным задачам, годам и условиям, а итоговая стоимость включает время, калибровку и расходники. Готовый прибор снимает часть работы по сборке, но не заменяет подбор трубки и калибровку. Поэтому сравнивать нужно полную стоимость и риски, а не только цену деталей.</p>
+
+        <p>Если вы выбираете оборудование и хотите обсудить задачу, <a href="/#contact">напишите нам</a>: подскажем, что учесть при выборе. Приборы Fluidica — в <a href="/devices/">каталоге</a>.</p>
+
+        <h2>Источники</h2>
+
+        <p>Все числа в статье принадлежат авторам перечисленных публикаций, относятся к их конструкциям, задачам и году публикации и не описывают самодельные насосы в целом. Для части источников использованы аннотации и пресс-материалы.</p>
+        <ol>
+          <li><a href="https://link.springer.com/article/10.1038/s41598-020-58246-6" rel="noopener" target="_blank">Behrens et al., Scientific Reports, 2020 — open-source 3D-printed peristaltic pump for small-volume liquid handling</a></li>
+          <li><a href="https://doaj.org/article/6009a1eeae38499181cc926f3abafb09" rel="noopener" target="_blank">HardwareX, 2020 — многоканальный перистальтический насос</a>. Аннотация.</li>
+          <li><a href="https://doaj.org/article/270919ae76bf4d16aa80eb272aa5dede" rel="noopener" target="_blank">HardwareX, 2021 — BoSL FAL pump</a>. Аннотация; насос для отбора проб воды.</li>
+          <li><a href="https://techxplore.com/news/2021-12-diy-3d-printed-peristaltic-kits-microfluidics.amp" rel="noopener" target="_blank">TechXplore — DIY 3D-printed peristaltic pump kits for microfluidics</a>. Пресс-материал SUTD, без независимой проверки.</li>
+          <li><a href="https://www.coleparmer.com.cn/tech-article/how-to-achieve-accurate-dispensing-with-peristaltic-pumps" rel="noopener" target="_blank">Cole-Parmer — How to achieve accurate dispensing with peristaltic pumps</a>. Материал производителя: факторы, влияющие на точность дозирования.</li>
+        </ol>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Подбираете перистальтический насос?</div>
+          <p>Опишите задачу: расход, жидкость, число каналов и режим работы — поможем подобрать конфигурацию.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/shpricevye-nasosy-svoimi-rukami-ili-gotovyy-pribor/">Шприцевые насосы своими руками или готовый прибор: что выгоднее</a>
+          <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">Как выбрать перистальтические насосы: чек-лист параметров</a>
+          <a href="/blog/chto-takoe-peristalticheskie-nasosy/">Что такое перистальтические насосы: простыми словами</a>
+          <a href="/devices/">Насосы Fluidica</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+
+</body>
+</html>
