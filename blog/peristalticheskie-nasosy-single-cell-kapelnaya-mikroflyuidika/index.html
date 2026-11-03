@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Перистальтические насосы для single-cell и капельной микрофлюидики - Fluidica</title>
+<meta name="description" content="Где перистальтический насос уместен в микрофлюидике, а где нет: пульсации, противодавление чипа, подача клеточных суспензий и двух фаз, альтернативы и чек-лист проверки.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/peristalticheskie-nasosy-single-cell-kapelnaya-mikroflyuidika/">
+<meta property="og:title" content="Перистальтические насосы для single-cell и капельной микрофлюидики - Fluidica">
+<meta property="og:description" content="Где перистальтический насос уместен в микрофлюидике, а где нет: пульсации, противодавление чипа, подача клеточных суспензий и двух фаз, альтернативы и чек-лист проверки.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/peristalticheskie-nasosy-single-cell-kapelnaya-mikroflyuidika/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Перистальтические насосы для single-cell и капельной микрофлюидики",
+      "description": "Где перистальтический насос уместен в микрофлюидике, а где нет: пульсации, противодавление чипа, подача клеточных суспензий и двух фаз, альтернативы и чек-лист проверки.",
+      "datePublished": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/peristalticheskie-nasosy-single-cell-kapelnaya-mikroflyuidika/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Микрофлюидика",
+          "item": "https://fluidica.ru/blog/peristalticheskie-nasosy-single-cell-kapelnaya-mikroflyuidika/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Микрофлюидика</a>
+        </nav>
+        <span class="eyebrow">Микрофлюидика</span>
+        <h1>Перистальтические насосы для single-cell и капельной микрофлюидики</h1>
+        <p class="hero-sub">Роль насоса в single-cell и капельных экспериментах: что известно о пульсациях и клетках, какие ограничения учесть и что проверить до работы с образцами.</p>
+        <div class="article-meta">
+          <span>3 ноября 2026</span>
+          <span>~9 мин чтения</span>
+          <span>Микрофлюидика</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Перистальтический насос можно использовать в микрофлюидной установке, но он не является универсальным решением. Его принцип работы — сжатие гибкой трубки — приводит к особенностям, которые в капельной микрофлюидике и single-cell экспериментах становятся важными: колебания потока, зависимость расхода от противодавления чипа, износ трубки. Насос подаёт жидкость, а результат эксперимента определяет вся система: чип, расходы фаз, свойства жидкостей, трубки и подготовка образца.</p>
+
+        <p>В статье разобрано, где такой насос может быть уместен, какие ограничения нужно учитывать и что проверить до эксперимента. Принцип работы мы разбирали в статье <a href="/blog/chto-takoe-peristalticheskie-nasosy/">«Что такое перистальтические насосы»</a>, а требования к подаче в капельной микрофлюидике — в статье <a href="/blog/shpricevye-nasosy-single-cell-kapelnaya-mikroflyuidika/">«Шприцевые насосы для single-cell и капельной микрофлюидики»</a>.</p>
+
+        <p>Как читать материал: прямых независимых испытаний перистальтических насосов в капельной генерации и в single-cell экспериментах, которые мы смогли проверить, найти не удалось. Поэтому статья опирается на общие принципы, публикации о смежных системах и материалы производителей, и каждое такое утверждение отмечено. Числовых характеристик здесь нет: они зависят от модели, трубки и чипа. Материал касается лабораторного оборудования и не описывает медицинские насосы.</p>
+
+
+        <h2>Что нужно от подачи жидкости</h2>
+
+        <p>В капельной микрофлюидике обычно есть как минимум две фазы: дисперсная (например, водный раствор, реагенты или клеточная суспензия) и непрерывная (например, масло с сурфактантом). Капля формируется в чипе, а не в насосе: на неё влияют расходы обеих фаз, геометрия канала, вязкость и межфазное натяжение. Если расход одной из фаз меняется, режим образования капель тоже может измениться.</p>
+
+        <p>Из этого следует несколько требований к подаче:</p>
+
+        <ul>
+          <li><span>расходы фаз нужно задавать и контролировать отдельно</span></li>
+          <li><span>расход должен быть достаточно стабильным для вашего чипа, а допустимые колебания определяются самой задачей</span></li>
+          <li><span>система должна выдерживать противодавление чипа без заметного ухода расхода</span></li>
+          <li><span>линия подачи не должна накапливать воздух и пузыри</span></li>
+        </ul>
+
+        <p>В single-cell экспериментах к этому добавляется работа с клетками. Стабильная подача сама по себе не обеспечивает «одну клетку в одной капле»: при случайной инкапсуляции распределение клеток по каплям подчиняется статистике Пуассона, и часть капель остаётся пустой. Подробнее об этом — в статье про шприцевые насосы, которую мы упоминали выше.</p>
+
+
+        <h2>Какую роль играет перистальтический насос</h2>
+
+        <p>Перистальтический насос подаёт жидкость из ёмкости по гибкой трубке, которая подсоединяется к входу чипа через коннекторы. Жидкость при этом контактирует только с трубкой, а трубку можно заменить, поэтому такой насос удобен там, где нужно избежать контакта среды с узлами привода.</p>
+
+        <p>Расход определяется сочетанием трубки, головки и скорости вращения. Производители указывают, что на фактический расход влияют износ и упругость трубки, приработка новой трубки, противодавление, скорость, вязкость и температура. Это важно для микрофлюидики: чип создаёт сопротивление потоку, и фактический расход может отличаться от заданного на дисплее. Поэтому расход нужно измерять в вашей системе, а не только полагаться на настройку насоса.</p>
+
+        <h3>Терминологический нюанс</h3>
+
+        <p>В научных публикациях по микрофлюидике «перистальтическим насосом» часто называют и встроенное в чип устройство, которое создаёт поток последовательным срабатыванием клапанов. Это другая конструкция. В этой статье речь идёт о насосах с гибкой трубкой и роторной головкой, внешних по отношению к чипу.</p>
+
+
+        <h2>Пульсации и стабильность потока</h2>
+
+        <p>Пульсации возникают потому, что жидкость вытесняется порциями при каждом прохождении ролика. О причинах и способах снижения мы писали в статьях <a href="/blog/chto-takoe-peristalticheskie-nasosy/">«Что такое перистальтические насосы»</a> и <a href="/blog/tipy-golovok-peristalticheskih-nasosov/">«Типы головок перистальтических насосов»</a>. Полностью устранить пульсации нельзя, корректно говорить о снижении их уровня.</p>
+
+        <p>Что известно о влиянии колебаний потока на капли:</p>
+
+        <ul>
+          <li><span>в экспериментальной работе 2015 года (Zeng и др., Journal of Micromechanics and Microengineering) для T-образного канала сравнили капельные генераторы, питаемые шприцевым насосом и давлением. Авторы показали, что обе системы дают высокочастотные колебания потока, приводящие к неоднородности размеров капель, а шприцевой насос добавляет низкочастотные колебания, связанные с механическими колебаниями самого насоса. Перистальтические насосы в этой работе не рассматривались</span></li>
+          <li><span>в численном моделировании 2025 года (Processes) для T-образного канала показано, что пульсирующая подача дисперсной фазы может менять режим образования капель. Это двумерная расчётная модель, а не эксперимент с перистальтическим насосом</span></li>
+        </ul>
+
+        <p>Эти работы показывают принцип: колебания потока могут влиять на размер и однородность капель. Но количественно оценить влияние пульсаций конкретного перистальтического насоса на ваш чип можно только измерением на вашей установке.</p>
+
+        <p>Производители систем управления давлением (Fluigent, Elveflow) указывают, что перистальтические насосы создают пульсации и менее стабильны на малых расходах по сравнению с шприцевыми и напорными системами. Эти компании продают именно напорные контроллеры, а их сравнения даны в качественной форме, без условий измерений. Поэтому такие оценки стоит учитывать как мнение поставщика альтернативной технологии, а не как независимый результат.</p>
+
+        <h3>Как уменьшают пульсации</h3>
+
+        <p>Используют несколько подходов:</p>
+
+        <ul>
+          <li><span>головки с большим числом роликов: пульсации обычно меньше, но трубка сжимается чаще, и ресурс трубки сокращается (мы писали об этом в статье о типах головок)</span></li>
+          <li><span>демпферы пульсаций. Например, дистрибьютор Darwin Microfluidics предлагает демпфер марки Innofluid для перистальтических насосов; производитель заявляет подавление пульсаций, но не приводит условий измерения этой цифры. Он же указывает условия установки: выходная трубка меньшего диаметра, чем входная, определённой длины, с выходом выше демпфера</span></li>
+          <li><span>настройку выходной линии: длина и диаметр трубки влияют на сопротивление и на форму потока</span></li>
+        </ul>
+
+        <p>Демпфер по сути добавляет в линию упругий элемент, а любая податливость, как мы писали в статье про шприцевые насосы, замедляет реакцию системы на изменение расхода. Достаточно ли выбранной меры для вашего чипа, показывает только измерение с демпфером и без него.</p>
+
+
+        <h2>Подача клеточных суспензий</h2>
+
+        <p>Можно ли подавать клетки перистальтическим насосом, зависит от типа клеток, трубки, скорости и геометрии тракта. Мы не нашли независимых данных о том, что перистальтический принцип безопасен для клеток вообще, поэтому такое утверждение нельзя принимать как факт.</p>
+
+        <p>Есть противоположные заявления производителей. Материалы поставщиков называют перистальтические насосы щадящими для чувствительных к сдвигу жидкостей, но в доступном нам тексте такие заявления не подкреплены данными. Производитель систем давления, наоборот, сообщал в своей заметке о наблюдениях за клетками при рециркуляции среды: при перистальтической подаче плотность клеток снизилась, и клетки выглядели округлыми, а при подаче давлением состояние клеток сохранялось. Это испытание одного производителя, качественное, на другой задаче (рециркуляция среды на чипе), без счёта жизнеспособности и статистики. Оба заявления нельзя переносить на ваш эксперимент.</p>
+
+        <p>Поэтому для клеточных суспензий:</p>
+
+        <ul>
+          <li><span>не считайте перистальтическую подачу автоматически щадящей и не считайте её автоматически вредной</span></li>
+          <li><span>сравните размер клеток с внутренним диаметром трубки и сечением каналов чипа</span></li>
+          <li><span>проверьте, не оседают ли клетки в трубке и ёмкости и не агрегируют ли они</span></li>
+          <li><span>оцените жизнеспособность клеток до и после прохождения через систему на вашем протоколе</span></li>
+        </ul>
+
+
+        <h2>Капельная микрофлюидика: две фазы</h2>
+
+        <p>Для двух фаз нужны отдельные линии с независимым управлением. Можно использовать отдельные насосы или многоканальную систему, но у многоканальной системы нужно уточнить, действительно ли каналы независимы. При общем роторе скорость вращения у каналов одинакова, а различия в расходе определяются трубками, и согласовать два канала с разными расходами таким образом не получится.</p>
+
+        <p>Размер капли определяется совокупностью факторов: расходами обеих фаз, геометрией канала, вязкостью и межфазным натяжением. Насос определяет только подачу. Поэтому нельзя говорить, что перистальтический насос сам обеспечивает точную генерацию капель или задаёт их размер.</p>
+
+        <p>Отдельный вопрос — совместимость трубки с жидкостями. Силикон подходит не для всех сред, а совместимость с маслами и растворителями нужно проверять по таблицам производителя трубки. Универсально подходящего материала нет.</p>
+
+
+        <h2>Когда перистальтический насос может быть уместен</h2>
+
+        <p>Производитель систем управления давлением, сравнивая технологии, называет перистальтические насосы хорошим вариантом для больших объёмов, высоких расходов и рециркуляции: насос может брать жидкость из открытой ёмкости, поэтому объём не ограничен шприцем. Дистрибьюторы отмечают и другое свойство: смачиваемой частью остаётся только трубка, которую можно заменить, что ограничивает риск загрязнения.</p>
+
+        <p>Для чипа, где важен малый стабильный поток, и для генерации капель одинакового размера подачу нужно подбирать под требуемые параметры и проверять на установке.</p>
+
+
+        <h2>Когда стоит рассмотреть другие способы подачи</h2>
+
+        <p>Если перистальтический насос не обеспечивает нужной стабильности, можно рассмотреть шприцевые насосы или напорную подачу. Но и они не лишены колебаний: в упомянутой работе 2015 года обе системы давали высокочастотные колебания потока. Поэтому выбор делают по измеренным параметрам вашей установки, а не по общему рейтингу. О шприцевых насосах для этих задач мы писали в <a href="/blog/shpricevye-nasosy-single-cell-kapelnaya-mikroflyuidika/">отдельной статье</a>.</p>
+
+
+        <h2>Что проверить до эксперимента</h2>
+
+        <p>Составьте требования и проведите испытание на модельной жидкости до работы с клетками:</p>
+
+        <ul>
+          <li><span>определите диапазон расхода каждой фазы, допустимые колебания потока, противодавление чипа и условия по температуре</span></li>
+          <li><span>подберите трубку по совместимости со всеми жидкостями, включая масло, и по размеру относительно клеток и каналов</span></li>
+          <li><span>проверьте, что каналы насоса независимы, если нужны разные расходы фаз</span></li>
+          <li><span>измерьте фактический расход в вашей системе, например, весовым методом, как это делают авторы открытых проектов насосов, и проверьте его на длительной работе с учётом износа трубки</span></li>
+          <li><span>оцените, как меняется расход после приработки трубки и при смене противодавления</span></li>
+          <li><span>сгенерируйте капли на модельных жидкостях и оцените разброс их размеров, при необходимости с демпфером и без него</span></li>
+          <li><span>только после этого проведите проверку жизнеспособности клеток на вашем протоколе</span></li>
+          <li><span>зафиксируйте параметры эксперимента и замены трубок, чтобы можно было оценить воспроизводимость</span></li>
+        </ul>
+
+        <p>Допустимые пороги колебаний и разброса зависят от вашей задачи, универсальных значений нет.</p>
+
+
+        <h2>Главное</h2>
+
+        <p>Перистальтический насос может подавать жидкости в микрофлюидные установки, особенно когда важны большой объём, рециркуляция, стерильная замена линии или простота. Для генерации капель одинакового размера и для работы с клетками его применимость нужно подтверждать измерениями на вашей системе: пульсации, зависимость расхода от противодавления и износ трубки могут влиять на результат, а данные о безопасности для клеток противоречивы и исходят в основном от производителей. Не стоит считать этот насос ни универсальным, ни непригодным: решение зависит от чипа, жидкостей и требований эксперимента.</p>
+
+        <p>Если вы подбираете оборудование для микрофлюидной установки, <a href="/#contact">напишите нам</a>: поможем описать задачу и определить, какие параметры нужно проверить. Приборы Fluidica — в <a href="/devices/">каталоге насосов</a>, раздел <a href="/pumps/peristaltic/">«Перистальтические насосы»</a>.</p>
+
+        <h2>Источники</h2>
+
+        <p>Прямых независимых испытаний перистальтических насосов в капельной генерации и в single-cell экспериментах среди проверенных источников нет. Материалы производителей систем управления давлением (Fluigent, Elveflow) поданы как позиция поставщика альтернативной технологии. Описания конкретных продуктов относятся к ним и не переносятся на другое оборудование. Числовые данные источников в статье не используются.</p>
+        <ol>
+          <li><a href="https://collaborate.princeton.edu/en/publications/variation-in-polydispersity-in-pump-and-pressure-driven-micro-dro/" rel="noopener" target="_blank">Zeng, Jacobi, Li, Stone — Variation in polydispersity in pump- and pressure-driven micro-droplet generators</a>, Journal of Micromechanics and Microengineering, 2015. Аннотация; сравнение шприцевого и напорного питания.</li>
+          <li><a href="https://mdpi-res.com/d_attachment/processes/processes-13-03690/article_deploy/processes-13-03690.pdf" rel="noopener" target="_blank">Kuljabekov et al. — Numerical Study of Pulsation-Controlled Droplet Generation in a Microfluidic T-Junction</a>, Processes, 2025. Численное моделирование, не эксперимент.</li>
+          <li><a href="https://www.fluigent.com/microfluidic-expertise/volumetric-control-technologies/" rel="noopener" target="_blank">Fluigent — Microfluidic flow control: comparison between peristaltic, syringe and pressure pumps</a>. Материал производителя напорных контроллеров.</li>
+          <li><a href="https://fluigent.com/resources-support/expertise/application-notes/peristaltic-pump-vs-pressure-based-microfluidic-flow-control-systems-for-organ-on-chip-applications" rel="noopener" target="_blank">Fluigent — Peristaltic pump vs pressure-based flow control for organ-on-chip applications</a>. Заметка производителя, качественные результаты по клеткам.</li>
+          <li><a href="https://elveflow.com/blog/peristaltic-pump-vs-pressure-based-flow-control-systems/" rel="noopener" target="_blank">Elveflow — Peristaltic pump vs pressure-based flow control systems</a>. Материал производителя напорных контроллеров.</li>
+          <li><a href="https://darwin-microfluidics.com/products/fluid-pulse-damper" rel="noopener" target="_blank">Darwin Microfluidics — Fluid Pulse Damper</a>. Карточка продукта; заявления производителя без условий измерения.</li>
+          <li><a href="https://www.biotechniques.com/cell-and-tissue-biology/avanator_shear-sensitive-pumping-with-peristaltic-pumps-gentle-on-your-cells-efficient-for-your-workflow" rel="noopener" target="_blank">BioTechniques — Shear-sensitive pumping with peristaltic pumps</a>. Спонсорский материал; данных в доступном тексте нет.</li>
+          <li><a href="https://www.coleparmer.com.cn/tech-article/how-to-achieve-accurate-dispensing-with-peristaltic-pumps" rel="noopener" target="_blank">Cole-Parmer — How to achieve accurate dispensing with peristaltic pumps</a>. Материал производителя: трубка, приработка, противодавление, скорость.</li>
+          <li><a href="https://www.johnmorrisgroup.com/blog/masterflex-peristaltic-pump-selection-guide" rel="noopener" target="_blank">John Morris Group — How to Select the Right Masterflex Peristaltic Pump System</a>. Материал дистрибьютора: смачиваемая часть, совместимость трубки со средой.</li>
+          <li><a href="https://link.springer.com/article/10.1038/s41598-020-58246-6" rel="noopener" target="_blank">Behrens et al. — open-source 3D-printed peristaltic pump for small-volume liquid handling</a>, Scientific Reports, 2020. Весовые измерения расхода авторами.</li>
+        </ol>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Подбираете перистальтический насос?</div>
+          <p>Опишите задачу: расход, жидкость, число каналов и режим работы — поможем подобрать конфигурацию.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/shpricevye-nasosy-single-cell-kapelnaya-mikroflyuidika/">Шприцевые насосы для single-cell и капельной микрофлюидики</a>
+          <a href="/blog/tipy-golovok-peristalticheskih-nasosov/">Типы головок перистальтических насосов: роликовые, башмачные, линейные</a>
+          <a href="/blog/chto-takoe-peristalticheskie-nasosy/">Что такое перистальтические насосы: простыми словами</a>
+          <a href="/pumps/peristaltic/">Перистальтические насосы Fluidica</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+
+</body>
+</html>
