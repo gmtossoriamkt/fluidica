@@ -50,12 +50,21 @@
     return null;
   }
 
+  // Кнопки главной без реального href (javascript:void(0)): цель по data-scroll
+  function scrollGoalFor(el){
+    var target = el.getAttribute('data-scroll');
+    if (target === 'contact') return 'click_write_us';
+    if (target === 'catalog') return 'go_catalog';
+    return null;
+  }
+
   document.addEventListener('click', function(ev){
     try {
       if (!loaded || typeof window.ym !== 'function') return;
-      var link = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+      var link = ev.target && ev.target.closest ? ev.target.closest('a[href], [data-scroll]') : null;
       if (!link) return;
-      var goal = goalFor(link);
+      var goal = link.hasAttribute('href') ? goalFor(link) : null;
+      if (!goal) goal = scrollGoalFor(link);
       if (goal) window.ym(COUNTER_ID, 'reachGoal', goal);
     } catch (e) {
       // цели не должны ломать клики по ссылкам
