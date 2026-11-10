@@ -1,0 +1,24 @@
+[
+  {
+    "path": "import-substitution",
+    "sitemap_url": "/import-substitution",
+    "title": "Импортозамещение: материалы по выбору насосов",
+    "eyebrow": "Подборка",
+    "intro": "Подборка материалов о выборе насосов российского, китайского и европейского происхождения и о том, что стоит проверять у поставщика.",
+    "articles_label": "Материалы блога",
+    "articles_title": "Статьи по теме",
+    "articles_desc": "Выбор, сравнение и стоимость насосов: материалы блога.",
+    "articles": [
+      "importozameshchenie-shpricevyh-nasosov",
+      "sravnenie-shpricevyh-nasosov-rossiya-kitay-es",
+      "sravnenie-peristalticheskih-nasosov-rossiya-kitay-es",
+      "kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov",
+      "kak-vybrat-shpricevye-nasosy-cheklist-parametrov",
+      "skolko-stoyat-peristalticheskie-nasosy-i-iz-chego-skladyvaetsya-cena",
+      "skolko-stoit-shpricevye-nasosy-i-iz-chego-skladyvaetsya-cena"
+    ],
+    "catalog_label": "Каталог",
+    "catalog_title": "Насосы Fluidica",
+    "catalog_links": ["/devices/", "/pumps/syringe/", "/pumps/peristaltic/"]
+  }
+]
