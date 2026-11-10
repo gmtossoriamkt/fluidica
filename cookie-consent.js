@@ -33,6 +33,7 @@
     document.body.appendChild(banner);
     banner.querySelector('button').addEventListener('click', function(){
       localStorage.setItem(STORAGE_KEY, '1');
+      window.dispatchEvent(new Event('fluidica-consent'));
       banner.classList.add('cookie-hidden');
       setTimeout(function(){ banner.remove(); }, reduceMotion ? 0 : 300);
     });

@@ -97,6 +97,11 @@ def build_page(root, cfg, sitemap, template, cards):
     body_start = template.index("<body>")
     header = template[body_start: template.index('<main id="top">')]
     footer = template[template.index("</main>"):]
+    consent_line = '<script src="/cookie-consent.js" defer></script>\n'
+    analytics_line = '<script src="/analytics.js" defer></script>\n'
+    if consent_line in footer and analytics_line not in footer:
+        # новые страницы не должны терять счётчик, даже если шаблон его ещё не содержит
+        footer = footer.replace(consent_line, consent_line + analytics_line, 1)
 
     def sub1(rx, repl, text):
         out, n = re.subn(rx, lambda m: repl(m), text, count=1)
