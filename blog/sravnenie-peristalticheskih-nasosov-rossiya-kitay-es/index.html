@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сравнение перистальтических насосов: Россия, Китай, ЕС - Fluidica</title>
+<meta name="description" content="Как сравнивать перистальтические насосы из России, Китая и ЕС: что говорят документы по моделям, что нельзя сопоставлять и что запросить у поставщика.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/sravnenie-peristalticheskih-nasosov-rossiya-kitay-es/">
+<meta property="og:title" content="Сравнение перистальтических насосов: Россия, Китай, ЕС - Fluidica">
+<meta property="og:description" content="Как сравнивать перистальтические насосы из России, Китая и ЕС: что говорят документы по моделям, что нельзя сопоставлять и что запросить у поставщика.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/sravnenie-peristalticheskih-nasosov-rossiya-kitay-es/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Сравнение перистальтических насосов: Россия, Китай, ЕС",
+      "description": "Как сравнивать перистальтические насосы из России, Китая и ЕС: что говорят документы по моделям, что нельзя сопоставлять и что запросить у поставщика.",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/sravnenie-peristalticheskih-nasosov-rossiya-kitay-es/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Сравнение",
+          "item": "https://fluidica.ru/blog/sravnenie-peristalticheskih-nasosov-rossiya-kitay-es/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Сравнение</a>
+        </nav>
+        <span class="eyebrow">Сравнение</span>
+        <h1>Сравнение перистальтических насосов: Россия, Китай, ЕС</h1>
+        <p class="hero-sub">Почему страна бренда не равна стране сборки и комплектующих, что известно по конкретным моделям и как сравнивать характеристики, гарантию и стоимость владения.</p>
+        <div class="article-meta">
+          <span>10 ноября 2026</span>
+          <span>~10 мин чтения</span>
+          <span>Сравнение</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Запрос «российский, китайский или европейский перистальтический насос» звучит как выбор по стране. На практике страна говорит о приборе меньше, чем кажется: у бренда, места сборки и комплектующих она может быть разной, а сравнивать имеет смысл конкретные модели с близкими характеристиками, а не страны целиком.</p>
+
+        <p>В статье мы разобрали, что можно проверить по открытым документам, чем отличаются подходы производителей и на что смотреть при сравнении предложений. Принцип работы мы разбирали в статье <a href="/blog/chto-takoe-peristalticheskie-nasosy/">«Что такое перистальтические насосы»</a>, порядок выбора — в <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">чек-листе параметров</a>, структуру цены — в статье <a href="/blog/skolko-stoyat-peristalticheskie-nasosy-i-iz-chego-skladyvaetsya-cena/">«Сколько стоят перистальтические насосы»</a>.</p>
+
+        <p>Как читать материал: источники — это каталоги, руководства и страницы производителей и продавцов, независимых сравнительных испытаний мы не нашли. Паспортные значения относятся к конкретным моделям и условиям, и мы не складываем их в рейтинг. Цен в статье нет: на страницах продавцов они чаще указаны «по запросу», а там, где есть, не видны дата, комплектация и условия. Материал касается лабораторного и промышленного оборудования и не описывает медицинские насосы.</p>
+
+
+        <h2>Что значит «российский», «китайский», «европейский»</h2>
+
+        <p>За одним названием могут стоять три разные вещи: страна бренда или владельца, страна сборки и страна происхождения комплектующих. В документах они указаны не всегда, и вывод по одному из этих признаков может оказаться неверным. Вот несколько примеров из источников:</p>
+
+        <ul>
+          <li><span>Watson-Marlow Limited в руководстве к модели 120U указана с адресом в Фалмуте, Англия. Великобритания не входит в ЕС, поэтому «европейский» и «из ЕС» — не одно и то же</span></li>
+          <li><span>В техническом листе Ismatec Reglo ICC владельцем торговой марки названа компания IDEX Health &amp; Science, а производственная площадка указана в штате Вашингтон, США. Название бренда не говорит о стране производства; по другим линейкам этого бренда мы данных не проверяли</span></li>
+          <li><span>У Heidolph на странице модели Hei-FLOW Ultimate 600 указан адрес компании в Швабахе, Германия, но не сказано, где изготовлен конкретный насос</span></li>
+          <li><span>В каталоге Longer страна прямо не названа. Указаны основание компании в 1997 году, статус дочерней компании Halma Group и исследовательские центры в Баодине и Шанхае</span></li>
+          <li><span>В каталоге LOIP (Санкт-Петербург) есть строка «Санкт-Петербург (Центральный офис, производство)» и общая фраза о собственном производстве приборов. Для насоса LS-301 место производства и происхождение узлов не указаны. На странице продавца этого насоса назван только продавец</span></li>
+        </ul>
+
+        <p>Вывод простой: перед сравнением нужно запросить у поставщика, что именно он называет «российским», «китайским» или «европейским» — бренд, сборку или узлы.</p>
+
+
+        <h2>Что есть на российском рынке</h2>
+
+        <p><strong>Промышленные шланговые насосы.</strong> ООО «Вулкан Пумпен Рус» на своей странице называет себя российским производителем перистальтических насосов и указывает Санкт-Петербург. Серия НП работает с производительностью от 0,05 до 150 м³/ч и давлением до 16 бар, размер шланга от 10 до 200 мм. Это другой класс оборудования, чем лабораторные насосы для расходов в миллилитрах в минуту, и прямо сопоставлять их нельзя. Интерфейсы связи на странице не описаны, срок гарантии не указан.</p>
+
+        <p><strong>Лабораторный насос LOIP LS-301.</strong> По каталогу LOIP 2026: одноканальный насос, расход 0,02–25 л/ч со шлангом 5 мм, максимальное давление 2,0 бар, четыре ролика, микропроцессорное управление. Каталог указывает «погрешность регулирования ±0,5 %», но не поясняет, к чему она относится: к частоте вращения или к расходу. Интерфейсы и гарантия не указаны.</p>
+
+        <p><strong>Перепродажа и маркировка.</strong> Российские продавцы предлагают и зарубежные бренды. Например, Тирит указывает перистальтические насосы CHONRY и Signal с пометкой «Китай» и гарантию 12 месяцев. Moslabo перечисляет Heidolph и behr (Германия), VELP (Италия), Laboao (КНР). Millab в фильтрах каталога называет страны Германия и Китай, но для отдельных моделей страну не указывает. Заметим, что гарантия 18 месяцев на странице Millab не привязана к конкретной группе товаров.</p>
+
+        <p><strong>Случай, когда нужны документы.</strong> На странице лабораторного насоса ВТ-101 (Байкаллаб) производитель не указан, а головки названы DG и YZ, как и в каталоге Longer. Эти обозначения не доказывают происхождение, но показывают, зачем его нужно уточнять. На той же странице расход указан двумя разными значениями (до 570 и до 900 мл/мин), поэтому цифры нужно сверять с паспортом.</p>
+
+        <p><strong>Медицинские насосы.</strong> В отраслевых новостях есть сообщение о российской разработке перистальтического насоса для аппаратов обработки донорской крови. По тексту источника, серийное производство не налажено. Это медицинское изделие, и к лабораторному сравнению оно не относится.</p>
+
+        <p>Что мы не смогли подтвердить: российского лабораторного перистальтического насоса с документально описанной компонентной базой, интерфейсами и независимыми каналами. Это не значит, что его нет, поэтому такие данные нужно запрашивать у производителя.</p>
+
+
+        <h2>Что у китайских производителей</h2>
+
+        <p>Longer в каталоге 2025–2026 приводит серии BT100, BT300, BT600 и WT600. Для BT100-3J указан диапазон скорости 0,1–100 об/мин и расход до 380 мл/мин с головкой YZ1515x, для BT300-2J и BT600-2J — скорость до 300 и 600 об/мин. Интерфейс RS485 есть у ряда моделей, аналоговое управление (4–20 мА, 0–5 В, 0–10 В) доступно через опциональный модуль. Компания заявляет сертификат ISO 9001:2015 и CE Safety Certificate. Это заявления компании: они не заменяют проверку конкретной модели. Гарантия в каталоге не указана.</p>
+
+        <p>В каталоге Millab (в фильтрах указаны бренды LeadFluid и Heidolph) есть модель BT 100S с диапазоном расхода 0,0001–720 мл/мин на 1, 2 и 4 канала. Диапазон зависит от головки и трубки, поэтому сравнивать его без этого условия нельзя.</p>
+
+        <p>Для китайского сегмента в целом открытых данных, пригодных для вывода о надёжности, мы не нашли. Он включает и простые, и программируемые модели. Выводить качество из страны производства некорректно.</p>
+
+
+        <h2>Что у европейских и западных производителей</h2>
+
+        <p><strong>Watson-Marlow 120U.</strong> В руководстве для головки 114DV указан диапазон 0,1–200 об/мин, расход от 0,002 мл/мин (трубка 0,5 мм) до 170 мл/мин (трубка 4,8 мм), четыре ролика. Управление: клавиатура, разъём внешнего управления, аналоговый вход 4–20 мА или 0–10 В. Гарантия по руководству — три года на привод с даты изготовления, при этом трубки и ролики исключены. Для моделей 120U и 120S она не действует при давлении выше 2 бар. Руководство также требует запускать 120U против часовой стрелки, чтобы получить давление до 2 бар. Условия гарантии российского поставщика могут отличаться: их нужно уточнять отдельно.</p>
+
+        <p><strong>Heidolph Hei-FLOW.</strong> По листу Precision 01 (копия у дистрибьютора Wolf Labs): одноканальная головка — 0,38–813 мл/мин, многоканальная — 0,005–364 мл/мин, скорость 5–120 об/мин, цифровой RS 232 и аналоговое управление. Точность ±1 % указана для воды без противодавления. Для Hei-FLOW Ultimate 600 на странице производителя заявлен диапазон 2,0–4056 мл/мин для одноканальных головок и три типа головок для трубок со стенкой 1,6 и 2,5 мм. Гарантия на этих страницах не указана.</p>
+
+        <p><strong>Ismatec Reglo ICC.</strong> По техническому листу: до четырёх каналов с независимым программированием, расход 0,0002–35 мл/мин на канал, 0,1–100 об/мин, по умолчанию восемь роликов (есть варианты на 6 и 12), RS-232 и USB. Гарантия в документе не указана.</p>
+
+
+        <h2>Что показывают документы: пять моделей</h2>
+
+        <p>Значения ниже сняты с документов, указанных в списке источников. Они относятся к разным головкам, трубкам и условиям и не складываются в рейтинг. Прочерк означает, что в источнике данных нет.</p>
+
+        <table class="compare">
+          <thead><tr><th>Модель</th><th>Происхождение по источнику</th><th>Расход, как указан</th><th>Каналы и интерфейсы</th><th>Гарантия по источнику</th></tr></thead>
+          <tbody>
+            <tr><td>LOIP LS-301</td><td>Российский бренд; место производства насоса не указано</td><td>0,02–25 л/ч, шланг 5 мм</td><td>1 канал; интерфейсы не указаны</td><td>не указана</td></tr>
+            <tr><td>Longer BT100-3J</td><td>Китай (центры компании в Баодине и Шанхае; страна прямо не названа)</td><td>до 380 мл/мин, головка YZ1515x</td><td>RS485; аналоговое управление через модуль</td><td>не указана</td></tr>
+            <tr><td>Watson-Marlow 120U</td><td>Великобритания (Фалмут, Англия)</td><td>0,002–170 мл/мин, головка 114DV</td><td>аналоговый вход 4–20 мА или 0–10 В, разъём внешнего управления</td><td>3 года на привод; трубки и ролики исключены</td></tr>
+            <tr><td>Heidolph Hei-FLOW Precision 01</td><td>Германия по адресу компании; место производства насоса не указано</td><td>0,38–813 мл/мин (одноканальная головка)</td><td>RS 232, аналоговое управление</td><td>не указана</td></tr>
+            <tr><td>Ismatec Reglo ICC</td><td>IDEX Health &amp; Science, площадка в США по техническому листу</td><td>0,0002–35 мл/мин на канал</td><td>4 канала, независимое управление; RS-232, USB</td><td>не указана</td></tr>
+          </tbody>
+        </table>
+
+
+        <h2>Что на самом деле стоит сравнивать</h2>
+
+        <p>Сравнивайте не страны, а параметры, которые нужны вашей задаче:</p>
+
+        <ul>
+          <li><span>диапазон расхода для вашей головки и трубки, а не максимум из каталога</span></li>
+          <li><span>давление и условия, при которых оно допустимо (у Watson-Marlow 120U это прямо указано в руководстве)</span></li>
+          <li><span>условия, при которых заявлена точность: вода, противодавление, калибровка</span></li>
+          <li><span>число каналов и их независимость: у одних моделей каналы независимы, у других общий ротор</span></li>
+          <li><span>интерфейсы и описание протокола связи, если насос нужно встроить в установку</span></li>
+          <li><span>совместимые трубки, их размеры и наличие в России</span></li>
+          <li><span>кто даёт гарантию (производитель или продавец) и что она исключает</span></li>
+          <li><span>запасные части, сервис и сроки поставки в вашем регионе</span></li>
+        </ul>
+
+
+        <h2>Как сравнивать стоимость</h2>
+
+        <p>Цену покупки стоит считать как часть совокупной стоимости владения за выбранный срок: покупка, расходники (трубки и сменные элементы), плановое обслуживание, ремонт и простой оборудования. Период и интенсивность работы должны быть одинаковыми для всех вариантов. Какой насос окажется выгоднее, зависит от этих составляющих, а не от страны: более дорогая модель может оказаться дешевле в эксплуатации, а дешёвая — наоборот.</p>
+
+        <p>Чтобы сравнение цен было корректным, запрашивайте коммерческие предложения с одинаковой комплектацией: привод, головка, трубки, блок питания, документы, доставка, налоги, гарантия. Подробнее о статьях затрат — в <a href="/blog/skolko-stoyat-peristalticheskie-nasosy-i-iz-chego-skladyvaetsya-cena/">статье о цене перистальтических насосов</a>.</p>
+
+
+        <h2>Импортозамещение и локализация</h2>
+
+        <p>Российская сборка и полная локализация — разные вещи. Если для вас важна независимость от импорта, запросите у поставщика перечень узлов с указанием происхождения: двигатель, электроника, редуктор, головка, трубки. Уточните, какие документы подтверждают заявленное происхождение и что именно они подтверждают.</p>
+
+        <p>Отдельный вопрос — что будет с обслуживанием: есть ли запчасти, кто делает ремонт и как быстро. Это преимущество зависит от конкретного поставщика, а не от страны. О том же для шприцевых насосов мы писали в статьях <a href="/blog/sravnenie-shpricevyh-nasosov-rossiya-kitay-es/">«Сравнение шприцевых насосов: Россия, Китай, ЕС»</a> и <a href="/blog/importozameshchenie-shpricevyh-nasosov/">«Импортозамещение шприцевых насосов»</a>.</p>
+
+
+        <h2>Утверждения, которые нельзя принимать без данных</h2>
+
+        <ul>
+          <li><span>«Европейские насосы качественнее китайских»: страна не подтверждает качество, нужны конкретные модели, испытания и данные об отказах</span></li>
+          <li><span>«Китайские насосы значительно дешевле»: сравнивать нужно полную стоимость поставки с гарантией и сервисом, при одинаковой комплектации</span></li>
+          <li><span>«Российские насосы не зависят от импорта»: без перечня узлов и документов о происхождении это не подтверждено</span></li>
+          <li><span>«Отечественное проще обслуживать»: это верно только при наличии запчастей, специалистов и документации</span></li>
+          <li><span>«При одинаковой цене характеристики одинаковы»: цена не является техническим параметром</span></li>
+        </ul>
+
+
+        <h2>Чек-лист запроса поставщику</h2>
+
+        <ol>
+          <li>Укажите задачу: жидкость, расход каждого канала, давление, режим работы.</li>
+          <li>Запросите паспорт и руководство на конкретную модель, а не на линейку.</li>
+          <li>Уточните, что входит в комплект: головка, трубки, питание, кабели.</li>
+          <li>Запросите список совместимых трубок и их доступность в России.</li>
+          <li>Для встраивания в установку — описание интерфейса и протокола связи.</li>
+          <li>Уточните, кто даёт гарантию, на что она не распространяется и где делают ремонт.</li>
+          <li>Запросите сроки поставки запчастей и стоимость сервиса.</li>
+          <li>Если важна локализация, запросите перечень узлов с указанием происхождения и подтверждающие документы.</li>
+        </ol>
+
+
+        <h2>Главное</h2>
+
+        <p>Сравнивать перистальтические насосы по странам некорректно: бренд, сборка и комплектующие могут относиться к разным странам, а характеристики и условия гарантии зависят от модели и поставщика. Опирайтесь на паспорта конкретных моделей, одинаковую комплектацию в коммерческих предложениях и расчёт совокупной стоимости. Пригодных для вывода независимых испытаний мы не нашли, поэтому критичные параметры лучше проверить на вашей установке.</p>
+
+        <p>Если вы выбираете насос и хотите обсудить задачу, <a href="/#contact">напишите нам</a>: поможем описать требования и составить список вопросов поставщику. Приборы Fluidica — в <a href="/devices/">каталоге</a>, раздел <a href="/pumps/peristaltic/">«Перистальтические насосы»</a>.</p>
+
+        <h2>Источники</h2>
+
+        <p>Статья опирается на каталоги, руководства и страницы производителей и продавцов; независимых сравнительных испытаний мы не нашли. Значения относятся к конкретным моделям, головкам и условиям, которые указаны в источниках, и не складываются в рейтинг. Цены не используются.</p>
+        <ol>
+          <li><a href="https://vpumpen.ru/catalog/shlangovye-peristalticheskie/peristalticheskie-nasosyi-serii-np" rel="noopener" target="_blank">ООО «Вулкан Пумпен Рус» — перистальтические насосы серии НП</a>. Страница производителя: промышленные шланговые насосы, диапазоны и давление.</li>
+          <li><a href="https://loip.ru/upload/iblock/6f0/cnem9nvqf3yn6bo7nmetzdyi2papgo58/Katalog-priborov-LOIP-2026.pdf" rel="noopener" target="_blank">LOIP — каталог приборов 2026</a>. Каталог производителя: характеристики LS-301 (стр. 31), сведения о производстве в контактах.</li>
+          <li><a href="https://tehno.com/product.phtml?uid=B00120038370" rel="noopener" target="_blank">НПО «Техноком» — LOIP LS-301</a>. Страница продавца: производитель не назван.</li>
+          <li><a href="https://baikallab.ru/catalog/more?more=2399&cat=72" rel="noopener" target="_blank">Байкаллаб — прецизионный перистальтический насос ВТ-101</a>. Страница продавца: производитель не указан, значения расхода на странице расходятся.</li>
+          <li><a href="https://analitika.millab.ru/catalog/laboratornoe-oborudovanie/peristalticheskie-nasosy/" rel="noopener" target="_blank">Millab Analytic — перистальтические насосы</a>. Каталог продавца: бренды LeadFluid и Heidolph, диапазоны расхода по моделям.</li>
+          <li><a href="https://www.moslabo.ru/production/prob/nasosylab/peristalticheskie/" rel="noopener" target="_blank">Moslabo — перистальтические лабораторные насосы</a>. Каталог продавца: бренды и страны производителей.</li>
+          <li><a href="https://tirit.org/nasos/perist.php" rel="noopener" target="_blank">Тирит — перистальтические насосы</a>. Страница поставщика: бренды CHONRY и Signal, гарантия 12 месяцев.</li>
+          <li><a href="https://d1twohzh90cvik.cloudfront.net/templates/assets/docs/2025-2026-Longer-Catalog.pdf" rel="noopener" target="_blank">Longer — каталог 2025–2026</a>. Каталог производителя: серии BT и WT, интерфейсы, заявленные сертификаты.</li>
+          <li><a href="https://manualmachine.com/watsonmarlow/120u/19888868-user-manual" rel="noopener" target="_blank">Watson-Marlow 120U — руководство пользователя</a>. Копия руководства на стороннем сайте: характеристики, интерфейсы, гарантия. Условия поставщика в России могут отличаться.</li>
+          <li><a href="https://heidolph-instruments.com/en/-sys-prefix-product/Peristaltic-Pumps/Hei-FLOW-Precision-06~p1008" rel="noopener" target="_blank">Heidolph — Hei-FLOW Ultimate 600</a>. Страница производителя: диапазон расхода, головки, интерфейсы.</li>
+          <li><a href="https://www.wolflabs.co.uk/documents/Heidolph_Pumps-peristaltic_Hei-Flow-Advanatage-01_523-52010-00.pdf" rel="noopener" target="_blank">Wolf Labs — лист данных Heidolph Hei-FLOW Precision 01</a>. Копия листа данных у дистрибьютора: диапазоны, интерфейсы, условия точности.</li>
+          <li><a href="https://www.michael-smith-engineers.co.uk/mse/uploads/resources/literature/Ismatec/Reglo-ICC-Product-Data-Sheet.pdf" rel="noopener" target="_blank">Ismatec Reglo ICC — технический лист</a>. Копия листа у дистрибьютора: каналы, расход, интерфейсы, площадка производства.</li>
+          <li><a href="https://tehnoomsk.ru/archives/14185" rel="noopener" target="_blank">Технопарк «Техносфера Россия» — российский перистальтический насос для крови</a>. Новость о медицинской разработке; серийное производство не налажено.</li>
+        </ol>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Подбираете перистальтический насос?</div>
+          <p>Опишите задачу: расход, жидкость, число каналов и режим работы — поможем подобрать конфигурацию.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/sravnenie-shpricevyh-nasosov-rossiya-kitay-es/">Сравнение шприцевых насосов: Россия, Китай, ЕС</a>
+          <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">Как выбрать перистальтические насосы: чек-лист параметров</a>
+          <a href="/blog/skolko-stoyat-peristalticheskie-nasosy-i-iz-chego-skladyvaetsya-cena/">Сколько стоят перистальтические насосы и из чего складывается цена</a>
+          <a href="/pumps/peristaltic/">Перистальтические насосы Fluidica</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+
+</body>
+</html>
