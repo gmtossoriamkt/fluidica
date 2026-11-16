@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Калибровка и валидация перистальтических насосов - Fluidica</title>
+<meta name="description" content="Как проверить фактический расход перистальтического насоса: калибровка взвешиванием, расчёт отклонения, протокол, периодичность и отличие от валидации.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/">
+<meta property="og:title" content="Калибровка и валидация перистальтических насосов - Fluidica">
+<meta property="og:description" content="Как проверить фактический расход перистальтического насоса: калибровка взвешиванием, расчёт отклонения, протокол, периодичность и отличие от валидации.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Калибровка и валидация перистальтических насосов: как проверить расход",
+      "description": "Как проверить фактический расход перистальтического насоса: калибровка взвешиванием, расчёт отклонения, протокол, периодичность и отличие от валидации.",
+      "datePublished": "2026-11-16",
+      "dateModified": "2026-11-16",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Калибровка и валидация",
+          "item": "https://fluidica.ru/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Калибровка и валидация</a>
+        </nav>
+        <span class="eyebrow">Инструкция</span>
+        <h1>Калибровка и валидация перистальтических насосов: как проверить расход</h1>
+        <p class="hero-sub">Чем калибровка отличается от регулировки, поверки и валидации, как измерить расход в рабочих условиях и что записать в протокол. Допуски и интервалы зависят от задачи и модели.</p>
+        <div class="article-meta">
+          <span>16 ноября 2026</span>
+          <span>~11 мин чтения</span>
+          <span>Перистальтические насосы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Перистальтический насос подаёт жидкость, сжимая гибкую трубку роликами. Значение, которое вы задали на приборе, и фактический расход в вашей системе — это не одно и то же: на подачу влияют трубка, её износ и сжатие, жидкость, температура и давление в линии. Поэтому в задачах, где важна воспроизводимость, расход проверяют измерением.</p>
+
+        <p>В статье разберём, чем отличаются калибровка, регулировка, поверка, валидация и квалификация, как проверить расход взвешиванием, как рассчитать отклонение и что записать в протокол. Общие шаги годятся для большинства моделей, а конкретные пункты меню, допуски и интервалы нужно брать из руководства вашего насоса.</p>
+
+        <p>Как читать материал: за основу взяты материалы производителей и поставщиков (WPI, Ossila, Darwin Microfluidics, Blue-White), текст Федерального закона № 102-ФЗ и описания квалификации оборудования. Это позиции производителей и общие принципы, а не результаты независимых испытаний. Мы говорим о лабораторных насосах, а не о медицинских. Числовых допусков и интервалов, пригодных для любого насоса, не существует, поэтому мы их не приводим.</p>
+
+
+        <h2>Зачем проверять расход перистальтического насоса</h2>
+
+        <p>Скорость вращения ротора задаёт, сколько раз ролики сожмут трубку, но объём, который уйдёт в линию за один оборот, зависит от трубки и условий. Ossila в материале о калибровке называет факторы, меняющие подачу: упругое восстановление трубки после сжатия, допуски по диаметру и расстоянию сжатия, температуру, вязкость жидкости, возраст трубки и противодавление.</p>
+
+        <p>Вывод простой: насос может работать исправно, а подача при этом отличаться от ожидаемой. Если вы дозируете реагент, питаете микрофлюидный чип или собираете стенд, это стоит проверить до эксперимента, а не после.</p>
+
+
+        <h2>Калибровка, регулировка, поверка, валидация и квалификация</h2>
+
+        <p>Эти слова часто используют как синонимы, но они обозначают разные действия.</p>
+
+        <table class="compare">
+          <thead><tr><th>Термин</th><th>Что означает</th><th>Чем не является</th></tr></thead>
+          <tbody>
+            <tr><td>Калибровка</td><td>Измерение фактической подачи при заданных значениях и установление соотношения между ними</td><td>Не настройка насоса на нужный расход</td></tr>
+            <tr><td>Регулировка</td><td>Изменение настроек или коэффициентов, чтобы уменьшить отклонение</td><td>Не измерение: сначала измеряют, потом при необходимости регулируют</td></tr>
+            <tr><td>Поверка</td><td>Подтверждение соответствия средства измерений метрологическим требованиям в порядке, который устанавливает закон</td><td>Не то же самое, что калибровка</td></tr>
+            <tr><td>Валидация</td><td>Подтверждение, что оборудование или процесс пригодны для конкретной задачи</td><td>Не свойство самого насоса «вообще»</td></tr>
+            <tr><td>Квалификация</td><td>Документированная проверка оборудования на этапах установки, функционирования и применения (IQ, OQ, PQ)</td><td>Не обязательна для любого лабораторного насоса</td></tr>
+          </tbody>
+        </table>
+
+        <p>В Федеральном законе № 102-ФЗ «Об обеспечении единства измерений» калибровка средств измерений определена как совокупность операций, выполняемых для определения действительных значений метрологических характеристик, а поверка — как совокупность операций для подтверждения соответствия средств измерений метрологическим требованиям. Средства измерений, не предназначенные для применения в сфере государственного регулирования обеспечения единства измерений, могут подвергаться калибровке в добровольном порядке.</p>
+
+        <p>Из этого следуют две оговорки. Во-первых, закон говорит о средствах измерений. Относится ли ваш насос к ним или это вспомогательное оборудование, зависит от области применения, и это лучше уточнить у метролога вашей организации. Во-вторых, проверка расхода насоса с помощью весов в большинстве лабораторных задач остаётся внутренней контрольной процедурой. Весы, секундомер и другие приборы, которыми вы измеряете, в свою очередь имеют собственный статус, и его нужно знать.</p>
+
+        <p>Если лаборатория, выполняющая калибровку, должна подтверждать компетентность, обычно ссылаются на ГОСТ ISO/IEC 17025-2019. Этот стандарт устанавливает общие требования к компетентности испытательных и калибровочных лабораторий и введён с 1 сентября 2019 года на основе ISO/IEC 17025:2017. Нужна ли вам такая лаборатория, определяют требования вашего заказчика, отрасли или системы качества, а не сам факт использования насоса.</p>
+
+
+        <h2>Когда проверять расход</h2>
+
+        <p>Универсального расписания нет, но есть ситуации, в которых результат прежних измерений перестаёт быть надёжным:</p>
+
+        <ul>
+          <li><span>насос новый или вы впервые подключаете его к своей системе</span></li>
+          <li><span>вы поменяли трубку, особенно на другой материал или другой размер</span></li>
+          <li><span>изменились жидкость, её вязкость или температура</span></li>
+          <li><span>изменилось давление в линии: добавили фильтр, клапан, длинную или тонкую трубку, чип</span></li>
+          <li><span>вы поменяли рабочий диапазон расхода</span></li>
+          <li><span>насос ремонтировали или заменяли головку</span></li>
+          <li><span>в работе появились признаки износа: расход падает, появились утечки или пульсации</span></li>
+        </ul>
+
+        <p>Некоторые производители прямо связывают калибровку с трубкой. WPI в инструкции к Peri-Star Pro пишет, что калибровка нужна для высокоточной подачи и после смены типа трубки. Там же указано, что калибровка доступна в режиме задания расхода, а в режиме скорости вращения (RPM) она не требуется: в этом режиме вы задаёте обороты, а не объём, и расход придётся измерять отдельно. Это описание одной модели, но логика понятна: по тому же материалу, расход зависит от внутреннего диаметра и материала трубки и от скорости ротора, поэтому после смены трубки данные нужно подтвердить измерением.</p>
+
+
+        <h2>Что именно проверяют</h2>
+
+        <p>Главный параметр — фактический расход при заданных условиях. Но одного числа обычно мало:</p>
+
+        <ul>
+          <li><span><strong>Отклонение</strong> фактического расхода от заданного</span></li>
+          <li><span><strong>Повторяемость</strong>: насколько результаты разных измерений в одной точке отличаются друг от друга</span></li>
+          <li><span><strong>Стабильность во времени</strong>: не уходит ли подача за время работы, например по мере прогрева или износа трубки</span></li>
+          <li><span><strong>Зависимость от скорости</strong>: проверка в нескольких точках диапазона, а не в одной</span></li>
+          <li><span><strong>Влияние противодавления</strong>: измерение при рабочем давлении в линии, а не при свободном сливе</span></li>
+        </ul>
+
+        <p>Ossila рекомендует строить зависимость подачи от скорости для всего рабочего диапазона и вычислять поправочный коэффициент для каждой скорости. Если вам нужен один режим, достаточно контрольных точек вокруг него. Если вы работаете в широком диапазоне, одной точки недостаточно.</p>
+
+        <p>Чего калибровка расхода не подтверждает: герметичность линии, отсутствие пузырьков, совместимость трубки с жидкостью и поведение системы при другой жидкости или другой трубке. Результат относится к той конфигурации, в которой вы его получили.</p>
+
+
+        <h2>Два способа измерить расход</h2>
+
+        <p><strong>Гравиметрический</strong> способ — взвешивание. Насос подаёт жидкость в ёмкость в течение известного времени, вы определяете её массу и пересчитываете в объём через плотность. Этот способ описывают WPI (для Peri-Star Pro: взвесить жидкость до и после пробного пуска) и Ossila (собрать жидкость и вычислить объём по массе). Метод прост и позволяет измерять небольшие расходы, если подобрать подходящие весы и время сбора.</p>
+
+        <p><strong>Объёмный</strong> способ — сбор жидкости в мерную ёмкость и деление объёма на время. Он нагляднее, но при малых расходах и коротком сборе точность отсчёта по шкале может не позволять сделать вывод об отклонении.</p>
+
+        <p>Расходомеры используют, когда нужен непрерывный контроль, но их нужно подбирать под жидкость и диапазон, а их показания тоже имеют погрешность. Для простой лабораторной проверки весы понятнее.</p>
+
+        <p>Какой бы способ вы ни выбрали, измеряйте в рабочих условиях: с той же трубкой, той же или близкой по вязкости жидкостью и тем же давлением в линии. Ossila советует брать калибровочную жидкость, вязкость которой близка к рабочей, а для неньютоновских жидкостей — проводить отдельную калибровку.</p>
+
+
+        <h2>Пошаговая проверка расхода</h2>
+
+        <p>Ниже общий порядок для гравиметрической проверки. Пункты меню, допустимые скорости и способ ввода поправки зависят от модели.</p>
+
+        <ol>
+          <li>Запишите конфигурацию: модель и серийный номер насоса, головку, трубку (материал, внутренний диаметр, толщину стенки), жидкость и температуру.</li>
+          <li>Установите ту трубку, с которой будете работать, по руководству вашей головки. Трубка, установленная с неверным сжатием, даёт неверный результат ещё до начала измерений.</li>
+          <li>Заполните линию жидкостью и удалите воздух из трубки и соединений.</li>
+          <li>Дайте новой трубке поработать до начала измерений. Ossila рекомендует такую обкатку, чтобы подача стала стабильной; её длительность у разных поставщиков и моделей различается.</li>
+          <li>Подключите нагрузку, которая будет в рабочей схеме, или имитируйте её противодавление, если оно существенно. Без этого результат относится к свободному сливу.</li>
+          <li>Выберите контрольные точки: один рабочий режим или несколько точек по диапазону, включая нижнюю и верхнюю границы, которые вы реально используете.</li>
+          <li>В каждой точке задайте расход, соберите жидкость в заранее взвешенную ёмкость за точно известное время и взвесьте её.</li>
+          <li>Повторите измерение в каждой точке несколько раз. Сколько повторов нужно, определяется требованиями вашей задачи и тем, какой разброс вы наблюдаете.</li>
+          <li>Рассчитайте средний расход, отклонение от заданного и разброс.</li>
+          <li>Если отклонение больше допустимого для вашей задачи, внесите поправку способом, который предусмотрен в руководстве насоса, и повторите измерения, чтобы убедиться, что поправка сработала.</li>
+          <li>Оформите протокол.</li>
+        </ol>
+
+
+        <h2>Расчёты</h2>
+
+        <p>Если известны масса собранной жидкости m, её плотность ρ и время сбора t, средний объёмный расход:</p>
+
+        <p>Q = m / (ρ × t)</p>
+
+        <p>При объёмном способе: Q = V / t.</p>
+
+        <p>Относительное отклонение от заданного значения Qзад:</p>
+
+        <p>δ = (Qизм − Qзад) / Qзад × 100%</p>
+
+        <p>Для серии из нескольких измерений рассчитывают среднее значение и стандартное отклонение, а повторяемость часто выражают относительным разбросом: s / среднее × 100%.</p>
+
+        <p>Пример (учебный, числа условные). Задано 5,00 мл/мин, вода, сбор 5 минут, масса собранной воды 24,6 г. Принимаем плотность воды около 0,998 г/мл:</p>
+
+        <p>Q = 24,6 / (0,998 × 5) ≈ 4,93 мл/мин</p>
+
+        <p>δ ≈ (4,93 − 5,00) / 5,00 × 100% ≈ −1,4%</p>
+
+        <p>Вывод «насос подаёт на 1,4% меньше» справедлив только для этой трубки, этой жидкости и этих условий. И его нужно сопоставить с неопределённостью самих измерений: весов, времени, плотности и испарения.</p>
+
+
+        <h2>Что искажает результат</h2>
+
+        <ul>
+          <li><span><strong>Весы.</strong> Чем меньше собранная масса, тем выше требования к разрешению и стабильности весов. При малых расходах и коротком сборе погрешность весов становится заметной</span></li>
+          <li><span><strong>Испарение.</strong> Из открытой ёмкости вода испаряется, и масса занижается; при малых расходах эффект заметнее. Эффект можно уменьшить, накрыв ёмкость</span></li>
+          <li><span><strong>Время.</strong> Старт и остановку нужно фиксировать точно: ошибка во времени переходит в расчёт расхода</span></li>
+          <li><span><strong>Температура и плотность.</strong> Плотность воды зависит от температуры. Ossila называет температуру одним из главных факторов, влияющих на подачу, так как она меняет и размеры трубки, и скорость её восстановления</span></li>
+          <li><span><strong>Вязкость.</strong> Ossila пишет, что вязкость замедляет восстановление трубки, а для неньютоновских жидкостей рекомендует отдельную калибровку</span></li>
+          <li><span><strong>Пузырьки и пульсации.</strong> Воздух в линии сжимается, а пульсации потока при малом времени сбора дают разброс</span></li>
+          <li><span><strong>Трубка и сжатие.</strong> Darwin Microfluidics называет трубку расходным элементом, который изнашивается от многократного сжатия; ранние признаки износа — снижение расхода и утечки. Недостаточное сжатие даёт пульсации и нестабильную подачу, а избыточное ускоряет усталость трубки</span></li>
+          <li><span><strong>Давление.</strong> По материалу Blue-White, при давлении выше рекомендованного для данной головки жидкость может уходить обратно под роликами; клапан в линии добавляет своё давление к давлению системы</span></li>
+          <li><span><strong>Состояние головки.</strong> По материалу Blue-White, повреждённая роликовая сборка создаёт дополнительное сопротивление и сокращает срок службы трубки; состояние головки проверяют до калибровки</span></li>
+        </ul>
+
+
+        <h2>Как часто проверять</h2>
+
+        <p>Универсального интервала нет, поэтому его определяют так:</p>
+
+        <ul>
+          <li><span>берут рекомендации производителя насоса и трубок</span></li>
+          <li><span>учитывают, насколько критична точность расхода в вашей задаче</span></li>
+          <li><span>смотрят на интенсивность работы и историю предыдущих проверок: если расход стабилен от проверки к проверке, интервал можно обосновать, а если уходит, его сокращают</span></li>
+          <li><span>повторяют проверку после событий из списка выше</span></li>
+        </ul>
+
+        <p>Различайте контрольное измерение и полную калибровку. Контрольное измерение — одна-две точки в рабочем режиме, чтобы убедиться, что подача не изменилась. Полную калибровку по всему диапазону делают при вводе в эксплуатацию, смене типа трубки или существенных изменениях условий. Какая процедура нужна в вашем случае, определяют требования процесса, производителя и системы качества организации.</p>
+
+        <p>Darwin Microfluidics рекомендует периодически осматривать трубку на трещины, изменение цвета и снижение расхода и вести учёт наработки; это помогает заменить трубку до того, как она повлияет на результат.</p>
+
+
+        <h2>Валидация и квалификация: IQ, OQ, PQ</h2>
+
+        <p>Валидация отвечает на вопрос, пригоден ли насос в вашей системе для вашей задачи. Калибровка — часть доказательств, но не вся валидация: нужно ещё показать, что процесс воспроизводится в реальных условиях.</p>
+
+        <p>В системах качества оборудование часто проходит квалификацию по этапам:</p>
+
+        <ul>
+          <li><span><strong>IQ (Installation Qualification)</strong> — документированная проверка того, что оборудование поставлено и установлено правильно: комплектность, подключения, версии программного обеспечения, записи о калибровке</span></li>
+          <li><span><strong>OQ (Operational Qualification)</strong> — подтверждение, что оборудование работает в пределах диапазонов, заявленных производителем: например, проверка двигателя, датчиков, сигнализации</span></li>
+          <li><span><strong>PQ (Performance Qualification)</strong> — подтверждение, что оборудование подходит для применения в реальных условиях и в рабочем диапазоне</span></li>
+        </ul>
+
+        <p>Эти процедуры описаны для оборудования, влияющего на качество продукции в регулируемых отраслях, и ссылаются на документы вроде руководства EU GMP (приложение 15). Для лабораторного насоса, не связанного с регулируемым производством, такой формальной процедуры может не требоваться; нужна ли она вам, определяют отрасль, заказчик и ваша система качества. Не утверждайте в документах «квалифицировано», если процедура не проводилась по утверждённому плану.</p>
+
+        <p>Если вы встраиваете насос в технологическую установку или стенд, валидацию относят ко всей конфигурации: насос, трубка, жидкость, линия и нагрузка.</p>
+
+
+        <h2>Протокол калибровки</h2>
+
+        <p>Что записывать, чтобы результат можно было воспроизвести и проверить:</p>
+
+        <table class="compare">
+          <thead><tr><th>Раздел</th><th>Что фиксировать</th></tr></thead>
+          <tbody>
+            <tr><td>Оборудование</td><td>Модель, производитель, серийный номер насоса</td></tr>
+            <tr><td>Конфигурация</td><td>Головка, трубка: материал, внутренний диаметр, толщина стенки, партия</td></tr>
+            <tr><td>Условия</td><td>Жидкость, температура, противодавление, длина и тип линии</td></tr>
+            <tr><td>Средства измерений</td><td>Весы, секундомер, термометр: тип, идентификатор, сведения о калибровке или поверке</td></tr>
+            <tr><td>Режимы</td><td>Заданные значения расхода или скорости</td></tr>
+            <tr><td>Результаты</td><td>Масса или объём, время, расход по каждому измерению</td></tr>
+            <tr><td>Расчёты</td><td>Среднее, отклонение, повторяемость, неопределённость</td></tr>
+            <tr><td>Заключение</td><td>Сравнение с критерием, который вы задали заранее</td></tr>
+            <tr><td>Исполнитель</td><td>Фамилия, дата, подпись</td></tr>
+          </tbody>
+        </table>
+
+        <p>Протокол и сертификат калибровки — не всегда один документ. Их состав и статус зависят от того, кто выполнял работу, и от требований вашей системы качества. Если вам нужен сертификат или свидетельство, запросите это у исполнителя заранее и уточните, на каком основании оно выдаётся.</p>
+
+
+        <h2>Когда обратиться за услугой</h2>
+
+        <p>Собственная проверка с весами подходит для контроля стенда и повседневной работы. К внешнему исполнителю стоит обращаться, если:</p>
+
+        <ul>
+          <li><span>у вас нет подходящих весов или нет времени отладить методику</span></li>
+          <li><span>нужен документ с вашим набором условий и измерений</span></li>
+          <li><span>насос встраивается в установку, где расход критичен</span></li>
+          <li><span>вы планируете повторять проверки по графику</span></li>
+        </ul>
+
+        <p>Перед заказом выясните у исполнителя: что именно он измеряет и в каких точках, с какой трубкой и жидкостью, какие средства измерений использует, что входит в результат и какой документ вы получите. Не принимайте обещания «сертификат» или «поверка» без указания, на каком основании они выдаются.</p>
+
+        <p>В <a href="/services/">каталоге</a> есть услуга «Калибровка расхода». Что именно в неё входит и какой документ вы получите, уточняйте у нас до заказа: калибровка расхода сама по себе не равна государственной поверке и не заменяет аккредитованную лабораторию, если она вам нужна.</p>
+
+
+        <h2>Чек-лист</h2>
+
+        <ul>
+          <li><span>записаны модель, серийный номер, головка, трубка и жидкость</span></li>
+          <li><span>трубка установлена по руководству, воздух из линии удалён</span></li>
+          <li><span>измерение проведено в рабочих условиях, включая противодавление</span></li>
+          <li><span>проверено несколько точек, если вы работаете в диапазоне</span></li>
+          <li><span>в каждой точке сделано несколько измерений</span></li>
+          <li><span>рассчитаны среднее, отклонение и разброс</span></li>
+          <li><span>учтены весы, время, температура, плотность и испарение</span></li>
+          <li><span>результат сравнён с критерием, заданным заранее</span></li>
+          <li><span>протокол сохранён, указана конфигурация, к которой он относится</span></li>
+          <li><span>определён повод и срок следующей проверки</span></li>
+        </ul>
+
+
+        <h2>Главное</h2>
+
+        <p>Калибровка перистальтического насоса — это измерение фактической подачи в вашей конфигурации, а не просто настройка прибора. Результат относится к конкретной трубке, жидкости, диапазону и давлению, поэтому после их изменения его нужно проверять заново. Регулировка, поверка, валидация и квалификация — отдельные процедуры, и ни одну из них не стоит подразумевать, если она не проводилась.</p>
+
+        <p>Если нужна помощь с проверкой расхода, <a href="/#contact">напишите нам</a>: подскажем, как организовать измерение и какие данные подготовить. Другие материалы по теме: <a href="/blog/tipichnye-oshibki-peristalticheskie-nasosy/">типичные ошибки</a>, <a href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">запуск перистальтического насоса</a> и <a href="/blog/kalibrovka-i-validaciya-shpricevyh-nasosov/">калибровка шприцевых насосов</a>.</p>
+
+        <h2>Источники</h2>
+
+        <p>Статья опирается на материалы производителей и поставщиков, текст закона и описания квалификации оборудования, а не на независимые испытания. Процедуры производителей относятся к конкретным моделям и не переносятся на другое оборудование. Числовые значения источников (допуски, время обкатки, интервалы) в статье не используются; пример расчёта учебный.</p>
+        <ol>
+          <li><a href="https://ossila.com/pages/calibration-of-peristaltic-pumps" rel="noopener" target="_blank">Ossila — Calibration of peristaltic pumps</a>. Материал поставщика оборудования: обкатка трубки, взвешивание, поправочные коэффициенты по скоростям, влияние температуры, вязкости и состояния трубки.</li>
+          <li><a href="https://wpiinc.com/blogs/all/how-to-calibrate-the-peri-star-pro-peristaltic-pump" rel="noopener" target="_blank">World Precision Instruments — How to calibrate the Peri-Star Pro peristaltic pump</a>. Инструкция производителя для одной модели: калибровка взвешиванием, режим задания расхода и режим RPM.</li>
+          <li><a href="https://blog.darwin-microfluidics.com/how-to-extend-peristaltic-pump-tubing-lifetime/" rel="noopener" target="_blank">Darwin Microfluidics — How to extend peristaltic pump tubing lifetime</a>. Материал поставщика: износ трубки, сжатие, ранние признаки износа, осмотр.</li>
+          <li><a href="https://www.blue-white.com/article/understanding-wear-factors-for-peristaltic-pump-tubes-and-other-components/" rel="noopener" target="_blank">Blue-White — Understanding wear factors for peristaltic pump tubes and other components</a>. Материал производителя: давление, недостаточное сжатие, состояние роликовой сборки.</li>
+          <li><a href="https://pravo.ppt.ru/fz/102-fz-67005" rel="noopener" target="_blank">Федеральный закон от 26.06.2008 № 102-ФЗ «Об обеспечении единства измерений»</a>. Определения калибровки и поверки, добровольная калибровка средств измерений вне сферы государственного регулирования (статьи 2 и 18). Текст закона на сайте-агрегаторе; актуальную редакцию сверяйте по официальному источнику.</li>
+          <li><a href="https://www.gostinfo.ru/catalog/Details/?id=6468537" rel="noopener" target="_blank">ГОСТ ISO/IEC 17025-2019</a>. Карточка стандарта: общие требования к компетентности испытательных и калибровочных лабораторий, действует с 1 сентября 2019 года.</li>
+          <li><a href="https://zamann-pharma.com/2024/04/22/iq-oq-pq-essential-steps-for-equipment-qualification/" rel="noopener" target="_blank">Zamann Pharma — IQ, OQ, PQ: essential steps for equipment qualification</a>. Обзор консалтинговой компании: содержание этапов квалификации и связь с регулируемыми отраслями. Позиция автора, не нормативный документ.</li>
+        </ol>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Нужна проверка расхода насоса?</div>
+          <p>Опишите насос, трубку, жидкость и нужный диапазон расхода — подскажем, как организовать проверку.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/kalibrovka-i-validaciya-shpricevyh-nasosov/">Калибровка и валидация шприцевых насосов</a>
+          <a href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">Пошаговый запуск перистальтического насоса</a>
+          <a href="/blog/tipichnye-oshibki-peristalticheskie-nasosy/">Типичные ошибки перистальтических насосов</a>
+          <a href="/pumps/peristaltic/">Перистальтические насосы Fluidica</a>
+          <a href="/services/">Услуги: пусконаладка, калибровка, обучение</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+<script src="/analytics.js" defer></script>
+
+</body>
+</html>
