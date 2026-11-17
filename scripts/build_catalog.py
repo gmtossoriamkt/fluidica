@@ -5,10 +5,10 @@
    - если товары раздела определены по данным (правило name_contains), плейсхолдер
      «Товары скоро появятся» заменяется сеткой карточек в формате /devices/
      (.product-grid / .product-card), правится счётчик в .section-desc,
-     описание страницы доводится до 110-160 символов;
+     описание страницы берётся из data/seo.json (шаблон с {goods} - число товаров), 110-160 символов;
    - если определить нельзя (правила нет), плейсхолдер остаётся, карточки не выдумываются;
-   - в обоих случаях добавляется JSON-LD: BreadcrumbList (по видимым хлебным крошкам)
-     и, если есть товары, ItemList.
+   - в обоих случаях добавляется JSON-LD: CollectionPage, BreadcrumbList (по видимым
+     хлебным крошкам) и, если есть товары, ItemList.
 2. Карточки товаров (product/<slug>/): блок «Смотрите также» - до 3 других товаров той же
    категории (category_slug), сначала из того же раздела насосов, дальше по кругу в порядке
    data/products.json. Блок вставляется перед .final-cta.
@@ -41,7 +41,6 @@ RE_PLACEHOLDER_TEXT = re.compile(r'<p class="placeholder-text">([^<]*)</p>')
 RE_SECTION_DESC = re.compile(r'(<section class="section" id="products">[\s\S]*?<p class="section-desc">)([^<]*)(</p>)')
 RE_RELATED = re.compile(r'^  <section class="section" id="related">[\s\S]*?^  </section>\r?\n\r?\n', re.M)
 RE_FINAL_CTA = re.compile(r'^  <section class="final-cta">', re.M)
-RE_SENTENCES = re.compile(r"(?<=[.!?])\s+(?=[А-ЯЁA-Z])")
 
 
 def read_text(path):
@@ -142,7 +141,7 @@ def css_chunks(root):
     return grid.group(0), media.group(1)
 
 
-def process_section_page(root, section, products, base_desc):
+def process_section_page(root, section, products, desc_template):
     path = root / section["path"] / "index.html"
     text = read_text(path)
     eol = "\r\n" if "\r\n" in text else "\n"
@@ -151,7 +150,7 @@ def process_section_page(root, section, products, base_desc):
     crumbs = crumbs_of(text)
     h1 = html.unescape(RE_H1_TEXT.search(text).group(1))
     new = text
-    graph = [breadcrumb_ld(crumbs, url)]
+    graph = [None, breadcrumb_ld(crumbs, url)]  # [0] - CollectionPage, заполняется ниже, когда известно описание
 
     if items:
         if not RE_GRID_BLOCK.search(new):
@@ -169,13 +168,7 @@ def process_section_page(root, section, products, base_desc):
             if new.count(end_anchor) != 1:
                 raise ValueError("не найден .grid-note a в стилях")
             new = new.replace(end_anchor, end_anchor + media_css.replace("\n", eol), 1)
-        prices = sorted(p["price"] for p in items)
-        if len(items) == 1:
-            tail = " В каталоге 1 товар — %s." % price_text(prices[0])
-        else:
-            tail = " В каталоге %d %s — от %s до %s." % (
-                len(items), plural_goods(len(items)), price_text(prices[0]), price_text(prices[-1]))
-        description = base_desc + tail
+        description = desc_template.replace("{goods}", "%d %s" % (len(items), plural_goods(len(items))))
         graph.append({
             "@type": "ItemList", "name": h1, "numberOfItems": len(items),
             "itemListElement": [
@@ -184,12 +177,12 @@ def process_section_page(root, section, products, base_desc):
                 for i, p in enumerate(items)],
         })
     else:
-        # товары не определены: плейсхолдер остаётся, в описание берём его же второе предложение
-        ph = RE_PLACEHOLDER_TEXT.search(new)
-        if not ph:
+        # товары не определены: плейсхолдер остаётся, число товаров в описание не подставляется
+        if not RE_PLACEHOLDER_TEXT.search(new):
             raise ValueError("нет ни товаров, ни плейсхолдера")
-        sentences = [s for s in RE_SENTENCES.split(html.unescape(ph.group(1))) if s]
-        description = "%s %s" % (base_desc, sentences[-1])
+        if "{goods}" in desc_template:
+            raise ValueError("в описании есть {goods}, а товаров в разделе нет")
+        description = desc_template
 
     if not DESC_MIN <= len(description) <= DESC_MAX:
         raise ValueError("описание %d символов, нужно %d-%d" % (len(description), DESC_MIN, DESC_MAX))
@@ -197,6 +190,7 @@ def process_section_page(root, section, products, base_desc):
         if len(rx.findall(new)) != 1:
             raise ValueError("тегов описания должно быть ровно 1")
         new = rx.sub(lambda m: m.group(1) + attr(description) + m.group(3), new)
+    graph[0] = {"@type": "CollectionPage", "name": h1, "url": url, "description": description, "inLanguage": "ru"}
     new = put_ld(new, ld_script(graph, eol), eol)
     return path, text, new, "%d карточек, описание %d симв." % (len(items), len(description)) if items \
         else "плейсхолдер оставлен, описание %d симв." % len(description)
@@ -256,13 +250,12 @@ def main(argv=None):
     root = Path(args.root).resolve()
     products = json.loads(read_text(root / "data" / "products.json"))
     sections = json.loads(read_text(root / "data" / "catalog_sections.json"))
-    sitemap = {e["url"].strip("/"): e for e in json.loads(read_text(root / "data" / "sitemap.json"))}
+    seo = {e["path"]: e for e in json.loads(read_text(root / "data" / "seo.json"))}
 
     jobs, errors = [], []
     for sec in sections:
-        base = sitemap[sec["path"]]["meta"]
         try:
-            jobs.append(process_section_page(root, sec, products, base))
+            jobs.append(process_section_page(root, sec, products, seo[sec["path"]]["description"]))
         except ValueError as e:
             errors.append((sec["path"], str(e)))
     for p in products:

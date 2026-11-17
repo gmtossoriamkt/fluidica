@@ -1,0 +1,92 @@
+[
+  {
+    "path": "chips",
+    "kind": "collection",
+    "category_slug": "chips",
+    "description": "Микрофлюидные чипы Fluidica: {goods} — чипы из PDMS, стекла и кварца. Для каждой позиции на карточке указана цена."
+  },
+  {
+    "path": "kits",
+    "kind": "collection",
+    "category_slug": "kits",
+    "description": "Наборы Fluidica для самостоятельной сборки: {goods} — киты насосов, микроскопа и электроники, апгрейд до 3 каналов и ремкомплект."
+  },
+  {
+    "path": "stations",
+    "kind": "collection",
+    "category_slug": "stations",
+    "description": "Микрофлюидные станции Fluidica: {goods} — капельной микрофлюидики, перфузии клеток и микросинтеза, лабораторный комплекс и полевой кейс."
+  },
+  {
+    "path": "consumables",
+    "kind": "collection",
+    "category_slug": "consumables",
+    "description": "Расходные материалы Fluidica для микрофлюидики: {goods} — трубки, фитинги Luer, иглы, шприцы, фильтры и наборы для литья ПДМС."
+  },
+  {
+    "path": "services",
+    "kind": "collection",
+    "category_slug": "services",
+    "description": "Услуги Fluidica: {goods} — пусконаладка, калибровка расхода, обучение, разработка конфигурации, сервисный контракт и модернизация насоса."
+  },
+  {
+    "path": "spare-parts",
+    "kind": "collection",
+    "category_slug": "spare-parts",
+    "description": "Запчасти и ЗИП для приборов Fluidica: {goods} — каретка и механизм подачи, блок электроники в сборе и предметный столик микроскопа."
+  },
+  {
+    "path": "chip-fabrication",
+    "kind": "collection",
+    "category_slug": "chip-fabrication",
+    "description": "Раздел каталога Fluidica об оборудовании для изготовления микрофлюидных чипов: карточки товаров готовятся. Опишите задачу — подберём конфигурацию."
+  },
+  {
+    "path": "devices",
+    "kind": "collection",
+    "category_slug": "devices",
+    "description": null
+  },
+  {
+    "path": "microscopes",
+    "kind": "collection",
+    "category_slug": "microscopes",
+    "description": null
+  },
+  {
+    "path": "new-open-source",
+    "kind": "collection",
+    "category_slug": "new-open-source",
+    "description": null
+  },
+  {
+    "path": "pumps/peristaltic",
+    "kind": "catalog_section",
+    "description": "Перистальтические насосы Fluidica: {goods} — 1-канальный и многоканальный. Для каждой модели на карточке указана цена."
+  },
+  {
+    "path": "pumps/syringe",
+    "kind": "catalog_section",
+    "description": "Шприцевые насосы Fluidica на заказ: раздел каталога, карточки товаров готовятся. Расскажите о задаче — подберём конфигурацию вручную."
+  },
+  {
+    "path": "privacy",
+    "kind": "webpage",
+    "description": "Политика конфиденциальности сайта Fluidica: раздел в разработке; есть сведения об использовании Яндекс.Метрики и «Вебвизора»."
+  },
+  {
+    "path": "terms",
+    "kind": "webpage",
+    "description": "Пользовательское соглашение сайта Fluidica: раздел в разработке, актуальная версия будет опубликована до запуска формы приёма заявок."
+  },
+  {
+    "path": "oferta",
+    "kind": "webpage",
+    "description": "Публичная оферта Fluidica: раздел в разработке, актуальная версия будет опубликована до запуска формы приёма заявок и обработки данных."
+  },
+  {
+    "path": "requisites",
+    "kind": "webpage",
+    "description": "Реквизиты владельца сайта Fluidica: ООО «ГМТ», ОГРН 1247700287834, ИНН 9710131540, юридический адрес в Москве и email для связи."
+  }
+]
