@@ -20,5 +20,121 @@
     "catalog_label": "Каталог",
     "catalog_title": "Насосы Fluidica",
     "catalog_links": ["/devices/", "/pumps/syringe/", "/pumps/peristaltic/"]
+  },
+  {
+    "path": "solutions/mikroflyuidika",
+    "sitemap_url": "/solutions/mikroflyuidika",
+    "title": "Оборудование для микрофлюидики: подборка",
+    "eyebrow": "Подборка",
+    "intro": "Подборка для лабораторий, работающих с микрофлюидикой: материалы блога о насосах и разделы каталога с приборами и расходными материалами.",
+    "articles_label": "Материалы блога",
+    "articles_title": "Статьи по теме",
+    "articles_desc": "Выбор, запуск и проверка оборудования: материалы блога.",
+    "articles": [
+      "shpricevye-nasosy-dlya-novichka-s-chego-nachat",
+      "chto-takoe-shpricevye-nasosy",
+      "chto-takoe-peristalticheskie-nasosy",
+      "kak-vybrat-shpricevye-nasosy-cheklist-parametrov",
+      "kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov"
+    ],
+    "catalog_label": "Каталог",
+    "catalog_title": "Приборы и расходные материалы Fluidica",
+    "catalog_links": ["/stations/", "/chips/", "/consumables/", "/pumps/syringe/", "/pumps/peristaltic/"]
+  },
+  {
+    "path": "solutions/single-cell-i-drop-seq",
+    "sitemap_url": "/solutions/single-cell-i-drop-seq",
+    "title": "Оборудование для single-cell и drop-seq: подборка",
+    "eyebrow": "Подборка",
+    "intro": "Материалы блога о роли насосов в single-cell и капельной микрофлюидике и разделы каталога Fluidica с приборами и расходными материалами.",
+    "articles_label": "Материалы блога",
+    "articles_title": "Статьи по теме",
+    "articles_desc": "Выбор, запуск и проверка оборудования: материалы блога.",
+    "articles": [
+      "shpricevye-nasosy-single-cell-kapelnaya-mikroflyuidika",
+      "peristalticheskie-nasosy-single-cell-kapelnaya-mikroflyuidika",
+      "kak-vybrat-shpricevye-nasosy-cheklist-parametrov",
+      "kalibrovka-i-validaciya-shpricevyh-nasosov"
+    ],
+    "catalog_label": "Каталог",
+    "catalog_title": "Приборы и расходные материалы Fluidica",
+    "catalog_links": ["/stations/", "/pumps/syringe/", "/pumps/peristaltic/", "/chips/", "/consumables/"]
+  },
+  {
+    "path": "solutions/generatsiya-kapel",
+    "sitemap_url": "/solutions/generatsiya-kapel",
+    "title": "Оборудование для генерации капель: подборка",
+    "eyebrow": "Подборка",
+    "intro": "Подборка по генерации капель: статьи блога о насосах для капельной микрофлюидики и разделы каталога с приборами и расходными материалами.",
+    "articles_label": "Материалы блога",
+    "articles_title": "Статьи по теме",
+    "articles_desc": "Выбор, запуск и проверка оборудования: материалы блога.",
+    "articles": [
+      "shpricevye-nasosy-single-cell-kapelnaya-mikroflyuidika",
+      "peristalticheskie-nasosy-single-cell-kapelnaya-mikroflyuidika",
+      "tipichnye-oshibki-shpricevye-nasosy",
+      "kalibrovka-i-validaciya-shpricevyh-nasosov"
+    ],
+    "catalog_label": "Каталог",
+    "catalog_title": "Приборы и расходные материалы Fluidica",
+    "catalog_links": ["/stations/", "/chips/", "/consumables/", "/pumps/syringe/"]
+  },
+  {
+    "path": "solutions/perfuziya-kletok",
+    "sitemap_url": "/solutions/perfuziya-kletok",
+    "title": "Оборудование для перфузии клеток: подборка",
+    "eyebrow": "Подборка",
+    "intro": "Подборка по перфузии клеток: статьи блога о перистальтических насосах и разделы каталога с приборами и расходными материалами.",
+    "articles_label": "Материалы блога",
+    "articles_title": "Статьи по теме",
+    "articles_desc": "Выбор, запуск и проверка оборудования: материалы блога.",
+    "articles": [
+      "chto-takoe-peristalticheskie-nasosy",
+      "tipy-golovok-peristalticheskih-nasosov",
+      "zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya",
+      "kalibrovka-i-validaciya-peristalticheskih-nasosov",
+      "tipichnye-oshibki-peristalticheskie-nasosy"
+    ],
+    "catalog_label": "Каталог",
+    "catalog_title": "Приборы и расходные материалы Fluidica",
+    "catalog_links": ["/stations/", "/pumps/peristaltic/", "/consumables/"]
+  },
+  {
+    "path": "solutions/organicheskiy-mikrosintez",
+    "sitemap_url": "/solutions/organicheskiy-mikrosintez",
+    "title": "Оборудование для органического микросинтеза",
+    "eyebrow": "Подборка",
+    "intro": "Подборка по органическому микросинтезу: статьи блога о шприцевых насосах и разделы каталога с приборами и расходными материалами.",
+    "articles_label": "Материалы блога",
+    "articles_title": "Статьи по теме",
+    "articles_desc": "Выбор, запуск и проверка оборудования: материалы блога.",
+    "articles": [
+      "kak-vybrat-shpricevye-nasosy-cheklist-parametrov",
+      "tipichnye-oshibki-shpricevye-nasosy",
+      "kalibrovka-i-validaciya-shpricevyh-nasosov",
+      "avtomatizaciya-shpricevyh-nasosov-integraciya-v-stend"
+    ],
+    "catalog_label": "Каталог",
+    "catalog_title": "Приборы и расходные материалы Fluidica",
+    "catalog_links": ["/stations/", "/pumps/syringe/", "/consumables/"]
+  },
+  {
+    "path": "solutions/obuchenie-i-praktikumy",
+    "sitemap_url": "/solutions/obuchenie-i-praktikumy",
+    "title": "Оборудование для обучения и практикумов",
+    "eyebrow": "Подборка",
+    "intro": "Подборка для обучения и практикумов: статьи блога о запуске и выборе насосов и разделы каталога с наборами, приборами и услугами обучения.",
+    "articles_label": "Материалы блога",
+    "articles_title": "Статьи по теме",
+    "articles_desc": "Выбор, запуск и проверка оборудования: материалы блога.",
+    "articles": [
+      "shpricevye-nasosy-dlya-novichka-s-chego-nachat",
+      "zapusk-shpricevogo-nasosa-poshagovaya-instrukciya",
+      "zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya",
+      "chto-takoe-shpricevye-nasosy"
+    ],
+    "catalog_label": "Каталог",
+    "catalog_title": "Приборы и расходные материалы Fluidica",
+    "catalog_links": ["/kits/", "/microscopes/", "/pumps/syringe/", "/services/"]
   }
 ]

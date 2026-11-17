@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Собирает навигационные страницы из data/pages.json и data/sitemap.json.
 
-Сейчас - /import-substitution/: подборка статей блога и ссылки на каталог.
+Страницы-подборки (/import-substitution/, /solutions/<slug>/): статьи блога и ссылки на каталог.
 Ничего не придумывается. Источники:
-  - data/sitemap.json: H1 и meta страницы (meta-заглушка «...: подробная информация.»
-    заменяется на вводный текст страницы, он укладывается в 110-160 символов);
+  - data/sitemap.json: H1 и meta страницы (meta-заглушки «...: подробная информация.» и
+    «Готовое решение под ...» заменяются на вводный текст страницы, он укладывается в 110-160 символов);
   - data/pages.json: вводный абзац, подписи блоков, список статей и ссылок каталога;
   - blog/index.html: карточки статей копируются как есть (дата, чтение, тег, заголовок, описание);
   - заголовки страниц каталога (<h1> у /devices/, /pumps/... ) - подписи ссылок каталога.
@@ -27,6 +27,7 @@ TITLE_MAX = 65
 TITLE_SUFFIX = " - Fluidica"
 TEMPLATE = "blog/index.html"
 TEMPLATE_META_TAIL = "подробная информация."
+TEMPLATE_META_HEAD = "Готовое решение под "  # заглушка страниц /solutions/...
 
 
 def read_text(path):
@@ -49,6 +50,9 @@ def blog_cards(template):
     """slug -> (HTML карточки как в blog/index.html, заголовок)."""
     cards = {}
     for m in re.finditer(r'^        <a href="/blog/([^"/]+)/" class="blog-card">[\s\S]*?^        </a>\n', template, re.M):
+        if m.group(0).count('class="blog-card"') != 1:
+            # карточка записана не по формату (например, в одну строку) и "съела" соседнюю
+            raise ValueError("карточка %s в %s разобрана неверно: проверьте переносы строк" % (m.group(1), TEMPLATE))
         title = re.search(r'<h3 class="blog-card-title">([^<]*)</h3>', m.group(0)).group(1)
         cards[m.group(1)] = (m.group(0), html.unescape(title))
     return cards
@@ -76,7 +80,7 @@ def build_page(root, cfg, sitemap, template, cards):
     intro = cfg["intro"]
 
     meta = entry["meta"]
-    description = intro if meta.endswith(TEMPLATE_META_TAIL) else meta
+    description = intro if meta.endswith(TEMPLATE_META_TAIL) or meta.startswith(TEMPLATE_META_HEAD) else meta
     if not DESC_MIN <= len(description) <= DESC_MAX:
         raise ValueError("описание %d символов, нужно %d-%d" % (len(description), DESC_MIN, DESC_MAX))
     title = cfg["title"] + TITLE_SUFFIX
