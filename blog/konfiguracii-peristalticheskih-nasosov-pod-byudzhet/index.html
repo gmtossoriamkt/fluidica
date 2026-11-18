@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Конфигурации перистальтических насосов под бюджет - Fluidica</title>
+<meta name="description" content="Как подобрать конфигурацию перистальтического насоса под задачу и бюджет: четыре сценария, на чём можно сэкономить и что уточнить у поставщика.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/konfiguracii-peristalticheskih-nasosov-pod-byudzhet/">
+<meta property="og:title" content="Конфигурации перистальтических насосов под бюджет - Fluidica">
+<meta property="og:description" content="Как подобрать конфигурацию перистальтического насоса под задачу и бюджет: четыре сценария, на чём можно сэкономить и что уточнить у поставщика.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/konfiguracii-peristalticheskih-nasosov-pod-byudzhet/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.css">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Конфигурации перистальтических насосов под разные бюджеты: четыре сценария",
+      "description": "Как подобрать конфигурацию перистальтического насоса под задачу и бюджет: четыре сценария, на чём можно сэкономить и что уточнить у поставщика.",
+      "datePublished": "2026-11-18",
+      "dateModified": "2026-11-18",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/konfiguracii-peristalticheskih-nasosov-pod-byudzhet/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Конфигурации под бюджет",
+          "item": "https://fluidica.ru/blog/konfiguracii-peristalticheskih-nasosov-pod-byudzhet/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Конфигурации под бюджет</a>
+        </nav>
+        <span class="eyebrow">Подборка</span>
+        <h1>Конфигурации перистальтических насосов под разные бюджеты: четыре сценария</h1>
+        <p class="hero-sub">Четыре сценария вместо рейтинга: что входит в конфигурацию, на чём можно сэкономить, а на чём нельзя, и что запросить у поставщика до покупки.</p>
+        <div class="article-meta">
+          <span>18 ноября 2026</span>
+          <span>~9 мин чтения</span>
+          <span>Перистальтические насосы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Запрос «ТОП перистальтических насосов по бюджету» подразумевает рейтинг «дешёвый — средний — дорогой». Но у перистальтических насосов цена складывается из привода, головки, трубки, числа каналов, управления и комплектации, и более дорогая конфигурация не всегда лучше для вашей задачи. Поэтому вместо рейтинга моделей мы разберём четыре типовых сценария: что в каждом важно, на чём можно сэкономить и на чём лучше не экономить.</p>
+
+        <p>В статье нет цен, названий моделей и диапазонов расхода: для честного сравнения нужны паспорта и коммерческие предложения, а открытые данные по рынку неполны и быстро устаревают. Как складывается цена и что уточнить у поставщика, мы разбирали в статье <a href="/blog/skolko-stoyat-peristalticheskie-nasosy-i-iz-chego-skladyvaetsya-cena/">«Сколько стоят перистальтические насосы»</a>, а список параметров выбора есть в <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">чек-листе</a>.</p>
+
+        <p>Как читать материал: за основу взяты материалы поставщиков и дистрибьюторов (Microlit, Axflow, John Morris Group, Cole-Parmer, WPI). Это позиции продавцов оборудования, а не независимые испытания. Конкретные функции приводов относятся к тем линейкам, где их описали, и не переносятся на другое оборудование. Статья о лабораторных насосах, а не о медицинских.</p>
+
+
+        <h2>Что входит в конфигурацию</h2>
+
+        <p>Конфигурация перистальтического насоса состоит из нескольких решений, и порядок выбора важен. John Morris Group (дистрибьютор Masterflex) пишет, что часто проще сначала выбрать размер и материал трубки, затем подобрать под неё насосную головку, а потом привод. Так вы не купите привод, под который потом не подберёте трубку нужного размера и стойкости.</p>
+
+        <ul>
+          <li><span><strong>Трубка.</strong> Её размер задаёт расход, а материал определяет совместимость с жидкостью. Microlit называет трубку «сердцем» системы и советует всегда проверять химическую совместимость и условия работы до окончательного выбора</span></li>
+          <li><span><strong>Головка.</strong> От неё зависят совместимые трубки, сглаживание потока и износ трубки (по материалам Microlit, число роликов влияет на плавность потока, допустимое давление и износ). Подробнее о типах головок в статье <a href="/blog/tipy-golovok-peristalticheskih-nasosov/">«Типы головок перистальтических насосов»</a></span></li>
+          <li><span><strong>Привод и управление.</strong> От ручной регулировки скорости до цифрового управления, программ, внешнего управления и интерфейсов связи</span></li>
+          <li><span><strong>Каналы.</strong> Один или несколько, на общем приводе или с независимым управлением</span></li>
+          <li><span><strong>Опции и комплектация.</strong> Блок питания, арматура, ПО, запасные трубки: что входит в цену, а что продаётся отдельно</span></li>
+        </ul>
+
+        <p>Не меняется одно правило: параметры нужно подбирать под вашу жидкость, расход, давление и режим работы, а не наоборот.</p>
+
+
+        <h2>Сценарий 1. Периодическая подача в лаборатории</h2>
+
+        <p><strong>Задача:</strong> перенос среды, добавление реагента, подача буфера, откачка жидкости без жёстких требований к воспроизводимости объёма.</p>
+
+        <p>Microlit пишет, что ручное управление подходит для базовых задач с невысокими требованиями к точности. Если ваша задача именно такая, переплачивать за программируемый привод нет смысла.</p>
+
+        <p><strong>На чём можно сэкономить:</strong> на программах, интерфейсах связи, дисплее с большим числом функций.</p>
+
+        <p><strong>На чём не экономить:</strong> на совместимости трубки с жидкостью и на соответствии трубки и головки. Выберите диапазон расхода с запасом на будущие задачи: Microlit рекомендует учитывать не только текущие нужды.</p>
+
+        <p><strong>Что проверить:</strong> фактический расход измерением, если от него что-то зависит (метод в статье <a href="/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/">о калибровке</a>).</p>
+
+
+        <h2>Сценарий 2. Регулярное дозирование</h2>
+
+        <p><strong>Задача:</strong> повторяющаяся подача заданных объёмов: приготовление смесей, питание реакторов, подача по расписанию.</p>
+
+        <p>Здесь важны цифровое управление и возможность запрограммировать режим. По Microlit, цифровое управление даёт лучшую точность и повторяемость, а программируемые модели позволяют задавать циклы дозирования и интервалы. Cole-Parmer в рекламной статье описывает приводы, которые хранят отдельную калибровку для каждого размера трубки, и режим, при котором мотор после дозы кратко реверсирует, чтобы избежать подтекания. Это функции конкретных линеек, их наличие нужно проверять в вашей модели.</p>
+
+        <p>Для тонкого дозирования John Morris Group советует начинать с систем с трубкой малого диаметра.</p>
+
+        <p><strong>На чём можно сэкономить:</strong> на числе каналов, если вам достаточно одного, и на расширенных интерфейсах, если вы не автоматизируете установку.</p>
+
+        <p><strong>На чём не экономить:</strong> на возможности калибровки в ваших условиях и на трубке. После смены типа трубки калибровку нужно повторять: WPI в инструкции к Peri-Star Pro связывает калибровку именно со сменой типа трубки.</p>
+
+        <p><strong>Чего не обещать:</strong> точности как «заводской характеристики». Точность, повторяемость и стабильность подачи зависят от трубки, давления, жидкости и режима, их нужно проверять измерением.</p>
+
+
+        <h2>Сценарий 3. Несколько каналов</h2>
+
+        <p><strong>Задача:</strong> одновременная подача по нескольким линиям: многостадийные протоколы, параллельные эксперименты, питание нескольких чипов или реакторов.</p>
+
+        <p>Microlit пишет, что многоканальные насосы позволяют качать одновременно по нескольким трубкам и полезны для высокой производительности или многоэтапных протоколов, а John Morris Group отмечает, что многоканальные головки повышают производительность при нескольких линиях от одного привода.</p>
+
+        <p>Но «многоканальный» не означает «выгоднее». Нужно выяснить:</p>
+
+        <ul>
+          <li><span>общий ли привод у каналов (тогда скорость у них одинакова, а различия в расходе определяются трубками) или каналы управляются независимо</span></li>
+          <li><span>как выравнивается расход между каналами и кто это проверяет</span></li>
+          <li><span>что выгоднее для вашей задачи: один многоканальный насос или несколько одноканальных (на это нет универсального ответа, он зависит от модели и условий)</span></li>
+        </ul>
+
+        <p><strong>На чём можно сэкономить:</strong> на независимом управлении, если вам нужен одинаковый расход во всех линиях.</p>
+
+        <p><strong>На чём не экономить:</strong> на проверке расхода в каждом канале отдельно и на запасных трубках.</p>
+
+
+        <h2>Сценарий 4. Автоматизированная установка и длительная работа</h2>
+
+        <p><strong>Задача:</strong> насос встроен в стенд или установку и работает по программе или команде внешней системы, иногда подолгу.</p>
+
+        <p>Microlit перечисляет для таких систем цифровые интерфейсы, интеграцию с внешним управлением и удалённый мониторинг, а у более продвинутых моделей называет связь по USB, RS-485 и Wi-Fi. Какие именно интерфейсы нужны, определяет ваша система управления: до покупки выясните, какой протокол поддерживает насос и есть ли документация для интеграции. Подробнее об автоматизации мы писали для шприцевых насосов в статье <a href="/blog/avtomatizaciya-shpricevyh-nasosov-integraciya-v-stend/">про интеграцию в стенд</a>.</p>
+
+        <p>Для длительной работы John Morris Group советует следить за ресурсом трубки, доступом для обслуживания и стабильностью привода. Axflow, дистрибьютор промышленных насосов, учитывает, сколько часов в день работает насос, и советует брать насос с запасом, чтобы он работал медленнее: это связывают с большим сроком службы трубки. Для ровного потока в этом материале применяют демпферы пульсаций. Это промышленные ориентиры, к лабораторным установкам их переносят с осторожностью.</p>
+
+        <p><strong>На чём можно сэкономить:</strong> на дополнительных функциях управления, если вашей системе нужен только сигнал пуска и стоп.</p>
+
+        <p><strong>На чём не экономить:</strong> на документации по интерфейсу, быстрой замене трубки, запасе трубок и плане калибровки.</p>
+
+
+        <h2>Сводка по сценариям</h2>
+
+        <table class="compare">
+          <thead><tr><th>Сценарий</th><th>Что важнее всего</th><th>Можно упростить</th><th>Не экономить</th></tr></thead>
+          <tbody>
+            <tr><td>Периодическая подача</td><td>Совместимость трубки, запас по расходу</td><td>Программы и интерфейсы</td><td>Трубка и головка, проверка расхода</td></tr>
+            <tr><td>Регулярное дозирование</td><td>Повторяемость, программирование, калибровка</td><td>Число каналов, интерфейсы</td><td>Калибровка, трубка, цифровое управление</td></tr>
+            <tr><td>Несколько каналов</td><td>Одинаковость и независимость каналов</td><td>Независимое управление, если оно не нужно</td><td>Проверка каждого канала, запас трубок</td></tr>
+            <tr><td>Автоматизация и длительная работа</td><td>Интерфейсы, ресурс трубки, обслуживание</td><td>Функции управления сверх нужных</td><td>Документация, быстрая замена трубки, план калибровки</td></tr>
+          </tbody>
+        </table>
+
+        <p>Таблица описывает логику выбора, а не конкретные модели.</p>
+
+
+        <h2>На чём экономить опасно</h2>
+
+        <ul>
+          <li><span><strong>Трубка выбирается только по цене.</strong> Она определяет совместимость с жидкостью, расход и срок службы. Подбор аналога мы разбирали в статье <a href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">об обслуживании и ремонте</a></span></li>
+          <li><span><strong>Сравнение только по максимальному расходу.</strong> Расход зависит от трубки, скорости, давления и условий измерения; сравнивать нужно режим, в котором вы будете работать</span></li>
+          <li><span><strong>Только цена покупки.</strong> Microlit называет выбор по начальной цене частой ошибкой: самый дешёвый насос может оказаться дороже в эксплуатации из-за обслуживания, снижения точности или короткого срока службы. Считайте замену трубок, запчасти, сервис, калибровку и простой</span></li>
+          <li><span><strong>Покупка «с запасом по функциям».</strong> Microlit подчёркивает, что выбор не сводится к самому мощному или функциональному варианту, он должен соответствовать задаче</span></li>
+        </ul>
+
+
+        <h2>Когда перистальтический насос не лучший выбор</h2>
+
+        <p>Перистальтический принцип подходит не для всех задач. Если нужны очень малые расходы и точная подача небольшого объёма, стоит рассмотреть <a href="/pumps/syringe/">шприцевые насосы</a> и сравнить типы в наших статьях о <a href="/blog/shpricevye-nasosy-princip-raboty-i-ustroystvo/">принципе работы</a> и <a href="/blog/kak-vybrat-shpricevye-nasosy-cheklist-parametrov/">выборе</a>. Если жидкость агрессивна, главное условие — стойкий материал трубки, и от него может зависеть сама возможность использовать этот тип насоса.</p>
+
+
+        <h2>Как выбрать конфигурацию под свою задачу</h2>
+
+        <ol>
+          <li>Опишите жидкость: вязкость, химический состав, температуру, чувствительность к сдвигу.</li>
+          <li>Определите расход и давление в линии и режим: периодически, по расписанию или непрерывно.</li>
+          <li>Выберите трубку: размер и материал под жидкость и расход.</li>
+          <li>Подберите головку под эту трубку и привод под головку.</li>
+          <li>Решите, нужны ли цифровое управление, программы и интерфейсы, и каким должен быть интерфейс для вашей системы.</li>
+          <li>Определите число каналов и нужна ли их независимость.</li>
+          <li>Уточните комплектацию: что входит в цену (трубка, питание, арматура, ПО), какие документы и калибровку предоставляет поставщик.</li>
+          <li>Проверьте расход измерением в рабочих условиях.</li>
+        </ol>
+
+
+        <h2>Что запросить у поставщика до покупки</h2>
+
+        <ul>
+          <li><span>руководство и технический паспорт модели</span></li>
+          <li><span>список трубок и головок, совместимых с приводом, и условия их применения</span></li>
+          <li><span>диапазоны расхода и давления с указанием трубки и условий измерения</span></li>
+          <li><span>режимы управления и интерфейсы, документацию для интеграции</span></li>
+          <li><span>состав комплекта и перечень опций, которые продаются отдельно</span></li>
+          <li><span>цену и стоимость трубок и запчастей на дату предложения, а также условия доставки и гарантии</span></li>
+          <li><span>что проверяется перед отправкой и каким документом это подтверждено</span></li>
+        </ul>
+
+
+        <h2>Что есть в каталоге Fluidica</h2>
+
+        <p>В каталоге представлены <a href="/pumps/peristaltic/">одноканальный и многоканальный перистальтические насосы</a>: описание и цены указаны на карточках. Какая конфигурация подходит под вашу задачу, зависит от жидкости, расхода и режима. Напишите нам задачу: подскажем, какие параметры стоит сопоставить.</p>
+
+
+        <h2>Главное</h2>
+
+        <p>Лучшая конфигурация перистальтического насоса определяется задачей: жидкостью, расходом, давлением, режимом работы и тем, насколько вам важна воспроизводимость. Начинайте с трубки, затем подбирайте головку и привод, а экономьте на функциях, которые вам не нужны, но не на совместимости, проверке расхода и расходных материалах.</p>
+
+        <p>Если вы выбираете оборудование, <a href="/#contact">напишите нам</a>. Смежные материалы: <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">как выбрать перистальтические насосы</a>, <a href="/blog/sravnenie-peristalticheskih-nasosov-rossiya-kitay-es/">сравнение насосов России, Китая и ЕС</a> и <a href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">запуск перистальтического насоса</a>.</p>
+
+        <h2>Источники</h2>
+
+        <p>Статья опирается на материалы поставщиков и дистрибьюторов, а не на независимые испытания. Функции приводов относятся к описанным линейкам и не переносятся на другое оборудование. Цены и числовые характеристики источников в статье не используются.</p>
+        <ol>
+          <li><a href="https://www.microlit.com/how-to-choose-the-right-peristaltic-pump-key-factors-buyers-should-consider/" rel="noopener" target="_blank">Microlit — How to choose the right peristaltic pump: key factors buyers should consider</a>. Материал поставщика: трубка, управление и интерфейсы, начальная цена и расходы эксплуатации, обслуживание.</li>
+          <li><a href="https://www.microlit.com/choosing-the-right-peristaltic-pump-for-your-lab/" rel="noopener" target="_blank">Microlit — Choosing the right peristaltic pump for your lab</a>. Материал поставщика: сценарии применения, каналы, ручное и цифровое управление, запас по расходу, головка и трубка.</li>
+          <li><a href="https://www.johnmorrisgroup.com/blog/masterflex-peristaltic-pump-selection-guide" rel="noopener" target="_blank">John Morris Group — How to select the right Masterflex peristaltic pump system</a>. Материал дистрибьютора: порядок выбора «трубка, головка, привод», сценарии применения, многоканальные головки.</li>
+          <li><a href="https://www.axflow.com/en-gb/applications/technical-support/pump-technologies/pump-types/how-to-select-peristaltic-pumps/" rel="noopener" target="_blank">Axflow — How to select peristaltic pumps</a>. Материал дистрибьютора промышленных насосов: время работы, температура, запас по производительности, демпферы пульсаций. Ориентиры промышленные.</li>
+          <li><a href="https://processengineering.co.uk/article/2019698/dispensing-accuracy" rel="noopener" target="_blank">Process Engineering — Dispensing accuracy</a>. Рекламный материал Cole-Parmer (Masterflex, 2015): калибровка по размеру трубки и режим реверса после дозы у описанных приводов.</li>
+          <li><a href="https://wpiinc.com/blogs/all/how-to-calibrate-the-peri-star-pro-peristaltic-pump" rel="noopener" target="_blank">World Precision Instruments — How to calibrate the Peri-Star Pro peristaltic pump</a>. Инструкция производителя для одной модели: калибровка после смены типа трубки.</li>
+        </ol>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Подобрать конфигурацию насоса?</div>
+          <p>Опишите жидкость, расход и режим работы. Подскажем, какие параметры сопоставить.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">Как выбрать перистальтические насосы: чек-лист параметров</a>
+          <a href="/blog/skolko-stoyat-peristalticheskie-nasosy-i-iz-chego-skladyvaetsya-cena/">Сколько стоят перистальтические насосы</a>
+          <a href="/blog/tipy-golovok-peristalticheskih-nasosov/">Типы головок перистальтических насосов</a>
+          <a href="/blog/sravnenie-peristalticheskih-nasosov-rossiya-kitay-es/">Сравнение перистальтических насосов: Россия, Китай, ЕС</a>
+          <a href="/pumps/peristaltic/">Перистальтические насосы Fluidica</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+<script src="/analytics.js" defer></script>
+
+</body>
+</html>
