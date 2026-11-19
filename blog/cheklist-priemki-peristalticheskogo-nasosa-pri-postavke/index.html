@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чек-лист приёмки перистальтического насоса - Fluidica</title>
+<meta name="description" content="Как принять перистальтический насос: проверка упаковки, документов, комплекта, головки и трубки, первый запуск, замеры расхода и действия при дефектах.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/cheklist-priemki-peristalticheskogo-nasosa-pri-postavke/">
+<meta property="og:title" content="Чек-лист приёмки перистальтического насоса - Fluidica">
+<meta property="og:description" content="Как принять перистальтический насос: проверка упаковки, документов, комплекта, головки и трубки, первый запуск, замеры расхода и действия при дефектах.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/cheklist-priemki-peristalticheskogo-nasosa-pri-postavke/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.css">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Чек-лист приёмки перистальтического насоса при поставке",
+      "description": "Как принять перистальтический насос: проверка упаковки, документов, комплекта, головки и трубки, первый запуск, замеры расхода и действия при дефектах.",
+      "datePublished": "2026-11-19",
+      "dateModified": "2026-11-19",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/cheklist-priemki-peristalticheskogo-nasosa-pri-postavke/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Чек-лист приёмки",
+          "item": "https://fluidica.ru/blog/cheklist-priemki-peristalticheskogo-nasosa-pri-postavke/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Чек-лист приёмки</a>
+        </nav>
+        <span class="eyebrow">Чек-лист</span>
+        <h1>Чек-лист приёмки перистальтического насоса при поставке</h1>
+        <p class="hero-sub">Три уровня проверки: при получении груза, после распаковки и при функциональном запуске. Что фиксировать, о чём уведомить поставщика и как не осложнить гарантию.</p>
+        <div class="article-meta">
+          <span>19 ноября 2026</span>
+          <span>~12 мин чтения</span>
+          <span>Перистальтические насосы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Перистальтический насос приехал в лабораторию. Включился, головка крутится, значит, всё в порядке? Не обязательно: включение не доказывает ни комплектность, ни соответствие заказу, ни точность подачи. Приёмка нужна, чтобы выяснить это до начала экспериментов, а не после, когда вопрос о том, кто виноват, уже трудно решить.</p>
+
+        <p>В статье собран практический чек-лист на трёх уровнях: при получении груза, после распаковки и при функциональной проверке. В конце есть таблица, которую можно распечатать. Универсальных допусков, сроков претензий и перечней документов здесь нет: они определяются договором, спецификацией и руководством вашей модели.</p>
+
+        <p>Как читать материал: за основу взяты руководства производителей (Watson-Marlow, Darwin Microfluidics, WPI, Blue-White) и тексты статей ГК РФ. Примеры из руководств относятся к конкретным моделям и не переносятся на другое оборудование. Это не юридическая консультация и не описание оборудования Fluidica. Статья о лабораторных насосах, а не о медицинских: у медицинских насосов отдельные требования. Для шприцевых насосов есть <a href="/blog/cheklist-priemki-shpricevyh-nasosov-pri-postavke/">отдельный чек-лист</a>.</p>
+
+
+        <h2>Три разных понятия: приёмка, работоспособность, соответствие заданию</h2>
+
+        <p>Эти процедуры связаны, но не заменяют друг друга.</p>
+
+        <table class="compare">
+          <thead><tr><th>Что проверяется</th><th>Вопрос</th><th>Когда</th></tr></thead>
+          <tbody>
+            <tr><td>Приёмка поставки</td><td>Привезли то, что заказано, в целом виде и в нужном количестве?</td><td>При получении и сразу после распаковки</td></tr>
+            <tr><td>Работоспособность</td><td>Прибор включается, управляется и работает без очевидных неисправностей?</td><td>При первом запуске</td></tr>
+            <tr><td>Соответствие заданию</td><td>Подача, режимы и интерфейсы отвечают спецификации или договору?</td><td>Если это предусмотрено договором или важно для эксперимента</td></tr>
+          </tbody>
+        </table>
+
+        <p>Осмотр без повреждений не подтверждает характеристики, а успешный запуск не доказывает точность расхода, стабильность подачи и соответствие давлению. Это разные вопросы, и на каждый нужна своя проверка.</p>
+
+
+        <h2>Что подготовить до приёмки</h2>
+
+        <p>Проверять удобнее, когда под рукой есть исходные документы. Подготовьте:</p>
+
+        <ul>
+          <li><span>договор, счёт и спецификацию или техническое задание</span></li>
+          <li><span>руководство по эксплуатации вашей модели, если оно доступно заранее</span></li>
+          <li><span>перечень того, что должно прийти: модель, число каналов, головка, трубка, блок питания, интерфейсы, ПО</span></li>
+          <li><span>модельную жидкость, ёмкости, весы или мерный сосуд, если в договоре предусмотрено измерение подачи</span></li>
+          <li><span>фотоаппарат или телефон и место, где можно разложить комплект</span></li>
+        </ul>
+
+        <p>Главный ориентир при приёмке — ваша спецификация, а не представление о том, как «обычно» выглядит насос. Решите заранее, кто участвует: тот, кто получает груз, инженер или конечный пользователь, и кто подписывает документы.</p>
+
+
+        <h2>Этап 1. Упаковка и транспортные документы</h2>
+
+        <p>Проверку начинают до вскрытия. Что сделать:</p>
+
+        <ul>
+          <li><span>осмотреть транспортную упаковку: вмятины, проколы, следы влаги, признаки вскрытия</span></li>
+          <li><span>сфотографировать повреждения, если они есть, вместе с маркировкой и накладной</span></li>
+          <li><span>сверить число мест с транспортными документами</span></li>
+          <li><span>при повреждении упаковки сделать замечание в документах перевозчика по его правилам</span></li>
+        </ul>
+
+        <p>Статья 513 ГК РФ для случая, когда товар получен от транспортной организации, требует проверить соответствие товара сведениям в транспортных и сопроводительных документах и принять его с соблюдением правил, установленных актами, регулирующими транспорт. Повреждённая упаковка при целом на вид приборе не означает, что прибор исправен: фиксируйте и то и другое, а вывод о дефекте оставьте за проверкой.</p>
+
+        <p>Решение об отказе от приёмки при повреждениях зависит от договора и закона. Если вы не принимаете товар, о его сохранности до решения поставщика говорит статья 514 ГК РФ («Ответственное хранение товара, не принятого покупателем»). Прежде чем отказываться, согласуйте шаги с юристом или ответственным за закупки.</p>
+
+
+        <h2>Этап 2. Документы, модель и серийный номер</h2>
+
+        <p>После вскрытия сверьте, что пришёл именно заказанный прибор. Сохраняйте упаковку, пока не убедитесь, что всё на месте и исправно, а при отсутствии или повреждении деталей сразу свяжитесь с поставщиком: так советует, например, руководство Watson-Marlow 120 (раздел 1.4).</p>
+
+        <ul>
+          <li><span><strong>Модель и исполнение.</strong> Название на корпусе, на упаковке и в документах должно совпадать с заказом. Насосы одного семейства могут различаться головками, числом каналов и управлением</span></li>
+          <li><span><strong>Серийный номер.</strong> Найдите его на шильдике и сверьте с сопроводительными документами. Он понадобится при гарантийном обращении</span></li>
+          <li><span><strong>Документы.</strong> Накладная или УПД, руководство по эксплуатации, паспорт, сведения о гарантии, документ о калибровке или заводской проверке, если его предоставление предусмотрено. Перечень зависит от договора и модели</span></li>
+          <li><span><strong>Что не путать.</strong> Заводская проверка, калибровка и поверка — разные процедуры, а паспорт и сертификат — разные документы. Определения калибровки и поверки мы разбирали в статье о <a href="/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/">калибровке и валидации перистальтических насосов</a></span></li>
+        </ul>
+
+        <p>Отсутствие отдельного гарантийного талона само по себе не означает отсутствия гарантии: условия могут быть записаны в договоре или другой документации. Если паспорта или руководства нет либо они не соответствуют модели, зафиксируйте это и запросите нужные документы у поставщика.</p>
+
+
+        <h2>Этап 3. Комплектность</h2>
+
+        <p>Универсального списка «обязательных» принадлежностей нет: комплект зависит от модели. Для примера, в руководстве Watson-Marlow 120 в комплект входят привод с головкой, внешний блок питания с переходниками для вилок и краткое руководство. У другого насоса состав будет другим.</p>
+
+        <p>Сверяйте комплект по спецификации, отмечая каждую позицию:</p>
+
+        <ul>
+          <li><span>привод и насосная головка (головка может заказываться отдельно; у Watson-Marlow, например, у головок собственная гарантия)</span></li>
+          <li><span>трубка: входит ли она в поставку, какого размера и из какого материала</span></li>
+          <li><span>блок питания, кабель, сетевые переходники</span></li>
+          <li><span>крепления, фитинги, соединители, переходники</span></li>
+          <li><span>запасные ролики и другие сменные элементы, если они заказывались</span></li>
+          <li><span>дополнительные модули: внешнее управление, интерфейсные кабели, ПО или инструкция по его получению</span></li>
+          <li><span>документация</span></li>
+        </ul>
+
+        <p>Недостачу или несоответствие зафиксируйте письменно до завершения приёмки в порядке, который предусмотрен договором.</p>
+
+
+        <h2>Этап 4. Внешний осмотр</h2>
+
+        <p>Осмотрите корпус, дисплей, кнопки, разъёмы, кабельные вводы и сетевой разъём. Не должно быть трещин, деформаций, повреждений изоляции, следов жидкости и коррозии. Особое внимание уделите головке:</p>
+
+        <ul>
+          <li><span>целостность крышки и фиксаторов</span></li>
+          <li><span>состояние роликов, прижимных элементов и креплений</span></li>
+          <li><span>отсутствие загрязнений и следов жидкости внутри головки</span></li>
+        </ul>
+
+        <p>Если руководство разрешает, проверьте, что ротор вращается рукой без заеданий и посторонних звуков. Нормы люфта и сопротивления в общем виде назвать нельзя: ориентируйтесь на документацию модели. Если насос явно повреждён, не подключайте его к питанию до инструкций поставщика.</p>
+
+
+        <h2>Этап 5. Головка и трубка</h2>
+
+        <p>Для перистальтического насоса это ключевой блок, потому что подача определяется парой «головка и трубка».</p>
+
+        <ul>
+          <li><span><strong>Соответствие заказу.</strong> Установленная головка должна быть той, что указана в спецификации</span></li>
+          <li><span><strong>Совместимость.</strong> Трубка должна подходить и к головке, и к вашей жидкости. WPI в материале о безопасной работе напоминает: используйте трубку, совместимую с перекачиваемым раствором</span></li>
+          <li><span><strong>Размер и материал.</strong> Сверьте типоразмер и материал трубки со спецификацией и списком, который указывает производитель. Darwin Microfluidics для головок DG пишет, что толщина стенки должна соответствовать зазору между роликами и корпусом</span></li>
+          <li><span><strong>Укладка и фиксация.</strong> Трубка должна лежать в головке без перекручиваний и перегибов, без натяжения и надёжно удерживаться фиксаторами. По Darwin, неправильная установка приводит к утечкам, неточному расходу, проскальзыванию трубки, пульсациям и ускоренному износу</span></li>
+          <li><span><strong>Состояние трубки.</strong> Нет трещин, перегибов, следов износа. Если трубка заметно изношена, WPI советует заменить её сразу</span></li>
+          <li><span><strong>Окклюзия (сжатие трубки роликами).</strong> Blue-White указывает, что недостаточное сжатие даёт утечку и обратный ток, а избыточное ускоряет износ. У некоторых головок окклюзия регулируется (у головок DG — храповым колесом). Для них Darwin описывает «пузырьковый тест» для головок DG: опустить вход трубки в воду, мягко продуть воздух через выход и повышать сжатие по одному делению, пока пузыри не перестанут выходить. Для вашей головки порядок регулировки берите из её документации</span></li>
+        </ul>
+
+        <p>Меняя трубку, всегда отключайте насос и вынимайте вилку из розетки, как рекомендует WPI. Подробнее о типах головок мы писали в статье <a href="/blog/tipy-golovok-peristalticheskih-nasosov/">«Типы головок перистальтических насосов»</a>.</p>
+
+
+        <h2>Этап 6. Первый запуск и функциональная проверка</h2>
+
+        <p>Перед включением прочитайте руководство именно вашей модели: порядок запуска, требования к питанию и допустимые режимы у насосов различаются. Общая последовательность описана в статье <a href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">«Пошаговый запуск перистальтического насоса»</a>. Для приёмки важно следующее:</p>
+
+        <ol>
+          <li><strong>Питание.</strong> Убедитесь, что блок питания и сетевой адаптер подходят для вашей сети, а значения соответствуют руководству. В руководстве Watson-Marlow 120, например, предусмотрены выбор сетевого переходника и коды ошибок при неподходящем напряжении, поэтому проверять питание нужно до включения.</li>
+          <li><strong>Головка на месте.</strong> В руководстве Watson-Marlow 120 (раздел 1.7) прямо сказано, что насос нельзя запускать без установленной головки.</li>
+          <li><strong>Включение и остановка.</strong> Проверьте, что привод запускается и останавливается по команде, а индикация и кнопки отвечают.</li>
+          <li><strong>Скорость и режимы.</strong> Проверьте регулировку скорости и режимы, которые входят в заказ: направление вращения, заполнение, дозирование, если они предусмотрены.</li>
+          <li><strong>Шум, вибрация, стабильность.</strong> Рывки, заедания, необычные звуки, потеря связи и самопроизвольные остановки нужно зафиксировать.</li>
+          <li><strong>Дополнительные функции.</strong> Проверьте те, что оговорены в заказе. Сохранение настроек после выключения питания проверяйте, если оно важно для вашей работы.</li>
+        </ol>
+
+        <h3>Можно ли запускать насос без жидкости</h3>
+
+        <p>Универсального ответа нет: решает руководство конкретной модели. В руководстве Watson-Marlow 120 (раздел 1.6) сказано, что перистальтические насосы могут работать всухую без риска. А в руководстве Watson-Marlow на шланговые насосы Bredel (серия APEX) сухой ход допустим, но создаёт дополнительную тепловую нагрузку на шланг и ускоряет его износ, поэтому рекомендуется сводить такие периоды к минимуму. Это разные насосы с разными условиями. Для вашей модели найдите в руководстве прямое разрешение и ограничение по времени, а при отсутствии данных не включайте насос «посуху» для проверки: используйте совместимую жидкость, например воду, если она подходит для трубки и контура.</p>
+
+
+        <h2>Проверка управления и интеграции</h2>
+
+        <p>Если насос будет встроен в установку или управляться внешней системой, проверьте на приёмке только то, что входит в заказ:</p>
+
+        <ul>
+          <li><span>внешнее управление и интерфейсы: подключается ли насос, выполняет ли основные команды</span></li>
+          <li><span>реакцию на внешние команды пуска и остановки, а также аварийную остановку, если она предусмотрена и руководство разрешает её проверять</span></li>
+          <li><span>документацию по интерфейсу</span></li>
+        </ul>
+
+        <p>Не создавайте неисправности специально (перекрытие линии, повышение давления выше допустимого), если такая проверка не описана в руководстве. Интеграцию с внешним оборудованием можно проверить позже на установке, если договор не требует этого при приёмке.</p>
+
+
+        <h2>Нужно ли измерять фактический расход при приёмке</h2>
+
+        <p>Это зависит от задачи и договора. Для базовой приёмки может хватить функциональной проверки. Если расход критичен для эксперимента либо измерение предусмотрено договором или техническим заданием, нужна отдельная проверка. Подача зависит от трубки, скорости, давления и состояния системы, поэтому одно измерение на произвольной трубке не подтверждает характеристики во всём диапазоне.</p>
+
+        <p>Как измерять расход взвешиванием, как подготовить трубку и что влияет на результат, мы разобрали в статье <a href="/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/">о калибровке и валидации перистальтических насосов</a>. Здесь важны три правила:</p>
+
+        <ul>
+          <li><span>назвать допустимое отклонение для всех насосов нельзя: критерий берут из спецификации, договора или согласованной методики</span></li>
+          <li><span>условия испытания (трубка, жидкость, скорость, давление, число повторов, критерии) нужно согласовать до проверки</span></li>
+          <li><span>результат записывают вместе с условиями, иначе его невозможно сравнить и воспроизвести</span></li>
+        </ul>
+
+
+        <h2>Если найдены дефекты или несоответствия</h2>
+
+        <p>Правило первое: остановите проверку и не пытайтесь исправить неисправность самостоятельно. Разборка и регулировка новой техники могут затруднить установление причины и повлиять на гарантию. Дальше:</p>
+
+        <ol>
+          <li><strong>Зафиксируйте.</strong> Модель, серийный номер, дату получения, номер договора, описание недостатка, условия, при которых он проявился, фото или видео, ФИО ответственного за приёмку.</li>
+          <li><strong>Уведомите поставщика.</strong> Статья 513 ГК РФ для договора поставки требует: покупатель проверяет количество и качество в срок и порядке, установленных законом, договором или обычаями делового оборота, и о выявленных несоответствиях и недостатках незамедлительно письменно уведомляет поставщика. Статья 483 ГК РФ для купли-продажи говорит об обязанности известить продавца о нарушении условий о количестве, ассортименте, качестве, комплектности, таре и упаковке в срок, установленный законом или договором, а если срока нет, то в разумный срок. Если вы не известили продавца, он вправе частично или полностью отказать в требованиях, но только если докажет, что это сделало их удовлетворение невозможным или повлекло несоразмерные расходы (по пункту 2 статьи 483). Какая норма применима к вашему договору, уточните у юриста.</li>
+          <li><strong>Сохраните</strong> документы, фотографии, переписку и упаковку.</li>
+          <li><strong>Ждите согласования</strong> дальнейших действий с поставщиком.</li>
+        </ol>
+
+        <p>Пример записи о замечании, который полезнее фразы «насос не работает»: «Насос модели ____, заводской № ____, получен ____. При команде запуска на скорости ____ привод не вращается, на дисплее код ____. Проверка выполнена по разделу ____ руководства. Приложены фото маркировки, видео проверки, копия спецификации».</p>
+
+        <p>Для вузов и организаций, работающих по 44-ФЗ или 223-ФЗ, порядок приёмки определяют закон и условия конкретной закупки. Универсальный чек-лист не заменяет эту процедуру. Если договором предусмотрены приёмочные испытания, их состав и критерии должны быть известны до проверки.</p>
+
+
+        <h2>Как не осложнить гарантийное обращение</h2>
+
+        <p>Условия гарантии вашей поставки определяет договор и документы производителя, поэтому сверяйте их, а не общие правила. Для примера, в руководстве Watson-Marlow 120 (раздел 1.3) гарантия не покрывает трубки как расходный материал, нормальный износ, неправильное использование и работу выше указанных давлений; ремонт и модификации должны выполнять производитель или авторизованный сервис; головки имеют собственную гарантию. Это условия одной модели, а не общие правила, но они показывают, что стоит прочитать до начала эксплуатации.</p>
+
+        <p>Практические советы:</p>
+
+        <ul>
+          <li><span>не разбирать насос и не вносить изменения до согласования с поставщиком</span></li>
+          <li><span>сверять трубки и расходные материалы со списком, который указывает производитель</span></li>
+          <li><span>работать в условиях, которые указаны в руководстве, и сохранить подтверждение этого (журнал запусков, фото установки)</span></li>
+          <li><span>при возврате оборудования заранее согласовать порядок: у Watson-Marlow, например, нужен номер возврата и документ об обеззараживании на каждое изделие, даже на неиспользованное (раздел 1.5 и 1.14 руководства). У других производителей порядок свой</span></li>
+        </ul>
+
+        <p>Если насос потребует диагностики или ремонта, посмотрите статью <a href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">об обслуживании и ремонте перистальтических насосов</a>.</p>
+
+
+        <h2>Памятка: что проверить до подписания документов</h2>
+
+        <p>Таблицу можно распечатать. Для каждого пункта отметьте «соответствует», «не соответствует» или «не применимо» и при несоответствии запишите описание и приложите материалы.</p>
+
+        <table class="compare">
+          <thead><tr><th>№</th><th>Что проверить</th><th>Результат</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Упаковка цела либо повреждения сфотографированы и зафиксированы</td><td>☐</td></tr>
+            <tr><td>2</td><td>Число мест совпадает с транспортными документами</td><td>☐</td></tr>
+            <tr><td>3</td><td>Модель и исполнение соответствуют заказу и спецификации</td><td>☐</td></tr>
+            <tr><td>4</td><td>Серийный номер сверен с документами</td><td>☐</td></tr>
+            <tr><td>5</td><td>Комплектность сверена с договором и спецификацией</td><td>☐</td></tr>
+            <tr><td>6</td><td>Получены паспорт, руководство и другие предусмотренные документы</td><td>☐</td></tr>
+            <tr><td>7</td><td>Корпус, дисплей, кнопки и разъёмы осмотрены</td><td>☐</td></tr>
+            <tr><td>8</td><td>Блок питания и кабели соответствуют требованиям руководства</td><td>☐</td></tr>
+            <tr><td>9</td><td>Установленная головка соответствует заказу</td><td>☐</td></tr>
+            <tr><td>10</td><td>Трубка подходит к головке и жидкости, материал и размер сверены</td><td>☐</td></tr>
+            <tr><td>11</td><td>Трубка уложена без перекручиваний и надёжно зафиксирована</td><td>☐</td></tr>
+            <tr><td>12</td><td>Ротор вращается без заеданий (если руководство разрешает проверку)</td><td>☐</td></tr>
+            <tr><td>13</td><td>Первый запуск выполнен по руководству</td><td>☐</td></tr>
+            <tr><td>14</td><td>Включение, остановка и регулировка скорости работают</td><td>☐</td></tr>
+            <tr><td>15</td><td>Заказанные режимы и дополнительные функции проверены</td><td>☐</td></tr>
+            <tr><td>16</td><td>Нет постороннего шума, вибрации и рывков</td><td>☐</td></tr>
+            <tr><td>17</td><td>Внешнее управление и интерфейсы проверены, если входят в заказ</td><td>☐</td></tr>
+            <tr><td>18</td><td>Расход измерен, если это предусмотрено договором или важно для задачи</td><td>☐</td></tr>
+            <tr><td>19</td><td>Замечания, фото и результаты проверок записаны</td><td>☐</td></tr>
+            <tr><td>20</td><td>Поставщик уведомлён о расхождениях в порядке и сроки по договору</td><td>☐</td></tr>
+          </tbody>
+        </table>
+
+
+        <h2>Частые ошибки при приёмке</h2>
+
+        <ul>
+          <li><span><strong>Проверить только включение.</strong> Запуск не подтверждает комплектность, совместимость трубки и соответствие заданию</span></li>
+          <li><span><strong>Не сверить головку и трубку.</strong> От них зависят подача и износ, а ошибка в установке проявится не сразу</span></li>
+          <li><span><strong>Запускать насос «посуху» без разрешения руководства.</strong> Для разных насосов правила разные</span></li>
+          <li><span><strong>Считать заводской документ полноценной приёмкой.</strong> Он не заменяет осмотр и сверку с заказом</span></li>
+          <li><span><strong>Назначать допуск по расходу «на глаз».</strong> Критерий должен следовать из договора или спецификации</span></li>
+          <li><span><strong>Не фиксировать повреждения.</strong> Без фото и описания сложнее установить, когда возник недостаток</span></li>
+          <li><span><strong>Самостоятельно ремонтировать новый прибор.</strong> Сначала нужно связаться с поставщиком</span></li>
+        </ul>
+
+
+        <h2>Главное</h2>
+
+        <p>Приёмка перистальтического насоса — это не только проверка, что он включается. Нужно убедиться, что получена нужная конфигурация, комплект соответствует заказу, головка и трубка установлены правильно, а заказанные функции работают. Если подача критична, добавьте измерение расхода по согласованной методике. Всё, что обнаружено, фиксируйте письменно и сообщайте поставщику в срок и порядке, установленных договором и законом.</p>
+
+        <p>Нужна помощь с приёмкой или вводом насоса в работу? <a href="/#contact">Напишите нам</a> или посмотрите <a href="/services/">услуги</a> и <a href="/pumps/peristaltic/">перистальтические насосы Fluidica</a>. Смежные материалы: <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">как выбрать перистальтические насосы</a> и <a href="/blog/tipichnye-oshibki-peristalticheskie-nasosy/">типичные ошибки перистальтических насосов</a>.</p>
+
+        <h2>Источники</h2>
+
+        <p>Статья опирается на руководства и материалы производителей и поставщиков, а также на тексты статей ГК РФ, а не на независимые испытания. Условия руководств (сухой ход, гарантия, возврат) относятся к названным моделям и не переносятся на другое оборудование. Числовые значения и допуски из источников в статье не используются. Это не юридическая консультация: применимые нормы уточняйте у юриста.</p>
+        <ol>
+          <li><a href="https://www.wolflabs.co.uk/document/Watson_marlow_peristaltic_pumps_120_manual.pdf" rel="noopener" target="_blank">Watson-Marlow 120 — руководство по установке, эксплуатации и обслуживанию</a>. Копия руководства на сайте дистрибьютора: проверка при получении и комплект (1.4), возврат и обеззараживание (1.5, 1.14), сухой ход (1.6), запуск без головки (1.7), гарантия (1.3). Требования относятся к этой модели.</li>
+          <li><a href="https://www.manualsdir.com/manuals/791352/watson-marlow-apex10.html?page=30" rel="noopener" target="_blank">Watson-Marlow APEX — руководство (раздел о сухом ходе)</a>. Копия руководства на стороннем сайте: сухой ход шланговых насосов Bredel, тепловая нагрузка и износ шланга. Требования относятся к этой серии.</li>
+          <li><a href="https://blog.darwin-microfluidics.com/how-to-properly-mount-a-tubing-on-a-peristaltic-pump-head/" rel="noopener" target="_blank">Darwin Microfluidics — How to properly mount a tubing on a peristaltic pump head</a>. Инструкция поставщика для головок DG насосов Longer: установка трубки, окклюзия, пузырьковый тест, ошибки установки.</li>
+          <li><a href="https://wpiinc.com/blogs/all/how-to-safely-use-a-peristaltic-pump" rel="noopener" target="_blank">World Precision Instruments — How to safely use a peristaltic pump</a>. Материал производителя: совместимость трубки, замена изношенной трубки, отключение питания при смене трубки.</li>
+          <li><a href="https://www.blue-white.com/article/understanding-wear-factors-for-peristaltic-pump-tubes-and-other-components/" rel="noopener" target="_blank">Blue-White — Understanding wear factors for peristaltic pump tubes and other components</a>. Материал производителя: недостаточное и избыточное сжатие трубки, давление, состояние роликовой сборки.</li>
+          <li><a href="https://www.zakonrf.info/gk/513/" rel="noopener" target="_blank">Гражданский кодекс РФ, статья 513. Принятие товаров покупателем (получателем)</a>. Текст на сайте-агрегаторе: осмотр, проверка количества и качества, уведомление поставщика, приёмка от транспортной организации. Комментарий об инструкциях П-6 и П-7 — на той же странице. Актуальную редакцию сверяйте по официальному источнику.</li>
+          <li><a href="https://gkodeksrf.ru/ch-2/rzd-4/gl-30/prg-1/st-483-gk-rf" rel="noopener" target="_blank">Гражданский кодекс РФ, статья 483. Извещение продавца о нарушении условий договора купли-продажи</a>. Текст на сайте-агрегаторе: обязанность известить продавца, срок, последствия неизвещения. Актуальную редакцию сверяйте по официальному источнику.</li>
+        </ol>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Нужна помощь с приёмкой насоса?</div>
+          <p>Опишите модель, комплект и что вызывает вопросы. Подскажем, как организовать проверку.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">Пошаговый запуск перистальтического насоса</a>
+          <a href="/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/">Калибровка и валидация перистальтических насосов</a>
+          <a href="/blog/tipy-golovok-peristalticheskih-nasosov/">Типы головок перистальтических насосов</a>
+          <a href="/blog/cheklist-priemki-shpricevyh-nasosov-pri-postavke/">Чек-лист приёмки шприцевых насосов</a>
+          <a href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">Обслуживание и ремонт перистальтических насосов</a>
+          <a href="/pumps/peristaltic/">Перистальтические насосы Fluidica</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+<script src="/analytics.js" defer></script>
+
+</body>
+</html>
