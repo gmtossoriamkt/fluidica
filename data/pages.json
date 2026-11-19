@@ -40,7 +40,7 @@
     ],
     "catalog_label": "Каталог",
     "catalog_title": "Приборы и расходные материалы Fluidica",
-    "catalog_links": ["/stations/", "/chips/", "/consumables/", "/pumps/syringe/", "/pumps/peristaltic/"]
+    "catalog_links": ["/stations/", "/chips/", "/chip-fabrication/", "/consumables/", "/pumps/syringe/", "/pumps/peristaltic/"]
   },
   {
     "path": "solutions/single-cell-i-drop-seq",
@@ -78,7 +78,7 @@
     ],
     "catalog_label": "Каталог",
     "catalog_title": "Приборы и расходные материалы Fluidica",
-    "catalog_links": ["/stations/", "/chips/", "/consumables/", "/pumps/syringe/"]
+    "catalog_links": ["/stations/", "/chips/", "/chip-fabrication/", "/consumables/", "/pumps/syringe/"]
   },
   {
     "path": "solutions/perfuziya-kletok",

@@ -45,13 +45,15 @@
     "path": "devices",
     "kind": "collection",
     "category_slug": "devices",
-    "description": null
+    "description": null,
+    "title": "Лабораторные насосы с открытым кодом: каталог"
   },
   {
     "path": "microscopes",
     "kind": "collection",
     "category_slug": "microscopes",
-    "description": null
+    "description": null,
+    "title": "Открытые микроскопы для лабораторий: каталог"
   },
   {
     "path": "new-open-source",
@@ -72,17 +74,20 @@
   {
     "path": "privacy",
     "kind": "webpage",
-    "description": "Политика конфиденциальности сайта Fluidica: раздел в разработке; есть сведения об использовании Яндекс.Метрики и «Вебвизора»."
+    "description": "Политика конфиденциальности сайта Fluidica: раздел в разработке; есть сведения об использовании Яндекс.Метрики и «Вебвизора».",
+    "robots": "noindex, follow"
   },
   {
     "path": "terms",
     "kind": "webpage",
-    "description": "Пользовательское соглашение сайта Fluidica: раздел в разработке, актуальная версия будет опубликована до запуска формы приёма заявок."
+    "description": "Пользовательское соглашение сайта Fluidica: раздел в разработке, актуальная версия будет опубликована до запуска формы приёма заявок.",
+    "robots": "noindex, follow"
   },
   {
     "path": "oferta",
     "kind": "webpage",
-    "description": "Публичная оферта Fluidica: раздел в разработке, актуальная версия будет опубликована до запуска формы приёма заявок и обработки данных."
+    "description": "Публичная оферта Fluidica: раздел в разработке, актуальная версия будет опубликована до запуска формы приёма заявок и обработки данных.",
+    "robots": "noindex, follow"
   },
   {
     "path": "requisites",

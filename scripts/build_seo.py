@@ -13,7 +13,13 @@
 Записи kind = "catalog_section" (/pumps/...) обрабатывает build_catalog.py,
 здесь они пропускаются; description для них тоже лежит в data/seo.json.
 
-Title, H1 и видимый текст не меняются. Скрипт идемпотентен, переводы строк сохраняются.
+Необязательные поля записи:
+  - title  - заголовок без суффикса; в <title> и og:title (и twitter:title, если есть)
+    пишется title + " — Fluidica", длина вместе с суффиксом 45-65 символов;
+    без поля title заголовок страницы не трогается;
+  - robots - значение <meta name="robots"> (например "noindex, follow"), тег ставится
+    сразу после meta description; без поля тег robots удаляется.
+H1 и видимый текст не меняются. Скрипт идемпотентен, переводы строк сохраняются.
 Коды возврата: 0 - всё в порядке, 1 - ошибки или (с --check) страницы устарели.
 """
 import argparse
@@ -29,6 +35,12 @@ from build_catalog import (  # noqa: E402
     ld_script, plural_goods, put_ld, read_text, write_text)
 
 DESC_MIN, DESC_MAX = 110, 160
+TITLE_MIN, TITLE_MAX = 45, 65
+TITLE_SUFFIX = " — Fluidica"
+RE_TITLE = re.compile(r'(<title>)([^<]*)(</title>)')
+RE_OG_TITLE = re.compile(r'(<meta property="og:title" content=")([^"]*)(">)')
+RE_TW_TITLE = re.compile(r'(<meta name="twitter:title" content=")([^"]*)(">)')
+RE_ROBOTS = re.compile(r'[ \t]*<meta name="robots" content="[^"]*">\r?\n')
 RE_CARD_HREF = re.compile(r'<a href="/product/([^/"]+)/" class="product-card">')
 
 
@@ -70,6 +82,24 @@ def process_page(root, entry, products):
                 raise ValueError("тегов описания должно быть ровно 1")
             new = rx.sub(lambda m: m.group(1) + attr(description) + m.group(3), new)
 
+    title = None
+    if entry.get("title"):
+        title = entry["title"] + TITLE_SUFFIX
+        if not TITLE_MIN <= len(title) <= TITLE_MAX:
+            raise ValueError("title %d символов, нужно %d-%d" % (len(title), TITLE_MIN, TITLE_MAX))
+        for rx, required in ((RE_TITLE, True), (RE_OG_TITLE, True), (RE_TW_TITLE, False)):
+            n = len(rx.findall(new))
+            if n > 1 or (required and n != 1):
+                raise ValueError("тег заголовка %s найден %d раз" % (rx.pattern[:30], n))
+            new = rx.sub(lambda m: m.group(1) + (html.escape(title, quote=False) if rx is RE_TITLE else attr(title)) + m.group(3), new)
+
+    new = RE_ROBOTS.sub("", new)
+    if entry.get("robots"):
+        m = re.search(r'^([ \t]*)<meta name="description" content="[^"]*">(\r?\n)', new, re.M)
+        if not m:
+            raise ValueError("не найден meta description для вставки robots")
+        new = new[:m.end()] + m.group(1) + '<meta name="robots" content="%s">' % attr(entry["robots"]) + m.group(2) + new[m.end():]
+
     page = {"@type": "CollectionPage" if entry["kind"] == "collection" else "WebPage",
             "name": h1, "url": url, "description": description, "inLanguage": "ru"}
     graph = [page, breadcrumb_ld(crumbs, url)]
@@ -82,9 +112,11 @@ def process_page(root, entry, products):
                 for i, p in enumerate(items)],
         })
     new = put_ld(new, ld_script(graph, eol), eol)
-    info = "%s, описание %d симв.%s%s" % (
+    info = "%s, описание %d симв.%s%s%s%s" % (
         page["@type"], len(description), "" if entry["description"] is not None else " (не менялось)",
-        ", ItemList %d" % len(items) if items else "")
+        ", ItemList %d" % len(items) if items else "",
+        ", title %d симв." % len(title) if title else "",
+        ", robots: " + entry["robots"] if entry.get("robots") else "")
     return path, text, new, info
 
 

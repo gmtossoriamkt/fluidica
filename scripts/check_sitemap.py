@@ -8,9 +8,15 @@
 Коды возврата: 0 - всё совпадает, 1 - есть расхождения.
 Флаг --fix дописывает недостающие URL (страницы блога - после последней записи блога,
 остальные - в конец urlset), сохраняя существующие переводы строк.
+Флаг --lastmod проставляет каждой записи <lastmod>YYYY-MM-DD</lastmod> - дату последнего
+git-коммита, менявшего index.html страницы (git log -1 --format=%cs). Если файл изменён,
+но ещё не закоммичен, берётся сегодняшняя дата (она станет датой коммита).
+Без --lastmod проверяется, что lastmod совпадает с этой датой (расхождения - код 1).
 """
 import argparse
+import datetime
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -18,6 +24,7 @@ ORIGIN = "https://fluidica.ru"
 SKIP_TOP_DIRS = {"data", "scripts", "components", ".git", "node_modules"}
 SERVICE_PAGES = {"oferta", "terms", "requisites", "privacy"}
 LOC_RE = re.compile(r"<loc>\s*([^<]+?)\s*</loc>")
+URL_RE = re.compile(r"<url>\s*<loc>\s*([^<]+?)\s*</loc>(?:\s*<lastmod>([^<]*)</lastmod>)?\s*</url>")
 
 
 def read_text(path):
@@ -51,6 +58,46 @@ def page_urls(root):
 
 def sitemap_urls(sitemap_path):
     return LOC_RE.findall(read_text(sitemap_path))
+
+
+def page_file(root, url):
+    rel = url[len(ORIGIN):].strip("/")
+    return (root / rel / "index.html") if rel else (root / "index.html")
+
+
+def git_lastmod(root, path):
+    """Дата последнего коммита, менявшего файл; сегодня - если есть незакоммиченные правки."""
+    rel = path.relative_to(root).as_posix()
+    dirty = subprocess.run(["git", "status", "--porcelain", "--", rel], cwd=root,
+                           capture_output=True, text=True, check=True).stdout.strip()
+    if dirty:
+        return datetime.date.today().isoformat()
+    out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", rel], cwd=root,
+                         capture_output=True, text=True, check=True).stdout.strip()
+    return out or datetime.date.today().isoformat()
+
+
+def lastmod_diffs(root, text):
+    """[(url, в sitemap, ожидается)] для записей с отсутствующим или устаревшим lastmod."""
+    diffs = []
+    for m in URL_RE.finditer(text):
+        url, current = m.group(1), m.group(2)
+        path = page_file(root, url)
+        if not path.is_file():
+            continue
+        expected = git_lastmod(root, path)
+        if current != expected:
+            diffs.append((url, current, expected))
+    return diffs
+
+
+def set_lastmod(root, text):
+    def repl(m):
+        path = page_file(root, m.group(1))
+        if not path.is_file():
+            return m.group(0)
+        return "<url><loc>%s</loc><lastmod>%s</lastmod></url>" % (m.group(1), git_lastmod(root, path))
+    return URL_RE.sub(repl, text)
 
 
 def insert_missing(text, missing):
@@ -90,6 +137,8 @@ def main(argv=None):
                         help="корень репозитория (по умолчанию - родитель папки scripts)")
     parser.add_argument("--fix", action="store_true",
                         help="дописать недостающие URL в sitemap.xml")
+    parser.add_argument("--lastmod", action="store_true",
+                        help="проставить <lastmod> по дате последнего git-коммита страницы")
     args = parser.parse_args(argv)
 
     root = Path(args.root).resolve()
@@ -123,7 +172,14 @@ def main(argv=None):
         print("\nДописано в sitemap.xml: %d" % len(missing))
         missing = []
 
-    if missing or orphans or duplicates:
+    if args.lastmod:
+        write_text(sitemap_path, set_lastmod(root, read_text(sitemap_path)))
+    stale = lastmod_diffs(root, read_text(sitemap_path))
+    print("\nlastmod не совпадает с датой git-коммита (%d):" % len(stale))
+    for url, cur, exp in stale:
+        print("  %s: %s -> %s" % (url, cur or "нет", exp))
+
+    if missing or orphans or duplicates or stale:
         return 1
     print("\nsitemap.xml совпадает со страницами.")
     return 0
