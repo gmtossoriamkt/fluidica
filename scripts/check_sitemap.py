@@ -6,7 +6,8 @@
 которые намеренно не входят в sitemap.
 
 Коды возврата: 0 - всё совпадает, 1 - есть расхождения.
-Флаг --fix дописывает недостающие URL (страницы блога - после последней записи блога,
+Флаг --fix дописывает недостающие URL (статьи блога - перед записью /blog/, а если её нет -
+после последней статьи блога;
 остальные - в конец urlset), сохраняя существующие переводы строк.
 Флаг --lastmod проставляет каждой записи <lastmod>YYYY-MM-DD</lastmod> - дату последнего
 git-коммита, менявшего index.html страницы (git log -1 --format=%cs). Если файл изменён,
@@ -102,21 +103,31 @@ def set_lastmod(root, text):
 
 def insert_missing(text, missing):
     """Возвращает text с дописанными URL, сохраняя переводы строк."""
-    blog = sorted(u for u in missing if u.startswith(ORIGIN + "/blog/"))
+    # сама лента /blog/ - после статей
+    blog = sorted((u for u in missing if u.startswith(ORIGIN + "/blog/")),
+                  key=lambda u: (u == ORIGIN + "/blog/", u))
     rest = sorted(u for u in missing if u not in blog)
 
     def entry(url):
         return "  <url><loc>" + url + "</loc></url>"
 
     if blog:
-        line_re = re.compile(
-            r"^[^\r\n]*<loc>" + re.escape(ORIGIN) + r"/blog/[^<]*</loc>[^\r\n]*(\r?\n)", re.M
+        # запись самой ленты /blog/ - статьи вставляются перед ней
+        index_re = re.compile(
+            r"^[^\r\n]*<loc>" + re.escape(ORIGIN) + r"/blog/</loc>[^\r\n]*(\r?\n)", re.M
         )
-        matches = list(line_re.finditer(text))
-        if matches:
-            last = matches[-1]
-            eol = last.group(1)
-            ins = "".join(entry(u) + eol for u in blog)
+        # записи статей /blog/<slug>/ - запасной вариант: после последней из них
+        article_re = re.compile(
+            r"^[^\r\n]*<loc>" + re.escape(ORIGIN) + r"/blog/[^<]+</loc>[^\r\n]*(\r?\n)", re.M
+        )
+        index = index_re.search(text)
+        articles = list(article_re.finditer(text))
+        if index:
+            ins = "".join(entry(u) + index.group(1) for u in blog)
+            text = text[: index.start()] + ins + text[index.start():]
+        elif articles:
+            last = articles[-1]
+            ins = "".join(entry(u) + last.group(1) for u in blog)
             text = text[: last.end()] + ins + text[last.end():]
         else:
             rest = sorted(set(rest) | set(blog))
