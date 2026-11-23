@@ -1,0 +1,1332 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ: частые вопросы про перистальтические насосы - Fluidica</title>
+<meta name="description" content="Ответы на 50 частых вопросов про лабораторные перистальтические насосы: принцип работы, расход, трубки, жидкости, обслуживание, неисправности и покупка.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/faq-peristalticheskie-nasosy-chastye-voprosy/">
+<meta property="og:title" content="FAQ: частые вопросы про перистальтические насосы - Fluidica">
+<meta property="og:description" content="Ответы на 50 частых вопросов про лабораторные перистальтические насосы: принцип работы, расход, трубки, жидкости, обслуживание, неисправности и покупка.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/faq-peristalticheskie-nasosy-chastye-voprosy/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.css">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin:0 0 40px;}
+  .toc-title{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;}
+  .toc ul{margin:0;padding-left:20px;}
+  .toc li{font-size:15.5px;line-height:1.5;margin-bottom:8px;}
+  .toc li:last-child{margin-bottom:0;}
+  .toc a{color:var(--primary-2);font-weight:600;transition:color .15s ease;}
+  .toc a:hover{color:var(--accent);}
+  .article-body h2[id]{scroll-margin-top:90px;}
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "FAQ: частые вопросы про перистальтические насосы",
+      "description": "Ответы на 50 частых вопросов про лабораторные перистальтические насосы: принцип работы, расход, трубки, жидкости, обслуживание, неисправности и покупка.",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/faq-peristalticheskie-nasosy-chastye-voprosy/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "FAQ",
+          "item": "https://fluidica.ru/blog/faq-peristalticheskie-nasosy-chastye-voprosy/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как работает перистальтический насос простыми словами?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ролики сжимают гибкую трубку и по мере вращения продвигают место сжатия вперёд, вытесняя жидкость. За роликом трубка возвращается к прежней форме, создаёт разрежение, и в неё подтягивается жидкость со стороны входа. Похоже на то, как если сдавить мягкую трубку пальцами и провести рукой вдоль неё.\nПодробное объяснение с примерами есть в статье «Что такое перистальтические насосы»."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Из каких узлов состоит насос и чем отличаются привод и головка?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Привод включает двигатель и систему управления: он задаёт вращение и скорость. Насосная головка — узел, в котором трубка сжимается: в роторных насосах это ротор с роликами, направляющая и крепления трубки. У ряда производителей головку подбирают отдельно под размер трубки, поэтому привод и головка могут продаваться раздельно.\nУстройство и типы головок разобраны в статье «Типы головок перистальтических насосов»."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Контактирует ли жидкость с деталями насоса?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "По описаниям Watson-Marlow и Verder, жидкость касается только внутренней поверхности трубки, а не ротора, роликов и привода. Поэтому такой насос не загрязняет жидкость деталями механизма, а жидкость не попадает в механизм.\nНо формулировка «жидкость не контактирует с насосом» неточна. С жидкостью контактируют сама трубка, соединители, фитинги и остальной контур, и совместимость нужно проверять для всех этих материалов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое окклюзия и как прижим трубки влияет на работу?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Окклюзия — степень, до которой ролик сжимает трубку. По определению Verder, при полной окклюзии обратного тока (проскальзывания) нет, поэтому насос считается объёмным. Недостаточное сжатие даёт утечку и обратный ток, избыточное ускоряет износ трубки (Blue-White, Darwin Microfluidics).\nУ некоторых головок окклюзия регулируется. Оптимальную настройку для пары «головка и трубка» определяет производитель, универсальных значений нет."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Зачем нужны ролики и влияет ли их число на пульсации?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ролики сжимают трубку. По описанию Watson-Marlow, хотя бы один ролик всегда прижимает трубку к направляющей, поэтому при остановке жидкость не возвращается назад и не нужны обратные клапаны.\nЧем больше роликов, тем обычно меньше пульсации, но трубка сжимается чаще, и ресурс сокращается (по обзору головок Masterflex L/S). Эффект зависит от конструкции головки и других параметров, поэтому «больше роликов» не гарантирует ровный поток."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как правильно выбрать насос под конкретную задачу?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Начните с описания задачи и жидкости. John Morris Group (дистрибьютор Masterflex) советует часто выбирать сначала размер и материал трубки, затем головку под неё, а потом привод. Так вы не купите привод, под который не подберёте нужную трубку.\nПошаговый порядок есть в чек-листе по выбору перистальтических насосов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие параметры нужно определить до покупки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "- жидкость: состав, вязкость, температура, чувствительность к сдвигу\n- минимальный, рабочий и максимальный расход\n- давление в линии и допустимое давление всех элементов контура\n- режим: периодически, по расписанию или непрерывно\n- число каналов и нужна ли независимая регулировка\n- управление и интерфейсы\n- расходные материалы: трубки, запасные части"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему нельзя ориентироваться только на максимальную производительность?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Максимальный расход в паспорте — верхняя граница, а не рабочий режим. Фактическая подача зависит от пары «трубка и головка», скорости, противодавления, вязкости и износа трубки.\nЕсли насос будет работать у нижней границы диапазона, уточните у производителя, какие точность и повторяемость заявлены в этой области и при каких условиях, и проверьте это измерением."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как учитывать рабочее давление?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Давление складывается из сопротивления всего тракта: фильтров, клапанов, длинных линий, вязкости и чипа. Допустимое значение определяет самый слабый элемент: трубка, фитинги, датчики, соединения. Blue-White называет давление наиболее влиятельным фактором износа трубки.\nЕсли выходную линию можно перекрыть, предусмотрите защиту: предохранительный клапан или реле давления. В руководстве Watson-Marlow 120U/D1 советуют ставить устройство сброса давления между насосом и клапаном на выходе."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как вязкость и температура влияют на выбор?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Watson-Marlow указывает, что перистальтические насосы подходят в том числе для вязких жидкостей. При этом вязкость и температура меняют фактический расход, поэтому калибровку проводят в условиях, близких к рабочим. Для вязких жидкостей руководство Watson-Marlow рекомендует работать на низкой скорости.\nС ростом температуры, по материалам Masterflex, химическая стойкость трубки снижается, а допустимое рабочее давление может падать. Конкретные пределы указывает производитель трубки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Когда нужен многоканальный насос, а когда достаточно одноканального?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Многоканальный насос полезен, когда нужно одновременно подавать жидкость по нескольким линиям (Microlit, John Morris Group). Но у части моделей несколько трубок обслуживает общий привод: скорость у них одинакова, и различия расхода определяются самими трубками.\nЕсли вам нужны разные расходы по каналам, ищите независимое управление. Если линия одна, обычно достаточно одноканальной модели. Сценарии разобраны в статье о конфигурациях под разные бюджеты."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как выбрать насос для непрерывной работы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Учитывайте, сколько часов в сутки работает насос, и доступ для замены трубки. Axflow (дистрибьютор промышленных насосов) советует брать насос с запасом, чтобы он работал медленнее: это связывают с большим сроком службы трубки. Это промышленный ориентир, к лабораторным установкам его переносят с осторожностью.\nДержите запас трубок и план калибровки. Для длительных режимов уточните у производителя, на какие условия рассчитан ресурс."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "От чего зависит производительность перистальтического насоса?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "- скорость вращения ротора\n- внутренний диаметр трубки\n- материал и упругость трубки\n- конструкция головки: число роликов, окклюзия\n- условия работы: противодавление, вязкость, температура\n- износ трубки"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как определяется расход и почему он может отличаться от паспортного?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Скорость вращения не равна расходу. В руководстве Watson-Marlow 120 таблицы расхода даны для новой трубки и воды при 20 °C, и там прямо сказано, что расход в конкретном применении определяют опытным путём для каждой новой трубки в рабочих условиях.\nПоэтому фактическая подача может отличаться от паспортной. Её проверяют измерением, например взвешиванием перекачанной жидкости."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Зависит ли расход от диаметра трубки и скорости вращения?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "При прочих равных больший внутренний диаметр трубки означает больший объём за оборот, а рост скорости обычно увеличивает расход. Watson-Marlow указывает, что в рекомендуемом диапазоне расход линейно зависит от скорости.\nНо более высокая скорость сокращает срок службы трубки (Blue-White, Darwin Microfluidics). Выбор скорости — компромисс между подачей и ресурсом."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему расход меняется при изменении противодавления?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Противодавление, вязкость, температура и износ трубки могут менять фактическую производительность. Величина эффекта зависит от модели, головки и трубки, поэтому общих цифр нет.\nЕсли насос работает на чип или фильтр, проверяйте подачу при характерном для вашей системы противодавлении, а не на открытой линии."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем точность отличается от повторяемости?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Точность показывает, насколько фактическая подача близка к заданной. Повторяемость показывает, насколько совпадают результаты повторных одинаковых запусков. Насос может стабильно подавать немного не тот объём: повторяемость хорошая, точность нет, и это можно скорректировать калибровкой.\nОдинаковый объём в каждом цикле не гарантирован: его нужно проверять измерением в ваших условиях. Заявленные значения привязаны к трубке и условиям измерения, об этом стоит спросить производителя. Методика проверки есть в статье о калибровке и валидации."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужно ли калибровать насос после установки новой трубки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, это рекомендуют производители. Инструкция WPI для Peri-Star Pro связывает калибровку со сменой типа трубки, а руководство Masterflex L/S советует обкатать трубку и периодически повторять калибровку. Ossila описывает обкатку новой трубки и взвешивание перекачанной жидкости.\nКалибровку стоит повторять при смене трубки, температуры или вязкости жидкости и по мере износа. Время обкатки источники называют по-разному: ориентируйтесь на руководство своей модели."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как правильно выбрать трубку?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Трубку подбирают по материалу, внутреннему диаметру и толщине стенки. Она должна быть совместима и с головкой, и с жидкостью. Darwin Microfluidics для головок DG указывает, что толщина стенки должна соответствовать зазору между роликами и корпусом.\nУ некоторых моделей допустимы только определённые трубки: например, для Watson-Marlow 120F в руководстве указана трубка из Pumpsil определённого размера."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие материалы применяют и как проверить совместимость с жидкостью?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Применяют силикон, термопластичные эластомеры, фторэластомеры, ПВХ и другие материалы. Название материала не гарантирует совместимость: нужно учитывать конкретный раствор, температуру, давление и рекомендации производителя.\nПоставщики советуют пользоваться таблицами, составленными именно для насосных трубок: общие рейтинги трубок могут не отражать нагрузку при перистальтической перекачке. Учитывайте все компоненты раствора, а не только основной. Если данных нет, Masterflex описывает иммерсионный тест: образец выдерживают в жидкости не менее 48 часов, затем осматривают на изменение цвета, набухание, растрескивание и потерю подачи, после чего проверяют на насосе."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли использовать трубки других производителей или заменить трубку аналогичной?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Поставщик трубок предупреждает, что даже небольшие отклонения размеров от допусков могут влиять на работу и безопасность. Он советует использовать размер, указанный производителем насоса, и запрашивать данные испытаний, подтверждающие заявленный ресурс.\nПоэтому «такой же по размеру» не значит «подходит». Как подбирать аналог, разобрано в статье об обслуживании и ремонте."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как понять, что трубка установлена неправильно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "По Darwin Microfluidics, признаки неправильной установки: утечки на входе или выходе, неточный расход, проскальзывание трубки, пульсации, ускоренный износ, пережатие. Видимые признаки: перекручивание, перегиб, смещение или провисание.\nПроверяйте установку по инструкции для вашей головки и пробным запуском на малой скорости. Порядок описан в пошаговой инструкции по запуску."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему трубка быстро изнашивается?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Срок службы определяют материал, давление и скорость, конструкция головки и окклюзия, свойства жидкости (вязкость, температура, абразивность) и окружающая среда (Darwin Microfluidics). Blue-White называет давление самым влиятельным фактором и отмечает, что чрезмерное сжатие тоже сокращает ресурс.\nБыстрый износ — повод проверить окклюзию, давление в линии, скорость и совместимость материала."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как часто менять трубку и можно ли использовать одну трубку для разных жидкостей?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Универсального интервала нет. Darwin Microfluidics пишет об общем диапазоне от нескольких сотен часов до нескольких тысяч. В его таблице данных Masterflex L/S 16 (вода, 21 °C, 0 бар) для Norprene указано 10 000 часов при 50 об/мин и 1000 часов при 600 об/мин, для Viton — 150 и 30 часов. Это пример зависимости от скорости и материала, а не прогноз для вашей системы.\nWPI советует заменять видимо изношенную трубку сразу. Про использование одной трубки для разных жидкостей прямых указаний в источниках нет. Практическая осторожность: она должна быть совместима со всеми жидкостями, а для чувствительных задач, где важно исключить перенос, лучше брать отдельную трубку."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие жидкости можно перекачивать: вязкие, агрессивные, с твёрдыми частицами?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В руководстве Watson-Marlow сказано, что перистальтические насосы подходят для большинства жидкостей, в том числе вязких, чувствительных к сдвигу, коррозионных, абразивных и с взвешенными твёрдыми частицами. Verder отмечает, что отсутствие внутренних клапанов позволяет перекачивать жидкости с крупными включениями и абразивные шламы (это описание промышленных насосов).\nДля лабораторной модели решает конкретная пара «головка и трубка»: для агрессивных сред определяет совместимость материала трубки, а частицы должны проходить через трубку и соединители. Допустимую долю твёрдых частиц указывает производитель."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Подходит ли насос для стерильных жидкостей, пищевых продуктов и фармацевтики?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Так как жидкость контактирует только с трубкой, риск загрязнения жидкости механизмом ниже. Но стерильность и пригодность для пищевых или фармацевтических задач нужно подтверждать для конкретного исполнения.\nКаталоги Masterflex описывают отдельные трубки как соответствующие стандартам FDA и USP Class VI и автоклавируемые. Это свойства конкретных трубок. Запрашивайте документы на вашу трубку, насос и процедуры очистки и стерилизации и проверяйте всё в рабочих условиях, как советует и поставщик трубок."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Подходит ли перистальтический насос для лабораторных исследований и микрофлюидики?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для подачи реагентов, питательных сред, буферов и длительной подачи из резервуара такие насосы широко используют. В микрофлюидике важны пульсации и противодавление: колебания потока могут влиять на результат.\nДля их уменьшения применяют специальные головки и демпферы, но полностью они колебания не устраняют. Подробнее: перистальтические насосы для single-cell и капельной микрофлюидики."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие ограничения возникают при работе с газожидкостными смесями?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В проверенных нами источниках прямых данных и допусков по газожидкостным смесям нет. Известно, что воздух в трубке делает расход нестабильным, а неправильная установка трубки может приводить к кавитации и попаданию воздуха (Darwin Microfluidics).\nДля точной подачи удаляйте воздух из линий до начала работы. Если нужно перекачивать смеси с газом, запросите у производителя данные для вашей модели и проверьте измерением."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Когда лучше выбрать шприцевой насос или другой тип?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Шприцевые насосы часто выбирают для малых расходов и точной подачи ограниченного объёма, а перистальтические удобны для длительной подачи из резервуара. Выбор зависит от требований к расходу, характеру потока и длительности эксперимента.\nСравнение принципов есть в статье «Принцип работы и устройство шприцевого насоса», а ответы на вопросы про шприцевые насосы собраны в отдельном FAQ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как подготовить насос к первому запуску?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Прочитайте руководство вашей модели. Проверьте питание и место установки, установите трубку по инструкции для головки, подключите линии, заполните систему и сделайте контрольный запуск на модельной жидкости, постепенно выходя на рабочую скорость.\nПолная последовательность — в статье «Пошаговый запуск перистальтического насоса». Что проверить при получении оборудования, разобрано в чек-листе приёмки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужно ли заполнять трубку жидкостью и можно ли запускать насос без жидкости?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Заполнение нужно, чтобы убрать воздух: у Watson-Marlow 120 для этого удерживают кнопку MAX, у Masterflex L/S — PRIME. Сухой ход зависит от модели. Руководства Watson-Marlow 120 и 323Dz допускают работу всухую, Verder пишет, что насос может работать без жидкости без повреждения внутренних компонентов. А в руководстве Watson-Marlow на шланговые насосы Bredel (серия APEX) сухой ход создаёт дополнительную тепловую нагрузку на шланг и ускоряет износ, поэтому такие периоды рекомендуют сводить к минимуму.\nУниверсального ответа нет: ищите допустимость и ограничение по времени в руководстве вашей модели. Не запускайте насос без установленной головки: например, Watson-Marlow 120 это запрещает."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как правильно остановить насос и подготовить его к простою?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Остановите привод и отключите питание, при необходимости сбросьте давление и слейте жидкость. Только после этого открывайте головку и снимайте трубку. Меняя трубку, всегда выключайте питание и вынимайте вилку из розетки (WPI).\nЕсли насос долго простаивает, Darwin Microfluidics для головок DG советует снимать трубку с роликов, чтобы не держать её сжатой."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужно ли промывать трубку после использования и чем?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "В руководствах Watson-Marlow 120 и Masterflex L/S отдельной процедуры промывки контура нет, поэтому порядок определяйте исходя из того, что перекачивали. Промывочная жидкость должна быть совместима с трубкой, фитингами и другими контактирующими материалами.\nНе промывайте систему любым растворителем: он может повредить трубку или фитинги. Корпус протирают слегка влажной тканью, погружать прибор нельзя."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как часто проводить обслуживание и что регулярно проверять?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Единого интервала нет, график определяет руководство модели и интенсивность работы. Darwin Microfluidics советует периодически проверять трубку на трещины, изменение цвета и снижение потока и вести учёт часов работы. В руководстве Watson-Marlow сказано держать направляющую и подвижные части головки чистыми.\nBlue-White отмечает, что невыявленная утечка может повредить роликовый узел, увеличить трение и сократить ресурс. При утечке остановите насос и проверьте головку."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как продлить срок службы трубки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "- не превышайте допустимое давление и разумную скорость вращения (Darwin Microfluidics, Blue-White)\n- выбирайте материал, совместимый с жидкостью\n- настраивайте окклюзию по инструкции, не перетягивайте\n- периодически осматривайте трубку и заменяйте до разрыва\n- при простое освобождайте трубку от роликов, если это рекомендует производитель головки\n- WPI советует регулярно протягивать свежий участок трубки в зону роликов при интенсивной работе"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему насос не подаёт жидкость?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Причины, которые стоит проверить по порядку: воздух в линии и неполное заполнение; закрытый клапан или перекрытая выходная линия; неверный размер трубки (слишком тонкая протягивается через головку или сжимается недостаточно, на что указывают производители); недостаточная окклюзия; неверное направление вращения.\nЕсли после проверок подача не появилась, остановите насос и обратитесь к руководству или в сервис."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему расход ниже ожидаемого или нестабилен?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Типичные причины: износ или неправильная установка трубки, неверная окклюзия, воздух в линии, рост противодавления, изменение вязкости или температуры, отсутствие калибровки для текущей трубки. Скорость вращения сама по себе не показывает фактический расход.\nИзмерьте подачу, сравните её с заданной и проверьте трубку. Список типичных ошибок собран в статье «Типичные ошибки при работе с перистальтическими насосами»."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что делать, если жидкость поступает рывками или с пульсациями?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Пульсации заложены в принципе: жидкость вытесняется порциями при сжатии трубки. На них влияют конструкция головки, число роликов, скорость и свойства трубки. Скрученная или провисшая трубка создаёт дополнительные пульсации и нестабильный поток.\nДля одних задач пульсации не важны, для других (дозирование, микрофлюидика) их стоит сначала измерить. Демпферы помогают сгладить поток, но не гарантируют полного устранения колебаний, и эффект проверяют в вашей системе."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Из-за чего насос шумит, вибрирует или смещается трубка?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Универсального перечня причин источники не дают. По описаниям производителей, смещённая трубка сжимается роликами неравномерно, что искажает расход и ускоряет износ, а провисание трубки снижает ресурс.\nПри необычном шуме остановите насос, проверьте установку трубки, ролики, направляющую и крепления. Если причина не найдена или есть подозрение на механическое повреждение, обратитесь в сервис."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему трубка повреждается или разрывается?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Типичные причины: давление выше допустимого или закрытая выходная линия, химическая несовместимость, естественный износ, чрезмерная окклюзия. Masterflex предупреждает, что при разрыве трубки жидкость может разбрызгиваться, поэтому при работе с агрессивными жидкостями нужны средства защиты.\nПоставщик трубок советует защиту от превышения давления: предохранительный клапан или реле давления."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что делать, если насос не включается или перегревается, и что можно устранить самостоятельно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Если насос не включается, проверьте питание и адаптер, затем код ошибки: расшифровка есть в руководстве. Например, для ошибки перегрузки по току Masterflex советует проверить, не заклинило ли головку и не превышена ли нагрузка. Общих причин перегрева источники не называют: проверьте условия установки (Watson-Marlow 120 требует свободной циркуляции воздуха и указывает допустимый диапазон температуры) и нагрузку.\nСамостоятельно обычно можно осмотреть насос, проверить подключение, заменить трубку и очистить доступные поверхности способом, разрешённым производителем. Привод и электронику не разбирайте: пользовательских деталей внутри привода нет (по руководствам Watson-Marlow). См. также статью об обслуживании и ремонте."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли регулировать скорость и какие способы управления бывают?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Microlit описывает варианты от ручной регулировки скорости до цифрового управления, программ и внешнего управления. Базовых задач с невысокими требованиями к точности достаточно ручного режима.\nЕсли насос работает в режиме «расход», он пересчитывает скорость по калибровке, и фактическую подачу всё равно нужно проверить измерением."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли управлять насосом с компьютера и интегрировать его в автоматизированную систему?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Это зависит от модели. Microlit перечисляет цифровые интерфейсы, интеграцию с внешним управлением и удалённый мониторинг, а у более продвинутых моделей называет связь по USB, RS-485 и Wi-Fi. Какие интерфейсы нужны, определяет ваша система управления.\nДо покупки выясните, какой протокол поддерживает насос и есть ли документация для интеграции. Общий подход к автоматизации описан в статье про интеграцию шприцевых насосов в стенд."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли модели с программируемыми режимами и можно ли менять направление подачи?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, но не у всех. По Microlit, программируемые модели позволяют задавать циклы дозирования и интервалы. У многих моделей направление подачи меняют переключением вращения, но для некоторых головок давление допускается только при одном направлении: например, для Watson-Marlow 120S и 120U давление до 2 бар разрешено только при вращении против часовой стрелки.\nCole-Parmer в рекламной статье описывает приводы, которые хранят отдельную калибровку для каждого размера трубки и после дозы кратко реверсируют мотор, чтобы избежать подтекания. Это функции конкретных линеек, их наличие нужно проверять в вашей модели."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли управлять несколькими насосами или каналами одновременно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Возможность зависит от модели и интерфейсов. Если несколько трубок установлены на общей головке, скорость у них одинакова, а различия расхода определяются трубками, поэтому расход каждого канала нужно проверять отдельно. Независимое управление каналами есть не у всех многоканальных систем.\nЕсли нужна синхронизация нескольких насосов, уточните у поставщика, какие команды и интерфейсы поддерживаются."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что обычно входит в комплект поставки?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Состав зависит от модели. Для примера, в руководстве Watson-Marlow 120 в комплект входят привод с головкой, внешний блок питания с переходниками для вилок и краткое руководство. Головка и трубка у других моделей могут продаваться отдельно.\nКомплект сверяют со спецификацией и договором: подробности в чек-листе приёмки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "От чего зависит стоимость насоса и какие расходники учесть в бюджете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Цена складывается из привода, головки, трубки, числа каналов, управления и комплектации. Microlit называет выбор только по начальной цене частой ошибкой: самый дешёвый насос может оказаться дороже в эксплуатации из-за обслуживания, снижения точности или короткого срока службы.\nВ бюджет закладывайте трубки, запчасти, сервис, калибровку и простой. Подробнее: «Сколько стоят перистальтические насосы»."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какой срок службы у перистальтического насоса?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Универсального срока нет. Трубка — расходный материал со своим ресурсом, а ресурс привода и головки зависит от модели и режима работы. Срок гарантии не равен сроку службы: например, у Watson-Marlow 120 гарантия на привод составляет три года с даты изготовления, а трубки в неё не входят.\nСпросите поставщика о ресурсе узлов, доступности запасных частей и сервиса на нужный вам срок."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие условия гарантии действуют на насос и расходные материалы, и какие документы должны быть?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Условия гарантии определяют договор и документы производителя, поэтому сверяйте именно их. Для примера, по руководству Watson-Marlow 120 гарантия не покрывает трубки как расходный материал, нормальный износ, неправильное использование и работу выше указанных давлений; ремонт должен выполнять производитель или авторизованный сервис, а головки имеют собственную гарантию.\nПеречень сопроводительных документов (руководство, паспорт, сведения о гарантии и калибровке) зависит от поставки и модели. Что сверять при получении, описано в чек-листе приёмки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Куда обращаться при неисправности и как проверить насос при получении?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сначала свяжитесь с поставщиком или сервисом, указанным в договоре, и не разбирайте насос до согласования действий. Подготовьте модель, серийный номер, описание неисправности, условия работы, фото или видео. Порядок возврата определяет производитель: Watson-Marlow, например, требует номер возврата и документ об обеззараживании оборудования.\nПри получении проверьте упаковку, комплектность, документы, головку, трубку и работу основных функций. Подробный список проверок есть в чек-листе приёмки перистальтического насоса."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">FAQ</a>
+        </nav>
+        <span class="eyebrow">FAQ</span>
+        <h1>FAQ: частые вопросы про перистальтические насосы</h1>
+        <p class="hero-sub">Как работает насос, от чего зависит расход, как выбрать и менять трубку, что делать при неисправностях. 50 коротких ответов с оговорками там, где всё зависит от модели.</p>
+        <div class="article-meta">
+          <span>23 ноября 2026</span>
+          <span>~14 мин чтения</span>
+          <span>Перистальтические насосы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Перистальтические насосы применяют в лабораториях, биотехнологиях и системах подачи реагентов. Но при выборе и работе быстро возникают вопросы: от чего зависит расход, как подобрать трубку, можно ли запускать насос без жидкости и что делать, если подача нестабильна.</p>
+
+        <p>Мы собрали 50 коротких ответов. Как читать материал: за основу взяты руководства и материалы производителей и поставщиков (Watson-Marlow, Masterflex, Darwin Microfluidics, Blue-White, WPI, Verder), а не независимые испытания. Примеры из руководств относятся к названным моделям и не переносятся на другое оборудование. Числовых допусков, сроков замены и интервалов обслуживания здесь нет: их задаёт производитель вашей модели. Статья о лабораторных насосах, а не о медицинских.</p>
+
+        <div class="toc" role="navigation" aria-label="Содержание">
+          <div class="toc-title">Разделы</div>
+          <ul>
+            <li><a href="#principle">Принцип работы и устройство</a></li>
+            <li><a href="#choice">Выбор насоса и характеристики</a></li>
+            <li><a href="#flow">Расход, точность и дозирование</a></li>
+            <li><a href="#tubing">Трубки и совместимость</a></li>
+            <li><a href="#liquids">Жидкости и области применения</a></li>
+            <li><a href="#service">Эксплуатация и обслуживание</a></li>
+            <li><a href="#faults">Неисправности и проблемы</a></li>
+            <li><a href="#control">Управление и автоматизация</a></li>
+            <li><a href="#purchase">Покупка, гарантия и сервис</a></li>
+          </ul>
+        </div>
+
+
+        <h2 id="principle">Принцип работы и устройство</h2>
+
+        <h3>1. Как работает перистальтический насос простыми словами?</h3>
+
+        <p>Ролики сжимают гибкую трубку и по мере вращения продвигают место сжатия вперёд, вытесняя жидкость. За роликом трубка возвращается к прежней форме, создаёт разрежение, и в неё подтягивается жидкость со стороны входа. Похоже на то, как если сдавить мягкую трубку пальцами и провести рукой вдоль неё.</p>
+
+        <p>Подробное объяснение с примерами есть в статье <a class="inline-link" href="/blog/chto-takoe-peristalticheskie-nasosy/">«Что такое перистальтические насосы»</a>.</p>
+
+        <h3>2. Из каких узлов состоит насос и чем отличаются привод и головка?</h3>
+
+        <p>Привод включает двигатель и систему управления: он задаёт вращение и скорость. Насосная головка — узел, в котором трубка сжимается: в роторных насосах это ротор с роликами, направляющая и крепления трубки. У ряда производителей головку подбирают отдельно под размер трубки, поэтому привод и головка могут продаваться раздельно.</p>
+
+        <p>Устройство и типы головок разобраны в статье <a class="inline-link" href="/blog/tipy-golovok-peristalticheskih-nasosov/">«Типы головок перистальтических насосов»</a>.</p>
+
+        <h3>3. Контактирует ли жидкость с деталями насоса?</h3>
+
+        <p>По описаниям Watson-Marlow и Verder, жидкость касается только внутренней поверхности трубки, а не ротора, роликов и привода. Поэтому такой насос не загрязняет жидкость деталями механизма, а жидкость не попадает в механизм.</p>
+
+        <p>Но формулировка «жидкость не контактирует с насосом» неточна. С жидкостью контактируют сама трубка, соединители, фитинги и остальной контур, и совместимость нужно проверять для всех этих материалов.</p>
+
+        <h3>4. Что такое окклюзия и как прижим трубки влияет на работу?</h3>
+
+        <p>Окклюзия — степень, до которой ролик сжимает трубку. По определению Verder, при полной окклюзии обратного тока (проскальзывания) нет, поэтому насос считается объёмным. Недостаточное сжатие даёт утечку и обратный ток, избыточное ускоряет износ трубки (Blue-White, Darwin Microfluidics).</p>
+
+        <p>У некоторых головок окклюзия регулируется. Оптимальную настройку для пары «головка и трубка» определяет производитель, универсальных значений нет.</p>
+
+        <h3>5. Зачем нужны ролики и влияет ли их число на пульсации?</h3>
+
+        <p>Ролики сжимают трубку. По описанию Watson-Marlow, хотя бы один ролик всегда прижимает трубку к направляющей, поэтому при остановке жидкость не возвращается назад и не нужны обратные клапаны.</p>
+
+        <p>Чем больше роликов, тем обычно меньше пульсации, но трубка сжимается чаще, и ресурс сокращается (по обзору головок Masterflex L/S). Эффект зависит от конструкции головки и других параметров, поэтому «больше роликов» не гарантирует ровный поток.</p>
+
+
+        <h2 id="choice">Выбор насоса и характеристики</h2>
+
+        <h3>6. Как правильно выбрать насос под конкретную задачу?</h3>
+
+        <p>Начните с описания задачи и жидкости. John Morris Group (дистрибьютор Masterflex) советует часто выбирать сначала размер и материал трубки, затем головку под неё, а потом привод. Так вы не купите привод, под который не подберёте нужную трубку.</p>
+
+        <p>Пошаговый порядок есть в <a class="inline-link" href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">чек-листе по выбору перистальтических насосов</a>.</p>
+
+        <h3>7. Какие параметры нужно определить до покупки?</h3>
+
+        <ul>
+          <li><span>жидкость: состав, вязкость, температура, чувствительность к сдвигу</span></li>
+          <li><span>минимальный, рабочий и максимальный расход</span></li>
+          <li><span>давление в линии и допустимое давление всех элементов контура</span></li>
+          <li><span>режим: периодически, по расписанию или непрерывно</span></li>
+          <li><span>число каналов и нужна ли независимая регулировка</span></li>
+          <li><span>управление и интерфейсы</span></li>
+          <li><span>расходные материалы: трубки, запасные части</span></li>
+        </ul>
+
+        <h3>8. Почему нельзя ориентироваться только на максимальную производительность?</h3>
+
+        <p>Максимальный расход в паспорте — верхняя граница, а не рабочий режим. Фактическая подача зависит от пары «трубка и головка», скорости, противодавления, вязкости и износа трубки.</p>
+
+        <p>Если насос будет работать у нижней границы диапазона, уточните у производителя, какие точность и повторяемость заявлены в этой области и при каких условиях, и проверьте это измерением.</p>
+
+        <h3>9. Как учитывать рабочее давление?</h3>
+
+        <p>Давление складывается из сопротивления всего тракта: фильтров, клапанов, длинных линий, вязкости и чипа. Допустимое значение определяет самый слабый элемент: трубка, фитинги, датчики, соединения. Blue-White называет давление наиболее влиятельным фактором износа трубки.</p>
+
+        <p>Если выходную линию можно перекрыть, предусмотрите защиту: предохранительный клапан или реле давления. В руководстве Watson-Marlow 120U/D1 советуют ставить устройство сброса давления между насосом и клапаном на выходе.</p>
+
+        <h3>10. Как вязкость и температура влияют на выбор?</h3>
+
+        <p>Watson-Marlow указывает, что перистальтические насосы подходят в том числе для вязких жидкостей. При этом вязкость и температура меняют фактический расход, поэтому калибровку проводят в условиях, близких к рабочим. Для вязких жидкостей руководство Watson-Marlow рекомендует работать на низкой скорости.</p>
+
+        <p>С ростом температуры, по материалам Masterflex, химическая стойкость трубки снижается, а допустимое рабочее давление может падать. Конкретные пределы указывает производитель трубки.</p>
+
+        <h3>11. Когда нужен многоканальный насос, а когда достаточно одноканального?</h3>
+
+        <p>Многоканальный насос полезен, когда нужно одновременно подавать жидкость по нескольким линиям (Microlit, John Morris Group). Но у части моделей несколько трубок обслуживает общий привод: скорость у них одинакова, и различия расхода определяются самими трубками.</p>
+
+        <p>Если вам нужны разные расходы по каналам, ищите независимое управление. Если линия одна, обычно достаточно одноканальной модели. Сценарии разобраны в статье <a class="inline-link" href="/blog/konfiguracii-peristalticheskih-nasosov-pod-byudzhet/">о конфигурациях под разные бюджеты</a>.</p>
+
+        <h3>12. Как выбрать насос для непрерывной работы?</h3>
+
+        <p>Учитывайте, сколько часов в сутки работает насос, и доступ для замены трубки. Axflow (дистрибьютор промышленных насосов) советует брать насос с запасом, чтобы он работал медленнее: это связывают с большим сроком службы трубки. Это промышленный ориентир, к лабораторным установкам его переносят с осторожностью.</p>
+
+        <p>Держите запас трубок и план калибровки. Для длительных режимов уточните у производителя, на какие условия рассчитан ресурс.</p>
+
+
+        <h2 id="flow">Расход, точность и дозирование</h2>
+
+        <h3>13. От чего зависит производительность перистальтического насоса?</h3>
+
+        <ul>
+          <li><span>скорость вращения ротора</span></li>
+          <li><span>внутренний диаметр трубки</span></li>
+          <li><span>материал и упругость трубки</span></li>
+          <li><span>конструкция головки: число роликов, окклюзия</span></li>
+          <li><span>условия работы: противодавление, вязкость, температура</span></li>
+          <li><span>износ трубки</span></li>
+        </ul>
+
+        <h3>14. Как определяется расход и почему он может отличаться от паспортного?</h3>
+
+        <p>Скорость вращения не равна расходу. В руководстве Watson-Marlow 120 таблицы расхода даны для новой трубки и воды при 20 °C, и там прямо сказано, что расход в конкретном применении определяют опытным путём для каждой новой трубки в рабочих условиях.</p>
+
+        <p>Поэтому фактическая подача может отличаться от паспортной. Её проверяют измерением, например взвешиванием перекачанной жидкости.</p>
+
+        <h3>15. Зависит ли расход от диаметра трубки и скорости вращения?</h3>
+
+        <p>При прочих равных больший внутренний диаметр трубки означает больший объём за оборот, а рост скорости обычно увеличивает расход. Watson-Marlow указывает, что в рекомендуемом диапазоне расход линейно зависит от скорости.</p>
+
+        <p>Но более высокая скорость сокращает срок службы трубки (Blue-White, Darwin Microfluidics). Выбор скорости — компромисс между подачей и ресурсом.</p>
+
+        <h3>16. Почему расход меняется при изменении противодавления?</h3>
+
+        <p>Противодавление, вязкость, температура и износ трубки могут менять фактическую производительность. Величина эффекта зависит от модели, головки и трубки, поэтому общих цифр нет.</p>
+
+        <p>Если насос работает на чип или фильтр, проверяйте подачу при характерном для вашей системы противодавлении, а не на открытой линии.</p>
+
+        <h3>17. Чем точность отличается от повторяемости?</h3>
+
+        <p>Точность показывает, насколько фактическая подача близка к заданной. Повторяемость показывает, насколько совпадают результаты повторных одинаковых запусков. Насос может стабильно подавать немного не тот объём: повторяемость хорошая, точность нет, и это можно скорректировать калибровкой.</p>
+
+        <p>Одинаковый объём в каждом цикле не гарантирован: его нужно проверять измерением в ваших условиях. Заявленные значения привязаны к трубке и условиям измерения, об этом стоит спросить производителя. Методика проверки есть в статье <a class="inline-link" href="/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/">о калибровке и валидации</a>.</p>
+
+        <h3>18. Нужно ли калибровать насос после установки новой трубки?</h3>
+
+        <p>Да, это рекомендуют производители. Инструкция WPI для Peri-Star Pro связывает калибровку со сменой типа трубки, а руководство Masterflex L/S советует обкатать трубку и периодически повторять калибровку. Ossila описывает обкатку новой трубки и взвешивание перекачанной жидкости.</p>
+
+        <p>Калибровку стоит повторять при смене трубки, температуры или вязкости жидкости и по мере износа. Время обкатки источники называют по-разному: ориентируйтесь на руководство своей модели.</p>
+
+
+        <h2 id="tubing">Трубки и совместимость</h2>
+
+        <h3>19. Как правильно выбрать трубку?</h3>
+
+        <p>Трубку подбирают по материалу, внутреннему диаметру и толщине стенки. Она должна быть совместима и с головкой, и с жидкостью. Darwin Microfluidics для головок DG указывает, что толщина стенки должна соответствовать зазору между роликами и корпусом.</p>
+
+        <p>У некоторых моделей допустимы только определённые трубки: например, для Watson-Marlow 120F в руководстве указана трубка из Pumpsil определённого размера.</p>
+
+        <h3>20. Какие материалы применяют и как проверить совместимость с жидкостью?</h3>
+
+        <p>Применяют силикон, термопластичные эластомеры, фторэластомеры, ПВХ и другие материалы. Название материала не гарантирует совместимость: нужно учитывать конкретный раствор, температуру, давление и рекомендации производителя.</p>
+
+        <p>Поставщики советуют пользоваться таблицами, составленными именно для насосных трубок: общие рейтинги трубок могут не отражать нагрузку при перистальтической перекачке. Учитывайте все компоненты раствора, а не только основной. Если данных нет, Masterflex описывает иммерсионный тест: образец выдерживают в жидкости не менее 48 часов, затем осматривают на изменение цвета, набухание, растрескивание и потерю подачи, после чего проверяют на насосе.</p>
+
+        <h3>21. Можно ли использовать трубки других производителей или заменить трубку аналогичной?</h3>
+
+        <p>Поставщик трубок предупреждает, что даже небольшие отклонения размеров от допусков могут влиять на работу и безопасность. Он советует использовать размер, указанный производителем насоса, и запрашивать данные испытаний, подтверждающие заявленный ресурс.</p>
+
+        <p>Поэтому «такой же по размеру» не значит «подходит». Как подбирать аналог, разобрано в статье <a class="inline-link" href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">об обслуживании и ремонте</a>.</p>
+
+        <h3>22. Как понять, что трубка установлена неправильно?</h3>
+
+        <p>По Darwin Microfluidics, признаки неправильной установки: утечки на входе или выходе, неточный расход, проскальзывание трубки, пульсации, ускоренный износ, пережатие. Видимые признаки: перекручивание, перегиб, смещение или провисание.</p>
+
+        <p>Проверяйте установку по инструкции для вашей головки и пробным запуском на малой скорости. Порядок описан в <a class="inline-link" href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">пошаговой инструкции по запуску</a>.</p>
+
+        <h3>23. Почему трубка быстро изнашивается?</h3>
+
+        <p>Срок службы определяют материал, давление и скорость, конструкция головки и окклюзия, свойства жидкости (вязкость, температура, абразивность) и окружающая среда (Darwin Microfluidics). Blue-White называет давление самым влиятельным фактором и отмечает, что чрезмерное сжатие тоже сокращает ресурс.</p>
+
+        <p>Быстрый износ — повод проверить окклюзию, давление в линии, скорость и совместимость материала.</p>
+
+        <h3>24. Как часто менять трубку и можно ли использовать одну трубку для разных жидкостей?</h3>
+
+        <p>Универсального интервала нет. Darwin Microfluidics пишет об общем диапазоне от нескольких сотен часов до нескольких тысяч. В его таблице данных Masterflex L/S 16 (вода, 21 °C, 0 бар) для Norprene указано 10 000 часов при 50 об/мин и 1000 часов при 600 об/мин, для Viton — 150 и 30 часов. Это пример зависимости от скорости и материала, а не прогноз для вашей системы.</p>
+
+        <p>WPI советует заменять видимо изношенную трубку сразу. Про использование одной трубки для разных жидкостей прямых указаний в источниках нет. Практическая осторожность: она должна быть совместима со всеми жидкостями, а для чувствительных задач, где важно исключить перенос, лучше брать отдельную трубку.</p>
+
+
+        <h2 id="liquids">Жидкости и области применения</h2>
+
+        <h3>25. Какие жидкости можно перекачивать: вязкие, агрессивные, с твёрдыми частицами?</h3>
+
+        <p>В руководстве Watson-Marlow сказано, что перистальтические насосы подходят для большинства жидкостей, в том числе вязких, чувствительных к сдвигу, коррозионных, абразивных и с взвешенными твёрдыми частицами. Verder отмечает, что отсутствие внутренних клапанов позволяет перекачивать жидкости с крупными включениями и абразивные шламы (это описание промышленных насосов).</p>
+
+        <p>Для лабораторной модели решает конкретная пара «головка и трубка»: для агрессивных сред определяет совместимость материала трубки, а частицы должны проходить через трубку и соединители. Допустимую долю твёрдых частиц указывает производитель.</p>
+
+        <h3>26. Подходит ли насос для стерильных жидкостей, пищевых продуктов и фармацевтики?</h3>
+
+        <p>Так как жидкость контактирует только с трубкой, риск загрязнения жидкости механизмом ниже. Но стерильность и пригодность для пищевых или фармацевтических задач нужно подтверждать для конкретного исполнения.</p>
+
+        <p>Каталоги Masterflex описывают отдельные трубки как соответствующие стандартам FDA и USP Class VI и автоклавируемые. Это свойства конкретных трубок. Запрашивайте документы на вашу трубку, насос и процедуры очистки и стерилизации и проверяйте всё в рабочих условиях, как советует и поставщик трубок.</p>
+
+        <h3>27. Подходит ли перистальтический насос для лабораторных исследований и микрофлюидики?</h3>
+
+        <p>Для подачи реагентов, питательных сред, буферов и длительной подачи из резервуара такие насосы широко используют. В микрофлюидике важны пульсации и противодавление: колебания потока могут влиять на результат.</p>
+
+        <p>Для их уменьшения применяют специальные головки и демпферы, но полностью они колебания не устраняют. Подробнее: <a class="inline-link" href="/blog/peristalticheskie-nasosy-single-cell-kapelnaya-mikroflyuidika/">перистальтические насосы для single-cell и капельной микрофлюидики</a>.</p>
+
+        <h3>28. Какие ограничения возникают при работе с газожидкостными смесями?</h3>
+
+        <p>В проверенных нами источниках прямых данных и допусков по газожидкостным смесям нет. Известно, что воздух в трубке делает расход нестабильным, а неправильная установка трубки может приводить к кавитации и попаданию воздуха (Darwin Microfluidics).</p>
+
+        <p>Для точной подачи удаляйте воздух из линий до начала работы. Если нужно перекачивать смеси с газом, запросите у производителя данные для вашей модели и проверьте измерением.</p>
+
+        <h3>29. Когда лучше выбрать шприцевой насос или другой тип?</h3>
+
+        <p>Шприцевые насосы часто выбирают для малых расходов и точной подачи ограниченного объёма, а перистальтические удобны для длительной подачи из резервуара. Выбор зависит от требований к расходу, характеру потока и длительности эксперимента.</p>
+
+        <p>Сравнение принципов есть в статье <a class="inline-link" href="/blog/shpricevye-nasosy-princip-raboty-i-ustroystvo/">«Принцип работы и устройство шприцевого насоса»</a>, а ответы на вопросы про шприцевые насосы собраны в <a class="inline-link" href="/blog/faq-shpricevye-nasosy-chastye-voprosy/">отдельном FAQ</a>.</p>
+
+
+        <h2 id="service">Эксплуатация и обслуживание</h2>
+
+        <h3>30. Как подготовить насос к первому запуску?</h3>
+
+        <p>Прочитайте руководство вашей модели. Проверьте питание и место установки, установите трубку по инструкции для головки, подключите линии, заполните систему и сделайте контрольный запуск на модельной жидкости, постепенно выходя на рабочую скорость.</p>
+
+        <p>Полная последовательность — в статье <a class="inline-link" href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">«Пошаговый запуск перистальтического насоса»</a>. Что проверить при получении оборудования, разобрано в <a class="inline-link" href="/blog/cheklist-priemki-peristalticheskogo-nasosa-pri-postavke/">чек-листе приёмки</a>.</p>
+
+        <h3>31. Нужно ли заполнять трубку жидкостью и можно ли запускать насос без жидкости?</h3>
+
+        <p>Заполнение нужно, чтобы убрать воздух: у Watson-Marlow 120 для этого удерживают кнопку MAX, у Masterflex L/S — PRIME. Сухой ход зависит от модели. Руководства Watson-Marlow 120 и 323Dz допускают работу всухую, Verder пишет, что насос может работать без жидкости без повреждения внутренних компонентов. А в руководстве Watson-Marlow на шланговые насосы Bredel (серия APEX) сухой ход создаёт дополнительную тепловую нагрузку на шланг и ускоряет износ, поэтому такие периоды рекомендуют сводить к минимуму.</p>
+
+        <p>Универсального ответа нет: ищите допустимость и ограничение по времени в руководстве вашей модели. Не запускайте насос без установленной головки: например, Watson-Marlow 120 это запрещает.</p>
+
+        <h3>32. Как правильно остановить насос и подготовить его к простою?</h3>
+
+        <p>Остановите привод и отключите питание, при необходимости сбросьте давление и слейте жидкость. Только после этого открывайте головку и снимайте трубку. Меняя трубку, всегда выключайте питание и вынимайте вилку из розетки (WPI).</p>
+
+        <p>Если насос долго простаивает, Darwin Microfluidics для головок DG советует снимать трубку с роликов, чтобы не держать её сжатой.</p>
+
+        <h3>33. Нужно ли промывать трубку после использования и чем?</h3>
+
+        <p>В руководствах Watson-Marlow 120 и Masterflex L/S отдельной процедуры промывки контура нет, поэтому порядок определяйте исходя из того, что перекачивали. Промывочная жидкость должна быть совместима с трубкой, фитингами и другими контактирующими материалами.</p>
+
+        <p>Не промывайте систему любым растворителем: он может повредить трубку или фитинги. Корпус протирают слегка влажной тканью, погружать прибор нельзя.</p>
+
+        <h3>34. Как часто проводить обслуживание и что регулярно проверять?</h3>
+
+        <p>Единого интервала нет, график определяет руководство модели и интенсивность работы. Darwin Microfluidics советует периодически проверять трубку на трещины, изменение цвета и снижение потока и вести учёт часов работы. В руководстве Watson-Marlow сказано держать направляющую и подвижные части головки чистыми.</p>
+
+        <p>Blue-White отмечает, что невыявленная утечка может повредить роликовый узел, увеличить трение и сократить ресурс. При утечке остановите насос и проверьте головку.</p>
+
+        <h3>35. Как продлить срок службы трубки?</h3>
+
+        <ul>
+          <li><span>не превышайте допустимое давление и разумную скорость вращения (Darwin Microfluidics, Blue-White)</span></li>
+          <li><span>выбирайте материал, совместимый с жидкостью</span></li>
+          <li><span>настраивайте окклюзию по инструкции, не перетягивайте</span></li>
+          <li><span>периодически осматривайте трубку и заменяйте до разрыва</span></li>
+          <li><span>при простое освобождайте трубку от роликов, если это рекомендует производитель головки</span></li>
+          <li><span>WPI советует регулярно протягивать свежий участок трубки в зону роликов при интенсивной работе</span></li>
+        </ul>
+
+
+        <h2 id="faults">Неисправности и проблемы</h2>
+
+        <h3>36. Почему насос не подаёт жидкость?</h3>
+
+        <p>Причины, которые стоит проверить по порядку: воздух в линии и неполное заполнение; закрытый клапан или перекрытая выходная линия; неверный размер трубки (слишком тонкая протягивается через головку или сжимается недостаточно, на что указывают производители); недостаточная окклюзия; неверное направление вращения.</p>
+
+        <p>Если после проверок подача не появилась, остановите насос и обратитесь к руководству или в сервис.</p>
+
+        <h3>37. Почему расход ниже ожидаемого или нестабилен?</h3>
+
+        <p>Типичные причины: износ или неправильная установка трубки, неверная окклюзия, воздух в линии, рост противодавления, изменение вязкости или температуры, отсутствие калибровки для текущей трубки. Скорость вращения сама по себе не показывает фактический расход.</p>
+
+        <p>Измерьте подачу, сравните её с заданной и проверьте трубку. Список типичных ошибок собран в статье <a class="inline-link" href="/blog/tipichnye-oshibki-peristalticheskie-nasosy/">«Типичные ошибки при работе с перистальтическими насосами»</a>.</p>
+
+        <h3>38. Что делать, если жидкость поступает рывками или с пульсациями?</h3>
+
+        <p>Пульсации заложены в принципе: жидкость вытесняется порциями при сжатии трубки. На них влияют конструкция головки, число роликов, скорость и свойства трубки. Скрученная или провисшая трубка создаёт дополнительные пульсации и нестабильный поток.</p>
+
+        <p>Для одних задач пульсации не важны, для других (дозирование, микрофлюидика) их стоит сначала измерить. Демпферы помогают сгладить поток, но не гарантируют полного устранения колебаний, и эффект проверяют в вашей системе.</p>
+
+        <h3>39. Из-за чего насос шумит, вибрирует или смещается трубка?</h3>
+
+        <p>Универсального перечня причин источники не дают. По описаниям производителей, смещённая трубка сжимается роликами неравномерно, что искажает расход и ускоряет износ, а провисание трубки снижает ресурс.</p>
+
+        <p>При необычном шуме остановите насос, проверьте установку трубки, ролики, направляющую и крепления. Если причина не найдена или есть подозрение на механическое повреждение, обратитесь в сервис.</p>
+
+        <h3>40. Почему трубка повреждается или разрывается?</h3>
+
+        <p>Типичные причины: давление выше допустимого или закрытая выходная линия, химическая несовместимость, естественный износ, чрезмерная окклюзия. Masterflex предупреждает, что при разрыве трубки жидкость может разбрызгиваться, поэтому при работе с агрессивными жидкостями нужны средства защиты.</p>
+
+        <p>Поставщик трубок советует защиту от превышения давления: предохранительный клапан или реле давления.</p>
+
+        <h3>41. Что делать, если насос не включается или перегревается, и что можно устранить самостоятельно?</h3>
+
+        <p>Если насос не включается, проверьте питание и адаптер, затем код ошибки: расшифровка есть в руководстве. Например, для ошибки перегрузки по току Masterflex советует проверить, не заклинило ли головку и не превышена ли нагрузка. Общих причин перегрева источники не называют: проверьте условия установки (Watson-Marlow 120 требует свободной циркуляции воздуха и указывает допустимый диапазон температуры) и нагрузку.</p>
+
+        <p>Самостоятельно обычно можно осмотреть насос, проверить подключение, заменить трубку и очистить доступные поверхности способом, разрешённым производителем. Привод и электронику не разбирайте: пользовательских деталей внутри привода нет (по руководствам Watson-Marlow). См. также <a class="inline-link" href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">статью об обслуживании и ремонте</a>.</p>
+
+
+        <h2 id="control">Управление и автоматизация</h2>
+
+        <h3>42. Можно ли регулировать скорость и какие способы управления бывают?</h3>
+
+        <p>Да. Microlit описывает варианты от ручной регулировки скорости до цифрового управления, программ и внешнего управления. Базовых задач с невысокими требованиями к точности достаточно ручного режима.</p>
+
+        <p>Если насос работает в режиме «расход», он пересчитывает скорость по калибровке, и фактическую подачу всё равно нужно проверить измерением.</p>
+
+        <h3>43. Можно ли управлять насосом с компьютера и интегрировать его в автоматизированную систему?</h3>
+
+        <p>Это зависит от модели. Microlit перечисляет цифровые интерфейсы, интеграцию с внешним управлением и удалённый мониторинг, а у более продвинутых моделей называет связь по USB, RS-485 и Wi-Fi. Какие интерфейсы нужны, определяет ваша система управления.</p>
+
+        <p>До покупки выясните, какой протокол поддерживает насос и есть ли документация для интеграции. Общий подход к автоматизации описан в статье <a class="inline-link" href="/blog/avtomatizaciya-shpricevyh-nasosov-integraciya-v-stend/">про интеграцию шприцевых насосов в стенд</a>.</p>
+
+        <h3>44. Есть ли модели с программируемыми режимами и можно ли менять направление подачи?</h3>
+
+        <p>Да, но не у всех. По Microlit, программируемые модели позволяют задавать циклы дозирования и интервалы. У многих моделей направление подачи меняют переключением вращения, но для некоторых головок давление допускается только при одном направлении: например, для Watson-Marlow 120S и 120U давление до 2 бар разрешено только при вращении против часовой стрелки.</p>
+
+        <p>Cole-Parmer в рекламной статье описывает приводы, которые хранят отдельную калибровку для каждого размера трубки и после дозы кратко реверсируют мотор, чтобы избежать подтекания. Это функции конкретных линеек, их наличие нужно проверять в вашей модели.</p>
+
+        <h3>45. Можно ли управлять несколькими насосами или каналами одновременно?</h3>
+
+        <p>Возможность зависит от модели и интерфейсов. Если несколько трубок установлены на общей головке, скорость у них одинакова, а различия расхода определяются трубками, поэтому расход каждого канала нужно проверять отдельно. Независимое управление каналами есть не у всех многоканальных систем.</p>
+
+        <p>Если нужна синхронизация нескольких насосов, уточните у поставщика, какие команды и интерфейсы поддерживаются.</p>
+
+
+        <h2 id="purchase">Покупка, гарантия и сервис</h2>
+
+        <h3>46. Что обычно входит в комплект поставки?</h3>
+
+        <p>Состав зависит от модели. Для примера, в руководстве Watson-Marlow 120 в комплект входят привод с головкой, внешний блок питания с переходниками для вилок и краткое руководство. Головка и трубка у других моделей могут продаваться отдельно.</p>
+
+        <p>Комплект сверяют со спецификацией и договором: подробности в <a class="inline-link" href="/blog/cheklist-priemki-peristalticheskogo-nasosa-pri-postavke/">чек-листе приёмки</a>.</p>
+
+        <h3>47. От чего зависит стоимость насоса и какие расходники учесть в бюджете?</h3>
+
+        <p>Цена складывается из привода, головки, трубки, числа каналов, управления и комплектации. Microlit называет выбор только по начальной цене частой ошибкой: самый дешёвый насос может оказаться дороже в эксплуатации из-за обслуживания, снижения точности или короткого срока службы.</p>
+
+        <p>В бюджет закладывайте трубки, запчасти, сервис, калибровку и простой. Подробнее: <a class="inline-link" href="/blog/skolko-stoyat-peristalticheskie-nasosy-i-iz-chego-skladyvaetsya-cena/">«Сколько стоят перистальтические насосы»</a>.</p>
+
+        <h3>48. Какой срок службы у перистальтического насоса?</h3>
+
+        <p>Универсального срока нет. Трубка — расходный материал со своим ресурсом, а ресурс привода и головки зависит от модели и режима работы. Срок гарантии не равен сроку службы: например, у Watson-Marlow 120 гарантия на привод составляет три года с даты изготовления, а трубки в неё не входят.</p>
+
+        <p>Спросите поставщика о ресурсе узлов, доступности запасных частей и сервиса на нужный вам срок.</p>
+
+        <h3>49. Какие условия гарантии действуют на насос и расходные материалы, и какие документы должны быть?</h3>
+
+        <p>Условия гарантии определяют договор и документы производителя, поэтому сверяйте именно их. Для примера, по руководству Watson-Marlow 120 гарантия не покрывает трубки как расходный материал, нормальный износ, неправильное использование и работу выше указанных давлений; ремонт должен выполнять производитель или авторизованный сервис, а головки имеют собственную гарантию.</p>
+
+        <p>Перечень сопроводительных документов (руководство, паспорт, сведения о гарантии и калибровке) зависит от поставки и модели. Что сверять при получении, описано в <a class="inline-link" href="/blog/cheklist-priemki-peristalticheskogo-nasosa-pri-postavke/">чек-листе приёмки</a>.</p>
+
+        <h3>50. Куда обращаться при неисправности и как проверить насос при получении?</h3>
+
+        <p>Сначала свяжитесь с поставщиком или сервисом, указанным в договоре, и не разбирайте насос до согласования действий. Подготовьте модель, серийный номер, описание неисправности, условия работы, фото или видео. Порядок возврата определяет производитель: Watson-Marlow, например, требует номер возврата и документ об обеззараживании оборудования.</p>
+
+        <p>При получении проверьте упаковку, комплектность, документы, головку, трубку и работу основных функций. Подробный список проверок есть в <a class="inline-link" href="/blog/cheklist-priemki-peristalticheskogo-nasosa-pri-postavke/">чек-листе приёмки перистальтического насоса</a>.</p>
+
+
+        <h2 id="summary">Главное</h2>
+
+        <p>Перистальтический насос подбирают под конкретную систему: жидкость, расход, давление, режим работы и трубку. Расход зависит не только от скорости, а срок службы трубки и ресурс узлов определяются условиями эксплуатации, поэтому универсальных значений в этой теме нет.</p>
+
+        <p>Заранее определите рабочие условия, подберите трубку и головку, проверьте фактический расход измерением и храните запас расходных материалов. Для всего, что зависит от модели (сухой ход, допустимое давление, порядок обслуживания, условия гарантии), опирайтесь на документацию производителя.</p>
+
+
+        <h2 id="sources">Источники</h2>
+
+        <p>Статья опирается на руководства и материалы производителей и поставщиков, а не на независимые испытания. Условия руководств (сухой ход, гарантия, возврат) относятся к названным моделям. Числа из источников приведены как примеры конкретной линейки, а не как нормы.</p>
+
+        <ol>
+          <li><a href="https://www.wolflabs.co.uk/document/Watson_marlow_peristaltic_pumps_120_manual.pdf" rel="noopener" target="_blank">Watson-Marlow 120 — руководство по установке, эксплуатации и обслуживанию</a>. Копия руководства на сайте дистрибьютора: комплект, сухой ход, запуск без головки, гарантия, возврат. Относится к этой модели.</li>
+          <li><a href="https://www.manualsdir.com/manuals/791350/watson-marlow-120u_d1.html?page=6" rel="noopener" target="_blank">Watson-Marlow 120U/D1 — обзор перистальтических насосов</a> и <a href="https://www.manualsdir.com/manuals/791548/watson-marlow-323dz.html?page=6" rel="noopener" target="_blank">Watson-Marlow 323Dz — обзор</a>. Копии руководств на стороннем сайте: принцип, контакт жидкости только с трубкой, сухой ход, перечень жидкостей.</li>
+          <li><a href="https://www.manualsdir.com/manuals/791352/watson-marlow-apex10.html?page=30" rel="noopener" target="_blank">Watson-Marlow APEX — руководство (раздел о сухом ходе)</a>. Копия руководства на стороннем сайте: сухой ход шланговых насосов Bredel.</li>
+          <li><a href="https://www.verderliquids.com/gb/en/pump-technologies/how-do-peristaltic-pumps-work/" rel="noopener" target="_blank">Verder — How does a peristaltic pump work?</a> Материал производителя: окклюзия, сухой ход и самовсасывание, твёрдые частицы. Описание в основном промышленных насосов.</li>
+          <li><a href="https://blog.darwin-microfluidics.com/how-to-properly-mount-a-tubing-on-a-peristaltic-pump-head/" rel="noopener" target="_blank">Darwin Microfluidics — How to properly mount a tubing on a peristaltic pump head</a>. Инструкция поставщика для головок DG насосов Longer: установка трубки, окклюзия, ошибки установки.</li>
+          <li><a href="https://blog.darwin-microfluidics.com/how-to-extend-peristaltic-pump-tubing-lifetime/" rel="noopener" target="_blank">Darwin Microfluidics — How to extend peristaltic pump tubing lifetime</a>. Материал поставщика: факторы срока службы трубки, диапазон ресурса, таблица Masterflex L/S 16.</li>
+          <li><a href="https://blog.darwin-microfluidics.com/fr/tetes-de-pompe-masterflex-l-s-le-guide-ultime/" rel="noopener" target="_blank">Darwin Microfluidics — Masterflex L/S pump heads: guide</a>. Обзор дистрибьютора: число роликов и пульсации.</li>
+          <li><a href="https://www.blue-white.com/article/understanding-wear-factors-for-peristaltic-pump-tubes-and-other-components/" rel="noopener" target="_blank">Blue-White — Understanding wear factors for peristaltic pump tubes and other components</a>. Материал производителя: давление, скорость, окклюзия, утечки.</li>
+          <li><a href="https://wpiinc.com/blogs/all/how-to-safely-use-a-peristaltic-pump" rel="noopener" target="_blank">World Precision Instruments — How to safely use a peristaltic pump</a>. Материал производителя: совместимость трубки, замена изношенной трубки, отключение питания.</li>
+          <li><a href="https://wpiinc.com/blogs/all/how-to-calibrate-the-peri-star-pro-peristaltic-pump" rel="noopener" target="_blank">World Precision Instruments — How to calibrate the Peri-Star Pro peristaltic pump</a>. Инструкция производителя для одной модели: калибровка после смены типа трубки.</li>
+          <li><a href="https://ossila.com/pages/calibration-of-peristaltic-pumps" rel="noopener" target="_blank">Ossila — Calibration of peristaltic pumps</a>. Материал поставщика: обкатка трубки и калибровка взвешиванием.</li>
+          <li><a href="https://www.avantorsciences.com/dk/da/support/tech-articles/masterflex/matching-the-tubing-to-the-fluid" rel="noopener" target="_blank">Peristaltic Pump Tubing and Chemical Compatibility (Masterflex / Avantor, VWR)</a>. Материал поставщика: таблицы совместимости, иммерсионный тест, влияние температуры. Страница перенаправляется на сайт VWR; использованы фрагменты, показанные в поисковой выдаче.</li>
+          <li><a href="https://us-legacy.vwr.com/cms/tech-article-tubing-selection-guide" rel="noopener" target="_blank">Guide to Selecting Tubing for Pumps and Fluid Handling Systems (Masterflex / VWR)</a> и <a href="https://assets.thermofisher.com/TFS-Assets/ANZ/brochures/cole-parmer-masterflex-tubing-application-guide.pdf" rel="noopener" target="_blank">Masterflex Tubing Application Guide (Cole-Parmer)</a>. Каталожные материалы поставщика: параметры отдельных трубок, соответствия FDA и USP, рекомендации проверять в реальных условиях. Использованы фрагменты, показанные в поисковой выдаче.</li>
+          <li><a href="https://www.microlit.com/how-to-choose-the-right-peristaltic-pump-key-factors-buyers-should-consider/" rel="noopener" target="_blank">Microlit — How to choose the right peristaltic pump</a> и <a href="https://www.microlit.com/choosing-the-right-peristaltic-pump-for-your-lab/" rel="noopener" target="_blank">Choosing the right peristaltic pump for your lab</a>. Материалы поставщика: управление и интерфейсы, каналы, начальная цена и расходы эксплуатации.</li>
+          <li><a href="https://www.johnmorrisgroup.com/blog/masterflex-peristaltic-pump-selection-guide" rel="noopener" target="_blank">John Morris Group — How to select the right Masterflex peristaltic pump system</a>. Материал дистрибьютора: порядок выбора «трубка, головка, привод», многоканальные головки.</li>
+          <li><a href="https://www.axflow.com/en-gb/applications/technical-support/pump-technologies/pump-types/how-to-select-peristaltic-pumps/" rel="noopener" target="_blank">Axflow — How to select peristaltic pumps</a>. Материал дистрибьютора промышленных насосов: запас по производительности и время работы. Ориентиры промышленные.</li>
+          <li><a href="https://processengineering.co.uk/article/2019698/dispensing-accuracy" rel="noopener" target="_blank">Process Engineering — Dispensing accuracy</a>. Рекламный материал Cole-Parmer (Masterflex, 2015): калибровка по размеру трубки и реверс после дозы у описанных приводов.</li>
+        </ol>
+
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Не нашли ответ на свой вопрос?</div>
+          <p>Опишите задачу — жидкость, расход, трубку и режим работы — и мы поможем подобрать конфигурацию или разобраться с настройкой.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/chto-takoe-peristalticheskie-nasosy/">Что такое перистальтические насосы: простыми словами</a>
+          <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">Как выбрать перистальтические насосы: чек-лист параметров</a>
+          <a href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">Пошаговый запуск перистальтического насоса</a>
+          <a href="/blog/tipichnye-oshibki-peristalticheskie-nasosy/">Типичные ошибки при работе с перистальтическими насосами</a>
+          <a href="/blog/cheklist-priemki-peristalticheskogo-nasosa-pri-postavke/">Чек-лист приёмки перистальтического насоса</a>
+          <a href="/pumps/peristaltic/">Перистальтические насосы Fluidica</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+<script src="/analytics.js" defer></script>
+
+</body>
+</html>
