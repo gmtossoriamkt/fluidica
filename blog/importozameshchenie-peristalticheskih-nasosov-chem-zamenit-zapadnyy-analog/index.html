@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Импортозамещение перистальтических насосов - Fluidica</title>
+<meta name="description" content="Как заменить импортный перистальтический насос: что зафиксировать, какие параметры сравнивать, как проверить головку, трубку, интерфейсы и результат.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/importozameshchenie-peristalticheskih-nasosov-chem-zamenit-zapadnyy-analog/">
+<meta property="og:title" content="Импортозамещение перистальтических насосов - Fluidica">
+<meta property="og:description" content="Как заменить импортный перистальтический насос: что зафиксировать, какие параметры сравнивать, как проверить головку, трубку, интерфейсы и результат.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/importozameshchenie-peristalticheskih-nasosov-chem-zamenit-zapadnyy-analog/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.css">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Импортозамещение перистальтических насосов: чем заменить западный аналог",
+      "description": "Как заменить импортный перистальтический насос: что зафиксировать, какие параметры сравнивать, как проверить головку, трубку, интерфейсы и результат.",
+      "datePublished": "2026-11-24",
+      "dateModified": "2026-11-24",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/importozameshchenie-peristalticheskih-nasosov-chem-zamenit-zapadnyy-analog/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Импортозамещение перистальтических насосов",
+          "item": "https://fluidica.ru/blog/importozameshchenie-peristalticheskih-nasosov-chem-zamenit-zapadnyy-analog/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Импортозамещение перистальтических насосов</a>
+        </nav>
+        <span class="eyebrow">Импортозамещение</span>
+        <h1>Импортозамещение перистальтических насосов: чем заменить западный аналог</h1>
+        <p class="hero-sub">Как подобрать замену западному перистальтическому насосу: данные об исходной конфигурации, головка и трубка, давление, интерфейсы, стоимость перехода и проверка измерением.</p>
+        <div class="article-meta">
+          <span>24 ноября 2026</span>
+          <span>~13 мин чтения</span>
+          <span>Перистальтические насосы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Перистальтический насос из Европы или США работал годами, а теперь у него закончились трубки, головка изношена или сервис недоступен. Первая мысль: найти «такой же, только российский или азиатский». Но у перистальтического насоса «такой же» почти никогда не означает «подставить и включить». Расход здесь задаёт не только привод: его определяют пара «головка + трубка», противодавление, жидкость и режим работы.</p>
+
+        <p>В статье разобран порядок подбора замены: что зафиксировать об исходном насосе, какие параметры сравнивать, как проверить совместимость с установкой и как подтвердить результат измерением. Мы не называем модель-«двойника» и не обещаем, что чья-то замена подойдёт без доработок: для этого нужны документы на вашу конкретную конфигурацию.</p>
+
+        <p>Как читать материал: он опирается на руководства и страницы производителей и поставщиков (Watson-Marlow, Masterflex/Ismatec, Cole-Parmer и др.). Примеры из них относятся к конкретным моделям и не переносятся на другое оборудование. Цены и сроки поставки здесь не приводятся: они зависят от поставщика и меняются. Статья не заменяет консультацию по вашему прибору.</p>
+
+
+        <h2>Почему предприятия ищут замену</h2>
+
+        <p>Причины у разных организаций разные, и от причины зависит решение. Прежде чем искать новый насос, стоит понять, что именно сломалось в цепочке поддержки:</p>
+
+        <ul>
+          <li><span>нельзя купить новый насос именно этой модели</span></li>
+          <li><span>можно купить насос, но нет оригинальных трубок или насосных головок</span></li>
+          <li><span>насос работает, но нет сервиса, запчастей или документации</span></li>
+          <li><span>закупка требует иной страны происхождения или иного поставщика</span></li>
+          <li><span>стоимость обслуживания и простоев стала выше, чем стоимость замены</span></li>
+        </ul>
+
+        <p>Эти ситуации не равны друг другу. Если дело только в трубках, иногда достаточно найти совместимую трубку для существующей головки (подробнее в статье <a href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">об обслуживании и ремонте после ухода вендора</a>). Если не работает привод и нет запчастей, речь о замене привода или всего насоса. Мы намеренно не делаем общих утверждений о том, что тот или иной бренд «ушёл с рынка»: у разных моделей, дистрибьюторов и периодов картина разная, и её нужно уточнять у поставщика.</p>
+
+
+        <h2>Что считать «аналогом»</h2>
+
+        <p>Слово «аналог» в закупках и переписке используется слишком свободно. Для работы полезно различать три уровня. Это наша рабочая терминология, а не стандарт:</p>
+
+        <ul>
+          <li><span><strong>Функциональная альтернатива.</strong> Решает ту же задачу (подаёт нужную жидкость с нужным расходом), но может отличаться конструкцией, габаритами, интерфейсами и характеристиками</span></li>
+          <li><span><strong>Технически совместимая замена.</strong> Подходит к вашей системе после проверки ключевых параметров: диапазон расхода, давление, трубка, управление, крепление</span></li>
+          <li><span><strong>Полная взаимозаменяемость.</strong> Насос можно заменить без существенных изменений установки и процесса. Это нужно подтверждать отдельно: заявление поставщика «аналог» такого подтверждения не заменяет</span></li>
+        </ul>
+
+        <p>Большинство реальных замен перистальтических насосов относится к первым двум уровням. Третий уровень встречается реже, потому что у разных производителей отличаются головки, трубки, валы привода и интерфейсы.</p>
+
+
+        <h2>Какие данные нужно зафиксировать до подбора</h2>
+
+        <p>Подбирать замену «по названию насоса» рискованно. В руководстве Watson-Marlow на серию 120 прямо сказано, что руководство предназначено только для того насоса, вместе с которым оно выдано, а более ранние и более поздние модели могут отличаться. Поэтому сначала соберите данные о вашей конфигурации:</p>
+
+        <ul>
+          <li><span>точная модель привода, модификация и, по возможности, год выпуска</span></li>
+          <li><span>модель головки и число каналов</span></li>
+          <li><span>трубка: внутренний диаметр, толщина стенки, материал</span></li>
+          <li><span>жидкость: состав, вязкость, температура, наличие частиц</span></li>
+          <li><span>рабочий расход (минимум и максимум), в том числе каждого канала</span></li>
+          <li><span>давление на выходе и на входе в реальной установке</span></li>
+          <li><span>режим: непрерывный, дозирование, реверс, длительность работы</span></li>
+          <li><span>питание, разъёмы, габариты, крепёж</span></li>
+          <li><span>интерфейсы управления: ручное управление, аналоговый вход, цифровая связь и команды, которыми пользуется ваше ПО</span></li>
+        </ul>
+
+        <p>Если паспорта на насос нет, начните с измерений: что реально подаётся в установке сейчас и при каких условиях. Это пригодится и для проверки замены.</p>
+
+
+        <h2>Какие параметры сравнивать</h2>
+
+        <h3>Расход: максимум из каталога не равен вашему расходу</h3>
+
+        <p>У перистальтического насоса расход зависит от скорости вращения, числа роликов и размера трубки. Один и тот же привод с головкой даёт совершенно разный расход при разных трубках. Например, в документации Watson-Marlow на головку 102R указано, что при частоте вращения 1–32 об/мин расход для силиконовой трубки с внутренним диаметром 0,5 мм составляет 0,03–0,9 мл/мин, а для трубки 4,8 мм — 1,6–54 мл/мин. Это разница в 50–60 раз на одной головке. Поэтому сравнивать нужно диапазон расхода именно для вашей трубки, а не максимальную цифру из каталога.</p>
+
+        <p>Кроме того, у Masterflex указано, что объём за оборот прямо пропорционален внутреннему диаметру трубки и даже небольшие отклонения диаметра заметно влияют на точность подачи. Отсюда практический вывод: замена трубки на «похожую» уже меняет расход.</p>
+
+        <h3>Головка и трубка: это пара, а не отдельные детали</h3>
+
+        <p>Головка рассчитана на конкретные трубки. Вот что видно из документов производителей:</p>
+
+        <ul>
+          <li><span>у Watson-Marlow головка 114DV имеет четыре ролика и принимает только трубку с толщиной стенки 1,6 мм; головка 102R принимает только непрерывную силиконовую трубку Pumpsil; многоканальные головки 400DM2 и 400DM3 принимают только манифольдную трубку</span></li>
+          <li><span>в листе данных на 102R сказано, что головки не взаимозаменяемы между разными приводами, потому что у приводов разные конструкции вала</span></li>
+          <li><span>у Masterflex головки серии L/S рассчитаны на строго определённые размеры трубок (L/S 13, 14, 16, 17, 18), а сама трубка изготавливается с жёсткими допусками под эти головки</span></li>
+        </ul>
+
+        <p>Следовательно, «поставить трубку от западного насоса в новую головку» нельзя считать безопасным действием без подтверждения: нужно сверить размеры (внутренний диаметр и стенку), материал и посадку. А «поставить новую головку на старый привод» возможно только если совпадают вал и крепление.</p>
+
+        <h3>Число роликов и пульсации</h3>
+
+        <p>По материалам Masterflex, меньшее число роликов на роторе данного размера даёт более высокий расход, но и более высокие пульсации. Больше роликов снижает пульсации и улучшает точность дозирования, но уменьшает расход и срок службы трубки. Там же описано, что соединение каналов двух спаренных головок в одну линию может заметно снизить пульсации. Если ваш процесс чувствителен к пульсациям (микрофлюидика, дозирование небольших объёмов), число роликов и конструкцию головки нужно сравнивать, а не только расход.</p>
+
+        <h3>Давление</h3>
+
+        <p>Давление нужно сравнивать как рабочее, а не как максимальное «в каталоге». У Watson-Marlow давление указано для конкретных головок: в каталоге для 114DV и 102R максимальным названо 2 бар, а в руководстве на серию 120 значения приведены для сочетаний привода и головки. Поэтому одно и то же семейство в разной комплектации имеет разные значения. Проверяйте давление для вашей комбинации привода, головки и трубки и сопоставляйте его с реальным противодавлением в установке, включая фильтры и клапаны, которые могут менять давление со временем.</p>
+
+        <h3>Жидкость и материал трубки</h3>
+
+        <p>Совместимость трубки с жидкостью нужно проверять по таблицам, составленным для трубок перистальтических насосов, и с учётом всех компонентов раствора и температуры (подробнее в статье <a href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">о ремонте после ухода вендора</a>). Если данных нет, поставщики трубок советуют сначала испытать образец. Трубка с теми же размерами, но из другого материала, имеет другую жёсткость и восстановление после сжатия, поэтому её нельзя считать равноценной без проверки.</p>
+
+        <h3>Что нельзя сравнивать только по паспорту</h3>
+
+        <p>Некоторые характеристики по паспорту сопоставить нельзя: точность и повторяемость подачи на вашей жидкости, пульсации, срок службы трубки при вашей скорости и давлении, поведение при длительной непрерывной работе. Это проверяется измерением (см. раздел о проверке ниже).</p>
+
+
+        <h2>Как подобрать замену: порядок действий</h2>
+
+        <ol>
+          <li>Зафиксируйте исходную конфигурацию и условия работы (раздел выше).</li>
+          <li>Определите критические параметры: что обязательно должно совпасть (диапазон расхода, давление, материал трубки, интерфейс), а где допустимо отклонение.</li>
+          <li>Решите, что вы меняете: только трубку, головку, привод или весь насос.</li>
+          <li>Составьте техническое задание на функции и характеристики, а не на название зарубежной модели.</li>
+          <li>Запросите у поставщиков паспорт и руководство на конкретную модель, таблицы совместимых трубок, габаритный чертёж, описание интерфейса, условия гарантии и сервиса.</li>
+          <li>Выберите для проверки один-два варианта и договоритесь об испытании: тестовый образец, демонстрация или пробная эксплуатация.</li>
+          <li>Сравните старый и новый насос на одной жидкости и в одинаковых условиях.</li>
+          <li>Только после этого принимайте решение о замене и зафиксируйте результат в документах.</li>
+        </ol>
+
+
+        <h2>Сравнительная таблица: что заполнять и чем подтверждать</h2>
+
+        <p>Ниже не рейтинг моделей, а форма таблицы, которую стоит заполнить для вашей пары «исходный насос — предлагаемая замена». Каждая ячейка должна опираться на документ производителя или на ваше измерение. Если для параметра данных нет, пишите «требует уточнения», а не предположение.</p>
+
+        <table class="compare">
+          <thead><tr><th>Критерий</th><th>Исходный (западный) насос</th><th>Предлагаемая замена</th><th>Чем подтверждаем</th></tr></thead>
+          <tbody>
+            <tr><td>Модель привода и головки</td><td>По вашей конфигурации</td><td>По предложению поставщика</td><td>Паспорт, точное обозначение</td></tr>
+            <tr><td>Трубка</td><td>Размеры и материал</td><td>Размеры и материал</td><td>Таблица совместимости, образец</td></tr>
+            <tr><td>Диапазон расхода</td><td>Для вашей трубки</td><td>Для вашей трубки</td><td>Документация и измерение</td></tr>
+            <tr><td>Рабочее давление</td><td>Для вашей комбинации</td><td>Для вашей комбинации</td><td>Руководство, испытание</td></tr>
+            <tr><td>Число каналов и их независимость</td><td>Фактическая</td><td>Фактическая</td><td>Паспорт, схема</td></tr>
+            <tr><td>Интерфейсы управления</td><td>Что используется сейчас</td><td>Что поддерживается</td><td>Описание протокола, проверка с вашим ПО</td></tr>
+            <tr><td>Габариты и крепёж</td><td>Чертёж</td><td>Чертёж</td><td>Габаритный чертёж</td></tr>
+            <tr><td>Гарантия и сервис</td><td>Фактические условия</td><td>Условия поставщика</td><td>Договор, письмо производителя</td></tr>
+            <tr><td>Стоимость владения</td><td>С расходниками и обслуживанием</td><td>С расходниками и обслуживанием</td><td>Одинаковая комплектация и срок</td></tr>
+          </tbody>
+        </table>
+
+        <p>Примеры значений по конкретным моделям из документов (LOIP, Longer, Watson-Marlow, Heidolph, Ismatec) собраны в статье <a href="/blog/sravnenie-peristalticheskih-nasosov-rossiya-kitay-es/">«Сравнение перистальтических насосов: Россия, Китай, ЕС»</a>. Значения там относятся к разным головкам и условиям и не являются списком «заменителей».</p>
+
+
+        <h2>Можно ли сохранить существующую систему</h2>
+
+        <p>Ответ зависит от четырёх групп вопросов, и каждую нужно проверить отдельно:</p>
+
+        <ul>
+          <li><span><strong>Механика.</strong> Габариты, расположение крепёжных отверстий, высота и положение головки, направление подключения трубок</span></li>
+          <li><span><strong>Электрика.</strong> Напряжение и тип питания, разъёмы, возможность использовать прежний блок питания и кабели</span></li>
+          <li><span><strong>Управление.</strong> В документах производителей встречаются ручное управление, аналоговые входы (например, 4–20 мА или 0–10 В), RS-232 и RS-485. Одинаковое название интерфейса не означает одинаковый набор команд: для цифровой связи нужно описание протокола. Если ваше ПО посылает конкретные команды, их нужно проверить на новом насосе или адаптировать</span></li>
+          <li><span><strong>Процесс.</strong> Даже при совпадении всего перечисленного повторите настройку и проверку технологического процесса: новый насос и новая трубка могут давать другой расход при тех же уставках</span></li>
+        </ul>
+
+        <p>Если насос входит в автоматизированную линию, заранее продумайте окно для монтажа, пусконаладки и испытаний. Обещание «замена без простоя» нужно проверять отдельно, а не принимать на веру.</p>
+
+
+        <h2>Стоимость перехода</h2>
+
+        <p>Цену насоса нужно считать как часть полной стоимости перехода. Сравнивайте варианты за один и тот же срок и при одинаковой комплектации:</p>
+
+        <ul>
+          <li><span>сам привод и головка, трубки, блок питания, кабели, крепёж</span></li>
+          <li><span>адаптеры и доработка установки</span></li>
+          <li><span>программная интеграция и повторная настройка</span></li>
+          <li><span>монтаж, пусконаладка, обучение персонала</span></li>
+          <li><span>повторная проверка или валидация процесса</span></li>
+          <li><span>расходные материалы и плановое обслуживание</span></li>
+          <li><span>запас критичных деталей</span></li>
+          <li><span>возможный простой на время замены</span></li>
+        </ul>
+
+        <p>Какой вариант окажется выгоднее, зависит от этих статей, а не от страны бренда. Подробнее о статьях затрат: <a href="/blog/skolko-stoyat-peristalticheskie-nasosy-i-iz-chego-skladyvaetsya-cena/">«Сколько стоят перистальтические насосы»</a>.</p>
+
+
+        <h2>Гарантия и обслуживание</h2>
+
+        <p>Условия сильно различаются между производителями и каналами поставки. Для примера: в руководстве Watson-Marlow на серию 120 указана трёхлетняя гарантия на привод, при этом трубки и изнашиваемые части исключены, а на страницах продавца для головок Masterflex L/S указан срок в два года. Это примеры конкретных документов, а не правила для рынка. До покупки уточните:</p>
+
+        <ul>
+          <li><span>кто даёт гарантию (производитель или продавец) и что она не покрывает</span></li>
+          <li><span>где и как выполняется ремонт, какие сроки</span></li>
+          <li><span>доступны ли трубки, головки и ролики в России и в какие сроки</span></li>
+          <li><span>есть ли документация для самостоятельного обслуживания</span></li>
+          <li><span>что произойдёт, если выйдет из строя привод</span></li>
+        </ul>
+
+
+        <h2>Российское происхождение и закупки</h2>
+
+        <p>Техническая совместимость и подтверждённое российское происхождение товара — разные вещи. Насос может подходить как замена по характеристикам, но это само по себе не означает, что он признаётся российской промышленной продукцией для целей закупки. Российский бренд или сборка в стране также не всегда достаточны. При закупках по 44-ФЗ и 223-ФЗ нужно проверять применимые правила национального режима и способ подтверждения происхождения; в частности, значение могут иметь критерии, установленные постановлением Правительства РФ № 719 (в действующей редакции), и сведения реестра российской промышленной продукции. Применимость конкретных требований зависит от категории оборудования и условий закупки. Если происхождение для вас важно, запросите у поставщика перечень узлов с указанием происхождения (двигатель, электроника, редуктор, головка, трубки) и подтверждающие документы. Об этом же для шприцевых насосов мы писали в статье <a href="/blog/importozameshchenie-shpricevyh-nasosov/">«Импортозамещение шприцевых насосов»</a>.</p>
+
+
+        <h2>Как проверить замену перед внедрением</h2>
+
+        <p>Паспортных данных для решения недостаточно. Практичный порядок проверки:</p>
+
+        <ol>
+          <li>Установите новую трубку и дайте насосу поработать: по материалам Masterflex, стабильность потока заметно растёт после первых минут работы, пока трубка «прирабатывается», поэтому первые измерения не показательны.</li>
+          <li>Измерьте расход взвешиванием или мерным сосудом на той же жидкости, что и в процессе, при нескольких скоростях и при реальном противодавлении.</li>
+          <li>Сравните результаты со старым насосом. Критерии приёмки задайте заранее, исходя из требований процесса, а не из универсальных допусков.</li>
+          <li>Проверьте повторяемость нескольких запусков и поведение при длительной непрерывной работе.</li>
+          <li>Проверьте работу с вашим ПО и управляющими сигналами.</li>
+          <li>Запишите условия и результаты. Порядок калибровки и валидации разобран в статье <a href="/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/">«Калибровка и валидация перистальтических насосов»</a>.</li>
+        </ol>
+
+        <p>Если процесс критичен, проведите пробную эксплуатацию параллельно со старым насосом, пока он ещё работает.</p>
+
+
+        <h2>Типичные ошибки</h2>
+
+        <ul>
+          <li><span>Называть любую модель «прямым аналогом» без проверки головки, трубки и интерфейсов</span></li>
+          <li><span>Сравнивать только максимальный расход</span></li>
+          <li><span>Считать трубки взаимозаменяемыми без сверки размеров, материала и посадки в головке</span></li>
+          <li><span>Обещать установку без переделок, не сверив размеры, питание и разъёмы</span></li>
+          <li><span>Ожидать прежней точности без сравнительных измерений в реальных условиях</span></li>
+          <li><span>Полагаться на заявление о полной локализации без перечня узлов и документов</span></li>
+          <li><span>Оценивать только цену закупки и не учитывать адаптацию, расходники и простой</span></li>
+          <li><span>Использовать общие утверждения о «ушедших брендах» вместо проверки поставок, сервиса и расходников конкретной модели</span></li>
+        </ul>
+
+
+        <h2>Чек-лист выбора замены</h2>
+
+        <ul>
+          <li><span>Зафиксированы модель привода и головки, трубка, жидкость, расход, давление и режим работы</span></li>
+          <li><span>Определено, что вы меняете: трубку, головку, привод или весь насос</span></li>
+          <li><span>Критические параметры отделены от допускающих отклонение</span></li>
+          <li><span>Диапазон расхода сверен для вашей трубки, а не по максимуму в каталоге</span></li>
+          <li><span>Давление сверено для вашей комбинации привода, головки и трубки</span></li>
+          <li><span>Совместимость трубки с жидкостью подтверждена таблицами или образцом</span></li>
+          <li><span>Габариты, крепления, питание и разъёмы сверены с чертежом</span></li>
+          <li><span>Интерфейс управления подтверждён описанием протокола или проверкой с вашим ПО</span></li>
+          <li><span>Запрошены условия гарантии, ремонта и сроки поставки трубок и запчастей</span></li>
+          <li><span>Происхождение проверено по документам, если оно важно для закупки</span></li>
+          <li><span>Проведены сравнительные измерения на вашей жидкости и в реальных условиях</span></li>
+          <li><span>Результаты и изменения зафиксированы в документах</span></li>
+        </ul>
+
+
+        <h2>Что может сделать Fluidica</h2>
+
+        <p>В каталоге услуг есть пусконаладка, калибровка расхода, обучение и модернизация насоса заказчика. Подобрать перистальтический насос под вашу задачу мы можем, но заранее не обещаем, что конкретная модель заменит ваш импортный насос без доработок: для этого нужны данные о вашей конфигурации. Пришлите модель и фото насоса, трубку, жидкость, расход и давление, и мы подскажем, какие варианты имеет смысл рассматривать и как их проверить. Другие материалы подборки — на странице <a href="/import-substitution/">«Импортозамещение»</a>.</p>
+
+
+        <h2>Главное</h2>
+
+        <p>Импортозамещение перистальтического насоса начинается не с поиска похожей модели, а с описания вашей конфигурации и задачи. Расход определяет пара «головка + трубка», а не только привод, поэтому главное, что нужно сверить, — трубка, давление, интерфейсы и поведение на вашей жидкости. Различайте функциональную альтернативу, совместимую замену и полную взаимозаменяемость, и принимайте решение только после измерений в условиях, близких к реальным. Так вы замените насос без необоснованных ожиданий и сократите риск остановки процесса.</p>
+
+        <h2>Источники</h2>
+
+        <p>Статья опирается на руководства, каталоги и технические материалы производителей и поставщиков, а не на независимые испытания. Значения относятся к конкретным моделям, головкам и трубкам и не переносятся на другое оборудование. Часть страниц Avantor/VWR перенаправляет на другие адреса, поэтому для них использованы фрагменты, показанные в поисковой выдаче. Цены не используются.</p>
+        <ol>
+          <li><a href="https://www.wolflabs.co.uk/document/Watson_marlow_peristaltic_pumps_120_manual.pdf" rel="noopener" target="_blank">Watson-Marlow 120 — руководство по установке, эксплуатации и обслуживанию</a>. Копия руководства у дистрибьютора: руководство относится только к насосу, с которым выдано; условия гарантии. Условия поставщика в России могут отличаться.</li>
+          <li><a href="https://manualshive.com/en/manual/watson-marlow/120/3729265?page=38" rel="noopener" target="_blank">Watson-Marlow 120 — головки 114DV</a>. Копия руководства: четыре ролика, трубка только со стенкой 1,6 мм.</li>
+          <li><a href="https://www.watson-marlow.com/siteassets/catalog/products/corporate/watson-marlow-pumps/cased-pumps/7106/literature/wd-wmpumps-120-102r-en.pdf" rel="noopener" target="_blank">Watson-Marlow — лист данных на головку 102R</a>. Страница производителя: трубка Pumpsil, таблица расхода по диаметрам и скорости, головки не взаимозаменяемы между приводами.</li>
+          <li><a href="https://nsk.dia-m.ru/upload/iblock/83e/peristalticheskie_nasosy_watson_marlow.pdf" rel="noopener" target="_blank">Watson-Marlow — каталог насосов и головок</a>. Копия каталога у дистрибьютора: типы трубок для головок 114DV, 102R, 400D1, 400DM2, 400DM3 и давление.</li>
+          <li><a href="https://b2b-ie.vwr.com/cms/tech-article-peristaltic-pump-dispensing-applications" rel="noopener" target="_blank">Masterflex — Peristaltic Tubing Pumps in Dispensing Applications</a>. Материал поставщика: число роликов и пульсации, диаметр трубки и объём за оборот, приработка трубки.</li>
+          <li><a href="https://b2b-de.vwr.com/cms/tech-article-ismatec-pump-selection-guide" rel="noopener" target="_blank">Masterflex Ismatec — Peristaltic Pump Selection Guide</a>. Материал поставщика: расход зависит от скорости, числа роликов и размера трубки.</li>
+          <li><a href="https://www.avantorsciences.com/us/en/product/39213412/masterflex-ls-standard-pump-heads-for-precision-tubing-avantor" rel="noopener" target="_blank">Masterflex L/S — Standard Pump Heads for Precision Tubing</a>. Страница продавца: размеры трубок L/S 13, 14, 16, 17, 18; гарантия на головки.</li>
+          <li><a href="https://b2b-in-gqp.vwr.com/store/externalContent/tech-article-masterflex-ls-tubing-options" rel="noopener" target="_blank">Masterflex L/S Tubing Options</a>. Материал поставщика: трубка с жёсткими допусками под головки L/S.</li>
+          <li><a href="https://www.processingmagazine.com/process-control-automation/instrumentation/article/55350293/increase-peristaltic-pump-safety-by-using-the-right-tubing" rel="noopener" target="_blank">Processing — Increase peristaltic pump safety by using the right tubing</a>. Статья специалиста Cole-Parmer: подбор трубки, размеры, совместимость, испытание образца. Позиция поставщика.</li>
+          <li><a href="https://wpiinc.com/blogs/all/how-to-calibrate-the-peri-star-pro-peristaltic-pump" rel="noopener" target="_blank">World Precision Instruments — How to calibrate the Peri-Star Pro</a>. Инструкция производителя для одной модели: калибровка после смены типа трубки.</li>
+          <li><a href="https://www.watson-marlow.com/en-us/support/product-support/warranty/policy-statement/" rel="noopener" target="_blank">Watson-Marlow — Warranty policy statement</a>. Пример политики гарантии производителя: условия зависят от серии и канала поставки.</li>
+          <li><a href="https://fluidica.ru/blog/sravnenie-peristalticheskih-nasosov-rossiya-kitay-es/" rel="noopener" target="_blank">Fluidica — Сравнение перистальтических насосов: Россия, Китай, ЕС</a>. Значения по моделям (интерфейсы, диапазоны, гарантия) взяты из документов, перечисленных в источниках той статьи.</li>
+        </ol>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Подобрать конфигурацию насоса?</div>
+          <p>Опишите жидкость, расход и режим работы. Подскажем, какие параметры сопоставить.</p>
+          <a href="/#contact" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/sravnenie-peristalticheskih-nasosov-rossiya-kitay-es/">Сравнение перистальтических насосов: Россия, Китай, ЕС</a>
+          <a href="/blog/importozameshchenie-shpricevyh-nasosov/">Импортозамещение шприцевых насосов</a>
+          <a href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">Обслуживание и ремонт перистальтических насосов</a>
+          <a href="/blog/kalibrovka-i-validaciya-peristalticheskih-nasosov/">Калибровка и валидация перистальтических насосов</a>
+          <a href="/import-substitution/">Импортозамещение: материалы по выбору насосов</a>
+          <a href="/pumps/peristaltic/">Перистальтические насосы Fluidica</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+<script src="/analytics.js" defer></script>
+
+</body>
+</html>
