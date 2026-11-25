@@ -255,6 +255,44 @@
   .final-cta h2{color:var(--white);}
   .final-cta .section-desc{color:rgba(255,255,255,0.75);margin:0 auto 36px;}
   .final-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .request-card{
+    max-width:640px;margin:0 auto;background:var(--white);color:var(--ink);text-align:left;
+    border-radius:14px;padding:32px;box-shadow:0 18px 48px rgba(0,0,0,0.22);
+  }
+  .rf-row{margin:0 0 18px;}
+  .rf-row label{display:block;font-size:14px;font-weight:600;color:var(--primary);margin:0 0 6px;}
+  .request-card input[type="text"],.request-card textarea{
+    width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--white);
+    border:1px solid var(--line);border-radius:8px;padding:12px 14px;
+  }
+  .request-card textarea{resize:vertical;min-height:110px;}
+  .request-card input[type="text"]:focus,.request-card textarea:focus{
+    outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent);
+  }
+  .rf-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  .consent-row{display:flex;align-items:flex-start;gap:10px;margin:4px 0 22px;}
+  .consent-row input[type="checkbox"]{flex:0 0 auto;width:18px;height:18px;margin-top:2px;accent-color:var(--accent);cursor:pointer;}
+  .consent-row label{font-size:14px;line-height:1.5;color:var(--muted);cursor:pointer;}
+  .consent-row a{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px;}
+  .consent-row a:hover{color:var(--accent);}
+  .rf-submit{width:100%;border:0;cursor:pointer;font:inherit;font-weight:700;}
+  .rf-submit:disabled{opacity:.5;cursor:not-allowed;box-shadow:none;transform:none;}
+  .rf-status{min-height:22px;margin:14px 0 0;font-size:14.5px;line-height:1.5;color:var(--muted);}
+  .rf-status.is-error{color:#B3261E;}
+  .rf-status.is-ok{color:var(--success);}
+  .rf-status a{color:var(--primary-2);text-decoration:underline;}
+  .rf-thanks{text-align:center;padding:24px 8px;}
+  .rf-thanks h3{margin:0 0 10px;font-family:var(--font-display);font-size:24px;color:var(--primary);}
+  .rf-thanks p{margin:0;color:var(--muted);font-size:16px;line-height:1.6;}
+  .request-alt{margin:22px 0 0;font-size:15px;color:rgba(255,255,255,0.75);}
+  .request-alt a{color:var(--white);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.35);}
+  .request-alt a:hover{border-bottom-color:var(--white);}
+  .request-alt .sep{margin:0 10px;opacity:.5;}
+  @media (max-width:560px){
+    .request-card{padding:22px 18px;}
+    .request-alt .sep{display:none;}
+    .request-alt a{display:block;margin-top:8px;border-bottom:0;}
+  }
 
   footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
   .footer-grid{
@@ -489,14 +527,34 @@
     </div>
   </section>
 
-  <section class="final-cta">
+  <section class="final-cta" id="request">
     <div class="wrap">
       <h2>Расскажите, какая задача стоит перед лабораторией</h2>
       <p class="section-desc">Подберём конфигурацию под задачу и посчитаем стоимость за один день.</p>
-      <div class="final-actions">
-        <a href="mailto:info@fluidica.ru?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20fluidica.ru" class="btn-primary">Написать нам</a>
-        <a href="javascript:void(0)" data-scroll="catalog" class="btn-ghost">Смотреть каталог</a>
+      <div class="request-card">
+        <form class="request-form" id="request-form" novalidate>
+          <div class="rf-row">
+            <label for="rf-name">Имя и компания</label>
+            <input type="text" id="rf-name" name="name" autocomplete="name" maxlength="120" required>
+          </div>
+          <div class="rf-row">
+            <label for="rf-contact">Телефон или e-mail</label>
+            <input type="text" id="rf-contact" name="contact" autocomplete="tel" maxlength="120" required>
+          </div>
+          <div class="rf-row">
+            <label for="rf-task">Изделие / задача</label>
+            <textarea id="rf-task" name="task" rows="4" maxlength="2000"></textarea>
+          </div>
+          <div class="rf-hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="consent-row">
+            <input type="checkbox" id="rf-consent" name="consent">
+            <label for="rf-consent">Даю согласие на обработку персональных данных в соответствии с <a href="/privacy/" target="_blank" rel="noopener">политикой конфиденциальности</a></label>
+          </div>
+          <button type="submit" class="btn-primary rf-submit" id="form-submit-button" disabled>Отправить заявку</button>
+          <p class="rf-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
+      <p class="request-alt">Или свяжитесь напрямую: <a href="mailto:info@fluidica.ru">info@fluidica.ru</a><span class="sep">·</span><a href="tel:+79853169104">+7 985 316-91-04</a></p>
     </div>
   </section>
 
@@ -581,6 +639,7 @@
 
 <script src="/cookie-consent.js" defer></script>
 <script src="/analytics.js" defer></script>
+<script src="/request-form.js" defer></script>
 <script src="/contact-copy.js" defer></script>
 
 </body>

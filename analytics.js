@@ -45,7 +45,7 @@
     if (href.indexOf('tel:') === 0) return 'click_phone';
     if (href.indexOf('mailto:') === 0) return 'click_email';
     if (href.indexOf('t.me/') !== -1) return 'click_telegram';
-    if (/#contact$/.test(href)) return 'click_write_us';
+    if (/#(contact|request)$/.test(href)) return 'click_write_us';
     if (href.indexOf('/devices') === 0 || href.indexOf('/pumps/') === 0) return 'go_catalog';
     return null;
   }
@@ -53,7 +53,7 @@
   // Кнопки главной без реального href (javascript:void(0)): цель по data-scroll
   function scrollGoalFor(el){
     var target = el.getAttribute('data-scroll');
-    if (target === 'contact') return 'click_write_us';
+    if (target === 'contact' || target === 'request') return 'click_write_us';
     if (target === 'catalog') return 'go_catalog';
     return null;
   }
@@ -70,6 +70,15 @@
       // цели не должны ломать клики по ссылкам
     }
   }, true);
+
+  // Событие из формы заявки (request-form.js): успешная отправка
+  document.addEventListener('fluidica-goal', function(ev){
+    try {
+      if (loaded && typeof window.ym === 'function' && ev.detail) window.ym(COUNTER_ID, 'reachGoal', ev.detail);
+    } catch (e) {
+      // цели не должны ломать форму
+    }
+  });
 
   if (!REQUIRE_CONSENT || hasConsent()) {
     load();
