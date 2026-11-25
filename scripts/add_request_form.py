@@ -88,7 +88,7 @@ BLOCK = """      <div class="request-card">
           <div class="rf-hp" aria-hidden="true"><label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
           <div class="consent-row">
             <input type="checkbox" id="rf-consent" name="consent">
-            <label for="rf-consent">Даю согласие на обработку персональных данных в соответствии с <a href="/privacy/" target="_blank" rel="noopener">политикой конфиденциальности</a></label>
+            <label for="rf-consent">Даю <a href="/consent/" target="_blank" rel="noopener">согласие на обработку персональных данных</a>. С <a href="/privacy/" target="_blank" rel="noopener">политикой конфиденциальности</a> ознакомлен(а)</label>
           </div>
           <button type="submit" class="btn-primary rf-submit" id="form-submit-button" disabled>Отправить заявку</button>
           <p class="rf-status" role="status" aria-live="polite"></p>

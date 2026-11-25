@@ -23,7 +23,7 @@ from pathlib import Path
 
 ORIGIN = "https://fluidica.ru"
 SKIP_TOP_DIRS = {"data", "scripts", "components", ".git", "node_modules"}
-SERVICE_PAGES = {"oferta", "terms", "requisites", "privacy"}
+SERVICE_PAGES = {"oferta", "terms", "requisites", "privacy", "consent"}
 LOC_RE = re.compile(r"<loc>\s*([^<]+?)\s*</loc>")
 URL_RE = re.compile(r"<url>\s*<loc>\s*([^<]+?)\s*</loc>(?:\s*<lastmod>([^<]*)</lastmod>)?\s*</url>")
 
