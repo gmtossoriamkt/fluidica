@@ -4,7 +4,9 @@
 В каждой странице с блоком <div class="header-actions"> скрипт вставляет:
   - разметку: ссылки tel:+79853169104 и mailto:info@fluidica.ru;
   - стили (после правила .header-actions): на узких экранах e-mail скрывается,
-    а телефон остаётся иконкой.
+    а телефон остаётся иконкой;
+  - подключает /contact-copy.js: на компьютерах клик по tel:/mailto: копирует контакт
+    в буфер обмена и показывает «Скопировано» (ссылка при этом работает как обычно).
 Цели Метрики (click_phone, click_email) срабатывают автоматически через analytics.js.
 
 Новые страницы (build_pages.py и др. берут шапку у страницы-шаблона) получают блок сами.
@@ -64,18 +66,38 @@ def write_text(path, text):
         f.write(text)
 
 
+SCRIPT_TAG = '<script src="/contact-copy.js" defer></script>'
+ANALYTICS_TAG = '<script src="/analytics.js" defer></script>'
+
+
+def add_script(text):
+    """Подключает /contact-copy.js (копирование контактов по клику на компьютерах)."""
+    if "contact-copy.js" in text:
+        return text, False
+    nl = "\r\n" if "\r\n" in text else "\n"
+    if ANALYTICS_TAG in text:
+        return text.replace(ANALYTICS_TAG, ANALYTICS_TAG + nl + SCRIPT_TAG, 1), True
+    if "</body>" in text:
+        return text.replace("</body>", SCRIPT_TAG + nl + "</body>", 1), True
+    return text, False
+
+
 def process(text):
     """Возвращает (новый_текст, статус): done / skip / noheader."""
-    if MARK in text:
-        return text, "skip"
-    if not RE_ACTIONS_OPEN.search(text) or not RE_ACTIONS_CSS.search(text):
-        return text, "noheader"
-    nl = "\r\n" if "\r\n" in text else "\n"
-    html = nl.join(HTML_LINES) + nl
-    text = RE_ACTIONS_OPEN.sub(lambda m: m.group(1) + m.group(2) + html, text, count=1)
-    css = CSS.replace("\n", nl)
-    text = RE_ACTIONS_CSS.sub(lambda m: m.group(1) + css + m.group(2), text, count=1)
-    return text, "done"
+    changed = False
+    if MARK not in text:
+        if not RE_ACTIONS_OPEN.search(text) or not RE_ACTIONS_CSS.search(text):
+            return text, "noheader"
+        nl = "\r\n" if "\r\n" in text else "\n"
+        html = nl.join(HTML_LINES) + nl
+        text = RE_ACTIONS_OPEN.sub(lambda m: m.group(1) + m.group(2) + html, text, count=1)
+        css = CSS.replace("\n", nl)
+        text = RE_ACTIONS_CSS.sub(lambda m: m.group(1) + css + m.group(2), text, count=1)
+        changed = True
+    text, added = add_script(text)
+    if changed or added:
+        return text, "done"
+    return text, "skip"
 
 
 def pages(root):
