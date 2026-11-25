@@ -7,6 +7,7 @@
   'use strict';
   if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
 
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var toast, timer;
 
   function show(msg) {
@@ -20,6 +21,7 @@
         'pointer-events:none;transition:opacity .15s ease;max-width:calc(100vw - 32px);';
       document.body.appendChild(toast);
     }
+    toast.style.transition = reduceMotion ? 'none' : 'opacity .15s ease';
     toast.textContent = msg;
     toast.style.opacity = '1';
     clearTimeout(timer);
