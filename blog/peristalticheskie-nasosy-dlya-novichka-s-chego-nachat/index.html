@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Перистальтические насосы для новичка: с чего начать - Fluidica</title>
+<meta name="description" content="Как устроен и работает перистальтический насос, где применяется, как выбрать первую модель, читать характеристики и избежать типичных ошибок. Гайд для новичка.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/peristalticheskie-nasosy-dlya-novichka-s-chego-nachat/">
+<meta property="og:title" content="Перистальтические насосы для новичка: с чего начать - Fluidica">
+<meta property="og:description" content="Как устроен и работает перистальтический насос, где применяется, как выбрать первую модель, читать характеристики и избежать типичных ошибок. Гайд для новичка.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/peristalticheskie-nasosy-dlya-novichka-s-chego-nachat/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.css">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .header-contact{
+    display:inline-flex;align-items:center;gap:7px;
+    color:rgba(255,255,255,0.82);font-size:14px;font-weight:600;
+    white-space:nowrap;transition:color .15s ease;
+  }
+  .header-contact:hover{color:var(--white);}
+  .header-phone svg{flex-shrink:0;color:var(--accent);}
+  @media (max-width:1100px){.header-mail{display:none;}}
+  @media (max-width:560px){
+    .header-actions{gap:14px;}
+    .header-phone span{display:none;}
+    .header-phone svg{width:20px;height:20px;}
+  }
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Перистальтические насосы для новичка: с чего начать",
+      "description": "Как устроен и работает перистальтический насос, где применяется, как выбрать первую модель, читать характеристики и избежать типичных ошибок. Гайд для новичка.",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/peristalticheskie-nasosy-dlya-novichka-s-chego-nachat/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Для новичков",
+          "item": "https://fluidica.ru/blog/peristalticheskie-nasosy-dlya-novichka-s-chego-nachat/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="mailto:info@fluidica.ru" class="header-contact header-mail">info@fluidica.ru</a>
+      <a href="tel:+79853169104" class="header-contact header-phone" aria-label="Позвонить: +7 985 316-91-04"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>+7 985 316-91-04</span></a>
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Для новичков</a>
+        </nav>
+        <span class="eyebrow">Для новичков</span>
+        <h1>Перистальтические насосы для новичка: с чего начать</h1>
+        <p class="hero-sub">Принцип работы, сильные и слабые стороны, выбор трубки и насоса, как читать паспорт, первый запуск и обслуживание — простым языком и со ссылками на подробные материалы.</p>
+        <div class="article-meta">
+          <span>26 ноября 2026</span>
+          <span>~13 мин чтения</span>
+          <span>Перистальтические насосы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Перистальтические насосы встречаются в лабораториях, биотехнологиях, химических исследованиях и на производстве. Новичку при первом знакомстве обычно хочется понять сразу несколько вещей: как это работает, чем отличается от других насосов, на что смотреть при выборе и что проверить перед первым запуском.</p>
+
+        <p>Эта статья — карта для начала пути. Здесь короткие и понятные ответы на базовые вопросы, а подробности вынесены в отдельные материалы, на которые мы ссылаемся по ходу текста.</p>
+
+        <p><strong>Как читать материал.</strong> Источники — документация и статьи производителей и поставщиков, а не независимые испытания; описания конкретных моделей не переносятся на другое оборудование. Числа в статье приведены только как иллюстрация и взяты из документации одной модели. Допустимые давления, ресурс трубки и интервалы обслуживания указывает производитель вашего насоса и трубки. Речь идёт о лабораторном оборудовании, а не о медицинских насосах.</p>
+
+
+        <h2>Что такое перистальтический насос простыми словами</h2>
+
+        <p>Перистальтический насос — это объёмный насос: он перемещает жидкость за счёт последовательного сжатия гибкой трубки. По описанию Watson-Marlow, ролики или башмаки сжимают трубку при вращении, создают разрежение и протягивают через неё жидкость.</p>
+
+        <p>Проще всего представить мягкую трубку с водой. Если сжать её пальцами и провести рукой вдоль трубки, вода сдвинется вперёд. В насосе то же самое делают ролики на вращающемся роторе. Название связано с перистальтикой — волнообразными сокращениями, которыми содержимое перемещается, например, по пищеварительному тракту.</p>
+
+        <p>Главная особенность: жидкость течёт только внутри трубки. Производитель подчёркивает, что к жидкости прикасается только внутренняя поверхность трубки, поэтому нет риска, что насос загрязнит жидкость или жидкость загрязнит насос. Важное уточнение: «не касается насоса» значит «не касается ротора, роликов и привода». Саму трубку и всё остальное в линии жидкость касается, и именно их нужно подбирать под жидкость.</p>
+
+
+        <h2>Как насос устроен и как он работает</h2>
+
+        <p>В типичной лабораторной конструкции четыре основных узла:</p>
+
+        <ul>
+          <li><span>привод: двигатель с редуктором или шаговый двигатель, который задаёт вращение</span></li>
+          <li><span>насосная головка: ротор с роликами и неподвижная дорожка, к которой ролики прижимают трубку</span></li>
+          <li><span>трубка: единственная деталь, через которую проходит жидкость</span></li>
+          <li><span>блок управления: включение, скорость, направление, у некоторых моделей — дозирование и внешнее управление</span></li>
+        </ul>
+
+        <p>Работа складывается из повторяющихся действий:</p>
+
+        <ol>
+          <li>Ролик прижимает трубку к дорожке и перекрывает её.</li>
+          <li>При вращении ротора место сжатия движется вдоль трубки и проталкивает жидкость вперёд.</li>
+          <li>За роликом трубка восстанавливает форму, образуется разрежение, и в неё поступает следующая порция жидкости.</li>
+          <li>Цикл повторяется, пока вращается ротор.</li>
+        </ol>
+
+        <p>Скорость подачи регулируют скоростью вращения ротора. Для многих моделей поток можно развернуть, изменив направление вращения; поставщики перечисляют возможность реверса среди преимуществ такой технологии.</p>
+
+        <p>Ещё одна особенность из описания производителя: по меньшей мере один ролик всегда сжимает трубку, поэтому при остановке насос не пропускает жидкость обратно, и обратные клапаны для этого не нужны.</p>
+
+        <p>Насос состоит из трёх сменных компонентов: головка, трубка и привод. В популярных семействах их можно комбинировать, но не любая головка подходит к любому приводу. Например, в листе данных Watson-Marlow на головку 102R указано, что головки не взаимозаменяемы между разными приводами. Поэтому совместимость всегда проверяют по документации.</p>
+
+
+        <h2>Где применяют перистальтические насосы</h2>
+
+        <p>Поставщики перечисляют пищевое производство, фармацевтику, химическую промышленность, лабораторные исследования, сельское хозяйство и водоподготовку. В лабораториях такие насосы применяют для дозирования, отбора проб, фильтрации, ферментации и перекачивания жидкостей.</p>
+
+        <p>Для начинающего полезно знать, что именно в этих задачах заявляют поставщики:</p>
+
+        <ul>
+          <li><span><strong>Агрессивные и абразивные жидкости.</strong> Совместимость определяется трубкой: поставщик пишет, что подобрать насос под раствор — значит подобрать химически совместимую трубку</span></li>
+          <li><span><strong>Вязкие жидкости.</strong> По описанию поставщика, насос создаёт разрежение, достаточное для многих вязких жидкостей</span></li>
+          <li><span><strong>Чувствительные среды и взвеси.</strong> Мягкое сжатие, как утверждает поставщик, оставляет целыми клетки и частицы</span></li>
+        </ul>
+
+        <p>Это позиция продавцов оборудования. Применимо ли оно к вашей жидкости, зависит от трубки, головки, температуры и вязкости. Фраза «подходит для любых жидкостей» — один из самых частых мифов (подробнее ниже). Те же поставщики называют типичные ограничения: срок службы трубки, химическая совместимость и давление.</p>
+
+
+        <h2>Преимущества и ограничения</h2>
+
+        <h3>Что делает технологию удобной</h3>
+
+        <ul>
+          <li><span>Контакт с жидкостью только у трубки. Сменив трубку, вы меняете весь смачиваемый путь: поставщики называют быструю смену продукта без перекрёстного загрязнения одним из преимуществ</span></li>
+          <li><span>Нет клапанов и сальников. Производители отдельно выделяют отсутствие клапанов в конструкции</span></li>
+          <li><span>Реверс и самовсасывание. Поставщик называет изоляцию жидкости, быструю смену трубки, реверс потока и способность работать всухую главными конкурентными особенностями технологии</span></li>
+          <li><span>Сравнительно простое обслуживание. Основной расходный элемент — трубка, и производители описывают её замену как штатную операцию</span></li>
+        </ul>
+
+        <h3>Что нужно учитывать</h3>
+
+        <ul>
+          <li><span><strong>Пульсации.</strong> Жидкость движется порциями, поэтому мгновенный расход колеблется даже при постоянной скорости. Для задач, где важен средний расход (например, наполнение ёмкости), это обычно не мешает. В микрофлюидных экспериментах пульсации могут влиять на результат. Демпферы сглаживают поток, но не гарантируют его полное устранение</span></li>
+          <li><span><strong>Износ трубки.</strong> Ролики многократно сжимают один и тот же участок, и трубка изнашивается. Справочные материалы указывают, что износ снижает эффективность и со временем может приводить к утечкам</span></li>
+          <li><span><strong>Давление.</strong> Допустимое давление определяется не только головкой, но и самой слабой частью тракта: трубкой, фитингами, датчиками</span></li>
+          <li><span><strong>Точность.</strong> Расход зависит от трубки, головки, противодавления, вязкости и состояния трубки, а не только от скорости вращения</span></li>
+        </ul>
+
+        <p>Если нужен практически беспульсационный поток в микроканалах, стоит рассмотреть и другие типы насосов. Один из вариантов — шприцевой: о нём мы рассказывали в статье <a href="/blog/shpricevye-nasosy-dlya-novichka-s-chego-nachat/">«Шприцевые насосы для новичка»</a>.</p>
+
+
+        <h2>Пять мифов о перистальтических насосах</h2>
+
+        <table class="compare">
+          <thead><tr><th>Что часто говорят</th><th>Как на самом деле</th></tr></thead>
+          <tbody>
+            <tr><td>«Жидкость вообще не касается насоса»</td><td>Она касается внутренней поверхности трубки и остальных элементов линии. Не касается ротора, роликов и привода</td></tr>
+            <tr><td>«Насос подходит для любых жидкостей»</td><td>Совместимость зависит от материала трубки, температуры и вязкости. Поставщики советуют выбирать по таблицам совместимости именно для насосных трубок</td></tr>
+            <tr><td>«Расход зависит только от скорости»</td><td>Он определяется скоростью, внутренним диаметром трубки и геометрией головки; на него влияют также противодавление, вязкость и износ</td></tr>
+            <tr><td>«Насос всегда можно запускать всухую»</td><td>Производители заявляют это для отдельных моделей. Для вашего прибора ответ даёт руководство</td></tr>
+            <tr><td>«Чем больше роликов, тем лучше»</td><td>По данным поставщика Masterflex, больше роликов снижает пульсации и повышает точность дозирования, но уменьшает расход и срок службы трубки</td></tr>
+          </tbody>
+        </table>
+
+        <p>К этой таблице стоит добавить ещё два утверждения, которые нельзя принимать на веру. «Насос не требует обслуживания»: трубку нужно осматривать и менять. «Подходит для стерильных процессов»: это нужно подтверждать для конкретной трубки, головки и процедуры очистки или стерилизации.</p>
+
+
+        <h2>Как выбрать первый насос</h2>
+
+        <p>Дистрибьютор Masterflex советует начинать не с привода, а с трубки: сначала выбрать размер и материал трубки под жидкость, затем подобрать под неё головку и привод. Для этого подготовьте ответы на шесть вопросов:</p>
+
+        <ol>
+          <li><strong>Какая жидкость?</strong> Назовите все компоненты раствора, концентрации, температуру и вязкость, есть ли частицы и какие требования к чистоте. Даже небольшие добавки некоторых кислот и растворителей могут разрушать трубку.</li>
+          <li><strong>Какой расход нужен в работе?</strong> Определите минимальный, обычный рабочий и максимальный расходы. Максимум из паспорта — это верхняя граница, а не рабочий режим.</li>
+          <li><strong>Какое давление в системе?</strong> Сложите сопротивление всего тракта: фильтры, расходомеры, клапаны, длинные линии, микрофлюидный чип.</li>
+          <li><strong>Как будет работать насос?</strong> Непрерывно или порциями, нужен ли реверс, сколько каналов, как управлять — кнопками, с компьютера или внешним сигналом.</li>
+          <li><strong>Какая нужна трубка?</strong> Материал, внутренний диаметр и толщина стенки должны соответствовать головке. Тип трубки обычно указывает производитель насоса.</li>
+          <li><strong>Что с поддержкой?</strong> Есть ли подробное руководство, доступны ли запасные трубки и кто консультирует по эксплуатации.</li>
+        </ol>
+
+        <p>Одноканальной модели обычно достаточно для первого знакомства. У многоканальных насосов не всегда можно регулировать расход каждого канала независимо: в некоторых конструкциях несколько трубок обслуживает общий привод.</p>
+
+        <p>Чтобы почувствовать влияние диаметра трубки, посмотрите на цифры из документации Watson-Marlow на головку 102R. При частоте вращения от 1 до 32 об/мин расход для силиконовой трубки с внутренним диаметром 0,5 мм составляет 0,03–0,9 мл/мин, а для трубки 4,8 мм — 1,6–54 мл/мин. Это значения для конкретной головки, не общее правило. Они показывают лишь порядок влияния: сменив трубку при той же скорости, расход можно изменить в десятки раз.</p>
+
+        <p>Подробнее о порядке выбора — в статье <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">«Как выбрать перистальтические насосы: чек-лист параметров»</a>, а об устройстве головок — в материале <a href="/blog/tipy-golovok-peristalticheskih-nasosov/">«Типы головок перистальтических насосов»</a>.</p>
+
+
+        <h2>Как читать характеристики насоса</h2>
+
+        <p>Паспортные данные удобно разбирать по строкам. Ниже — что означает каждая и на что смотреть.</p>
+
+        <table class="compare">
+          <thead><tr><th>Параметр</th><th>Что означает</th><th>На что обратить внимание</th></tr></thead>
+          <tbody>
+            <tr><td>Диапазон расхода</td><td>Объём жидкости в единицу времени (мкл/мин, мл/мин, л/ч)</td><td>Относится к конкретной паре «головка + трубка», а не к насосу вообще</td></tr>
+            <tr><td>Скорость вращения</td><td>Обороты ротора в минуту</td><td>Это не расход: расход зависит ещё от трубки и условий</td></tr>
+            <tr><td>Давление</td><td>Давление, при котором система работает</td><td>Различайте рабочее и предельное значения и проверяйте самый слабый элемент тракта</td></tr>
+            <tr><td>Непрерывный режим</td><td>Допустимое время работы без остановки</td><td>Условия задаёт производитель для модели и трубки</td></tr>
+            <tr><td>Точность</td><td>Насколько расход близок к заданному</td><td>Уточните условия измерения: трубка, жидкость, противодавление</td></tr>
+            <tr><td>Повторяемость</td><td>Насколько одинаковым получается результат при повторах</td><td>Это не то же самое, что точность: можно стабильно промахиваться на одну и ту же величину</td></tr>
+          </tbody>
+        </table>
+
+        <p>Реальный расход может отличаться от каталожного: на него влияют противодавление, вязкость, температура и износ трубки. Поэтому после установки новой трубки расход проверяют измерением. Самый доступный способ — собрать жидкость за известное время и взвесить: так калибруют насосы, например, по инструкциям World Precision Instruments и Ossila.</p>
+
+        <p>Достоверные данные ищите в руководстве и паспорте на ваш насос и в документации на трубку. Каталог и рекламный текст помогают сориентироваться, но не заменяют документацию.</p>
+
+
+        <h2>Первый запуск</h2>
+
+        <p>Подробный порядок мы разобрали в статье <a href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">«Пошаговый запуск перистальтического насоса»</a>. Здесь — самое важное:</p>
+
+        <ol>
+          <li>Прочитайте руководство на вашу модель. Порядок установки трубки и регулировки у разных головок различается.</li>
+          <li>Проверьте, что трубка подходит головке по размеру и материалу.</li>
+          <li>Установите трубку по инструкции при выключенном приводе.</li>
+          <li>Убедитесь, что клапаны в линии открыты и выходная линия не перекрыта. В руководстве Watson-Marlow на модель 120U/D1 прямо сказано, что клапаны должны быть открыты до запуска насоса.</li>
+          <li>Для первого опыта используйте воду и малую скорость. Проверьте подачу и герметичность соединений.</li>
+          <li>Измерьте фактический расход взвешиванием и только затем выходите на рабочий режим.</li>
+        </ol>
+
+        <p>Не рассчитывайте, что насос выдержит работу без жидкости: возможность сухого хода зависит от модели и режима, и её нужно проверить в руководстве.</p>
+
+
+        <h2>Обслуживание: что делать с трубкой</h2>
+
+        <p>Трубка — расходный материал. Универсального срока замены нет: он зависит от скорости вращения, давления, температуры, химических свойств жидкости и степени сжатия трубки в головке. Производитель Blue-White называет давление и скорость вращения в числе главных факторов износа.</p>
+
+        <p>Признаки износа: снижение расхода, заметная деформация, трещины, подтекание. Иногда о проблеме говорят шум или вибрация. Что можно делать самостоятельно, определяет руководство: замена трубки обычно описана как штатная операция, а разборку привода и головки без инструкции не выполняют. Условия гарантии зависят от производителя, поэтому прочитайте их до вмешательства.</p>
+
+        <p>После работы трубку и линию при необходимости промывают. Способ зависит от жидкости, материала трубки и инструкции производителя.</p>
+
+
+        <h2>Пять типичных ошибок новичков</h2>
+
+        <p>Подробный разбор — в статье <a href="/blog/tipichnye-oshibki-peristalticheskie-nasosy/">«Типичные ошибки перистальтических насосов»</a>. Вот самые частые:</p>
+
+        <ul>
+          <li><span><strong>Выбор по максимальному расходу.</strong> Что делать: определить рабочий диапазон и сопоставить его с выбранной парой «головка + трубка»</span></li>
+          <li><span><strong>Неподходящая трубка.</strong> Что делать: выбирать по таблицам совместимости для насосных трубок и использовать размер, рекомендованный производителем насоса</span></li>
+          <li><span><strong>Игнорирование давления.</strong> Что делать: составить перечень элементов тракта с допустимыми давлениями и убедиться, что выходная линия не перекрыта</span></li>
+          <li><span><strong>Настройка по скорости, а не по расходу.</strong> Что делать: проверять расход измерением в условиях, близких к рабочим</span></li>
+          <li><span><strong>Игнорирование износа.</strong> Что делать: осматривать трубку, вести учёт времени работы и менять её по признакам износа</span></li>
+        </ul>
+
+
+        <h2>Чек-лист перед покупкой</h2>
+
+        <p>Чтобы консультация с поставщиком была быстрой, подготовьте:</p>
+
+        <ul>
+          <li><span>название и состав жидкости, температуру и вязкость</span></li>
+          <li><span>минимальный, рабочий и максимальный расход</span></li>
+          <li><span>ожидаемое давление и список элементов в линии</span></li>
+          <li><span>режим работы: непрерывный, порционный, нужен ли реверс</span></li>
+          <li><span>число каналов и способ управления</span></li>
+          <li><span>материал и размер трубки, если они уже известны</span></li>
+          <li><span>условия измерения точности, которые вам важны</span></li>
+          <li><span>требования к чистоте, стерильности или очистке</span></li>
+          <li><span>вопросы по документации, запасным трубкам и сервису</span></li>
+        </ul>
+
+
+        <h2>Главное</h2>
+
+        <p>Перистальтический насос подходит для знакомства с лабораторным дозированием: принцип простой, жидкость контактирует только с трубкой, а расходный элемент меняется без разборки механизма. Главные задачи новичка — подобрать трубку под жидкость, понять, что расход зависит не только от скорости, и проверить его измерением.</p>
+
+        <p>Не пытайтесь освоить всё сразу. Начните с воды, малой скорости и взвешивания, а к калибровке, расчёту ресурса трубки и автоматизации переходите, когда базовая работа станет привычной.</p>
+
+        <h2>Источники</h2>
+
+        <p>Статья опирается на документацию, руководства и материалы производителей и поставщиков, а не на независимые испытания. Страницы VWR (Masterflex) прочитаны по фрагментам результатов поиска: полный текст не открывался. Описания конкретных моделей относятся к ним и не переносятся на другое оборудование.</p>
+        <ol>
+          <li><a href="https://www.watson-marlow.com/en-us/support/pump-principles/peristaltic-pumps-how-they-work/" rel="noopener" target="_blank">Watson-Marlow — Peristaltic pumps: how do they work?</a>. Описание производителя: принцип, контакт жидкости только с трубкой, отсутствие клапанов.</li>
+          <li><a href="https://www.manualsdir.com/manuals/791548/watson-marlow-323dz.html?page=6" rel="noopener" target="_blank">Watson-Marlow 323Dz — Peristaltic pumps: an overview</a>. Копия руководства на стороннем сайте: принцип действия, отсутствие клапанов, возможность сухого хода для этой серии.</li>
+          <li><a href="https://www.watson-marlow.com/siteassets/catalog/products/corporate/watson-marlow-pumps/cased-pumps/7106/literature/wd-wmpumps-120-102r-en.pdf" rel="noopener" target="_blank">Watson-Marlow — лист данных на головку 102R</a>. Страница производителя: таблица расхода по диаметру трубки и скорости, головки не взаимозаменяемы между приводами.</li>
+          <li><a href="https://www.manualsdir.com/manuals/791350/watson-marlow-120u_d1.html?page=10" rel="noopener" target="_blank">Watson-Marlow 120U/D1 — руководство, раздел Do’s and don’ts</a>. Копия руководства на стороннем сайте; требования относятся к этой модели.</li>
+          <li><a href="https://us-prod2.vwr.com/cms/tech-article-custom-peristaltic-pump-solutions" rel="noopener" target="_blank">Peristaltic Pumps Offer Custom Fluid Solutions (VWR / Masterflex)</a>. Материал поставщика: области применения, преимущества, ограничения, расход и число роликов.</li>
+          <li><a href="https://b2b-us.vwr.com/cms/tech-article-peristaltic-pumps" rel="noopener" target="_blank">Peristaltic Pumps are designed for many industries (VWR / Masterflex)</a>. Материал поставщика: совместимость через выбор трубки, вязкие жидкости, взвеси.</li>
+          <li><a href="https://b2b-ie.vwr.com/cms/tech-article-peristaltic-pump-dispensing-applications" rel="noopener" target="_blank">Masterflex — Peristaltic Tubing Pumps in Dispensing Applications</a>. Материал поставщика: число роликов, расход и пульсации.</li>
+          <li><a href="https://www.johnmorrisgroup.com/blog/masterflex-peristaltic-pump-selection-guide" rel="noopener" target="_blank">John Morris Group — How to Select the Right Masterflex Peristaltic Pump System</a>. Материал дистрибьютора: сначала трубка, затем головка и привод.</li>
+          <li><a href="https://www.globalspec.com/learnmore/flow_transfer_control/pumps/peristaltic_pumps" rel="noopener" target="_blank">GlobalSpec — Peristaltic Pumps Information</a>. Справочный обзор: преимущества и недостатки, износ трубки.</li>
+          <li><a href="https://www.blue-white.com/article/understanding-wear-factors-for-peristaltic-pump-tubes-and-other-components/" rel="noopener" target="_blank">Blue-White — Understanding wear factors for peristaltic pump tubes</a>. Материал производителя: давление, скорость, окклюзия и износ; описывает промышленные дозирующие насосы, общий принцип.</li>
+          <li><a href="https://www.processingmagazine.com/process-control-automation/instrumentation/article/55350293/increase-peristaltic-pump-safety-by-using-the-right-tubing" rel="noopener" target="_blank">Processing — Increase peristaltic pump safety by using the right tubing</a>. Авторская статья специалиста Cole-Parmer: совместимость трубки, давление, защита контура. Позиция поставщика.</li>
+          <li><a href="https://wpiinc.com/blogs/all/how-to-calibrate-the-peri-star-pro-peristaltic-pump" rel="noopener" target="_blank">World Precision Instruments — How to calibrate the Peri-Star Pro</a>. Инструкция производителя для одной модели: калибровка взвешиванием.</li>
+          <li><a href="https://ossila.com/pages/calibration-of-peristaltic-pumps" rel="noopener" target="_blank">Ossila — Calibration of peristaltic pumps</a>. Материал поставщика оборудования: обкатка трубки и взвешивание, влияние температуры и вязкости.</li>
+        </ol>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Нужна помощь с первым насосом?</div>
+          <p>Опишите жидкость, расход и режим работы — подскажем, с какой конфигурации начать.</p>
+          <a href="/#request" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/chto-takoe-peristalticheskie-nasosy/">Что такое перистальтические насосы: простыми словами</a>
+          <a href="/blog/kak-vybrat-peristalticheskie-nasosy-cheklist-parametrov/">Как выбрать перистальтические насосы: чек-лист параметров</a>
+          <a href="/blog/tipy-golovok-peristalticheskih-nasosov/">Типы головок перистальтических насосов</a>
+          <a href="/blog/zapusk-peristalticheskogo-nasosa-poshagovaya-instrukciya/">Пошаговый запуск перистальтического насоса</a>
+          <a href="/blog/tipichnye-oshibki-peristalticheskie-nasosy/">Типичные ошибки перистальтических насосов</a>
+          <a href="/blog/faq-peristalticheskie-nasosy-chastye-voprosy/">FAQ: частые вопросы про перистальтические насосы</a>
+          <a href="/pumps/peristaltic/">Перистальтические насосы Fluidica</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+<script src="/analytics.js" defer></script>
+<script src="/contact-copy.js" defer></script>
+
+</body>
+</html>
