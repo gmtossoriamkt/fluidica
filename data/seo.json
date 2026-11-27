@@ -99,5 +99,10 @@
     "path": "requisites",
     "kind": "webpage",
     "description": "Реквизиты владельца сайта Fluidica: ООО «ГМТ», ОГРН 1247700287834, ИНН 9710131540, юридический адрес в Москве и email для связи."
+  },
+  {
+    "path": "contacts",
+    "kind": "webpage",
+    "description": "Контакты Fluidica: email info@fluidica.ru, телефоны, Telegram и MAX для заявок на лабораторные приборы, юридический адрес ООО «ГМТ» в Москве."
   }
 ]
