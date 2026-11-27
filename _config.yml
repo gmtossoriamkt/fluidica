@@ -4,5 +4,9 @@
 # Новый служебный файл или папку в корне репозитория - добавить сюда.
 exclude:
   - CNAME
+  - CLAUDE.md
   - content-plan.csv
   - factcheck/
+  - scripts/
+  - data/
+  - components/
