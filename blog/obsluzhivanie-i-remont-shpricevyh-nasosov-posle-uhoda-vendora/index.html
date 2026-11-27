@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ремонт шприцевых насосов после ухода вендора - Fluidica</title>
+<meta name="description" content="Как обслуживать и ремонтировать шприцевой насос без поддержки производителя: диагностика по симптомам, чистка и смазка привода, замена узлов, проверка расхода.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B3B4E">
+<link rel="canonical" href="https://fluidica.ru/blog/obsluzhivanie-i-remont-shpricevyh-nasosov-posle-uhoda-vendora/">
+<meta property="og:title" content="Ремонт шприцевых насосов после ухода вендора - Fluidica">
+<meta property="og:description" content="Как обслуживать и ремонтировать шприцевой насос без поддержки производителя: диагностика по симптомам, чистка и смазка привода, замена узлов, проверка расхода.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fluidica.ru/blog/obsluzhivanie-i-remont-shpricevyh-nasosov-posle-uhoda-vendora/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://fluidica.ru/img/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Fluidica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fluidica.ru/img/og-default.png">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/fonts.css">
+<style>
+  :root{
+    --primary:#0B3B4E;
+    --primary-2:#10566E;
+    --accent:#17B9C4;
+    --accent-2:#F2A03D;
+    --ink:#16232B;
+    --muted:#56676F;
+    --line:#D8E2E6;
+    --surface:#F4F8F9;
+    --white:#FFFFFF;
+    --success:#2E9E6B;
+
+    --font-display: 'Manrope', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --container: 1160px;
+    --article: 760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px;}
+  .article-wrap{max-width:var(--article);margin:0 auto;padding:0 28px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,59,78,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--container);margin:0 auto;
+  }
+  .logo{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:22px;
+    color:var(--white);
+    display:flex;align-items:baseline;letter-spacing:-0.01em;
+  }
+  .logo .dot-i{position:relative;padding-right:1px;}
+  .logo .droplet{
+    position:absolute;top:-1px;left:6px;width:7px;height:9px;
+    background:var(--accent);
+    border-radius:70% 70% 70% 0% / 70% 70% 60% 60%;
+    transform:rotate(45deg);
+  }
+  nav{display:flex;gap:32px;align-items:center;}
+  nav a{
+    color:rgba(255,255,255,0.82);
+    font-size:14.5px;font-weight:500;
+    transition:color .15s ease;
+  }
+  nav a:hover{color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:18px;}
+  .header-contact{
+    display:inline-flex;align-items:center;gap:7px;
+    color:rgba(255,255,255,0.82);font-size:14px;font-weight:600;
+    white-space:nowrap;transition:color .15s ease;
+  }
+  .header-contact:hover{color:var(--white);}
+  .header-phone svg{flex-shrink:0;color:var(--accent);}
+  @media (max-width:1100px){.header-mail{display:none;}}
+  @media (max-width:560px){
+    .header-actions{gap:14px;}
+    .header-phone span{display:none;}
+    .header-phone svg{width:20px;height:20px;}
+  }
+  .cta-small{
+    background:var(--accent);color:var(--primary);
+    font-size:14px;font-weight:700;
+    padding:9px 18px;border-radius:8px;
+    white-space:nowrap;
+  }
+
+  .hero{
+    position:relative;
+    background:linear-gradient(165deg, var(--primary) 0%, var(--primary-2) 62%, #0e4a5f 100%);
+    color:var(--white);
+    overflow:hidden;
+    padding:88px 0 64px;
+  }
+  .hero-inner{
+    max-width:var(--article);margin:0 auto;padding:0 28px;
+    position:relative;z-index:2;
+  }
+  .breadcrumb{
+    display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+    font-size:13.5px;color:rgba(255,255,255,0.55);margin:0 0 22px;
+  }
+  .breadcrumb a{color:rgba(255,255,255,0.75);transition:color .15s ease;}
+  .breadcrumb a:hover{color:var(--accent);}
+  .breadcrumb span{color:rgba(255,255,255,0.35);}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--accent);}
+  h1{
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(30px, 4.2vw, 44px);
+    line-height:1.12;
+    letter-spacing:-0.02em;
+    margin:0 0 22px;
+  }
+  .hero-sub{
+    font-size:17px;line-height:1.6;
+    color:rgba(255,255,255,0.82);
+    margin:0 0 28px;
+    font-weight:400;
+  }
+  .article-meta{
+    display:flex;gap:18px;flex-wrap:wrap;align-items:center;
+    font-family:var(--font-mono);font-size:12.5px;
+    color:rgba(255,255,255,0.6);
+  }
+  .article-meta span{display:flex;align-items:center;gap:7px;}
+
+  .article-body{padding:72px 0 40px;}
+  .article-body p{
+    font-size:17px;line-height:1.75;color:var(--ink);margin:0 0 22px;
+  }
+  .article-body h2{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);letter-spacing:-0.01em;
+    color:var(--primary);margin:48px 0 18px;
+  }
+  .article-body h2:first-of-type{margin-top:0;}
+  .article-body h3{
+    font-family:var(--font-display);font-weight:700;
+    font-size:19px;color:var(--ink);margin:32px 0 12px;
+  }
+  .article-body ul, .article-body ol{
+    margin:0 0 22px;padding-left:22px;color:var(--ink);
+  }
+  .article-body li{font-size:16.5px;line-height:1.7;margin-bottom:10px;}
+  .article-body li strong{color:var(--primary);}
+  .article-body a.inline-link{color:var(--primary-2);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px;}
+  .article-body a.inline-link:hover{color:var(--accent);}
+
+  .callout{
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:22px 26px;margin:0 0 32px;
+  }
+  .callout p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.65;}
+  .callout p strong{color:var(--ink);}
+
+  .formula{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px 26px;margin:0 0 26px;text-align:center;
+  }
+  .formula p{margin:0;font-family:var(--font-mono);font-size:17px;color:var(--primary);}
+
+  .checklist{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:32px;margin:40px 0;
+  }
+  .checklist-title{
+    font-family:var(--font-display);font-weight:700;font-size:18px;
+    color:var(--primary);margin:0 0 18px;
+  }
+  .checklist ul, .checklist ol{margin:0;padding-left:0;list-style:none;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    font-size:15.5px;line-height:1.6;color:var(--ink);margin-bottom:14px;
+  }
+  .checklist li:last-child{margin-bottom:0;}
+  .checklist li::before{
+    content:'';flex:0 0 auto;width:16px;height:16px;margin-top:2px;
+    border-radius:5px;border:1.5px solid var(--accent);
+  }
+  .checklist li > span{min-width:0;overflow-wrap:break-word;}
+
+  table.compare{
+    width:100%;border-collapse:collapse;margin:0 0 32px;
+    font-size:14.5px;
+  }
+  table.compare th, table.compare td{
+    border:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top;
+  }
+  table.compare th{
+    background:var(--surface);font-family:var(--font-mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500;
+  }
+  table.compare td{color:var(--ink);line-height:1.55;}
+  table.compare td.checkbox-col{text-align:center;font-size:18px;color:var(--line);width:48px;}
+
+
+  .article-cta{
+    background:var(--surface);border:1px dashed var(--line);border-radius:16px;
+    padding:40px 36px;text-align:center;margin:48px 0 0;
+  }
+  .article-cta .placeholder-title{
+    font-family:var(--font-display);font-weight:700;font-size:19px;
+    color:var(--ink);margin:0 0 10px;
+  }
+  .article-cta p{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 24px;max-width:440px;margin-left:auto;margin-right:auto;}
+
+  .btn-primary{
+    background:var(--accent);color:var(--primary);
+    font-weight:700;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow:0 8px 24px rgba(23,185,196,0.25);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--primary);
+    font-weight:600;font-size:15.5px;
+    padding:15px 28px;border-radius:9px;
+    display:inline-block;
+    transition:background .15s ease, border-color .15s ease;
+  }
+  .btn-ghost:hover{background:var(--surface);}
+
+  .related{padding:24px 0 88px;}
+  .related-title{
+    font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 20px;
+  }
+  .related-links{display:flex;flex-direction:column;gap:14px;}
+  .related-links a{
+    font-size:15.5px;font-weight:600;color:var(--primary);
+    padding:16px 20px;border:1px solid var(--line);border-radius:10px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .related-links a:hover{border-color:var(--accent);color:var(--primary-2);}
+
+  footer{background:var(--primary);color:rgba(255,255,255,0.7);padding:64px 0 32px;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .footer-brand .logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.6);}
+  .footer-col-title{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(255,255,255,0.4);margin-bottom:16px;
+  }
+  .footer-col a{display:block;font-size:14.5px;color:rgba(255,255,255,0.78);margin-bottom:12px;transition:color .15s ease;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:28px;
+    font-size:13px;color:rgba(255,255,255,0.45);flex-wrap:wrap;gap:14px;
+  }
+  .footer-legal{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    margin-top:14px;
+    font-size:12px;color:rgba(255,255,255,0.4);
+  }
+  .footer-legal a{color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-legal a:hover{color:var(--accent);}
+
+  .footer-col .contact-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .footer-col .contact-row a{margin-bottom:0;}
+  .footer-col .contact-icons{display:flex;align-items:center;gap:8px;}
+  .footer-col .icon-link{display:inline-flex;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .icon-link:hover{color:var(--accent);}
+  .footer-col .icon-link svg{width:16px;height:16px;}
+  .footer-col .contact-row-link{display:inline-flex;align-items:center;gap:8px;}
+  .footer-col .contact-row-link svg{width:15px;height:15px;color:rgba(255,255,255,0.55);transition:color .15s ease;}
+  .footer-col .contact-row-link:hover svg{color:var(--accent);}
+
+  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  [data-reveal].in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    [data-reveal]{opacity:1;transform:none;transition:none;}
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    table.compare{display:block;overflow-x:auto;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero{padding-top:76px;}
+    .checklist{padding:24px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Обслуживание и ремонт шприцевых насосов после ухода вендора",
+      "description": "Как обслуживать и ремонтировать шприцевой насос без поддержки производителя: диагностика по симптомам, чистка и смазка привода, замена узлов, проверка расхода.",
+      "datePublished": "2026-11-27",
+      "dateModified": "2026-11-27",
+      "author": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fluidica",
+        "url": "https://fluidica.ru/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://fluidica.ru/img/og-default.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fluidica.ru/blog/obsluzhivanie-i-remont-shpricevyh-nasosov-posle-uhoda-vendora/"
+      },
+      "image": "https://fluidica.ru/img/og-default.png",
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://fluidica.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Блог",
+          "item": "https://fluidica.ru/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ремонт шприцевого насоса",
+          "item": "https://fluidica.ru/blog/obsluzhivanie-i-remont-shpricevyh-nasosov-posle-uhoda-vendora/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+    <nav>
+      <a href="/">Каталог</a>
+      <a href="/">Почему мы</a>
+      <a href="/">Госзакупки</a>
+      <a href="/blog/">Блог</a>
+      <a href="/">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="mailto:info@fluidica.ru" class="header-contact header-mail">info@fluidica.ru</a>
+      <a href="tel:+79853169104" class="header-contact header-phone" aria-label="Позвонить: +7 985 316-91-04"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>+7 985 316-91-04</span></a>
+      <a href="/" class="cta-small">Каталог</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <article>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <nav class="breadcrumb" aria-label="Хлебные крошки">
+          <a href="/">Главная</a><span>/</span>
+          <a href="/blog/">Блог</a><span>/</span>
+          <a href="javascript:void(0)" data-scroll="top">Ремонт шприцевого насоса</a>
+        </nav>
+        <span class="eyebrow">Инструкция</span>
+        <h1>Обслуживание и ремонт шприцевых насосов после ухода вендора</h1>
+        <p class="hero-sub">Что сохранить, пока насос работает, как искать неисправность по симптому, что можно заменить аналогом в приводе и почему после ремонта расход нужно проверять взвешиванием.</p>
+        <div class="article-meta">
+          <span>27 ноября 2026</span>
+          <span>~16 мин чтения</span>
+          <span>Шприцевые насосы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="article-wrap">
+        <p>Когда производитель уходит с рынка или прекращает поддержку, шприцевой насос в лаборатории продолжает работать — до первой поломки, первого сбоя прошивки или до момента, когда закончатся фирменные запчасти. Конструкция у большинства лабораторных шприцевых насосов в целом понятная: шаговый двигатель вращает ходовой винт, винт двигает толкатель, толкатель давит на поршень шприца. Поэтому многое в обслуживании можно сделать самостоятельно. Но механика здесь напрямую определяет расход, а электроника и прошивка часто закрыты, и это ограничивает ремонт сильнее, чем кажется.</p>
+
+        <p>В статье разберём, что зафиксировать до поломки, как диагностировать неисправность по симптому, какое обслуживание делать регулярно, что можно заменить аналогом и как проверить насос после ремонта. Конкретные процедуры (чем смазывать, как разбирается каретка, какой двигатель подходит) зависят от модели — их нужно брать из документации вашего прибора.</p>
+
+        <p>Как читать материал: статья опирается на руководства и материалы производителей (Ossila, частично Harvard Apparatus и KD Scientific), материал Elveflow, научную статью и репозиторий открытого проекта Poseidon. Это документация к конкретным приборам и позиции компаний, а не независимые испытания, и из неё мы переносим только общие принципы. Статья о лабораторных насосах для дозирования и микрофлюидики, а не о медицинских инфузионных насосах: ремонт медицинских изделий регулируется иначе и здесь не рассматривается.</p>
+
+
+        <h2>Какая у вас ситуация</h2>
+
+        <p>«Уход вендора» означает разное, и от этого зависят возможности:</p>
+
+        <ul>
+          <li><span>производитель ушёл с российского рынка, но продолжает работать в других странах — документация и запчасти могут быть доступны через других поставщиков</span></li>
+          <li><span>официальный сервис прекращён, но расходные материалы и шприцы по-прежнему продаются</span></li>
+          <li><span>модель снята с производства, а запчасти ещё есть у дистрибьюторов</span></li>
+          <li><span>производство и поддержка прекращены полностью</span></li>
+        </ul>
+
+        <p>Отдельно стоит вопрос гарантии. Условия у производителей разные: например, Ossila в руководстве к своему шприцевому насосу прямо пишет, что работы с электрическими компонентами должен выполнять только её инженер, а модификация или обслуживание третьими лицами лишает гарантии. Сохраняется ли гарантия на ваш прибор после ухода вендора и после самостоятельного ремонта, определяют договор и документы на конкретный насос.</p>
+
+
+        <h2>Что зафиксировать, пока насос работает</h2>
+
+        <p>Для шприцевого насоса это важнее, чем для многих других приборов: значительная часть его «ценности» — в настройках и программном обеспечении, которые после ухода производителя может быть негде взять.</p>
+
+        <ul>
+          <li><span>производитель, модель, серийный номер, год выпуска, версия прошивки (если она показывается в меню)</span></li>
+          <li><span>программа управления, драйверы и их версии; сохраните установочные файлы и инструкции, пока они доступны для скачивания</span></li>
+          <li><span>сохранённые программы и протоколы дозирования, если насос их хранит</span></li>
+          <li><span>какие шприцы вы используете (производитель, объём, материал) и какой внутренний диаметр задан для каждого в настройках</span></li>
+          <li><span>интерфейс подключения и кабели, протокол команд, если насос управляется с компьютера или из стенда</span></li>
+          <li><span>руководство пользователя, сервисная документация и перечень запчастей, если они у вас есть</span></li>
+          <li><span>результаты последней проверки расхода — с ними будет с чем сравнить насос после ремонта</span></li>
+        </ul>
+
+        <p>Сфотографируйте шильдик, каретку, фиксаторы шприца и разъёмы. Если корпус открывается штатно, сфотографируйте и внутренний вид — это сильно помогает при сборке и при разговоре с сервисом.</p>
+
+
+        <h2>Из чего состоит насос и что изнашивается</h2>
+
+        <p>По описанию Ossila, шаговый двигатель передаёт вращение на ходовой винт, винт двигает блок, упирающийся во фланец поршня, а движение блока ограничивает направляющая — линейный рельс или одна-две направляющие штанги; фланец шприца у ряда моделей фиксируется зажимом. Отсюда типичные узлы, на которые стоит смотреть при обслуживании:</p>
+
+        <table class="compare">
+          <thead><tr><th>Узел</th><th>Что с ним бывает</th></tr></thead>
+          <tbody>
+            <tr><td>Шприц</td><td>Расходный элемент: износ уплотнения поршня, деформация пластикового шприца, налёт и кристаллы. Многие «неисправности насоса» на деле — проблемы шприца</td></tr>
+            <tr><td>Фиксаторы шприца и толкатель</td><td>Ослабление, износ, плохая посадка фланца — шприц смещается, появляется дополнительный люфт</td></tr>
+            <tr><td>Ходовой винт и гайка</td><td>Загрязнение, высыхание смазки, износ гайки, люфт</td></tr>
+            <tr><td>Направляющие, подшипники</td><td>Загрязнение, заедание, неравномерный ход</td></tr>
+            <tr><td>Муфта между двигателем и винтом</td><td>Ослабление крепления, проскальзывание</td></tr>
+            <tr><td>Концевые выключатели</td><td>Загрязнение, обрыв провода, ложные срабатывания</td></tr>
+            <tr><td>Двигатель и драйвер</td><td>Пропуск шагов при перегрузке, перегрев, отказ драйвера</td></tr>
+            <tr><td>Блок питания, плата, дисплей, кнопки</td><td>Отказы электроники; без схемы и прошивки ремонт ограничен</td></tr>
+          </tbody>
+        </table>
+
+        <p>Подробнее о том, как связаны шаг двигателя, винт и расход, — в статье <a href="/blog/shpricevye-nasosy-princip-raboty-i-ustroystvo/">о принципе работы и устройстве шприцевого насоса</a>.</p>
+
+
+        <h2>Диагностика: от простого к сложному</h2>
+
+        <p>Прежде чем разбирать привод, исключите причины снаружи насоса. Порядок такой:</p>
+
+        <ol>
+          <li>Отключите насос от сети перед любым вмешательством в механику. Ossila предупреждает о точках защемления у движущейся каретки — руки держать подальше от неё во время работы.</li>
+          <li>Снимите шприц и проверьте, как насос двигается без нагрузки: если без шприца ход ровный, а со шприцем нет — ищите причину в шприце и линии.</li>
+          <li>Проверьте шприц: свободно ли идёт поршень, нет ли налёта, трещин, следов жидкости за уплотнением.</li>
+          <li>Проверьте линию: пузырьки, засоры, длину и диаметр трубок, клапаны и фильтры.</li>
+          <li>Проверьте настройки: диаметр шприца, единицы, режим (подача или забор).</li>
+          <li>Проверьте расход измерением, а не по дисплею. Методика — в статье <a href="/blog/kalibrovka-i-validaciya-shpricevyh-nasosov/">о калибровке и валидации шприцевых насосов</a>.</li>
+          <li>Только после этого осматривайте винт, гайку, направляющие, муфту, двигатель и электронику.</li>
+        </ol>
+
+        <p>Для быстрой ориентации:</p>
+
+        <table class="compare">
+          <thead><tr><th>Симптом</th><th>Что проверить в первую очередь</th></tr></thead>
+          <tbody>
+            <tr><td>Каретка стоит, двигатель гудит или щёлкает</td><td>Противодавление и засор в линии, упор в конец хода, заедание поршня, затем загрязнение винта и направляющих, затем ток драйвера</td></tr>
+            <tr><td>Насос не реагирует</td><td>Питание, разъёмы, предохранитель (если он предусмотрен руководством), затем плата и блок питания</td></tr>
+            <tr><td>Ошибка концевика, движение не начинается</td><td>Положение каретки относительно концевиков, загрязнение и проводка концевиков</td></tr>
+            <tr><td>Неравномерная подача, пульсации</td><td>Пузырьки и податливость системы, плохая фиксация шприца, затем состояние винта, гайки и направляющих, затем настройки микрошага</td></tr>
+            <tr><td>Капли после остановки</td><td>Пузырьки воздуха, податливость пластикового шприца и трубок</td></tr>
+            <tr><td>Фактический расход не совпадает с заданным</td><td>Диаметр шприца в настройках, другой производитель шприца, затем пропуск шагов и износ механики</td></tr>
+            <tr><td>Скрип, рывки, шум</td><td>Сухой или загрязнённый винт и направляющие, ослабленный крепёж и муфта</td></tr>
+          </tbody>
+        </table>
+
+        <p>Несколько пояснений из документации производителей. По материалам Ossila, вязкие или концентрированные растворы и длинные тонкие трубки создают противодавление, которое может заклинить движение, — поэтому советуют использовать трубку минимальной разумной длины, а при сохраняющихся засорах — большего диаметра и начинать с малой скорости. Капли после остановки Ossila объясняет пузырьками воздуха, которые сжимаются при подаче, и упругой деформацией пластиковых шприцев и трубок. Elveflow напоминает, что давление, которое создаёт шприцевой насос, при засоре растёт без ограничения, — поэтому заклинивание каретки может быть следствием засора, а не поломки привода. Там же отмечено, что время установления расхода зависит от системы и может составлять от секунд до часов, так что «нестабильный расход» сразу после старта ещё не неисправность.</p>
+
+        <p>Пример того, насколько процедуры зависят от модели: в насосе Ossila при срабатывании аппаратного концевика (коды ошибок 0x0E1 и 0x0E2) производитель предлагает вручную повернуть винт так, чтобы каретка отошла от концевиков, и перезапустить систему. У другого насоса такой порядок может быть неприменим — ищите раздел о неисправностях в руководстве вашей модели.</p>
+
+
+        <h2>Регулярное обслуживание: чистка и смазка</h2>
+
+        <p>Механика шприцевого насоса нуждается в чистоте и смазке винта и направляющих, но конкретные указания у производителей разные. Несколько примеров:</p>
+
+        <ul>
+          <li><span><strong>Ossila</strong> — направляющую и ходовой винт смазывать экономно, периодически, каждые 200 часов работы, синтетической смазкой из комплекта насоса. Корпус чистить безворсовой салфеткой, при необходимости слегка влажной — водой, 75-процентным раствором изопропилового спирта или мягким моющим средством; салфетка должна быть влажной, а не мокрой.</span></li>
+          <li><span><strong>KD Scientific</strong> (серия 410) — по фрагменту руководства: на направляющие — немного лёгкого машинного масла, на винт — немного смазки или масла; растворители для чистки насоса не использовать.</span></li>
+          <li><span><strong>Harvard Apparatus</strong> — по фрагменту страницы поддержки: у части насосов есть напоминание об обслуживании; рекомендуется проверить, не запылён ли и не липкий ли винт, и смазать его, если он сухой.</span></li>
+        </ul>
+
+        <p>Вывод отсюда простой: интервал, тип смазки и допустимые чистящие средства берутся из руководства вашей модели, а не из чужого. Если руководства нет, смазку не стоит подбирать наугад: она должна быть совместима с материалами гайки, направляющих и уплотнений, а избыток смазки собирает пыль. В таком случае лучше поручить обслуживание тому, кто может определить материалы узлов, или хотя бы начать с чистки и осмотра без смазки.</p>
+
+        <p>Практика, которая не зависит от модели: держите поверхность насоса и каретку сухими (разлив жидкости — частая причина загрязнения механики), не оставляйте насос с упором каретки в конец хода и ведите журнал — дата, часы работы, что почистили и смазали.</p>
+
+
+        <h2>Механика: что можно заменить аналогом</h2>
+
+        <p>Главное отличие шприцевого насоса от многих других приборов: расход вычисляется контроллером из числа шагов двигателя, хода винта и диаметра шприца. Отсюда правило — любая замена в цепочке «двигатель — муфта — винт — гайка» должна сохранять эту кинематику, иначе насос будет работать, но дозировать неверно.</p>
+
+        <ul>
+          <li><span><strong>Ходовой винт и гайка.</strong> Сопоставляют диаметр, шаг и число заходов (вместе они дают ход за оборот), длину, способ опоры на концах, материал гайки. Винт с другим ходом изменит расход при тех же настройках.</span></li>
+          <li><span><strong>Направляющие и подшипники.</strong> Диаметр, длина, посадка, тип подшипников. Совпадения «на глаз» недостаточно: перекос даёт неравномерный ход.</span></li>
+          <li><span><strong>Муфта.</strong> Посадочные диаметры валов и тип муфты; после замены — проверка соосности и отсутствия проскальзывания.</span></li>
+          <li><span><strong>Фиксаторы шприца, толкатель.</strong> Часто это простые детали, но от них зависит, не смещается ли шприц под нагрузкой.</span></li>
+        </ul>
+
+        <p>Люфт гайки отдельно заметен при смене направления (подача — забор) и в старте подачи. Если он вырос, это повод заменить гайку, а до замены — учитывать его в протоколе: о люфте при смене направления подробнее в статье <a href="/blog/tipichnye-oshibki-shpricevye-nasosy/">о типичных ошибках со шприцевыми насосами</a>.</p>
+
+
+        <h2>Двигатель, драйвер, блок питания, прошивка</h2>
+
+        <p>При замене шагового двигателя недостаточно совпадения размера фланца. Сопоставляют как минимум:</p>
+
+        <ul>
+          <li><span>число шагов на оборот — от него зависит пересчёт шагов в объём</span></li>
+          <li><span>номинальный ток и сопротивление обмоток, совместимость с драйвером</span></li>
+          <li><span>крутящий момент — его должно хватать на рабочее противодавление с запасом, иначе возможен пропуск шагов</span></li>
+          <li><span>фланец, вал, длину корпуса, разъём и порядок проводов</span></li>
+        </ul>
+
+        <p>Если после замены двигателя каретка поехала не в ту сторону, причина может быть в порядке подключения обмоток. В репозитории Poseidon, например, для этого случая прямо советуют развернуть разъём двигателя на 180 градусов. Это указание для конкретной открытой конструкции, а не универсальный рецепт: у закрытого насоса сначала сверяйтесь со схемой.</p>
+
+        <p>Блок питания заменяют только на совместимый по напряжению, току, полярности и разъёму. С платой управления и прошивкой сложнее всего: без схемы, исходного кода и сервисных инструментов производителя плату можно диагностировать, но восстановить её удаётся не всегда, а прошивку без файла производителя не перезаписать. Поэтому ремонт электроники закрытого насоса стоит планировать как попытку с неопределённым результатом. Отдельный риск — управление с компьютера: если программа управления больше недоступна, а протокол команд не описан, встроить насос в новый стенд может быть труднее, чем починить. О протоколах и интеграции — в статье <a href="/blog/avtomatizaciya-shpricevyh-nasosov-integraciya-v-stend/">об автоматизации шприцевых насосов</a>.</p>
+
+
+        <h2>Открытые конструкции: почему их проще ремонтировать</h2>
+
+        <p>Открытые шприцевые насосы обслуживать без производителя заметно проще — не потому что они надёжнее, а потому что всё нужное для ремонта опубликовано. Например, в репозитории проекта Poseidon выложены CAD-файлы печатных деталей, перечень покупных компонентов, прошивка Arduino, управляющая программа и подробные инструкции по сборке, всё под лицензией BSD-2-Clause. В статье авторов (Booeshaghi et al., Scientific Reports, 2019) подчёркивается, что система собирается только из покупных стандартных компонентов и печатных деталей, а печатные детали можно изменить в любой CAD-программе и напечатать заново.</p>
+
+        <p>Это не значит, что открытый насос «чинится сам»: после замены деталей его так же нужно проверять измерением, а печатные детали отличаются от исходных, если они напечатаны другим материалом или на другом принтере. Но вопрос «где взять схему, прошивку и чертёж каретки» снимается. Подробнее об открытых проектах — в <a href="/blog/obzor-otkrytykh-proektov-shpricevye-nasosy/">обзоре открытых шприцевых насосов</a>, а о том, что выбрать при замене импортного прибора, — в статье <a href="/blog/importozameshchenie-shpricevyh-nasosov/">об импортозамещении шприцевых насосов</a>.</p>
+
+
+        <h2>Проверка после ремонта</h2>
+
+        <p>Насос, который снова двигается, ещё не подтвердил прежние характеристики. После ремонта проверьте:</p>
+
+        <ul>
+          <li><span>ход каретки по всей длине без нагрузки и со шприцем, на малой и большой скорости — без рывков, скрипа и пропуска шагов</span></li>
+          <li><span>работу концевиков в обоих крайних положениях</span></li>
+          <li><span>надёжность фиксации шприца и отсутствие заметного люфта при смене направления</span></li>
+          <li><span>герметичность линии</span></li>
+          <li><span>фактический расход взвешиванием — с вашим рабочим шприцем, на нескольких расходах из рабочего диапазона, с повторами</span></li>
+          <li><span>сравнение с результатами проверки до поломки, если они сохранились</span></li>
+        </ul>
+
+        <p>Если меняли что-то в цепочке «двигатель — винт — гайка» или настройки драйвера, проверка расхода обязательна. Зафиксируйте результат: что заменили, на какие детали, что и как измерили, кто и когда.</p>
+
+
+        <h2>Ремонтировать или заменять</h2>
+
+        <p>Универсального правила, при какой стоимости ремонт выгоден, нет. Ниже общая логика решения, а не результат исследования.</p>
+
+        <p>Ремонт обычно оправдан, если:</p>
+
+        <ul>
+          <li><span>неисправность в механике или в узле с доступной заменой (фиксаторы, гайка, направляющие, двигатель с известными параметрами)</span></li>
+          <li><span>есть документация и способ управлять насосом — с дисплея или через описанный протокол</span></li>
+          <li><span>насос подходит вашей задаче, и прямой замены в нужном исполнении нет</span></li>
+        </ul>
+
+        <p>Замена обычно разумнее, если:</p>
+
+        <ul>
+          <li><span>отказала плата или прошивка, а схемы и файлов прошивки нет</span></li>
+          <li><span>насос встроен в стенд, а программа управления больше не работает и протокол не описан</span></li>
+          <li><span>насос нестабилен после нескольких ремонтов</span></li>
+          <li><span>задача требует подтверждённых характеристик, а после ремонта подтвердить их нечем</span></li>
+          <li><span>простой обходится дороже покупки</span></li>
+        </ul>
+
+        <p>При сравнении учитывайте не только цену детали, но и диагностику, работу специалиста, повторную калибровку, простой и риск повторного отказа. Варианты замены и их особенности — в <a href="/blog/sravnenie-shpricevyh-nasosov-rossiya-kitay-es/">сравнении шприцевых насосов из России, Китая и ЕС</a>.</p>
+
+
+        <h2>Независимый сервис: что спросить</h2>
+
+        <p>Независимый сервис может взять на себя диагностику, чистку и смазку, замену механических узлов, подбор аналогов и проверку расхода. Он не заменяет производителя полностью: у него может не быть прошивок, сервисного ПО и закрытой документации. Перед передачей насоса спросите:</p>
+
+        <ul>
+          <li><span>какие модели шприцевых насосов он уже обслуживал</span></li>
+          <li><span>какие работы выполняет сам, а какие передаёт партнёрам</span></li>
+          <li><span>как подбирает и подтверждает совместимость деталей, особенно винта, гайки и двигателя</span></li>
+          <li><span>как проверяет результат: расход взвешиванием, повторяемость, люфт</span></li>
+          <li><span>какие документы выдаёт: акт работ, перечень замен, протокол проверки</span></li>
+          <li><span>что будет, если ремонт окажется невозможным</span></li>
+        </ul>
+
+
+        <h2>Что есть у Fluidica</h2>
+
+        <p>В основе насосов Fluidica лежат разработки открытого проекта Poseidon, но готовый прибор и исходный проект — не одно и то же: для наших насосов действуют наши документация и характеристики. В разделе <a href="/spare-parts/">запчастей и ЗИП</a> есть каретка подачи и механизм подачи в сборе, прошитый блок электроники и ремкомплект насоса. В <a href="/services/">каталоге услуг</a> — калибровка расхода, годовой сервисный контракт и модернизация насоса заказчика. Можно ли помочь с насосом другого производителя и что именно получится сделать, зависит от модели, поэтому пришлите модель, серийный номер, фото и описание неисправности.</p>
+
+
+        <div class="checklist">
+          <div class="checklist-title">Чек-лист: обслуживание и ремонт шприцевого насоса</div>
+          <ul>
+            <li><span>записаны модель, серийный номер, версия прошивки, шприцы и заданные диаметры</span></li>
+            <li><span>сохранены программа управления, драйверы, протоколы и документация</span></li>
+            <li><span>сохранены результаты последней проверки расхода</span></li>
+            <li><span>перед вмешательством насос отключён от сети, шприц снят, линия слита</span></li>
+            <li><span>диагностика прошла по порядку: шприц, линия, настройки, расход, затем механика и электроника</span></li>
+            <li><span>чистка и смазка — по руководству вашей модели, а не по чужому</span></li>
+            <li><span>замена винта, гайки и двигателя сохраняет ход винта и число шагов на оборот</span></li>
+            <li><span>после ремонта проверены ход, концевики, фиксация шприца, герметичность и расход взвешиванием</span></li>
+            <li><span>результат записан в журнал обслуживания</span></li>
+          </ul>
+        </div>
+
+
+        <h2>Главное</h2>
+
+        <p>Уход производителя не делает шприцевой насос бесполезным: механику — винт, гайку, направляющие, фиксаторы — обычно можно почистить, смазать и заменить. Но расход в этом приборе вычисляется из кинематики, поэтому любые замены в приводе подбираются по параметрам, а результат подтверждается взвешиванием. Слабое место закрытых насосов — электроника, прошивка и программа управления: сохраните всё, что можно, пока насос работает. У открытых конструкций эта проблема снята документацией проекта.</p>
+
+        <p>Если нужна помощь с диагностикой или проверкой расхода, <a href="/#contact">напишите нам</a>. Смежные материалы: <a href="/blog/zapusk-shpricevogo-nasosa-poshagovaya-instrukciya/">пошаговый запуск шприцевого насоса</a>, <a href="/blog/cheklist-priemki-shpricevyh-nasosov-pri-postavke/">чек-лист приёмки</a> и <a href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">ремонт перистальтических насосов после ухода вендора</a>.</p>
+
+        <h2>Источники</h2>
+
+        <p>Статья опирается на руководства и материалы производителей, научную статью и репозиторий открытого проекта, а не на независимые испытания. Процедуры относятся к конкретным моделям и не переносятся на другое оборудование. Руководство KD Scientific и страница поддержки Harvard Apparatus прочитаны по фрагментам поисковой выдачи: их сайты были недоступны при подготовке статьи, поэтому из них взяты только общие указания без чисел.</p>
+        <ol>
+          <li><a href="https://www.ossila.com/pages/syringe-pump-user-manual" rel="noopener" target="_blank">Ossila — Syringe Pump User Manual</a>. Руководство производителя к одной модели: смазка винта и направляющей, чистка, точки защемления, обслуживание электрики только инженером Ossila и условия гарантии.</li>
+          <li><a href="https://www.ossila.com/pages/syringe-pump-troubleshooting" rel="noopener" target="_blank">Ossila — Syringe pump troubleshooting</a>. Материал производителя: капли после остановки, противодавление и заклинивание, ошибки концевиков для своей модели.</li>
+          <li><a href="https://www.ossila.com/pages/how-do-syringe-pumps-work" rel="noopener" target="_blank">Ossila — How do syringe pumps work</a>. Материал производителя: устройство привода — двигатель, винт, блок, направляющие, зажим.</li>
+          <li><a href="https://www.elveflow.com/microfluidic-flow-control-archive/microfluidics-syringe-pumps-drawbacks-overcoming" rel="noopener" target="_blank">Elveflow — Microfluidics syringe pumps: drawbacks</a>. Архивный материал производителя систем управления давлением (конкурирующая технология): пульсации от шага двигателя, рост давления при засоре, время установления расхода.</li>
+          <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6711986/" rel="noopener" target="_blank">Booeshaghi A. S. et al. Principles of open source bioinstrumentation applied to the poseidon syringe pump system. Scientific Reports, 2019</a>. Научная статья авторов проекта: стандартные покупные компоненты и печатные детали, модульность, редактирование CAD-моделей.</li>
+          <li><a href="https://github.com/pachterlab/poseidon" rel="noopener" target="_blank">pachterlab/poseidon — репозиторий проекта на GitHub</a>. Состав открытой документации (CAD, перечень компонентов, прошивка, программа, инструкции по сборке), лицензия BSD-2-Clause, указание о развороте разъёма двигателя.</li>
+          <li><a href="https://www.manualsdir.com/manuals/564066/kd-scientific-410.html?page=32" rel="noopener" target="_blank">KD Scientific — 410 Series User Manual, Maintenance</a>. Руководство производителя к одной серии, прочитано по фрагменту поисковой выдачи: смазка направляющих и винта, запрет растворителей при чистке.</li>
+          <li><a href="https://support.harvardapparatus.com/hc/en-us/articles/1500007007681-Maintenance-Syringe-Pump-Calibration-or-Syringe-Pump-Maintenance-Alarm" rel="noopener" target="_blank">Harvard Apparatus — Syringe Pump Maintenance Alarm</a>. Страница поддержки производителя, прочитана по фрагменту поисковой выдачи: напоминание об обслуживании, проверка и смазка ходового винта.</li>
+        </ol>
+
+        <div class="article-cta" data-reveal>
+          <div class="placeholder-title">Нужна помощь с ремонтом шприцевого насоса?</div>
+          <p>Опишите модель, неисправность и условия работы — подскажем, что можно сделать.</p>
+          <a href="/#request" class="btn-primary">Оставить заявку</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="related">
+      <div class="article-wrap">
+        <div class="related-title">Читать дальше</div>
+        <div class="related-links">
+          <a href="/blog/kalibrovka-i-validaciya-shpricevyh-nasosov/">Калибровка и валидация шприцевых насосов: как проверить фактический расход</a>
+          <a href="/blog/tipichnye-oshibki-shpricevye-nasosy/">Типичные ошибки при выборе и эксплуатации шприцевых насосов</a>
+          <a href="/blog/shpricevye-nasosy-princip-raboty-i-ustroystvo/">Шприцевые насосы: принцип работы и устройство</a>
+          <a href="/blog/importozameshchenie-shpricevyh-nasosov/">Импортозамещение шприцевых насосов</a>
+          <a href="/blog/obsluzhivanie-i-remont-peristalticheskih-nasosov-posle-uhoda-vendora/">Обслуживание и ремонт перистальтических насосов после ухода вендора</a>
+          <a href="/spare-parts/">Запчасти и ЗИП</a>
+          <a href="/services/">Услуги: калибровка, сервис, модернизация</a>
+          <a href="/blog/">Все статьи блога</a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">flu<span class="dot-i"><span class="droplet"></span>i</span>dica</a>
+        <p>Открытые научные приборы, собранные и готовые к работе.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Каталог</div>
+        <a href="/#catalog">Насосы</a>
+        <a href="/#catalog">Микроскопы</a>
+        <a href="/#catalog">Станции</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Компания</div>
+        <a href="/#why">О нас</a>
+        <a href="/#why">Открытый код</a>
+        <a href="/#trust">Госзакупки</a>
+        <a href="/blog/">Блог</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Контакты</div>
+        <a href="mailto:info@fluidica.ru">info@fluidica.ru</a>
+        <a href="tel:+79853169104">+7 985 316-91-04</a>
+        <div class="contact-row">
+          <a href="tel:+79888777295">+7 988 877-72-95</a>
+          <span class="contact-icons">
+            <a href="tel:+79888777295" class="icon-link" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="tel:+79888777295" class="icon-link" aria-label="MAX">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </span>
+        </div>
+        <a href="tel:+77021394489">+7 702 139-44-89</a>
+        <a href="https://t.me/tandelovtat" class="contact-row-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+          @tandelovtat
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Fluidica. Совместимо с открытым проектом Poseidon.</span>
+    </div>
+    <div class="footer-legal">
+      <a href="/privacy/">Политика конфиденциальности</a>
+      <a href="/terms/">Пользовательское соглашение</a>
+      <a href="/oferta/">Публичная оферта</a>
+      <a href="/requisites/">Реквизиты</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-scroll]').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const id = el.getAttribute('data-scroll');
+      if(id === 'top'){
+        window.scrollTo({top:0, behavior:'smooth'});
+        return;
+      }
+      const target = document.getElementById(id);
+      if(target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+<script src="/cookie-consent.js" defer></script>
+<script src="/analytics.js" defer></script>
+<script src="/contact-copy.js" defer></script>
+
+</body>
+</html>
