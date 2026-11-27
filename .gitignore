@@ -1,2 +1,4 @@
-.claude/
+# Локальные настройки Claude Code не храним; skills - храним (их читает задача по расписанию)
+.claude/*
+!.claude/skills/
 __pycache__/
